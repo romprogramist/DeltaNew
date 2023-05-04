@@ -1,0 +1,191 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Гемостаз"
+    });
+}
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Полуавтоматический коагулометр ECL 105 (Erba)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/Hemostasis/ECL105_1.jpg" alt="">
+                <img class="box1 img-big" src="/images/Hemostasis/ECL105_11.jpg" alt="">
+                <img class="box2 img-min" src="/images/Hemostasis/ECL105_2.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/Hemostasis/ECL105_3.jpg" alt="">
+                <img class="box4 img-min" src="/images/Hemostasis/ECL105_4.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описаниe</h3>
+                <ul class="big-list">
+                    <li>1-канальный полуавтоматический коагулометр, позволяющий проводить как коагулологические (640 нм) и имунотурбидиметрические исследования (800 нм)</li>
+                    <li>Количество позиций реагентов: 5 (3 позиций для реагентов с инкубацией (37 ± 0,2°C), из них одна позиция с перемешиванием; 2 позиций для реагентов с температурой окружающей среды)</li>
+                    <li>5 инкубируемых реакционных позиций (37 ± 0,2 °C)</li>
+                    <li>Автоматическое начало измерения после добавления реагента стартовой пипеткой</li>
+                    <li>Можно подключить к лабораторной информационной системе</li>
+                    <li>Возможность подключения сканера штрих-кодов и внешней клавиатуры</li>
+                    <li>Контроль качества осуществляется с использованием программы</li>
+                    <li>Безопасность эксплуатации обеспечивается радиочастотной идентификацией (RFID)</li>
+                    <li>Мониторинг количества реагентов, калибраторов и контролей</li>
+                    <li>Печать калибровочных кривых</li>
+                    <li>Встроенная система контроля качества с построением карт Леви-Дженингса</li>
+                    <li>Дисплей Touch Screen 7 дюймов</li>
+                    <li>Встроенный термопринтер</li>
+                    <li>RFID идентификатор количества кювет</li>
+                    <li>Возможность подключения к ЛИС</li>
+                    <li>Программа контроля качества</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Вид аналитической системы: полуавтоматический</li>
+                        <li>Количество каналов: 4</li>
+                        <li>Количество позиций для образцов: 20</li>
+                        <li>Количество позиций для реагентов: 12</li>
+                        <li>Клоттинговые тесты: ПВ, АЧТВ, Фибриноген, ТВ, Факторы свертываемости (II, V, VII, X, VIII, IX, XI, XII)</li>
+                        <li>Иммунологические тесты: Д-Димер</li>
+                        <li>Длина волны: 640 / 800 нм</li>
+                        <li>Дисплей: Touch Screen</li>
+                        <li>Принтер: встроенный термопринтер</li>
+                        <li>Считыватель штрих-кода: да</li>
+                        <li>Передача данных: поддержка двунаправленный ЛИС</li>
+                        <li>Размеры: 216x205x75 мм</li>
+                        <li>Электропитание: 100-250 В, 47-63 Гц</li>
+                        <li>Вес: 1 кг</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="img">
+                            <img src="/images/Hemostasis/HemostasisReg.jpg" alt="">
+                        </div> 
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>Клоттинговые тесты</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>PT - протромбиновое время</li>
+                                <li>APTT - активированное частичное тромбопластиновое время</li>
+                                <li>CaCl2 – хлорид кальция</li>
+                                <li>FBG - фибриноген</li>
+                                <li>TT – тромбиновое время</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>Хромогенные тесты</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>AT III – антитромбин III</li>
+                                <li>Protein C – протеин C</li>
+                                <li>Protein S – протеин S</li>
+                                <li>LA Screen - волчаночный антикоагулянт (скрининговый тест)</li>
+                                <li>LA Confirm - волчаночный антикоагулянт (подтверждающий тест)</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>Иммунологические тесты</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>DD – Д-димер</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>Факторы (внешний путь)</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>F II – фактор II</li>
+                                <li>F V - фактор V</li>
+                                <li>F VII - фактор VII</li>
+                                <li>F X - фактор X</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>Факторы (внутренний путь)</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>F VIII – фактор VIII</li>
+                                <li>F IX – фактор IX</li>
+                                <li>F XI – фактор XI</li>
+                                <li>F XII – фактор XII</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Расходные материалы</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="list">
+                            <ul>
+                                <li>Кюветы одноразовые (2x500)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

@@ -1,0 +1,120 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Исследование эякулята"
+    });
+}
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Автоматический анализатор качества спермы QwikCheck Gold (West Medica)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/ejaculateStudy/QwikCheckGold_1.png" alt="">
+                <img class="box1 img-big" src="/images/ejaculateStudy/QwikCheckGold_11.png" alt="">
+                <img class="box2 img-min" src="/images/ejaculateStudy/QwikCheckGold_2.png" alt="">
+                <img class="box3 img-min img-c" src="/images/ejaculateStudy/QwikCheckGold_3.png" alt="">
+                <img class="box4 img-min" src="/images/ejaculateStudy/QwikCheckGold_4.png" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описаниe</h3>
+                <ul class="big-list">
+                    <li>Быстрое, простое и точное тестирование спермы менее чем за две минуты</li>
+                    <li>Измерение и расчет индивидуальных и дополнительных показателей спермы</li>
+                    <li>Полная распечатка результатов анализа</li>
+                    <li>Режим «Повышенной чувствительности»</li>
+                    <li>Используемые капилляры биологически безопасны и могут быть использованы в любой среде</li>
+                    <li>Контроль качества: самотестирование, автокалибровка</li>
+                    <li>Подключение к ПК с помощью ПО Vision SQA®</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Определяемые параметры: концентрация сперматозоидов; подвижность (PR+NP); поступательная подвижность (PR); непоступательная подвижность (NP); неподвижность (IM); % нормальная морфология; концентрация подвижных сперматозоидов (MSC); концентрация сперматозоидов с поступательной подвижностью (PMSC); концентрация функциональных сперматозоидов (FSC); средняя скорость; общее количество сперматозоидов; общее количество подвижных сперматозоидов; общее количество сперматозоидов с поступательной подвижностью; общее количество функциональных сперматозоидов; общее количество сперматозоидов с нормальной морфологией</li>
+                        <li>Измерительная часть: источники светового излучения - два LED для канала подвижности и канала спектрофотометра; система детекторов: два фотодетектора для подвижности и оптической плотности</li>
+                        <li>Типы проб: свежая сперма, замороженная сперма, обработанная сперма</li>
+                        <li>Дисплей: рабочий жидкокристаллический с подсветкой (16 строк x 40 знаков)</li>
+                        <li>Принтер: внешний</li>
+                        <li>Клавиатура: функциональные клавиши, цифровые клавиши, клавиши управления курсором</li>
+                        <li>Интерфейс: RS-232</li>
+                        <li>Приспособление для тестирования проб: измерительный капилляр - пластиковый, принудительно заполняемый</li>
+                        <li>Память: 250 результатов тестов</li>
+                        <li>Время анализа: 45–75 секунд</li>
+                        <li>Температура тестирования проб: 37 °C</li>
+                        <li>Сигналы: входной сигнал канала подвижности - аналоговый, до 5 В; входной сигнал канала спектрофотометра - модулированный (1 кГц), аналоговый, до 5 В</li>
+                        <li>Контроль качества: внутренний - электронный тест самопроверки и автокалибровка; внешний - автоматический, с использованием контрольных материалов QwikCheck beads</li>
+                        <li>Электропитание: 100–250 В, 50/60 Гц, 10 VA</li>
+                        <li>Габариты: 20x30x15 см</li>
+                        <li>Вес: 4,1 кг</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable"> 
+                        
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Расходные материалы</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="list">
+                            <ul>
+                                <li>Капилляры с I-Button. Упаковка 50 шт</li>
+                                <li>Набор для очистки</li>
+                                <li>Контрольный материал QwikCheсk Beads (3х5 мл)</li>
+                                <li>Реактив для разведения спермы QwikCheсk Dilution (50 мл)</li>
+                                <li>Набор для разжижения спермы QwikCheсk Liquefaction (20 уп. х 0,5 мг)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>@ViewData["Title"] - Delta</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+	<environment include="Development">
+		<link rel="stylesheet" href="~/css/layout.css" asp-append-version="true">
+	</environment>
+	<environment exclude="Development">
+		<link rel="stylesheet" href="/css/layout-bundle.css" asp-append-version="true">
+	</environment>
+	@await RenderSectionAsync("Styles", required: false)
+	<environment exclude="Development">
+		@* important js, maybe analytics *@
+	</environment>
+</head>
+<body>
+<environment exclude="Development">
+	<noscript>
+		@* no script part of important, maybe analytics *@
+	</noscript>
+</environment>
+<environment include="Development">
+	<div id="development-mode"></div>
+</environment>
+<header>
+	<div class="wrapper">
+		<a href="/home" class="logo">
+			<img src="/images/icon/logo.svg" alt="" title="">
+		</a>
+		<nav>
+			<ul>
+				<li>
+					<a href="/home">Главная</a>
+				</li>
+				<li class="submenu-open">
+					<a href="#">Продукты</a>
+				</li>
+				<li>
+					<a href="/home/partners/#partners">Бренды</a>
+				</li>
+				<li>
+					<a href="/#news">Техобслуживание</a>
+				</li>
+				<li> 
+					<a href="/home/AboutUs/#AboutUs">О Нас</a>
+				</li>
+				<li>
+					<a href="/home/ContactUs/#ContactUs">Контакты</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="hamburger">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+	<form class="mobail-form"> 
+		<input type="search" id="query" name="q" placeholder="Search...">
+		<div class="search-options">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		@* <img src="/images/icon/search-options.svg" alt="" title=""> *@
+	</form>
+	<form class="desktop-form"> 
+		<input type="search" id="query" name="q" placeholder="Search...">
+		<div class="open-search-btn"></div>
+	</form>
+</header>
+<main>
+	@RenderBody()
+</main>
+<section class="map">
+	<div class="wrapper">
+		<div>
+			<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A50da5c14bf8e869abfef628d71b9978bfcdd53b40b9d634a5d378b194c289bb6&amp;source=constructor" width="100%" height="460" frameborder="0"></iframe>
+		</div>
+	</div>
+</section>
+<section class="contacts">
+	<div class="wrapper">
+		<a href="">
+			<img src="/images/icon/logo.svg" alt="" title="">
+		</a>
+		<div>
+			<a href="">
+				<img src="/images/icon/facebook.svg" alt="" title="">
+			</a>
+			<a href="">
+				<img src="/images/icon/instagram.svg" alt="" title="">
+			</a>
+			<a href="">
+				<img src="/images/icon/twitter.svg" alt="" title="">
+			</a>
+		</div>
+	</div>
+</section>
+<footer>
+	<div class="wrapper">
+		<nav>
+			<li>
+				<a href="">
+					Главная
+				</a>
+			</li>
+			<li>
+				<a href="">
+					Продукты
+				</a>
+			</li>
+			<li>
+				<a href="">
+					Бренды
+				</a>
+			</li>
+			<li>
+				<a href="">
+					Техобслуживание
+				</a>
+			</li>
+			<li>
+				<a href="">
+					О Нас
+				</a>
+			</li>
+			<li>
+				<a href="">
+					Контакты
+				</a>
+			</li>
+		</nav>
+		<div class="phone">
+			<div class="header">
+				<p>
+					Телефон:
+				</p>
+			</div>
+			<div>
+				<a href="">
+					<img src="/images/icon/phone.svg" alt="" title="">
+					<img class="phone-black" src="/images/icon/phone-black.svg" alt="" title="">
+					+374(10) 23-08-51
+				</a>
+				<a href="">
+					<img src="/images/icon/phone.svg" alt="" title="">
+					<img class="phone-black" src="/images/icon/phone-black.svg" alt="" title="">
+					+374(55) 77-66-99
+				</a>
+			</div>
+		</div>
+		<div class="location">
+			<div class="header">
+				<p>
+					Местоположение:
+				</p>
+			</div>
+			<div>
+				<img src="/images/icon/map_icon.svg" alt="" title="">
+				<img class="map-icon-black" src="/images/icon/map_icon-black.svg" alt="" title="">
+				<div>
+					<p>
+						Yerevan,Armenia Komitas 55/3
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="social-network">
+		<div class="items">
+			<a href="">
+				<img src="/images/icon/facebook.svg" alt="" title="">
+			</a>
+			<a href="">
+				<img src="/images/icon/instagram.svg" alt="" title="">
+			</a>
+			<a href="">
+				<img src="/images/icon/twitter.svg" alt="" title="">
+			</a>
+		</div>
+	</div>
+</footer>
+<div class="overlay" id="loader">
+	@* place loader html here *@
+</div>
+<div class="submenu" id="products">
+	<div class="items-s">
+		<div class="item">
+			<a href="/home/Products" class="item-hr">
+				Гематология
+			</a>
+			<a href="/home/MocciStudy" class="item-hr">
+				Исследование мочи
+			</a>
+			<a href="/home/EjaculateStudy" class="item-hr">
+				Исследование эякулята
+			</a>
+			<a href="/home/Biochemistry" class="item-hr">
+				Биохимия
+			</a> 
+			<div class="item-hr arrow">
+				<a href="#">
+					Иммунология
+				</a>
+			</div>
+			<div class="subsection">
+				<a href="/home/IfaPage">ИФА</a>
+				<a href="/home/Immunochemistry">Иммунохимия</a>
+			</div>
+		</div>
+		<div class="line"></div>
+		<div class="item">
+			<a href="/home/Electrolytes" class="item-hr">
+				Электролиты
+			</a>
+			<a href="/home/Hemostasis" class="item-hr">
+				Гемостаз (коагуляция)
+			</a>
+			<a href="#" class="item-hr">
+				Экспресс диагностика
+			</a>
+			<a href="#" class="item-hr">
+				Иммунофлуоресценция
+			</a>
+			<a href="#" class="item-hr">
+				Изосерология
+			</a>
+		</div>
+		<div class="line"></div>
+		<div class="item item-a">
+			<a href="#" class="item-hr">
+				Оптические инструменты
+			</a>
+			<a href="#" class="item-hr">
+				Центрифуги
+			</a>
+			<a href="#" class="item-hr">
+				Общелабораторное оборудование
+			</a>
+			<a href="/home/OneProductDescription" class="item-hr">
+				Общелабораторные расходные материалы
+			</a>
+			<a href="/home/LaboratoryChemistry" class="item-hr">
+				Лабораторная химия
+			</a>
+		</div>
+	</div>
+</div>
+<img class="top" src="/images/icon/top.svg" alt="">
+<environment include="Development">
+	<script src="~/js/phone-mask.js" asp-append-version="true"></script>
+	<script src="~/js/api-request.js" asp-append-version="true"></script>
+	<script src="~/js/loader.js" asp-append-version="true"></script>
+	<script src="~/js/modal.js" asp-append-version="true"></script>
+	<script src="~/js/helpers.js" asp-append-version="true"></script>
+	<script src="~/js/form-request.js" asp-append-version="true"></script>
+	<script src="~/js/layout.js" asp-append-version="true"></script>
+</environment>
+<environment exclude="Development">
+	<script src="~/js/layout-bundle.js" asp-append-version="true"></script>
+</environment>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

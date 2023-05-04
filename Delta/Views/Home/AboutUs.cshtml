@@ -1,0 +1,65 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/about-us.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/about-us-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "О Нас"
+    });
+}
+
+
+
+<section id="AboutUs" class="at-the-right-edge">
+    <div class="items">
+        <div>
+            <img src="/images/img/About-us-img.jpg" alt="" title="">
+            <p>Благодарим Вас за интерес, проявленный к нашей компании, и за посещение нашего веб-сайта.
+               Основная деятельность компании является разработка и производство диагностических тест-систем
+               для клинической химии и биохимии. При этом Дельта импортирует и поставляет реагенты,
+               лабораторные материалы и оборудование для диагностических, исследовательских и экологических
+               целей более чем из 20 европейских, американских и других компаний.
+               Основной целью компании является удовлетворение потребностей клиентов путем предоставления
+               надежного оборудования и тест-наборов, в основном адаптированных к условиям и оборудованию
+               различных диагностических лабораторий.</p>
+        </div>
+        <p>
+            Уважаемые коллеги!
+            <br>
+            Компания подчеркивает первенство структурированного диалога между пользователями. А также
+            комментарии и запросы пользователей относительно наших продуктов и услуг.
+            Образовательные и информационные программы, включая научные семинары, симпозиумы и
+            конференции, играют важную роль в деятельности компании.
+            Надеемся, что информация, размещенная на нашем сайте, будет способствовать модернизации и
+            развитию диагностических технологий.
+            С уважением <br>
+            А.Л. Карабашян <br>
+            Директор ООО "Дельта"
+        </p>
+    </div>
+    <div class="bg"></div>
+</section>

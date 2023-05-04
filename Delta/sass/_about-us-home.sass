@@ -1,0 +1,109 @@
+.about-us
+  padding: 10px
+  z-index: -999
+  .wrapper
+    max-width: 403px
+    margin: 0 auto
+    & > div  
+      margin-top: 10px
+      & > img
+        width: 100%
+      & > div
+        & > h3
+          display: none
+        & > p
+          font-weight: 500
+          margin-top: 20px
+          line-height: 21px
+          text-align: justify
+          color: $darkGrey-color
+          padding: 0 10px
+        
+
+  h3
+    font-weight: 700
+    font-size: 20px
+
+@media screen and ( min-width: 900px )
+  .about-us
+    .wrapper
+      min-width: 100%
+      padding: 130px 30px 30px 30px
+      & > h3
+        display: none
+      & > div
+        max-width: 827px
+        margin: 0 auto
+        display: flex
+        align-items: center        
+        & > img
+          max-width: 473px
+          margin-right: 40px
+        & > div
+          max-width: 526px
+          min-width: 40%
+          & > h3
+            font-weight: 700
+            font-size: 44px
+            line-height: 66px
+            display: block
+            color: $darkGrey-color
+          & > p
+            color: $darkGrey-color
+            padding: 0
+            font-size: 19px
+            line-height: 27px
+            
+@media screen and ( min-width: 954px )
+  .about-us
+    position: relative
+    .wrapper
+      padding: 100px 20px 150px 90px
+    &:before      
+      content: ""
+      background: url(/images/icon/big-logo1.svg) no-repeat
+      position: absolute
+      width: 462px
+      min-height: 1308px
+      top: -55%
+      left: 20px
+    &:after
+      content: ""
+      background: #F4F4F4
+      position: absolute
+      width: 40%
+      min-height: 1211px
+      top: -76.3%
+      left: 0
+      z-index: -1
+@media screen and ( min-width: 1130px )
+  .about-us
+    &:after
+      top: -81.5%
+  
+@media screen and ( min-width: 1190px )
+  .about-us
+    .wrapper
+      padding: 175px 0 213px 120px
+      & > div
+        max-width: 1046px
+        width: 100%
+        & > div
+          & > h3
+            font-size: 64px
+            line-height: 96px
+          & > p
+            font-size: 24px
+            line-height: 36px
+    &:after
+      top: -58.2%
+      min-height: 1320px
+    &:before
+      top: -196px
+      
+@media screen and ( min-width: 1450px )
+  .about-us
+    .wrapper
+      padding: 175px 0 213px 360px
+
+

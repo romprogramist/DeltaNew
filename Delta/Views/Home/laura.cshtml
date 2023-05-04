@@ -1,0 +1,143 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Исследование Мочи"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Автоматическая станция анализа мочи Laura (Erba)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/mocciStudy/laura-1-1.jpg" alt="">
+                <img class="box1 img-big" src="/images/mocciStudy/laura-11-1.jpg" alt="">
+                <img class="box2 img-min" src="/images/mocciStudy/laura-2-1.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/mocciStudy/laura-3-1.jpg" alt="">
+                <img class="box4 img-min" src="/images/mocciStudy/laura-4-1.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Производительность 400 полосок в час</li>
+                    <li>Автоматическое определение используемого типа полосок</li>
+                    <li>Автоматическая внутренняя калибровка</li>
+                    <li>Емкость памяти 1000 последних измерений</li>
+                    <li>Прямая бесшумная печать на встроенном термопринтере</li>
+                    <li>Русская версия программы</li>
+                    <li>Идентификация образца – по порядковому номеру измерения, по идентификационному номеру, по сформированному рабочему листу, с использованием устройства для считывания штрих-кода</li>
+                    <li>Автоматическое предупреждение о положительных результатах</li>
+                    <li>К результатам можно присоединить короткий комментарий</li>
+                    <li>Проверка исправности работы оптической системы прибора контрольными серыми полосками</li>
+                    <li>Простой режим сохранения чистоты прибора</li>
+                    <li>Предупреждение о необходимости исследования осадка мочи</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Вид аналитической системы: полуавтоматический, полуколичественный рефлексионный фотометр</li>
+                        <li>Определяемые параметры: белок, глюкоза, кетоны, билирубин, уробилиноген, нитриты, лейкоциты, кровь, рН, удельный вес</li>
+                        <li>Диагностические полоски ФАН Лаура®, используемые для анализа: от 2 до 10 параметров</li>
+                        <li>Принцип измерения: измерение с использованием ССD камеры и LED диодов</li>
+                        <li>Длина волны: 535, 610 нм</li>
+                        <li>Время до получения первого измерения: 60 сек, далее 9 сек на один анализ</li>
+                        <li>Производительность: 400 полосок в час</li>
+                        <li>Дисплей: 5″ жидкокристаллический сенсорный экран 320×240 пикселей</li>
+                        <li>Возможность собственных настроек;</li>
+                        <li>Принтер: встроенный термопринтер, 12 результатов/мин</li>
+                        <li>Интерфейс: внешнее подключение через RS 232 порт, возможность подключения внешней клавиатуры или сканера для считывания штрих кодов</li>
+                        <li>Память: 1000 последних результатов</li>
+                        <li>Параметры электропитания: 90-230 В / 50-60 Гц</li>
+                        <li>Потребляемая мощность в режиме работы: 45 Вт</li>
+                        <li>Потребляемая мощность в режиме ожидания - 6 Вт</li>
+                        <li>Температура: оптимальный диапазон 20-25 °C</li>
+                        <li>Относительная влажность 20-90%.</li>
+                        <li>Габариты: 430х290х170</li>
+                        <li>Вес: 5 кг.</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="list">
+                            <ul class="none-ul show">
+                                <li>ДекаФАН  Лаура</li>
+                                <li>ГептаФАН  Лаура</li>
+                                <li>ПентаФАН  Лаура</li>
+                                <li>ДиаФАН  Лаура</li>
+                                <li>МикроАльбуФАН Лаура</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Расходные материалы</p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>
+
+

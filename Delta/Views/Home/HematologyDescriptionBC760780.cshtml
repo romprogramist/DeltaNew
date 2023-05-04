@@ -1,0 +1,190 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Гематология"
+    });
+}
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Автоматический гематологический анализатор 
+                Mindray BC-760/780*
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/imgHematology/BC760780-1.png" alt="">
+                <img class="box1 img-big" src="/images/imgHematology/BC760780-11.png" alt="">
+                <img class="box2 img-min" src="/images/imgHematology/BC760780-2.png" alt="">
+                <img class="box3 img-min img-c" src="/images/imgHematology/BC760780-3.png" alt="">
+                <img class="box4 img-min" src="/images/imgHematology/BC760780-4.png" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описаниe</h3>
+                <ul class="big-list">
+                    <li>Tехнология SF Cube, в которой используются новейшие системы оптики и реагентов, помогает точнее дифференцировать кластеры клеток (6 типов, включая незрелые гранулоциты), что очень важно для выявления аномальных клеток, измерять концентрацию гемоглобина, определять количество ядросодержащих эритроцитов в пробах крови, а также проводить анализ биологических жидкостей</li>
+                    <li>Измерение СОЭ</li>
+                    <li>NRBC/RET*, PLT-H/PLT-O*/IPF</li>
+                    <li>Спектр определяемых параметров – 109 показателей, важных для работы клинициста</li>
+                    <li>Высокая точность измерений, подсчет полной формулы лейкоцитов, типирование патологических и незрелых форм всех видов клеток крови – точный и достоверный результат установления диагноза</li>
+                    <li>Непрерывная автозагрузка - шесть штативов по 5 пробирок</li>
+                    <li>Функция STAT с проколом колпачка - возможность обработки STAT-образцов и образцов капиллярной крови; минимизация биологических рисков</li>
+                    <li>Автоматическая калибровка</li>
+                    <li>Флагирование патологических результатов</li>
+                    <li>Наличие настраиваемых пользователем режимов тестирования: - СВС – общий анализ; - СВС+Diff – общий анализ с дифференцировкой 5 субпопуляций лейкоцитов Измерение СОЭ с другими параметрами</li>
+                    <li>Анализатор позволяет работать со следующими видами биологических жидкостей: спинномозговая, плевральная, асцитическая и синовиальная.</li>
+                    <li>Хранение до 130 000 результатов исследований, включая всю числовую информацию, гистограмм и скатерограмм</li>
+                    <li>Возможность выбирать наиболее рациональный режим исследования для каждого вида диагностики, что позволяет экономить реагент и время, затрачиваемое на 1 анализ</li>
+                    <li>TFT сенсорный дисплей с простым, интуитивно понятным интерактивным управлением</li>
+                    <li>4 USB порта, для возможности подключения дополнительных внешних приборов (Wi-Fi-адаптер, внешний принтер, клавиатура, мышка, внешний сканер штрихкодов и т.п.)</li>
+                    <li>Управление ключами шифрования: RFID</li>
+                    <li>Встроенный термальный принтерВстроенный сканер штрихкодов</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Производительность: CD - 80 тестов/ч, CDR - 45 тестов/ч, CD+ESR - 40 тестов/ч</li>
+                        <li>Определяемые параметры: количество измеряемых параметров цельной крови 109 основных - 41 (WBC Bas# Bas% Neu# Neu% Eos# Eos% Lym# Lym% Mon# Mon% IMG# IMG% RET%* RET#* RHE* IRF* LFR* MFR* HFR* RBC HGB MCV MCH MCHC RDW-CV RDW-SD HCT NRBC# NRBC% PLT PLT-I PLT-H PLT-O* MPV PDW PCT P-LCR P-LCC IPF ESR), 68* исследовательских (HFC#, HFC%, RBC-O, PLT-O, PLT-I, WBC-O, WBC-D, TNC-D, IME%, IME#, H-NR%, L-NR%, NLR, PLR, WBC-N, TNC-N, InR#, InR‰, Micro#, Micro%, Macro#, Macro%, RPI, H-IPF, IPF#, MRV, FRC#, FRC%, PDW-SD); количество измеряемых параметров биологических жидкостей 18 основных - 7 (WBC-BF TC-BF# MN# MN% PMN# PMN% RBC-BF) и 11 исследовательских параметров</li>
+                        <li>Принцип измерения: импедансный метод для подсчета эритроцитов и тромбоцитов, реагент без цианида для определения содержания гемоглобина, ESR - фотометрический метод, технология клеточного анализа SF Cube - WBC (IMG/Neu/Mon/Lym/Eos/Bas), NRBC/RET*, PLT-H/PLT-O*/IPF</li>
+                        <li>Объем образца: CD (цельная кровь) - 25 мкл, CD+ESR (цельная кровь) -160 мкл, предварительное разведение - 20 мкл</li>
+                        <li>Режим анализа: цельная кровь (CBC, CBC + DIFF, CBC + DIFF + RET*, CD + ESR, CDR + ESR*, CD/3-кратный подсчет лейкоцитов, CDR/5-кратный подсчет тромбоцитов* и др. режимы), предварительное разведение (CBC, CBC + DIFF, CDR* и др. режимы), биологические жидкости (CBC + DIFF)</li>
+                        <li>Дисплей: 10.4 -дюймовый сенсорный TFT экран, LabExpert, ПК</li>
+                        <li>Объем памяти: до 150 000 результатов, включая числовые и графические данные</li>
+                        <li>Передача данных: LAN - 1 порт, USB - 4 порта (Технические характеристики: 5 В пост. тока; 500 мА; USB 2.0 - 3 шт.; USB 3.0 - 1 порт), поддержка двунаправленный ЛИС</li>
+                        <li>Печать: лазерный принтер/струйный принтер, разнообразные форматы печати и пользовательские форматы</li>
+                        <li>Поддержка нескольких языков: рyccий, английский, китайский, испанский, португальский, французский</li>
+                        <li>Рабочие условия: температура - 15°C - 32°C; влажность - 30% - 85%; атмосферное давление - 70 кПа – 106 кПА</li>
+                        <li>Электропитание: 100-240В переменного тока, 50/60 Гц</li>
+                        <li>Размеры: 840 (длина) x 655 (ширина) x 600 (высота) мм</li>
+                        <li>Вес: ≤35 кг</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="img">
+                            <img src="/images/imgHematology/reagents760780.jpg" alt="">
+                        </div> 
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>BC-760</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>M-6LH Lyse</li>
+                                <li>M-6LD Lyse</li>
+                                <li>M-FD Dye</li>
+                                <li>DS Diluent</li>
+                                <li>Probe Cleanser</li>
+                                <li>ESR Solution Reagent</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>BC-780</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>M-6LH Lyse</li>
+                                <li>M-6LD Lyse</li>
+                                <li>M-FD Dye</li>
+                                <li>DS Diluent</li>
+                                <li>Probe Cleanser</li>
+                                <li>ESR Solution Reagent</li>
+                                <li>l FR Dye*</li>
+                                <li>l MDR Diluent*</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <a href="/pdf/hematology-doc.pdf">
+                            <div class="doc">
+                                <p>
+                                    EU Quality <br> Mangment <br> System Certificate 
+                                </p>
+                            </div>
+                        </a>
+                        <a href="/pdf/hematology-IVDDDOC760:780.pdf">
+                            <div class="doc">
+                                <p>
+                                    BC-760/780 <br> IVDD  DOC 
+                                </p>
+                            </div>
+                        </a>
+                        <a href="/pdf/hematology-RoshDOC760:780.pdf">
+                            <div class="doc">
+                                <p>
+                                    BC-760/780 <br> Rosh DOC
+                                </p>
+                            </div>
+                        </a>
+                        <a href="/pdf/hematology-ESRSolutionCE.pdf">
+                            <div class="doc">
+                                <p>
+                                    ESR Solution CE 
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p></p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

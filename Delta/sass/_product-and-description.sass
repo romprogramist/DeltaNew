@@ -1,0 +1,394 @@
+.at-the-right-edge
+  .items
+    display: block
+    .header-title
+      position: relative
+      max-width: 411px
+      margin: 0 auto
+      & > h3
+        font-weight: 700
+        font-size: 14px
+        line-height: 21px
+      &:after
+        content: ""
+        position: absolute
+        background: #C72930
+        width: 50%
+        height: 6px
+    .header-title-red
+      h3
+        color: rgba(211, 28, 36, 1)
+        text-align: center
+        font-size: 20px
+      h4
+        font-weight: 500
+        font-size: 16px
+        line-height: 19px
+      &:after
+        display: none
+    .header-mt
+      margin-top: 30px
+    .wrapper-d
+      display: flex
+      flex-direction: column
+      align-items: center
+      
+      .item-images
+        margin-top: 25px
+        display: grid
+        grid-template: repeat(2, 1fr) / repeat(3, 1fr)
+        max-width: 411px
+        img
+          padding: 7.5px
+          width: 100%
+          object-fit: cover
+        .box1
+          grid-column-start: 1
+          grid-column-end: 4   
+        .box2
+          grid-row-start: 2
+          grid-column-start: 1
+          grid-column-end: 2
+        .box4
+          grid-row-start: 2
+          grid-column-start: 2
+          grid-column-end: 3
+        .box3
+          grid-row-start: 2
+          grid-column-start: 3
+          grid-column-end: 4
+        .img-min
+          margin-top: 7.5px          
+          max-width: 125px
+        .img-big
+          display: none
+      .item-title
+        max-width: 411px
+        & > h3
+          font-weight: 700
+          font-size: 20px
+          line-height: 30px
+          text-align: justify
+      .item-table
+        max-width: 411px
+        margin-top: 50px
+        .column          
+          .hed-card
+            background: #D9D9D9
+            padding: 9px 0
+            height: 42px
+            & > p
+              text-align: center
+              line-height: 24px
+          & > ul
+            min-height: 420px    
+          .emptyTable
+            min-height: 420px
+            background: #F7F7F7
+            margin-top: 7px
+            padding: 11px 11px 33px 
+            & > .img
+              position: relative
+              img
+                width: 100%
+                object-fit: cover
+                cursor: pointer                
+              &:before
+                content: ''
+                background: url(/images/icon/magnifying-glassW.svg) center center / cover no-repeat
+                width: 47px
+                height: 47px
+                position: absolute
+                transform: translate(-50%, -50%)
+                top: 50%
+                left: 50%
+                cursor: pointer
+            .document
+              display: none
+            .active-img
+              display: block
+              position: fixed
+              top: 50%
+              left: 50%
+              transform: translate(-50%, -50%)
+              width: 100vw
+              height: 100vh
+              z-index: 999
+              background-color: rgba(0,0,0,.6)
+              & > img
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+                height: auto
+                max-width: 600px
+                padding: 0 23px
+              &:before
+                display: none
+          
+            .list 
+              .hed , a
+                display: block
+                margin-top: 25px
+                //background: rgba(211, 28, 36, 0.88)
+                cursor: pointer
+                & > p
+                  padding: 5px 0
+                  font-weight: 700
+                  font-size: 16px
+                  line-height: 24px
+                  color: $white-color
+                  text-align: center
+              .img-1
+                background: linear-gradient(90deg, #FF8A00 0%, rgba(255, 158, 44, 0.03) 100%)
+              .img-2 
+                background: linear-gradient(180deg, #004990 32.21%, #52AAFF 71.21%)
+              .img-3 
+                background: #366797
+              .img-4 
+                background: #F99C30
+              .img-5 
+                background: #366797
+              .img-6 
+                background: #63749E
+              .img-7
+                background: #20B9B9
+              .img-8
+                background: #7EC119
+              .img-9
+                background: #0476C4
+              .img-10
+                background: #4DAC5E
+              .img-11
+                background: #00459D
+              .img-12
+                background: #D30536
+              .img-13
+                background: #BB0F1B
+              .img-14
+                background: #F55869
+              .img-15
+                background: #910165
+              .img-16
+                background: #D6DF00
+              .img-17
+                background: #750062
+              .img-18
+                background: #FB9D00
+              .img-bio-1
+                background: linear-gradient(90deg, #20B9B9 68.6%, rgba(32, 185, 185, 0) 100%)
+              .img-bio-2
+                background: linear-gradient(90deg, #F55869 70.34%, rgba(245, 88, 105, 0.03) 100%)
+              .img-bio-3
+                background: linear-gradient(90deg, #D30536 67.65%, rgba(211, 5, 54, 0) 100%)
+              .img-bio-4
+                background: linear-gradient(90deg, #7EC119 69.47%, rgba(126, 193, 25, 0) 103.92%)
+              .img-bio-5
+                background: linear-gradient(90deg, #4DAC5E 72.52%, rgba(77, 172, 94, 0) 100%)
+              .img-bio-6
+                background: linear-gradient(90deg, #D30536 71.21%, rgba(211, 5, 54, 0) 100%)
+              .img-bio-7
+                background: linear-gradient(90deg, #BB0F1B 65.99%, rgba(187, 15, 27, 0) 100%)
+              .img-bio-8
+                background: linear-gradient(90deg, #F55869 67.3%, rgba(245, 88, 105, 0) 100%)
+              .img-bio-9
+                background: linear-gradient(90deg, #910165 62.08%, rgba(145, 1, 101, 0) 100%)
+              .img-bio-10
+                background: linear-gradient(90deg, #D6DF00 63.82%, rgba(214, 223, 0, 0) 96.08%)
+              .img-20
+                background: linear-gradient(90deg, #FF0000 0%, rgba(215, 105, 81, 0.03) 100%)
+              .img-21
+                background: #900000
+              .img-22
+                background: #C61F1F
+              .none-ul
+                display: none
+              & > ul
+                margin-top: 18px         
+                li
+                  list-style-type: none
+                  font-weight: 400
+                  font-size: 14px
+                  line-height: 21px
+                  position: relative
+                  margin-top: 10px
+                  &:before
+                    border: 0.1px solid #D9D9D9
+                    content: ''
+                    width: 100%
+                    position: absolute
+                    bottom: -5px
+                    
+            .doc
+              display: flex
+              align-items: flex-start
+              &:before
+                content: ''
+                width: 6px
+                height: 6px
+                border-radius: 50%
+                background: #1840C3
+                margin-top: 5px
+                margin-right: 7px
+              & > p
+                font-weight: 500
+                font-size: 14px
+                line-height: 21px
+                color: #1840C3
+                cursor: pointer
+                
+          .big-list
+            padding-left: 20px
+            padding-right: 10px
+        .column-1
+          .big-list
+            padding-left: 30px
+        .column-4
+          .emptyTable
+            position: relative
+            &:before
+              content: ''
+              position: absolute
+              background: url(/images/icon/center-logo.svg) center center / cover no-repeat      
+              width: 111px
+              height: 360px
+              left: 50%
+              top: 50%
+              transform: translate(-50%, -50%)          
+              
+  .big-list
+    margin-top: 12px
+    & > p
+      margin-left: -15px
+      font-weight: 500
+      font-size: 14px
+      line-height: 19px
+      color: #535353
+    li
+      font-weight: 500
+      font-size: 13px
+      line-height: 20px
+      color: $darkGrey-color
+      list-style-type: disc
+
+@media screen and ( min-width: 450px )
+  .at-the-right-edge
+    .items
+      .wrapper-d
+        .item-images
+          grid-template: repeat(3, 1fr) / repeat(3, 1fr)
+          img
+            margin-top: 0 !important
+          .box1
+            width: 270px
+            grid-column-start: 1
+            grid-column-end: 3
+            grid-row-start: 1
+            grid-row-end: 4
+          .box2          
+            grid-row-start: 1
+            grid-column-start: 3
+            grid-column-end: 4
+          .box3
+            grid-row-start: 2
+            grid-column-start: 3
+            grid-column-end: 4
+          .box4
+            grid-row-start: 3
+            grid-column-start: 3
+            grid-column-end: 4
+          .img-big
+            display: block
+          .img-min
+            width: 112.5px
+            
+          .img-min1
+            display: none
+        .item-title
+          max-width: 511px    
+          margin-top: 30px
+        .item-table
+          max-width: 511px
+          
+@media screen and ( min-width: 600px )
+  .at-the-right-edge
+    .items
+      .header-title
+        max-width: 511px
+      .wrapper-d
+        .item-images
+          max-width: 511px
+          .box1
+            width: 361px
+            height: 413px
+          .img-min
+            width: 125px
+            height: 136px
+            
+@media screen and ( min-width: 800px )
+  .at-the-right-edge
+    .items
+      .wrapper-d
+        align-items: flex-start
+      .header-title
+        padding-top: 51px
+        margin: 0
+        & > h3
+          font-size: 25px
+          line-height: 33px
+        & > h4          
+          font-size: 24px
+          line-height: 28px
+        .item-images
+          margin-top: 50px
+@media screen and ( min-width: 1387px )
+  .at-the-right-edge    
+    .items
+      .header-title
+        min-width: 1052px
+        padding-left: 7.5px
+        margin: 0
+        h3
+          font-size: 32px
+          line-height: 48px
+      .wrapper-d
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        margin-top: 35px
+        .item-images
+          margin-top: 0
+        .item-title
+          margin: 0 0 0 30px
+          h3
+            font-size: 24px
+            line-height: 36px
+        ul
+          li
+            font-size: 16px
+            line-height: 24px
+        .item-table
+          min-width: 100%
+          display: flex
+          .emptyTable
+            height: 100%
+          .column
+            width: 100%
+          .column-1
+            max-width: 100%
+            .big-list
+              padding: 40px
+            ul
+              padding: 37px 34px 10px
+          .column-2
+            max-width: 230px
+            margin: 0 7px
+          .column-3
+            max-width: 200px
+          .column-4
+            max-width: 200px            
+            margin: 0 7px
+
+
+
+            

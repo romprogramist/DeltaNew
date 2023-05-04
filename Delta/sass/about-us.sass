@@ -1,0 +1,72 @@
+@import "map"
+@import "contacts"
+@import "not-main"
+@import "at-the-right-edge"
+
+
+.not-main
+  background: url(/images/img/main-partners.jpg) center center / cover no-repeat
+  
+  
+.at-the-right-edge
+  .items
+    font-weight: 500
+    font-size: 13px
+    line-height: 20px
+    text-align: justify
+    color: $darkGrey-color
+    & > div
+      img
+        width: 100%
+        object-fit: cover
+      & > p
+        margin-top: 21px
+        font-size: 13px
+        line-height: 15px
+        text-align: justify
+
+    & > p
+      margin-top: 10px
+      font-size: 13px
+      line-height: 15px
+      text-align: justify
+
+
+@media screen and ( min-width: 800px )
+  .at-the-right-edge
+    .items
+      & > div
+        display: flex        
+        img
+          margin-top: 45px
+          min-width: 50%
+          margin-right: 25px
+        & > p
+          margin-top: 45px
+          font-size: 17px
+          line-height: 20px
+      & > p
+        margin-top: 40px
+        font-size: 17px
+        line-height: 20px
+          
+@media screen and ( min-width: 1200px )
+  .at-the-right-edge
+    .items
+      & > div        
+        img
+          min-width: 35%
+        & > p
+          font-size: 32px
+          line-height: 38px
+      & > p
+        font-size: 32px
+        line-height: 38px
+@media screen and ( min-width: 1580px )
+  .at-the-right-edge
+    .items
+      font-size: 32px
+      line-height: 48px
+      & > div
+        img
+          min-width: 35%

@@ -1,0 +1,116 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "ИФА"
+    });
+}
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Инкубатор-шейкер для планшетов StatFax 2200 (Awareness)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/imgIfa/StatFax2200-1.jpg" alt="">
+                <img class="box1 img-big" src="/images/imgIfa/StatFax2200-11.jpg" alt="">
+                <img class="box2 img-min" src="/images/imgIfa/StatFax2200-2.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/imgIfa/StatFax2200-3.jpg" alt="">
+                <img class="box4 img-min" src="/images/imgIfa/StatFax2200-4.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Работает с двумя планшетами или стрипами</li>
+                    <li>Буквенно-цифровой дисплей</li>
+                    <li>Цифровой контроль амплитуды и скорости встряхивания</li>
+                    <li>8 режимов встряхивания (575–1500 встряхиваний/минуту)</li>
+                    <li>Свето- и пылезащитная крышка</li>
+                    <li>Цифровая установка времени</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Режимы работы: шейкер; инкубатор; шейкер/инкубатор</li>
+                        <li>Температурный диапазон: от комнатной до 40 °С</li>
+                        <li>Точность инкубатора: 0,1 °С</li>
+                        <li>Колебания температуры при закрытой крышке: в пределах ± 4 °С</li>
+                        <li>Механизм инкубатора: подогреваемое алюминиевое основание</li>
+                        <li>Время прогрева: обычно 15 мин, для проверки отображается на дисплее</li>
+                        <li>Датчик температуры: терморезистор</li>
+                        <li>Скорость миксера: 8 режимов встряхивания, от 575 до 1500 встряхиваний в минуту</li>
+                        <li>Режимы таймера: установка времени, просмотр оставшегося времени, звуковой сигнал (останавливает смешивание, но поддерживает контроль температуры после истечения времени ожидания)</li>
+                        <li>Разрешение таймера: 1 с</li>
+                        <li>Диапазон таймера: от 1 с до 99 мин 59 с</li>
+                        <li>Держатель планшетов: для 2-х стандартных микропланшетов или рамки для стрипов</li>
+                        <li>Дисплей: 4 цифры, красный люминесцентный</li>
+                        <li>Клавиатура: 16 мембранных клавиш 4x4</li>
+                        <li>Корпус: пластиковый, с металлическим основанием</li>
+                        <li>Защита от аэрозоля: плексигласовая крышка дымчатого цвета</li>
+                        <li>Питание: 12 В переменного тока, 2 А, через адаптер</li>
+                        <li>Температура: 18–35 °С</li>
+                        <li>Влажность: ниже 80%</li>
+                        <li>Размеры: 43 х 37 х 18 см</li>
+                        <li>Вес: 3,3 кг</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p></p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

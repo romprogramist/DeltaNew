@@ -1,0 +1,34 @@
+@import "variables"
+
+.map
+  margin-top: 50px
+  .wrapper
+    & > div
+      position: relative
+      iframe
+        height: 274px
+      &:before
+        content: ''
+        position: absolute
+        left: 0
+        top: -14px
+        background: $red-color
+        width: 33%
+        height: 15px
+      &:after
+        content: ""        
+        position: absolute
+        top: -14px
+        right: 0
+        width: 67%
+        height: 15px
+        background: #F4F4F4
+@media screen and ( min-width: 954px )
+  .map
+    margin-top: 0
+    .wrapper
+      & > div
+        iframe
+          height: 460px
+        &:after
+          background: #FFFFFF

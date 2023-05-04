@@ -1,0 +1,181 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+	ViewData["Title"] = "Home Page";
+}
+
+@section Styles {
+	<environment include="Development">
+		<link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+	</environment>
+	<environment exclude="Development">
+		<link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+	</environment>
+}
+
+@section Scripts {
+	<environment include="Development">
+    	<script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+    	<script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+	await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+	{
+		Title = "Our Production"
+	});
+}
+<section id="at-the-right-edge" class="at-the-right-edge">
+	<div class="items">
+		<div class="item">
+			<img src="/images/img/our-production-test.png" alt="">
+			<div>
+				<div>
+					<h3>BeneVision N1</h3>
+				</div>
+				<p>Innovation has been rooted in Mindray’s blood since the company was founded 30 years ago, as we believe that it is the key to make the best of healthcare accessible to all. In the era of medical transformation, we never.</p>
+			</div>
+		</div>
+		<div class="item">
+			<img src="/images/img/our-production-test.png" alt="">
+			<div>
+				<div>
+					<h3>BeneVision N1</h3>
+				</div>
+				<p>Innovation has been rooted in Mindray’s blood since the company was founded 30 years ago, as we believe that it is the key to make the best of healthcare accessible to all. In the era of medical transformation, we never.</p>
+			</div>
+		</div>
+		<div class="item">
+			<img src="/images/img/our-production-test.png" alt="">
+			<div>
+				<div>
+					<h3>BeneVision N1</h3>
+				</div>
+				<p>Innovation has been rooted in Mindray’s blood since the company was founded 30 years ago, as we believe that it is the key to make the best of healthcare accessible to all. In the era of medical transformation, we never.</p>
+			</div>
+		</div>
+		<div class="item">
+			<img src="/images/img/our-production-test.png" alt="">
+			<div>
+				<div>
+					<h3>BeneVision N1</h3>
+				</div>
+				<p>Innovation has been rooted in Mindray’s blood since the company was founded 30 years ago, as we believe that it is the key to make the best of healthcare accessible to all. In the era of medical transformation, we never.</p>
+			</div>
+		</div>
+		<div class="item">
+			<img src="/images/img/our-production-test.png" alt="">
+			<div>
+				<div>
+					<h3>BeneVision N1</h3>
+				</div>
+				<p>Innovation has been rooted in Mindray’s blood since the company was founded 30 years ago, as we believe that it is the key to make the best of healthcare accessible to all. In the era of medical transformation, we never. </p>
+			</div>
+		</div>
+		<div class="item">
+			<img src="/images/img/our-production-test.png" alt="">
+			<div>
+				<div>
+					<h3>BeneVision N1</h3>
+				</div>
+				<p>Innovation has been rooted in Mindray’s blood since the company was founded 30 years ago, as we believe that it is the key to make the best of healthcare accessible to all. In the era of medical transformation, we never. </p>
+			</div>
+		</div>
+		<div class="item">
+			<img src="/images/img/our-production-test.png" alt="">
+			<div>
+				<div>
+					<h3>BeneVision N1</h3>
+				</div>
+				<p>Innovation has been rooted in Mindray’s blood since the company was founded 30 years ago, as we believe that it is the key to make the best of healthcare accessible to all. In the era of medical transformation, we never.</p>
+			</div>
+		</div>
+		<div class="item">
+			<img src="/images/img/our-production-test.png" alt="">
+			<div>
+				<div>
+					<h3>BeneVision N1</h3>
+				</div>
+				<p>Innovation has been rooted in Mindray’s blood since the company was founded 30 years ago, as we believe that it is the key to make the best of healthcare accessible to all. In the era of medical transformation, we never.</p>
+			</div>
+		</div>
+		<div class="item">
+			<img src="/images/img/our-production-test.png" alt="">
+			<div>
+				<div>
+					<h3>BeneVision N1</h3>
+				</div>
+				<p>Innovation has been rooted in Mindray’s blood since the company was founded 30 years ago, as we believe that it is the key to make the best of healthcare accessible to all. In the era of medical transformation, we never.</p>
+			</div>
+		</div>
+		<div class="item">
+			<img src="/images/img/our-production-test.png" alt="">
+			<div>
+				<div>
+					<h3>BeneVision N1</h3>
+				</div>
+				<p>Innovation has been rooted in Mindray’s blood since the company was founded 30 years ago, as we believe that it is the key to make the best of healthcare accessible to all. In the era of medical transformation, we never.</p>
+			</div>
+		</div>
+		<div class="item">
+			<img src="/images/img/our-production-test.png" alt="">
+			<div>
+				<div>
+					<h3>BeneVision N1</h3>
+				</div>
+				<p>Innovation has been rooted in Mindray’s blood since the company was founded 30 years ago, as we believe that it is the key to make the best of healthcare accessible to all. In the era of medical transformation, we never. </p>
+			</div>
+		</div>
+		<div class="item">
+			<img src="/images/img/our-production-test.png" alt="">
+			<div>
+				<div>
+					<h3>BeneVision N1</h3>
+				</div>
+				<p>Innovation has been rooted in Mindray’s blood since the company was founded 30 years ago, as we believe that it is the key to make the best of healthcare accessible to all. In the era of medical transformation, we never. </p>
+			</div>
+		</div>
+	</div>
+	<div class="bg"></div>
+</section>
+
+@* <div> *@
+@* 	<h1>Home page</h1> *@
+@* 	<p>Home page content</p> *@
+@* </div> *@
+
+@* <button class="m-trigger" data-modal-id="application"> *@
+@* 	Оставить заявку *@
+@* </button> *@
+
+
+@* *@
+@* <form class="review-form" novalidate> *@
+@* 	<h2>Оставьте отзыв</h2> *@
+@* 	<div> *@
+@* 		<input placeholder="Введите имя" type="text" name="name"> *@
+@* 	</div> *@
+@* 	<div> *@
+@* 		<input placeholder="Введите номер" type="tel" name="phone"> *@
+@* 	</div> *@
+@* 	<div> *@
+@* 		<input placeholder="Введите email" type="email" name="email"> *@
+@* 	</div> *@
+@* 	<div> *@
+@* 		<input placeholder="Введите текст отзыва" type="text" name="text"> *@
+@* 	</div> *@
+@* 	<div> *@
+@* 		<input placeholder="Введите оценку от 0 до 9" type="number" name="rate" value="0"> *@
+@* 	</div> *@
+@* 	<p>*Оставляя отзыв, Вы потверждаете согласие согласие на обработку введенных персональных данных</p> *@
+@* 	<div class="validation"></div> *@
+@* 	<button type="submit">Оставить отзыв</button> *@
+@* </form> *@
+
+
+@* <p>Отзывы</p> *@
+@* <div class="reviews-content"> *@
+@* </div> *@

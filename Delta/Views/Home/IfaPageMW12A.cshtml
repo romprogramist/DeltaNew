@@ -1,0 +1,122 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+            <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+        </environment>
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "ИФА"
+    });
+}
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Полуавтоматический промыватель/washer для планшет
+                MINDRAY MW-12A
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/imgIfa/MW-12A1.jpg" alt="">
+                <img class="box1 img-big" src="/images/imgIfa/MW-12A11.jpg" alt="">
+                <img class="box2 img-min" src="/images/imgIfa/MW-12A2.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/imgIfa/MW-12A3.jpg" alt="">
+                <img class="box4 img-min" src="/images/imgIfa/MW-12A4.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Подходит для мытья планшет с плоским, U-образным или V-образным дном;</li>
+                    <li>2 Режима промывки с держателями для 8- и 12 – луночных стрипов;</li>
+                    <li>Программирование до 100 протоколов промывки;</li>
+                    <li>Автоматическое определение дна и защита от повреждения;</li>
+                    <li>Регулируемое время встряхивания и замачивания;</li>
+                    <li>Оборудован крышкой для защиты рабочего места от аэрозольного распыления;</li>
+                    <li>Встроенная программа самодиагностики;</li>
+                    <li>Функция осушения лунки с двойной аспирацией;</li>
+                    <li>Автоматическая система контроля жидкости.</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Вид аналитической системы: Полуавтомат</li>
+                        <li>Вид планшет : 96/48 луночные планшеты</li>
+                        <li>Форма планшет: Плоское,U- и V-образное дно</li>
+                        <li>Дисплей: ЖК</li>
+                        <li>Разрешение: 192х64</li>
+                        <li>Интерфейс ввода данных: Клавиатура; 8 опциональных клавиш</li>
+                        <li>Тип гребенок : 12 канальная (на 48 лунок); 8 канальная (на 96 лунок)</li>
+                        <li>Наличие перекрестной аспирации: есть</li>
+                        <li>Время промывки: 0-300 с</li>
+                        <li>Время шейкирования: 0-300 с</li>
+                        <li>Количество циклов промывки: 9</li>
+                        <li>Память: До 100 программ промывки</li>
+                        <li>Интерфейс: Последовательный порт RS-232</li>
+                        <li>Электропитание: АС 100В-240В, 50/60 Гц, 100ВА</li>
+                        <li>Условия окружающей среды при работе: Температура:5-35°C; Влажность: 15-85% Давление: от 70кПа до 106кПа</li>
+                        <li>Габариты,мм: 400(Д)Х330(Ш)Х145(В)</li>
+                        <li>Вес,кг: 7.2</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p></p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

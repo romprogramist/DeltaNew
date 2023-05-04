@@ -1,0 +1,146 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-doc.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-doc-bundle.js" asp-append-version="true"></script>
+    </environment>
+    
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Биохимия"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Полуавтоматический биохимический анализатор Stat Fax 1904+ (Awarenes Technology)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/biochemistry/biochemistryStatFax1904-1-1.jpg" alt="">
+                <img class="box1 img-big" src="/images/biochemistry/biochemistryStatFax1904-11-1.jpg" alt="">
+                <img class="box2 img-min" src="/images/biochemistry/biochemistryStatFax1904-2-1.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/biochemistry/biochemistryStatFax1904-3-1.jpg" alt="">
+                <img class="box4 img-min" src="/images/biochemistry/biochemistryStatFax1904-4-1.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Полуавтоматический биохимический анализатор с открытой системой, которая позволяет работать с любыми реагентами промышленного производства</li>
+                    <li>Русифицирован</li>
+                    <li>Анализатор позволяет делать анализ как реакции по конечной точке так и кинетической реакции</li>
+                    <li>Двухлучевая оптическая система с шестью длинами волн (340, 405, 450, 505, 545, 600 нм )</li>
+                    <li>Встроенный принтер и встроенный термостат на 12 лунок</li>
+                    <li>Буквенно-цифровой дисплей</li>
+                    <li>Полноценная кинетика с построением графика реакции</li>
+                    <li>Автоматическое колесо фильтров</li>
+                    <li>Одно- или многоточечная калибровка</li>
+                    <li>Энергонезависимая память на 60 тестов</li>
+                    <li>Сохранение калибровок</li>
+                    <li>Проточная кювета Mosquito™ — сокращает расход реактивов (опция)</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Диапазон линейности измерения: 0,00–2,50 единицы оптической плотности (А)</li>
+                        <li>Точность фотометра: ± (1 % от измерения +0,005 А) при 0–1,5 А; ± (2 % от измерения +0,005 А) при 1,5–2 А</li>
+                        <li>Стабильность: дрейф нуля не более 0,005 А в течение 8 ч</li>
+                        <li>Источник света: галогеновая лампа с вольфрамовой нитью</li>
+                        <li>Фильтры (длины волн): 340, 405, 450, 505, 545 и 600 нм</li>
+                        <li>Ширина полосы пропускания на половине высоты: 10 нм</li>
+                        <li>Тип фильтров: интерференционные</li>
+                        <li>Размер пробирки: 12 мм, стандартная круглая</li>
+                        <li>Минимальный объем: 1 мл</li>
+                        <li>Максимальный объем: 2 мл (только для контроля 37 °С)</li>
+                        <li>Температура: 37 °С (± 0,3 °С), инкубационный блок включен постоянно, измерительная ячейка может включаться/ выключаться</li>
+                        <li>Время прогрева лампы: в кинетическом режиме -120 с ; с проточной кюветой Mosquito™ - 240 с; в других режимах - 45 с</li>
+                        <li>Время прогрева ячейки: 20–30 мин, зависит от окружающей температуры</li>
+                        <li>Время прогрева инкубационного блока: 20–30 мин, зависит от окружающей температуры</li>
+                        <li>Время автоматического отключения лампы для ее сохранения: через 15 мин бездействия, 30 мин с Mosquito™</li>
+                        <li>Скорость: измерение, расчет и печать результатов за 3 с</li>
+                        <li>Дисплей: буквенно-цифровой, 16-значный, жидкокристаллический</li>
+                        <li>· Принтер: термический, 20 знаков в строке, бумага 57 мм</li>
+                        <li>Клавиатура: 16 мембранных клавиш, 4x4, со звуковым сигналом</li>
+                        <li>Методы расчета: одноточечная калибровка по стандарту или фактору; многоточечная калибровка (до 7); кинетика по стандарту или фактору (единичные или множественные); по фиксированному времени</li>
+                        <li>Корпус: пластиковый, окрашенный огнеупорной эмалью, с металлическим основанием</li>
+                        <li>Электропитание: 110–120 или 220–240 В, 50/60 Гц, переключение по выбору</li>
+                        <li>Мощность: менее 50 Вт</li>
+                        <li>Температура: 15–35 °С</li>
+                        <li>Влажность: менее 85 %</li>
+                        <li>Габариты: 24x34x10 см</li>
+                        <li>Вес: 4,5 кг</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Расходные материалы</p>
+                    </div>
+                    <div class="emptyTable">
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

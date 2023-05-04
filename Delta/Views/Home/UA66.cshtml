@@ -1,0 +1,129 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Исследование Мочы"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Полуавтоматический анализатор мочи UA-66 (Mindray)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/mocciStudy/UA66-1-1.jpg" alt="">
+                <img class="box1 img-big" src="/images/mocciStudy/UA66-11-1.jpg" alt="">
+                <img class="box2 img-min" src="/images/mocciStudy/UA66-2-1.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/mocciStudy/UA66-3-1.jpg" alt="">
+                <img class="box4 img-min" src="/images/mocciStudy/UA66-4-1.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Спектр определяемых параметров – 11 показателей, важных для работы клинициста</li>
+                    <li>Высокая специфичность и чувствительность измерений – достоверный результат для постановки точного диагноза</li>
+                    <li>Простота измерений: тест-полоски готовы к исследованиям</li>
+                    <li>Источник холодного света высокой яркости, длительный срок эксплуатации</li>
+                    <li>Экономичность эксплуатации прибора – отсутствие жидких реагентов и технических растворов</li>
+                    <li>Скорость получения результата: время исследования – 1 минута</li>
+                    <li>Автоматическая калибровка</li>
+                    <li>Флагирование патологических результатов</li>
+                    <li>Стандартный интерфейс</li>
+                    <li>RS232 для подключения к внешнему компьютеру</li>
+                    <li>Хранение в памяти до 1000 результатов анализа</li>
+                    <li>Встроенный термальный принтер</li>
+                    <li>Большой LCD-дисплей с простым интуитивным интерактивным управлением</li>
+                    <li>Русифицированное меню</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Производительность: 120 тестов в час или 60 тестов в час</li>
+                        <li>Тестируемые параметры: лейкоциты; нитриты; уробилиноген; белок; pH; кровь; удельный вес; кетоны; билирубин; глюкоза; аскорбиновая кислота;</li>
+                        <li>Длина волны: 557 нм, 620 нм, 656 нм</li>
+                        <li>Принцип измерения: фотометрия коэффициента отражения</li>
+                        <li>Дисплей: LCD-монитор, разрешение 240х128</li>
+                        <li>Память: 1000 результатов</li>
+                        <li>Принтер: встроенный термопринтер, ширина бумаги 57 мм</li>
+                        <li>Интерфейс: стандартный RS 232</li>
+                        <li>Температура: 5-40 °С</li>
+                        <li>Влажность: 15-80 %</li>
+                        <li>Требования к сети: 220 В ± 10 %, 50/60 Г</li>
+                        <li>Потребляемая мощность: 40 Вт</li>
+                        <li>Размеры: 100 мм (Д) х 360 мм (Ш) х 300 мм (В)</li>
+                        <li>Вес: 3,8 кг</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="list">
+                            <ul class="none-ul show">
+                                <li>Стрипы - U-11</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Расходные материалы</p>
+                    </div>
+                    <div class="emptyTable">
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>
+
+

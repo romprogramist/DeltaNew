@@ -1,0 +1,299 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Биохимия"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Автоматический биохимический анализатор BS-480 (Mindray)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/biochemistry/biochemistryBS480-1-1.jpg" alt="">
+                <img class="box1 img-big" src="/images/biochemistry/biochemistryBS480-11-1.jpg" alt="">
+                <img class="box2 img-min" src="/images/biochemistry/biochemistryBS480-2-1.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/biochemistry/biochemistryBS480-3-1.jpg" alt="">
+                <img class="box4 img-min" src="/images/biochemistry/biochemistryBS480-4-1.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Автоматический биохимический анализатор с закрытой системой</li>
+                    <li>Напольный, дискретный биохимический анализатор с произвольным доступом и постоянной производительностью 400 тестов в час и до 240 тестов в час с ISE (K, Na, Cl)</li>
+                    <li>Точная аспирация образцов и реагентов</li>
+                    <li>Встроенная система удаления воздушных пузырьков перед промывкой</li>
+                    <li>Перекрестное загрязнение < 0,05%</li>
+                    <li>Защита от столкновений в вертикальном и горизонтальном положениях</li>
+                    <li>Автоматическое восстановление системы</li>
+                    <li>Определение уровня жидкости, выявление сгустков</li>
+                    <li>Круглосуточное охлаждение отсека для реагентов</li>
+                    <li>Многоразовые кюветы с автоматической станцией промывки</li>
+                    <li>Два автономных миксера</li>
+                    <li>Дифракционная решетка с 12 длинами волн</li>
+                    <li>Встроенный сканнер штрих-кодов</li>
+                    <li>Предварительное и последующее разбавление образца</li>
+                    <li>Двунаправленное соединение с интерфейсом системы ЛИС</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Вид аналитической системы: полностью автоматизированная, настольная, произвольного оступа, выполнение срочных (STAT) образцов</li>
+                        <li>Производительность: 400 фотометрических тестов в час, до 240 ионоселективных (ISE) тестов в час</li>
+                        <li>Принципы измерения: фотометрия, турбидиметрия</li>
+                        <li>Метод измерения: конечная точка кинетическая реакция, фиксированное время, ISE (опция), монохроматические/бихроматические методы, до 4х реагентов</li>
+                        <p>Зона образцов</p>
+                        <li>Количество образцов: 90 проб в первичных или вторичных пробирках</li>
+                        <li>Объем образца: 1,5−45 мкл, с шагом 0,1 мкл</li>
+                        <li>Дозатор образцов: детекция уровня жидкости, детекция сгустка и защита от столкновений</li>
+                        <li>Промывка дозатора: внутренней и внешней поверхности дозатора, перенос <0,05%</li>
+                        <li>Разведение: aвтоматическое разведение образцов предразведение и постразведение отношение разведения 1:50 (разведение в кварцевых кюветах)</li>
+                        <li>Встроенный сканер штрихкодов: сканер штрихкодов для образцов/реагентов</li>
+                        <li>ISEмодуль (опция): K+, NA+, Cl с производительностью до 240 тестов в час</li>
+                        <p>Зона реагентов</p>
+                        <li>Количество образцов: 80 охлаждаемых позиций (2−10°С)</li>
+                        <li>Объем реагентов: 10−350 µl</li>
+                        <li>Дозатор реагентов: детекция уровня жидкости, защита от столкновений и инвентаризация реагентов</li>
+                        <li>Промывка дозатора: внутренней и внешней поверхности дозатора</li>
+                        <p>Реакционная система</p>
+                        <li>Реакционный ротор: 90 кювет, автоматическая промывка</li>
+                        <li>Оптический путь: 5 мм</li>
+                        <li>Реакционный объем: 120-360 µl</li>
+                        <li>Температура термостатирования: 37°С±0,1°С</li>
+                        <li>Перемешивание: 2 миксера</li>
+                        <p>Оптическая система</p>
+                        <li>Источник света: галогеново-вольфрамовая лампа</li>
+                        <li>Фотометр: обращенная оптика, дифракционная решетка</li>
+                        <li>Длины волн: 340нм, 380нм, 412нм, 450нм, 505нм, 546нм, 570 нм, 605нм, 660нм, 700нм, 740 нм, 800нм</li>
+                        <li>Диапазон оптической плотности: 0-3,3 Abs</li>
+                        <li>Разрешение: 0,0001Abs</li>
+                        <p>Контроль качества и Калибровка</p>
+                        <li>Режимы калибровки: линейная (одноточечная, двухточечная и многоточечная), Logit-Log 4P, Logit-Log 5P, Spline , экспоненциальная, полиномиальная, параболическая</li>
+                        <li>Правила контроля качества: правила Вестгарда, Леви-Дженнигса, метод кумулятивных сумм, twin plot</li>
+                        <p>Управление</p>
+                        <li>Операционная система: Window 8</li>
+                        <li>Интерфейс: RS-232, Network, USB, параллельный порт</li>
+                        <p>Условия работы</p>
+                        <li>Расход воды: менее 20 литров в час, деонизированная</li>
+                        <li>Источник питания: 200−240В, 50/60 Гц, 1500ВА</li>
+                        <li>Температура: 15−30°С</li>
+                        <li>Влажность: 35−85%</li>
+                        <li>Размер: 1180мм (Д) ×710мм (Г) × 1150мм (В)</li>
+                        <li>Вес: 300 кг</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="img">
+                            <img src="/images/biochemistry/biochemistry-BA88A.jpg" alt="">
+                        </div>
+                        <div class="list">
+                            <div class="hed img-bio-1">
+                                <p>Печеночная панель</p>
+                            </div>
+                            <ul>
+                                <li>ALT - Аланинаминотрансфераза</li>
+                                <li>AST - Аспартатаминтрансфераза</li>
+                                <li>γ-GT - Гама-глутамилтрансфераза</li>
+                                <li>ALP - Щелочная фосфатаза</li>
+                                <li>Bil-D - Прямой билирубин (DSA)</li>
+                                <li>Bil-D - Прямой билирубин (VOX)</li>
+                                <li>Bil-T - Общий билирубин (DSA)</li>
+                                <li>Bil-T - Общий билирубин (VOX)</li>
+                                <li>TP - Общий белок</li>
+                                <li>TPUC - Общий белок в моче</li>
+                                <li>ALB - Альбумин</li>
+                                <li>TBA - Общие желчные кислоты</li>
+                                <li>PA - Преальбумин</li>
+                                <li>CHE - Холинэстераза</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-bio-2">
+                                <p>Печеночная панель</p>
+                            </div>
+                            <ul>
+                                <li>UREA - Мочевина</li>
+                                <li>CREA - Креатинин</li>
+                                <li>UA - Мочевая кислота</li>
+                                <li>CO2 - Бикарбонат</li>
+                                <li>β2-MG - β2-микроглобулин</li>
+                                <li>Cys-C II – Цистатин C</li>
+                                <li>RBP - Ретинол-связывающий белок</li>
+                                <li>MALB - Микроальбумин</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-bio-3">
+                                <p>Кардиологическая панель</p>
+                            </div>
+                            <ul>
+                                <li>CK - Креатининкиназа</li>
+                                <li>CK-MB - Креатининкиназа-МВ</li>
+                                <li>MYO - Миоглобин</li>
+                                <li>LDH - Лактатдегидрогеназа</li>
+                                <li>α-HBDH - Альфа-гидроксибутиратдегидрогеназа</li>
+                                <li>HCY - Гомоцистеин</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-bio-4">
+                                <p>Анемия и электролиты</p>
+                            </div>
+                            <ul>
+                                <li>Fe - Железо</li>
+                                <li>FER - Ферритин</li>
+                                <li>TRF - Трансферрин</li>
+                                <li>Ca - Кальций</li>
+                                <li>Mg - Магний</li>
+                                <li>P - Фосфор</li>
+                                <li>G6PD - Глюкозо-6-фосфатдегидрогеназа</li>
+                                <li>UIBC - Ненасыщенная железосвязывающая способность</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-bio-5">
+                                <p>Липидная панель</p>
+                            </div>
+                            <ul>
+                                <li>TC - Общий холестерин</li>
+                                <li>TG - Триглицериды</li>
+                                <li>HDL-C - Липопротеины высокой плотности</li>
+                                <li>LDL-C - Липопротеины низкой плотности</li>
+                                <li>Apo-A1 - Аполипопротеин-А1</li>
+                                <li>Apo-B - Аполипопротеин-В</li>
+                                <li>Lp(a) - Липопротеин (а)</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-bio-6">
+                                <p>Иммунологическая панель</p>
+                            </div>
+                            <ul>
+                                <li>IgA - Иммуноглобулин А</li>
+                                <li>IgG- Иммуноглобулин G</li>
+                                <li>IgM - Иммуноглобулин М</li>
+                                <li>IgE - Иммуноглобулин E</li>
+                                <li>C3 - Комплимент С3</li>
+                                <li>C4 - Комплимент С4</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-bio-7">
+                                <p>Диабетическая панель</p>
+                            </div>
+                            <ul>
+                                <li>Glu- G - Глюкоза (оксидазный метод)</li>
+                                <li>Glu-HK - Глюкоза (гексокиназный метод)</li>
+                                <li>HbA1c - Гликированный гемоглобин</li>
+                                <li>FUN - Фруктозамин</li>
+                                <li>β-HB – бета-гидроксибутират</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-bio-8">
+                                <p>Ревматическая панель</p>
+                            </div>
+                            <ul>
+                                <li>CRP - С-реактивный белок</li>
+                                <li>RF - Ревматоидный фактор</li>
+                                <li>HS-CRP - Высокочувствительный С-реактивный белок</li>
+                                <li>АSО - анти-стрептолизин О</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                                                    <div class="hed img-bio-9">
+                                                        <p>Панкреатическая панель</p>
+                                                    </div>
+                                                    <ul>
+                                                        <li>α-Amylasa - Альфа-амилаза</li>
+                                                        <li>LIP - Липаза</li>
+                                                    </ul>
+                                                </div>
+                        <div class="list">
+                            <div class="hed img-bio-10">
+                                <p>Легочная панель</p>
+                            </div>
+                            <ul>
+                                <li>ACE - Ангиотензинпревращающий фермент</li>
+                                <li>ADA - Аденозиндезаминаза</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Расходные материалы</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="img">
+                            <img src="/images/biochemistry/biochemistry-BA88A-1.jpg" alt="">
+                        </div>
+                        <ul class="big-list">
+                            <li>Многоразовые кюветы</li>
+                            <li>Детергент CD-80</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

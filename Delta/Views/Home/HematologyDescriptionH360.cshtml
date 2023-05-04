@@ -1,0 +1,127 @@
+
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Гематология"
+    });
+}
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Автоматический гематологический анализатор H360 (Erba)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/imgHematology/H360Erba-1.png" alt="">
+                <img class="box1 img-big" src="/images/imgHematology/H360Erba-11.png" alt="">
+                <img class="box2 img-min" src="/images/imgHematology/H360Erba-2.png" alt="">
+                <img class="box3 img-min img-c" src="/images/imgHematology/H360Erba-3.png" alt="">
+                <img class="box4 img-min" src="/images/imgHematology/H360Erba-4.png" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описаниe</h3>
+                <ul class="big-list">
+                    <li>Дифференциация лейкоцитов по 3 популяциям, 22 регистрируемых параметра, 3 гистограммы (RBC,WBC,PLT)</li>
+                    <li>Режим цельной крови, капиллярной цельной крови и предварительного разведения</li>
+                    <li>Измерения уровня гемоглобина проводится по безцианидной технологии.</li>
+                    <li>Расширенный анализ тромбоцитов (P-LCR, P-LCC, PDW- SD, PDW-CV)</li>
+                    <li>Большой объем памяти, до 50.000 результатов</li>
+                    <li>Объем образца составляет всего 9 мкл, идеально для педиатрии</li>
+                    <li>Гарантированная точность разбавления с использованием автоматического дозирования разбавителя</li>
+                    <li>Анализ одним нажатием кнопки</li>
+                    <li>Индикатор состояния</li>
+                    <li>Высококачественные компоненты для длительного срока службы</li>
+                    <li>Небольшая занимаемая площадь</li>
+                    <li>Сенсорный TFT-экран с диагональю 10,4 дюйма с простым программным обеспечением</li>
+                    <li>USB-интерфейс с поддержкой подключения: компьютера, встроенного термопринтера, клавиатуры, ручного считывателя штрих-кодов, внешнего устройства памяти</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Производительность: 60 образцов в час</li>
+                        <li>Определяемые параметры: 22 параметров - WBC, RBC, HGB, HCT, MCV MCH, MCHC, RDW-CV, RDW-SD, PLT, MPV, PCT, PDW-CV, PDW-SD, P-LCR, P-LCC, Lymph%/#, Mid %/#, Gran%/#</li>
+                        <li>Принцип измерения: импедансный метод для подсчета лейкоцитов, эритроцитов и тромбоцитов, реагент без цианида для определения содержания гемоглобина</li>
+                        <li>Объем образца: режим предварительного разведения - 20 мкл, режим цельной крови - 9 мкл, режим цельной капиллярной крови - 20 мкл</li>
+                        <li>Дисплей: 10.4 -дюймовый сенсорный TFT экран</li>
+                        <li>Объем памяти: до 50 000 результатов с графиками</li>
+                        <li>Интерфейс: 4 USB, 1 порт LAN</li>
+                        <li>Печать: внешний термопринтер</li>
+                        <li>Рабочие условия: температура - 15°C - 30°C; атмосферное давление - 70 кПа – 106 кПА</li>
+                        <li>Электропитание: 100-240В переменного тока, 50/60 Гц</li>
+                        <li>Размеры: 364 (длина) x 477 (ширина) x 417 (высота) мм</li>
+                        <li>Вес: 25 кг</li>
+                    </ul>
+                </div> 
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="img">
+                            <img src="/images/imgHematology/ELITE580Erba.jpg" alt="">
+                        </div>
+                        <ul class="big-list">
+                            <li>Erba Dil (20L)</li>
+                            <li>Erba Lyse Cyanide Free</li>
+                            <li>Elite H Clean</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p></p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

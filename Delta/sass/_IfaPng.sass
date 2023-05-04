@@ -1,0 +1,130 @@
+.wrapper-reag
+  display: flex
+  flex-wrap: wrap
+  align-items: flex-start
+  .block
+    max-width: 500px
+    width: 100%
+    margin-top: 20px
+    
+    .img
+      text-align: center
+      padding: 5px 0 
+      margin-top: 18px
+      max-width: 500px
+      width: 100%
+      cursor: pointer
+      & > p
+        color: #FFFFFF
+        font-weight: 700
+        font-size: 11.8951px
+        line-height: 120.5%
+    .img-1
+      background: linear-gradient(90deg, #20B9B9 67.62%, rgba(32, 185, 185, 0) 102.98%)
+    .img-2
+      background: linear-gradient(90deg, #7EC119 69.38%, rgba(126, 193, 25, 0) 103.89%)
+    .img-3
+      background: linear-gradient(90deg, #0476C4 77.45%, rgba(4, 118, 196, 0) 100%)
+    .img-4
+      background: linear-gradient(90deg, #4DAC5E 67.61%, rgba(77, 172, 94, 0) 100%)
+    .img-5
+      background: linear-gradient(90deg, #00459D 64.19%, rgba(0, 69, 157, 0) 104.53%)
+    .img-6
+      background: linear-gradient(90deg, #D30536 59.82%, rgba(211, 5, 54, 0) 100%)
+    .img-7
+      background: linear-gradient(90.03deg, #BB0F1B 54.81%, rgba(187, 15, 27, 0) 101.7%)
+    .img-8
+      background: linear-gradient(90deg, #F55869 60.58%, rgba(245, 88, 105, 0) 100%)
+    .img-9
+      background: linear-gradient(90deg, #0476C4 77.45%, rgba(4, 118, 196, 0) 100%)
+    .img-10
+      background: #D6DF00
+    .img-11
+      background: #750062
+    .img-12
+      background: #FB9D00
+    .img-13
+      background: rgba(211, 28, 36, 0.88)
+    .img-14
+      background: linear-gradient(90deg, #C72930 67.61%, rgba(199, 41, 48, 0.45) 100%)
+    .img-23
+      background: linear-gradient(90deg, #D30536 64.19%, rgba(211, 28, 36, 0.19) 104.53%)
+    .img-24
+      background: linear-gradient(90.03deg, #910165 54.81%, rgba(187, 15, 27, 0) 101.7%)
+      
+    .list-reag
+      margin-top: 20px
+      padding: 0 8px
+      max-width: 500px
+      width: 100%
+      display: none
+      li
+        position: relative
+        margin-top: 20px        
+        padding-right: 22px
+        & > a
+          font-weight: 500
+          font-size: 10px
+          line-height: 14px
+          color: black
+          &:before
+            position: absolute
+            content: ''
+            background: url(/images/icon/savePdf.svg)
+            right: -14px
+            bottom: -5px
+            width: 19px
+            height: 23px
+        &:after
+          content: ''
+          width: 100%
+          border: .5px solid #E1E1E1
+          position: absolute
+          left: 0
+          bottom: -10px
+.store-drg-international
+  font-size: 18px
+  line-height: 229.5%
+  color: #000000
+  cursor: pointer
+  font-weight: 700
+  display: block
+  margin-top: 40px
+  width: 80px
+  
+@media screen and ( min-width: 800px )
+  .at-the-right-edge
+    .items
+      .header-title-red
+        position: relative
+        margin: 0 !important
+        h3
+          text-align: left !important
+        &:before
+          content:  ''
+          position: absolute
+          width: 80vw
+          border: .5px solid #D1D1D1
+          bottom: -10px
+      .wrapper-reag
+        max-width: 1300px
+        margin: 0 !important
+        .block
+          .img
+            & > p
+              font-size: 22px
+              line-height: 120.5%
+          .list-reag
+            margin-top: 20px
+            padding: 0 8px
+            max-width: 500px
+            width: 100%
+            li
+              & > a
+                font-size: 20px
+                line-height: 30px
+                font-weight: 400
+@media screen and ( min-width: 1228px )
+  .wrapper-reag
+    .block
+      margin-right: 50px       

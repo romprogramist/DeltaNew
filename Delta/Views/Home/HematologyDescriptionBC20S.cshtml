@@ -1,0 +1,131 @@
+
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Гематология"
+    });
+}
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Автоматический гематологический анализатор Myndray BC-20s
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/imgHematology/BC20s-1.png" alt="">
+                <img class="box1 img-big" src="/images/imgHematology/BC20s-11.png" alt="">
+                <img class="box2 img-min" src="/images/imgHematology/BC20s-2.png" alt="">
+                <img class="box3 img-min img-c" src="/images/imgHematology/BC20s-3.png" alt="">
+                <img class="box4 img-min" src="/images/imgHematology/BC20s-4.png" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описаниe</h3>
+                <ul class="big-list">
+                    <li>Встроенный термопринтер</li>
+                    <li>Большой объём памяти, до 200 000 результатов включая графики</li>
+                    <li>Компактные размеры, не занимает много места на столе</li>
+                    <li>Объем пробы 9 мкл для цельной капиллярной крови идеально для педиатрических образцов</li>
+                    <li>Новая технология, применяемая в приборах, уменьшает как расход рабочих растворов, так и их общее количество по сравнению с предыдущими моделями</li>
+                    <li>Анализаторы этой серии используют в работе всего 3 реагента</li>
+                    <li>Компактный размер и хранение рабочих растворов «на борту» позволит сэкономить место в небольших лабораториях</li>
+                    <li>Общий анализ крови с тремя лейкоцитарными формулами, 19 параметр для трех видов гистограмм</li>
+                    <li>Интуитивно понятная операционная система, сенсорный TFT-экран с диагональю 8,4 дюйма</li>
+                    <li>Отбор проб в открытых пробирках</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Производительность: 40 образцов в час</li>
+                        <li>Определяемые параметры: 19 параметров - WBC, Lymph#, Mid#, Gran#, Lymph%, Mid%, Gran%, RBC, HGB, HCT, MCV, MCH, MCHC, RDW-CV, RDW-SD, PLT, MPV, PDW, PCT; 3 гистограммы для подсчета WBC, RBC и PLT</li>
+                        <li>Принцип измерения: импедансный метод для подсчета лейкоцитов, эритроцитов и тромбоцитов, реагент без цианида для определения содержания гемоглобина</li>
+                        <li>Объем образца: режим цельной и капиллярной крови - 9 мкл; режим предварительного разбавления - 20 мкл</li>
+                        <li>Дисплей: 8.4 -дюймовый сенсорный TFT экран</li>
+                        <li>Объем памяти: до 200 000 результатов, включая числовую и графическую информацию</li>
+                        <li>Передача данных: LAN-порт поддерживает протокол HL7; поддерживает двунаправленную связь LIS</li>
+                        <li>Интерфейс: 4 USB-порта (для внешнего принтера, обновления программного обеспечения, сканер штрих-кода, WIFI -адаптера, клавиатуры и мыши), LAN-порт</li>
+                        <li>Печать: термограф, ширина бумаги 50 мм, различные форматы печати; опционный внешний принтер</li>
+                        <li>Рабочие условия: температура: - 10°C - 40°C; влажность: 10% - 90%; атмосферное давление: 70 кПа – 106 кПА</li>
+                        <li>Размеры: 300 мм*410 мм*400 мм (Ш*Г*В)</li>
+                        <li>Вес: ≤20 кг</li>
+                    </ul>
+                </div> 
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="img">
+                            <img src="/images/imgHematology/reagents700720.jpg" alt="">
+                        </div>
+                        <ul class="big-list">
+                            <li>M-30D DILUENT</li>
+                            <li>M-30CFL LYSE</li>
+                            <li>PROBE CLEANSER</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <a href="/pdf/hematology-doc.pdf">
+                            <div class="doc">
+                                <p>
+                                    EU Quality <br> Managment <br> Certificate
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p></p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

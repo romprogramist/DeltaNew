@@ -1,0 +1,146 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-doc.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-doc-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Исследование Мочы"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Aвтоматический анализатор мочи EU-3000 (Mindray)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/mocciStudy/EU3000-1-1.jpg" alt="">
+                <img class="box1 img-big" src="/images/mocciStudy/EU3000-11-1.jpg" alt="">
+                <img class="box2 img-min" src="/images/mocciStudy/EU3000-2-1.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/mocciStudy/EU3000-3-1.jpg" alt="">
+                <img class="box4 img-min" src="/images/mocciStudy/EU3000-4-1.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Маленькие габариты и большие возможности</li>
+                    <li>Не большой размер анализатора - экономия места в лаборатории</li>
+                    <li>Инновационный гибрид для анализа мочи</li>
+                    <li>Интеграция параметров химии и форменных элементов</li>
+                    <li>9 дополнительных фаз эритроцитов поддерживают более точные патологические диагнозы</li>
+                    <li>Гибридный анализатор, обладающий большими возможностями, требуя минимум места</li>
+                    <li>Гибридная система позволяет одновременно исследовать как показатели осадка, так и химические показатели образца мочи</li>
+                    <li>40 реальных кадров изображений, полноэкранное сканирование</li>
+                    <li>Морфологический анализ по Золотому стандарту</li>
+                    <li>Максимально удобный интерфейс, понятный каждому</li>
+                    <li>Малые расходы промывающего раствора</li>
+                    <li>Технология динамической интеллектуальной фокусировки в реальном времени, нет необходимости в фокусирующем реагенте, что снижает стоимость теста</li>
+                    <li>Расширена идентификация форменных частей</li>
+                    <li>Только один реагент</li>
+                    <li>Русифицированное меню</li>
+                    <li>Понятный интерфейс, в стиле всего оборудования Mindray</li>
+                    <li>Возможность подачи проб в ручную, для быстрого тестирования</li>
+                </ul>
+
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Производительность: гибридный режим (форменные элементы/биохимия) – 40 т/ч; биохимия – 120 т/ч</li>
+                        <li>Объем образца: гибридный режим - 1.25 мл; режим форменных элементов -1 мл; режим химии - 0.75 мл</li>
+                        <li>Принцип: форменные элементы – технология машинного видения; химия - фотоэлектрическая колориметрия</li>
+                        <li>Определяемые параметры форменных элементов: измеряемые параметры - RBC, WBC, WBCC, BACT, YST, EC, SRC, CRYS, HYAC, UNCC, MUC; расчетные параметры - РOI, Normocyte(#), Normocyte(%), Poikilocyte(#), Poikilocyte(%), AcaRBC(%), GhoRBC(%), SphRBC(%), UncRBC(%) )</li>
+                        <li>Определяемые биохимические параметры: измеряемые параметры - GLU, PRO, BLD, BIL, pH, KET, VitC, URO, NIT, LEU, S.G., MCA, CRE, CA, Color; расчетные параметры – P/C, Micro A/C</li>
+                        <li>Канал подсчета: одноканальный</li>
+                        <li>Загрузка стрипов: 200 стрипов</li>
+                        <li>Интерфейс: LAN порт, двусторонний ЛИС</li>
+                        <li>Температура: 5-40 °С</li>
+                        <li>Влажность: 15-80 %</li>
+                        <li>Требования к сети: 220 В ± 10 %, 50/60 Г</li>
+                        <li>Потребляемая мощность: 40 Вт</li>
+                        <li>Размеры: 600 мм (Д) х 670 мм (Ш) х 530 мм (В)</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="emptyTable">
+                            <div class="list">
+                                <ul class="none-ul show">
+                                    <li>Стрипы – 11/14U</li>
+                                    <li>Prob Cleanser</li>
+                                    <li>EU-50</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Расходные материалы</p>
+                    </div>
+                    <div class="emptyTable">
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

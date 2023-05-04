@@ -1,0 +1,260 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Гемостаз"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title header-title-red">
+            <h3>
+                Реагенти
+            </h3>
+        </div>
+        <div class="header-title header-mt">
+            <h3>
+                Erba
+            </h3>
+        </div>
+        <div class="wrapper wrapper-reag">
+            <div class="block">
+                <div class="hed img img-7">
+                    <p>Клоттинговые тесты</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">
+                            PT (Low ISI, Lyophilized) - Erba Protime <br>
+                            6 x 4 ml
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            PT (Low ISI, Lyophilized) - Erba Protime <br>
+                            10 x 4 ml
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            PT (Low ISI, Liquid) - Erba Protime LS 4 <br>
+                            2 x 2 ml
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            PT (Low ISI, Liquid) - Erba Protime LS <br>
+                            10 2 x 5 ml
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            PT (Low ISI, Liquid) - Erba Protime LS 50 <br>
+                            10 x 5 ml
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            PT (Low ISI, Liquid) - Erba Protime LS 100 <br>
+                            10 x 10 ml
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            APTT - Erba Actime <br>
+                            6 x 5 ml
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            APTT - Erba Actime <br>
+                            10 x 5 ml
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            CaCl2 - Erba Calcium Chloride <br>
+                            10 x 10 ml
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Fibrinogen - Erba Thrombin Reagent <br>
+                            5 x 2 ml
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Fibrinogen - Erba Thrombin Reagent <br>
+                            10 x 2 ml
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Thrombin Time - Erba Thrombin Time <br>
+                            10 x 2 ml
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-7">
+                    <p>Хромогенные тесты</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">
+                            AT III - Erba Chrom Antithrombin IIIbr <br>
+                            3 x 2 ml AT III Factor Xabr <br>
+                            3 x 2 ml AT III Factor Xa Substratebr <br>
+                            3 x 3 ml AT III Diluent
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Protein C - Erba Chrom Protein Cbr <br>
+                            2 x 2 ml PC Activatorbr <br>
+                            2 x 2 ml PC Substratebr <br>
+                            1 x 5 ml PC Diluent
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Protein S - Erba Protein S Clottingbr <br>
+                            2 x 1 ml PS Deficient Plasmabr <br>
+                            2 x 1 ml PS Activatorbr <br>
+                            2 x 1 ml Substratebr <br>
+                            1 x 2 ml Substrate Diluentbr <br>
+                            1 x 5 ml CaCl2 25mMbr <br>
+                            1 x 25 ml Saline Solution 0.9%
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Lupus Anticoagulant Screen - Erba LA1 Screenbr <br>
+                            10 x 2ml
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Lupus Anticoagulant Confirm - Erba LA2 Confirmbr <br>
+                            10 x 1 ml
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-7">
+                    <p>Иммунологические тесты</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">
+                            DDimer - Erba DDimer <br>
+                            R 3 x 7 ml D-Dimer Buffer <br>
+                            3 x 4 ml D-Dimer Latex
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            DDimer - Erba DDimer <br>
+                            R 1 x 7 ml D-Dimer Buffer <br>
+                            1 x 4 ml D-Dimer Latex
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-7">
+                    <p>Факторы (внешний путь)</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">F II - Erba Factor II Deficient Plasma <br>
+                            3 x 1 ml
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">F V - Erba Factor V Deficient Plasma <br>
+                            8 x 1 ml
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">F VII - Erba Factor VII Deficient Plasma <br>
+                            3 x 1 ml
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">F X - Erba Factor X Deficient Plasma <br>
+                            3 x 1 ml
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-14">
+                    <p>Факторы (внутренний путь)</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">
+                            F VIII Erba Factor VIII Deficient Plasma <br>
+                            8 x 1 ml
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            F IX Erba Factor IX Deficient Plasma <br>
+                            8 x 1 ml
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            F XI Erba Factor XI Deficient Plasma <br>
+                            3 x 1 ml
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            F XII Erba Factor XII Deficient Plasma <br>
+                            3 x 1 ml
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a class="store-drg-international" href="https://store.drg-international.com/">Более>></a>
+    </div>
+    <div class="bg"></div>
+</section>

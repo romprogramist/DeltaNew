@@ -1,0 +1,31 @@
+.at-the-right-edge , .contact-us
+  position: relative
+  .bg
+    position: absolute
+    width: 100%
+    height: 100%
+    background: #F4F4F4
+    top: 155px
+    z-index: -999
+  .items
+    background: #FFFFFF
+    border-radius: 16px
+    padding: 30px
+    margin: -155px 10px 0 10px
+
+@media screen and ( min-width: 800px )
+  .at-the-right-edge
+    padding-bottom: 200px
+    .items
+      padding: 0 84px 60px
+      margin: -444px 0 0 12%
+      border-radius: 0
+    .bg
+      top: 444px
+      &:before
+        content: ''
+        position: absolute
+        background: url(/images/img/not-main-mini-logo.svg)
+        width:  170px
+        height: 100%
+        left: 13px

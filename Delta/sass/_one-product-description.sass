@@ -1,0 +1,90 @@
+
+.one-product
+  .items
+    .oneItem
+      .img
+        max-width: 430px
+        width: 100%
+        margin: 0 auto
+        position: relative
+        img
+          width: 100%
+        &:before
+          content: 'BM-120'
+          position: absolute
+          font-weight: 700
+          font-size: 18px
+          left: 20px
+          top: 20px
+      .top-title
+        margin-top: 22px
+        & > p
+          font-weight: 500
+          font-size: 13px
+          line-height: 20px
+          text-align: justify
+          color: $darkGrey-color
+      .bot-title
+        margin-top: 10px
+        h3
+          font-weight: 700
+          font-size: 20px
+        ul
+          margin-top: 5px
+          li
+            list-style-type: disc
+            font-weight: 500
+            font-size: 13px
+            line-height: 20px
+            text-align: justify
+            color: $darkGrey-color
+        
+@media screen and ( min-width: 800px )
+  .one-product
+    .items
+      padding: 0
+      .oneItem
+        .img
+          max-width: 100%
+          &:before
+            font-size: 25px
+        .top-title
+          padding: 0 30px
+          & > p
+            font-size: 15px
+            line-height: 22px
+        .bot-title
+          padding: 0 30px
+          h3
+            font-size: 22px
+          ul
+            li
+              font-size: 15px
+              line-height: 22px
+      
+@media screen and ( min-width: 1061px )
+  .one-product
+    .items
+      .oneItem
+        .img
+          &:before
+            font-size: 40px
+            top: 25px
+            left: 97px
+        .top-title
+          padding: 0 80px
+          margin-top: 45px
+          & > p
+            font-size: 24px
+            line-height: 36px
+        .bot-title
+          padding: 0 80px
+          margin-top: 70px
+          h3
+            font-size: 36px
+          ul
+            margin-top: 13px
+            li
+              font-size: 24px
+              line-height: 36px
+              margin-left: 21px

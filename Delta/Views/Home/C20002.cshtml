@@ -1,0 +1,175 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Гемостаз"
+    });
+}
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Полуавтоматический анализатор коагуляции C2000-2 (Mindray)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/Hemostasis/C20002_1.png" alt="">
+                <img class="box1 img-big" src="/images/Hemostasis/C20002_11.png" alt="">
+                <img class="box2 img-min" src="/images/Hemostasis/C20002_2.png" alt="">
+                <img class="box3 img-min img-c" src="/images/Hemostasis/C20002_3.png" alt="">
+                <img class="box4 img-min" src="/images/Hemostasis/C20002_3.png" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описаниe</h3>
+                <ul class="big-list">
+                    <li>Механический метод определения</li>
+                    <li>Электромагнитный принцип детекции сгустка</li>
+                    <li>Интуитивно понятное меню</li>
+                    <li>Компактный и удобный в работе прибор</li>
+                    <li>Автоматическое начало измерения после добавления реагента стартовой пипеткой</li>
+                    <li>Наличие предустановленных тестов</li>
+                    <li>Легкое программирование и перепрограммирование прибора</li>
+                    <li>Сохранение в памяти прибора калибровочных кривых</li>
+                    <li>Надежная система детекции образования сгустка по вязкости</li>
+                    <li>Полное меню клоттинговых тестов</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Вид аналитической системы: полуавтоматический</li>
+                        <li>Объем пробы: 50-200 мкл</li>
+                        <li>Объем реагента: 50-100 мкл</li>
+                        <li>Измерительные каналы: 2</li>
+                        <li>Инкубационный блок</li>
+                        <li>Температура инкубационного блока: 37 °С</li>
+                        <li>Отсек инкубации реагентов: 3 позиции</li>
+                        <li>Отсек инкубации проб: 6 позиции</li>
+                        <li>Управление прибором: интегрированная в панель клавиатура</li>
+                        <li>Автоматическое начало измерения : при помощи стартовой пипетки</li>
+                        <li>Вывод результатов: на дисплей/на принтер</li>
+                        <li>Распечатка результата: встроенный принтер</li>
+                        <li>Индикация времени инкубации: звуковая</li>
+                        <li>Параметры дисплея: LCD-дисплей</li>
+                        <li>Интерфейс: RS-232</li>
+                        <li>Результаты: в секундах, %, INR, g/1, mg/dL</li>
+                        <li>Определяемые параметры: протромбиновое время – в секундах, % и единицах, МНО, АЧТВ, фибриноген, тромбиновое время, факторы свертывания (II, V, VII, X, VIII, IX, XI, XII), гепарин и LMWH, протеины С и S</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="img">
+                            <img src="/images/Hemostasis/HemostasisReg2.jpg" alt="">
+                        </div> 
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>Клоттинговые тесты</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>PT - протромбиновое время</li>
+                                <li>APTT - активированное частичное тромбопластиновое время</li>
+                                <li>CaCl2 – хлорид кальция</li>
+                                <li>FBG - фибриноген</li>
+                                <li>TT – тромбиновое время</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>Хромогенные тесты</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>AT III – антитромбин III</li>
+                                <li>Protein C – протеин C</li>
+                                <li>Protein S – протеин S</li>
+                                <li>LA Screen - волчаночный антикоагулянт (скрининговый тест)</li>
+                                <li>LA Confirm - волчаночный антикоагулянт (подтверждающий тест)</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>Факторы (внешний путь)</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>F II – фактор II</li>
+                                <li>F V - фактор V</li>
+                                <li>F VII - фактор VII</li>
+                                <li>F X - фактор X</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>Факторы (внутренний путь)</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>F VIII – фактор VIII</li>
+                                <li>F IX – фактор IX</li>
+                                <li>F XI – фактор XI</li>
+                                <li>F XII – фактор XII</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Расходные материалы</p>
+                    </div>
+                    <div class="emptyTable">
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

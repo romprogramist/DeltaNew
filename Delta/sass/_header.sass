@@ -1,0 +1,222 @@
+header
+  padding: 18px 25px 10px 25px
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 800
+  background: $white-color
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25)
+  & > div
+    display: flex
+    justify-content: space-between
+    align-items: center
+    .logo
+      img
+        width: 74px
+    nav
+      z-index: 10
+      position: fixed
+      top: 70px
+      left: -150%
+      transform: translateX(-50%)
+      width: 95.9%
+      background: #FFFFFF
+      box-shadow: 0 0 38px rgba(0, 0, 0, 50)
+      border-radius: 16px
+      padding: 40px 1.2px 24px 43px
+      transition: all .3s
+      ul
+        li
+          margin-top: 36px
+          position: relative
+          a
+            color: $lightGray-color
+            font-size: 20px
+            line-height: 30px
+          &:before
+            content: ''
+            position: absolute
+            margin-top: 50px
+            width: 100%
+            border: 1px solid #F4F4F4
+        li:first-child
+          margin-top: 0
+        li:last-child
+          &:before
+            display: none
+    .hamburger
+      order: 2
+      cursor: pointer
+      width: 45px
+      height: 50px
+      display: flex
+      flex-direction: column
+      justify-content: center
+      z-index: 999
+      & > div
+        margin: 5px 0 0 auto
+        height: 4px
+        border-radius: 5px
+        background: #000000
+        transition: all .3s
+      :nth-child(1)
+        transition: all .3s
+        width: 24px
+        margin-top: 0
+      :nth-child(2)
+        width: 24px
+      :nth-child(3)
+        transition: all .3s
+        width: 18px 
+  .desktop-form
+    input
+      transition: all .3s
+      position: absolute
+      width: 0
+      height: 0
+      border: none      
+      border-radius: 8px
+      background: rgba(217, 217, 217, 0.4)
+  .mobail-form
+    margin-top: 20px
+    position: relative
+    display: flex
+    align-items: center
+    .search-options
+      cursor: pointer
+      display: none
+      margin-left: 25px
+    input
+      width: 100%
+      height: 47px
+      background: rgba(217, 217, 217, 0.4)
+      border-radius: 8px
+      padding-left: 16px
+      border: none
+    &:before
+      content: ''
+      background: url(/images/icon/magnifying-glass.svg) no-repeat
+      position: absolute
+      right: 12px
+      top: 50%
+      transform: translateY(-50%)
+      width: 24px
+      height: 24px
+      pointer-events: none
+  .active-nav
+    nav
+      display: block     
+      left: 50%
+      transition: all .3s
+    .hamburger
+      :nth-child(1)
+        transition: all .3s
+        width: 24px
+        position: absolute
+        transform: rotate(-45deg)
+        right: 25px
+      :nth-child(2)
+        width: 0
+      :nth-child(3)
+        transition: all .3s
+        margin-top: 0
+        width: 24px
+        position: absolute
+        transform: rotate(45deg)
+        right: 25px
+@media screen and ( min-width: 800px )
+  header
+    position: static
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 7px 80px
+    .wrapper
+      width: 100%
+      .logo
+        img
+          width: 108px
+      .hamburger
+        display: none
+      nav
+        position: absolute
+        border: 0
+        background: none
+        box-shadow: none
+        left: 50%
+        padding: 0
+        min-width: 100%
+        top: 63px
+        background: #ffffff  
+        border-radius: 0
+        ul
+          display: flex
+          align-items: center
+          justify-content: space-between
+          max-width: 869px
+          margin: 0 30px 0 15%
+          li
+            margin-top: 0
+            padding: 13px 0
+            a
+              color: #000000           
+            &:before
+              border: none
+          .product-active
+            position: relative
+            &:before
+              content: ''
+              position: absolute
+              width: 0
+              height: 0             
+              border-left: 7px solid transparent
+              border-right: 7px solid transparent
+              border-bottom: 10.5px solid #D9D9D9
+              left: 50%
+              transform: translateX(-50%)
+              top: -4px                   
+              
+        &:before
+          content: ""
+          position: absolute
+          border: 0.1px solid #E0E0E0
+          width: 100%
+          
+          
+    .mobail-form
+      display: none
+    .desktop-form
+      display: block
+      .open-search-btn
+        cursor: pointer
+        width: 24px
+        height: 24px
+        position: relative
+        &:before
+          position: absolute
+          content: ''
+          background: url(/images/icon/magnifying-glass.svg) no-repeat
+          width: 100%
+          height: 100%
+    .desktop-form-active
+      width: 400px
+      input
+        transition: all .3s
+        padding: 7px 0 7px 13px
+        width: 100%
+        height: 100%
+        position: static
+      .open-search-btn
+        display: none
+          
+@media screen and ( min-width: 1440px )
+  header
+    .wrapper
+      nav
+        ul
+          li
+            margin: 0 14px
+            a
+              font-size: 23px
+          li:first-child
+            margin-left: 0

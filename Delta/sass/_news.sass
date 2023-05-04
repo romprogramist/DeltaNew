@@ -1,0 +1,82 @@
+.news
+  display: flex
+  margin-top: 34px
+  z-index: 999
+  .side-header
+    background: $red-color
+    min-width: 20%
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    & > p
+      font-weight: 700
+      transform: rotate(-90deg)
+      color: $white-color
+    &:before
+      content: ''
+      position: absolute
+      background: $white-color
+      border-radius: 0
+      height: 100%
+      width: 2px
+      right: 0
+  .wrapper
+    background: url(/images/img/news_bg.jpg) center center / cover no-repeat
+    padding: 36px 25px
+    z-index: -2
+    & > div
+      color: $white-color
+      
+      h2
+        font-weight: 900
+        font-size: 16px
+        line-height: 24px        
+      & > p
+        font-weight: 700
+        font-size: 13px
+        line-height: 20px
+        margin-top: 15px
+        
+@media screen and ( min-width: 800px )
+  .news
+    margin-top: 2px
+    .side-header
+      justify-content: flex-end
+      p
+        font-size: 36px
+    .wrapper
+      position: relative
+      padding: 92px 0 206px 0
+      width: 100%
+      background-image: none
+      & > div
+        max-width: 638px  
+        z-index: 3
+        margin-left: 30px
+        h2
+          font-size: 48px
+          line-height: 72px
+          font-weight: 700
+        p
+          font-size: 24px
+          line-height: 36px
+          font-weight: 400
+      &:after
+        content: ''
+        position: absolute
+        right: 0
+        background: url(/images/img/news_bg.jpg) center center / cover no-repeat
+        width: 75%
+        height: 100%
+        top: 0
+        z-index: -1
+      &:before
+        position: absolute
+        content: ''
+        height: 100%
+        background: $red-color
+        left: 0
+        min-width: 25%
+        top: 0
+        z-index: -1

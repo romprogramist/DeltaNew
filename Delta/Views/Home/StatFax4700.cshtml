@@ -1,0 +1,144 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "ИФА"
+    });
+}
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Иммуноферментный анализатор StatFax 4700 (Awareness)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/imgIfa/StatFax4700-1.jpg" alt="">
+                <img class="box1 img-big" src="/images/imgIfa/StatFax4700-11.jpg" alt="">
+                <img class="box2 img-min" src="/images/imgIfa/StatFax4700-2.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/imgIfa/StatFax4700-3.jpg" alt="">
+                <img class="box4 img-min" src="/images/imgIfa/StatFax4700-4.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Экономичная открытая система и компактный дизайн</li>
+                    <li>Спектральный диапазон волн 340-630 нм</li>
+                    <li>Загрузка до трех стрипов</li>
+                    <li>Автоматическое позиционирование каждого стрипа для считывания</li>
+                    <li>Несколько способов вычисления</li>
+                    <li>Сенсорный экран и встроенный принтер</li>
+                    <li>Надежная конструкция</li>
+                    <li>Не требует дополнительного обслуживания</li>
+                    <li>Сохранение до 120 программируемых тестов</li>
+                    <li>Результаты исследований через 30 секунд при исследовании 12-луночного стрипа</li>
+                    <li>Доступны различные конфигурации фильтров</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Вид аналитической системы: полуавтомат</li>
+                        <li>Тип системы: открытая</li>
+                        <li>Источник света: галогенновая лампа с функцией сбережения</li>
+                        <li>Фильтры: видимого спектра - 405, 450, 492, 545, 600, 630 нм; УФ - 340, 405, 450, 492, 545, 630 нм (фильтры на заказ от 340 до 700 нм). Интерференционные с прочным ионным покрытием, с полосой полупропускания 10 нм</li>
+                        <li>Диапазон линейности измерения: 0,0–3,0 единиц абсорбции (A)</li>
+                        <li>Транспортировка: обнаружение лунки Auto-Track™ автоматический режим транспортировки и обнаружения лунки</li>
+                        <li>Скорость: считывает, вычисляет и печатает результаты исследования 12-луночного стрипа за 30 сек</li>
+                        <li>Точность фотометра: ± 1 % (от измерения + 0,01 А) при 0–1,5 А, ± 2 % (от измерения +0,01 А) при 1,5–3,0 А</li>
+                        <li>Стабильность: не более 0,005 А за 8 ч</li>
+                        <li>Стрипы: разделенные на части и не разделенные, 8/12- луночные; загрузка до трех стрипов</li>
+                        <li>Методы расчета: калибровка по одной точке стандартом или фактором, калибровка по нескольким точкам с построением соответствующего графика, линейная регрессия с выборкой по 4 параметрам и кубическому сплайну</li>
+                        <li>Меню анализа: более 120 открытых каналов для выполнения анализов - сохранение всех параметров, в том числе длин волн, вычислений, кодов единиц измерения, диапазонов, истолкований, значений калибратора, названий анализов и предыдущего графика</li>
+                        <li>Дисплей: интерактивный, сенсорный, цветной, ЖК-дисплей 3,5”</li>
+                        <li>Принтер: термопринтер с точечной матрицей и графическими возможностями</li>
+                        <li>Корпус: пластиковый, огнестойкий</li>
+                        <li>Электропитание: 115 В или 230 В переменный ток, 1,5 А, 50–60 Гц</li>
+                        <li>Размеры: 24(Д)х34(Ш)х13(В) см</li>
+                        <li>Вес: 2,3 кг</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="list">
+                            <a href="/home/IfaPng" class="hed img-1">
+                                <p>DRG</p>
+                            </a>
+                            <a href="/home/IfaMonoBindR" class="hed img-2">
+                                <p>MONIBIND</p>
+                            </a>
+                            <a href="/home/IfaIBL" class="hed img-3">
+                                <p>IBL</p>
+                            </a>
+                            <a href="/home/IfaCanAg" class="hed img-4">
+                                <p>CANAG</p>
+                            </a>
+                            <a href="/home/IfaCTK" class="hed img-5">
+                                <p>CTK</p>
+                            </a>
+                            <a href="#" class="hed img-6">
+                                <p>ЭКОЛАБ</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <a href="/pdf/ifa-doc-StatFax.pdf">
+                            <div class="doc">
+                                <p>
+                                    РУ_StatFax
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p></p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg"></div>
+</section>

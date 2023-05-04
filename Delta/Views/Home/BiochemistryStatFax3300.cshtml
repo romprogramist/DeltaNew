@@ -1,0 +1,136 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+    
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Биохимия"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Полуавтоматический биохимический анализатор Stat Fax 3300 (Awarenes Technology)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/biochemistry/biochemistryStatFax3300-1-1.jpg" alt="">
+                <img class="box1 img-big" src="/images/biochemistry/biochemistryStatFax3300-11-1.jpg" alt="">
+                <img class="box2 img-min" src="/images/biochemistry/biochemistryStatFax3300-2-1.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/biochemistry/biochemistryStatFax3300-3-1.jpg" alt="">
+                <img class="box4 img-min" src="/images/biochemistry/biochemistryStatFax3300-4-1.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Полуавтоматический биохимический анализатор с открытой системой, которая позволяет работать с любыми реагентами промышленного производства</li>
+                    <li>Высокая производительность</li>
+                    <li>Встроенная проточная кювета для сокращения расхода реагента</li>
+                    <li>Температурный контроль проточной кюветы 37 °С</li>
+                    <li>Большой жидкокристаллический дисплей и встроенный принтер</li>
+                    <li>Полноценная кинетика с построением графика реакции на дисплее</li>
+                    <li>Автоматическое колесо фильтров</li>
+                    <li>Одно- или многоточечная калибровка</li>
+                    <li>Энергонезависимая память на 500 пациентов</li>
+                    <li>Сохранение калибровок</li>
+                    <li>Внешний термостат на 18 пробирок (опция)</li>
+                    <li>Буквенно-цифровая клавиатура (опция)</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Тип фотометра: фотометр с колесом фильтров</li>
+                        <li>Конфигурация оптической системы: однолучевая с непрерывно поворачивающимся колесом фильтров; монохроматическое или бихроматическое измерения 8 позиций фильтров</li>
+                        <li>Методы расчета и измерения: абсорбция (Absorbance), калибровка по стандарту (Standard Mode), бланк по каждой пробе (Differential samples), калибровка по фактору (Factor Mode), многоточечная калибровка (Multi Standard Mode) (до 7 стандартов), многоточечная калибровка % Abs (Multi Standard % Abs) (до 7 стандартов), кинетика (Kinetic Mode) (последовательно или группами (Batch)) по стандарту (Standard) или фактору (Factor), по фиксированному времени (Fixed Time Kinetic) по стандарту (Standard) или фактору (Factor)</li>
+                        <li>Каналы: 120 открытых</li>
+                        <li>Источник света: галогеновая лампа с вольфрамовой нитью, 10Вт</li>
+                        <li>Тип фильтра: 4-кавитационный интерференционный с ионным напылением</li>
+                        <li>Точность установки длины волны: ± 3 нм</li>
+                        <li>Фильтры (длины волн): 340, 405, 505, 545, 580, 630 нм (стандартная комплектация); автоматическое колесо фильтров</li>
+                        <li>Кюветы: 1 см квадратная кювета, 12 мм круглая пробирка, проточная кювета</li>
+                        <li>Проточная кювета: нержавеющая сталь 316, боросиликатное стекло окон, цилиндрическая, диаметр 2.3 длина 5 ± 0.05 мм</li>
+                        <li>Минимальный объем: 250 мкл</li>
+                        <li>Аспирация/продувка: вакуумная помпа, 18 см Hg</li>
+                        <li>Клапан: силиконовый, пережимного типа</li>
+                        <li>Держатель кюветы: отсек с контролем температуры 37°С</li>
+                        <li>Детектор: галлий-арсенид-фосфидный фотодиод</li>
+                        <li>Дисплей: 240 х 126, графический, ЖКД, с подсветкой</li>
+                        <li>Абсорбция: от -0,5 до 3,5 (проточная кювета); от -0,5 до 2,5 (пробирка или 1см кювета</li>
+                        <li>Концентрация: максимум 999,999</li>
+                        <li>Компенсация ноля: автоматическая</li>
+                        <li>Интерфейсы: LPT (Centronics, D-sub 25p); RS-232 (D-sub 9p)</li>
+                        <li>Ввод данных: 1. встроенная 20 клавишная клавиатура; 2. внешняя PS2 101 клавишная клавиатура (разъем на задней панели прибора) - не входит в комплект</li>
+                        <li>Время прогрева: 90 с для фотометра; 15 мин для термостата</li>
+                        <li>Электроника: микропроцессор Z180 18 МГц; 128 Кб EEPROM памяти; 32 Кб энергонезависимой памяти (NVRAM)</li>
+                        <li>Принтер: термопринтер, бумага 110 мм</li>
+                        <li>Электропитание: 90-260 В (автонастройка), 50/60 Гц, 60 Вт, САТ II предохранители: 2.5 А / 250 В, 2.0 А / 250 В</li>
+                        <li>Температура: 15 - 35°С</li>
+                        <li>Влажность: менее чем 85%</li>
+                        <li>Габариты: 40 х 37 х 14 (30) см с закрытой крышкой</li>
+                        <li>Вес: 6.4 кг</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Расходные материалы</p>
+                    </div>
+                    <div class="emptyTable">
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

@@ -1,0 +1,344 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "ИФА"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title header-title-red">
+            <h3>
+                Реагенти
+            </h3>
+        </div>
+        <div class="header-title header-mt">
+            <h3>
+                DRG
+            </h3>
+        </div>
+    <div class="wrapper wrapper-reag">
+        <div class="block">
+            <div class="hed img img-1">
+                <p>Щитовидная панель</p>
+            </div>
+            <ul class="list-reag">
+                <li>
+                    <a href="#">
+                        TSH - тиреотропный гормон
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Т3 - общий трийодтиронин
+                    </a>
+                </li>
+                <li>
+                    <a href="/pdf/FreeT3.pdf">FT3 - свободный трийодтиронин</a>
+                </li>
+                <li>
+                    <a href="#">T4 - общий тироксин</a>
+                </li>
+                <li>
+                    <a href="#">
+                        FT4 - свободный тироксин
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Anti-TG - антитела к тиреоглобулину
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Anti - TPO - антитела к тиреоидной пероксидазе
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        TG - тиреоглобулин
+                    </a>
+                </li>
+            </ul>
+        </div>  
+        <div class="block">
+            <div class="hed img img-3">
+                <p>Репродуктивная панель</p>
+            </div>
+            <ul class="list-reag">                   
+                <li>
+                    <a href="#">
+                        FSH - фолликулостимулирующий гормон
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        PRL - пролактин
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Estradiol - эстрадиол
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Progesteron - прогестерон
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        17-OH Progesteron - 17-OH прогестерон
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        E2-онкомаркер
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Testosterone - тестостерон
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Testosterone free - свободный тестостерон
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        DHEA - дегидроэпиандростерон
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        DHEA-S - дегидроэпиандростерон - сульфат
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        HCG - хорионический гонадотропин
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Sperm Ab - антитела к спермальным антигенам
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        AMH - антимюллеровый гормон
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="block">
+            <div class="hed img img-9">
+                <p>Неонатальный скрининг</p>
+            </div>
+            <ul class="list-reag">
+                <li>
+                    <a href="#">
+                        Estriol free - свободный эстриол
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Free β-hCG - бета-хорионический гонадотропин, свободный
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        PAPP-A – ассоцир. с беременностью плацентарный белок А
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        AFP - альфа-фетопротеин
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        HCG - хорионический гонадотропин
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="block">
+            <div class="hed img img-5">
+                <p>Панель костной ткани</p>
+            </div>
+            <ul class="list-reag">
+                <li>
+                    <a href="#">
+                        PTH-паратиреоидный гормон
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Calcitonin-кальцитонин
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="block">
+            <div class="hed img img-7">
+                <p>Сахарный диабет</p>
+            </div>
+            <ul class="list-reag">
+                <li>
+                    <a href="#">
+                        Insulin-инсулин
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Proinsulin – проинсулин
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Leptin - лептин
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="block">
+            <div class="hed img img-2">
+                <p>Инфекционные заболевания</p>
+            </div>
+            <ul class="list-reag">
+                <li>
+                    <a href="#">
+                        HSV 2 IgG
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        HSV 2 IgM
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Chlamydia IgG
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        CMV IgG
+                                       
+                    </a>
+                </li>
+                <li>
+                    <a href="#">CMV IgM</a>
+                </li>
+                <li>
+                    <a href="#">
+                        Toxo IgM
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Helicobacter Pylori IgG
+                    </a>
+                </li>
+                <li>                    
+                    <a href="#">
+                        Ureaplasma urealyticum IgM
+                    </a>
+                </li>
+                <li>                    
+                    <a href="#">
+                        Mycoplasma hominis IgM
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="block">
+            <div class="hed img img-4">
+                <p>Опухолевые маркеры</p>
+            </div>
+            <ul class="list-reag">
+                <li>
+                    <a href="#">
+                        PSA - простат-специфический антиген
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        · AFP - альфа-фетопротеин
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        · HCG - хорионический гонадотропин
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="block">
+            <div class="hed img img-8">
+                <p>Функция надпочечников</p>
+            </div>
+            <ul class="list-reag">
+                <li>
+                    <a href="#">
+                        AKTH-адренокортикотропный гормон
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Cortisol-кортизол
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="block">
+        <div class="hed img img-12">
+            <p>Факторы роста</p>
+        </div>
+        <ul class="list-reag">
+            <li>
+                <a href="#">
+                    HGH - соматотропный гормон
+                </a>
+            </li>
+        </ul>
+    </div>
+    </div>
+    <a class="store-drg-international" href="https://www.drg-diagnostics.de/10-1-Products.html">Более>></a>
+    </div>
+    <div class="bg"></div>
+</section>

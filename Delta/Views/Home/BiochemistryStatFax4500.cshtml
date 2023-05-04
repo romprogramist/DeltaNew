@@ -1,0 +1,127 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Биохимия"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Полуавтоматический биохимический анализатор Stat Fax 4500 (Awarenes Technology)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/biochemistry/biochemistryStatFax4500-1-1.jpg" alt="">
+                <img class="box1 img-big" src="/images/biochemistry/biochemistryStatFax4500-11-1.jpg" alt="">
+                <img class="box2 img-min" src="/images/biochemistry/biochemistryStatFax4500-2-1.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/biochemistry/biochemistryStatFax4500-3-1.jpg" alt="">
+                <img class="box4 img-min" src="/images/biochemistry/biochemistryStatFax4500-4-1.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Полуавтоматический биохимический анализатор с открытой системой, которая позволяет работать с любыми реагентами промышленного производства</li>
+                    <li>Русифицирован</li>
+                    <li>Встроенная проточная кювета для сокращения расхода реагента</li>
+                    <li>Анализатор позволяет делать анализ как реакции по конечной точке так и кинетической реакции</li>
+                    <li>Двухлучевая оптическая система с шестью длинами волн (340, 405, 505, 545, 580, 630 нм )</li>
+                    <li>Встроенный принтер и встроенный термостат на 12 лунок</li>
+                    <li>Буквенно-цифровой дисплей</li>
+                    <li>Полноценная кинетика с построением графика реакции</li>
+                    <li>Одно- или многоточечная калибровка</li>
+                    <li>Энергонезависимая память на 120 тестов</li>
+                    <li>Сохранение калибровок</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Диапазон линейности измерения: от 0,00 - 3,0 единицы оптической плотности (А)</li>
+                        <li>Точность фотометра: ± (1 % от измерения +0,005 А)</li>
+                        <li>Стабильность: дрейф нуля не более 0,005 А в течение 8 ч, двухволновое измерение</li>
+                        <li>Источник света: галогеновая лампа с режимом сохранения</li>
+                        <li>Фильтры (длины волн): 340, 405, 505, 545, 580 и 630 нм; дополнительные фильтры в диапазоне 340-750 нм, доступны по специальному заказу</li>
+                        <li>Ширина полосы пропускания на половине высоты: 10 нм</li>
+                        <li>Тип фильтров: интерференционные с IAD покрытием</li>
+                        <li>Размер пробирки: 12 мм, стандартная круглая</li>
+                        <li>Быстродействие: измерение, вычисление и печать результатов одной пробирки в течение трех секунд</li>
+                        <li>Дисплей: цветной жидкокристаллический сенсорный дисплей, 3.5"</li>
+                        <li>Принтер: термический с точечной матрицей, возможность печати графики, ширина бумаги 56-58мм</li>
+                        <li>Микропроцессор: eZ80, 64K EEPROM</li>
+                        <li>Интерфейс: USB 2.0, USB для подключения мыши (опция)</li>
+                        <li>Методы измерения и расчета: абсорбция, одно- и двухволновое измерение, дифференциальный бланк; по конечной точке по стандарту или фактору, многоточечная калибровка (до 8 стандартов, линейная регрессия, кубический сплайн); кинетика по стандарту, по фактору или многоточечной калибровке</li>
+                        <li>Память: 50 методик, сохранение всех параметров, включая фильтр, метод расчета, единицы измерения, границы норм и линейности, времена для кинетики, значения стандартов, название теста и предыдущую калибровку</li>
+                        <li>Сертификация: сертифицирован NTRL, CE</li>
+                        <li>Контроль температуры: отображение температуры измерительного отсека и инкубатора, выбирается пользователем</li>
+                        <li>Корпус: пластиковый огнестойкий с металлическим основанием</li>
+                        <li>Электропитание: внешний блок питания, 110-120 или 220-240 В, 50/60 Гц, 1.5А,</li>
+                        <li>Мощность: менее 50 Вт</li>
+                        <li>Габариты: 24 х 34 х13 см</li>
+                        <li>Вес: 4,5 кг</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Расходные материалы</p>
+                    </div>
+                    <div class="emptyTable">
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

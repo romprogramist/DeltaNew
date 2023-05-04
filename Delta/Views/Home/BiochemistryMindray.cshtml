@@ -1,0 +1,193 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "ИФА"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title header-title-red">
+            <h3>
+                Реагенти
+            </h3>
+        </div>
+        <div class="header-title header-mt">
+            <h4>
+                Реагенты для Aвтоматических анализатров
+            </h4>
+        </div>
+        <div class="header-title header-mt">
+            <h3>
+                Mindray
+            </h3>
+        </div>
+        <div class="wrapper wrapper-reag">
+            <div class="block">
+                <div class="hed img img-1">
+                    <p>Печеночная панель</p>
+                </div>
+                <ul class="list-reag">
+                    <li><a href="#">ALT - Аланинаминотрансфераза <br> R1-4×35 mL; R2-2×18 mL</a></li>
+                    <li><a href="#">AST - Аспартатаминтрансфераза <br> R1-4×35 mL; R2-2×18 mL</a></li>
+                    <li><a href="#">γ-GT - Гама-глутамилтрансфераза <br> R1-4×35 mL; R2-2×18 mL</a></li>
+                    <li><a href="#">ALP - Щелочная фосфатаза <br> R1-4×35 mL; R2-2×18 mL</a></li>
+                    <li><a href="#">Bil-D - Прямой билирубин (DSA) <br> R1-4×20 mL; R2-1×20 mL</a></li>
+                    <li><a href="#">Bil-D - Прямой билирубин (VOX) <br> R1-4×35 mL; R2-2×18 mL</a></li>
+                    <li><a href="#">Bil-T - Общий билирубин (DSA) <br> R1-4×20 mL; R2-1×20 mL</a></li>
+                    <li><a href="#">Bil-T - Общий билирубин (VOX) <br> R1-4×35 mL; R2-2×18 mL</a></li>
+                    <li><a href="#">TP - Общий белок <br> R-4×40 mL</a></li>
+                    <li><a href="#">TPUC - Общий белок в моче <br> R-3×18 mL; Calibrator: 1×1 mL</a></li>
+                    <li><a href="#">ALB – Альбумин <br> R-4×40 mL</a></li>
+                    <li><a href="#">TBA - Общие желчные кислоты <br> R1-2×27 mL; R2-1×18 mL; Calibrator: 1×1.5 mL</a></li>
+                    <li><a href="#">PA - Преальбумин <br> R1-1×40 mL; R2-1×15 mL</a></li>
+                    <li><a href="#">CHE - Холинэстераза <br> R1-2×40 mL; R2-1×16 mL; Calibrator:1×3 mL; Control:1×5 mL</a></li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-8">
+                    <p>Функция надпочечников</p>
+                </div>
+                <ul class="list-reag">
+                    <li><a href="#">UREA - Мочевина <br> R1-4×35 mL; R2-2×18 mL</a></li>
+                    <li><a href="#">CREA - Креатинин <br> R1-2×27 mL; R2-1×18 mL</a></li>
+                    <li><a href="#">UA - Мочевая кислота <br> R1-4×40 mL; R2-2×20 mL</a></li>
+                    <li><a href="#">CO2 – Бикарбонат  R-2×20 mL; Calibrator: 1×1.5 mL; Control:1×5 mL</a></li>
+                    <li><a href="#">β2-MG - β2-микроглобулин <br> R1-1×40 mL; R2-1×12 mL</a></li>
+                    <li><a href="#">Cys-C II – Цистатин C <br> R1-1×40 mL; R2-1×12 mL</a></li>
+                    <li><a href="#">RBP - Ретинол-связывающий белок <br> R1-2×18 mL; R2-2×8 mL; Calibrator: 1×1 mL</a></li>
+                    <li><a href="#">MALB - Микроальбумин <br> R1-2×18 mL; R2-2×5 mL</a></li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-7">
+                    <p>Кардиологическая панель</p>
+                </div>
+                <ul class="list-reag">
+                    <li><a>CK - Креатининкиназа <br> R1-2×35 mL; R2-1×18 mL</a></li>
+                    <li><a>CK-MB - Креатининкиназа-МВ <br> R1-2×35 mL; R2-1×18 mL</a></li>
+                    <li><a>MYO – Миоглобин <br> R1 1×20 mL ; R2 1×8 mL; Calibrator: 4×1 Ml</a></li>
+                    <li><a>LDH - Лактатдегидрогеназа <br> R1-4×35 mL; R2-2×18 mL</a></li>
+                    <li><a>α-HBDH - Альфа-гидроксибутиратдегидрогеназа <br> R1-4×35 mL; R2-2×18 mL</a></li>
+                    <li><a>HCY – Гомоцистеин <br> R1-1×25 mL; R2-1×8 mL; Calibrator: 5×1 mL</a></li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-2">
+                    <p>Анемия и электролиты</p>
+                </div>
+                <ul class="list-reag">
+                    <li><a> Fe - Железо <br> R1-2×40 mL; R2-1×16 mL; Calibrator: 1×1.5 mL; Control:1×5 mL</a></li>
+                    <li><a>FER - Ферритин <br> R1-2×18 mL; R2-2×10 mL</a></li>
+                    <li><a> TRF - Трансферрин <br> R1-2×32 mL; R2-2×6 mL</a></li>
+                    <li><a>Ca – Кальций <br> R-4×40 mL</a></li>
+                    <li><a>Mg - Магний <br> R-4×40 mL</a></li>
+                    <li><a>P - Фосфор <br> R-4×40 mL</a></li>
+                    <li><a>G6PD - Глюкозо-6-фосфатдегидрогеназа <br> R1-1×20 mL; R2-1×7 mL</a></li>
+                    <li><a>UIBC - Ненасыщенная железосвязывающая способность <br> R1-1×20 mL; R2-1×7 mL; Calibrator: 1×1 mL</a></li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-4">
+                    <p>Липидная панель</p>
+                </div>
+                <ul class="list-reag">
+                    <li><a>TC - Общий холестерин <br> R-4×40 mL</a></li>
+                    <li><a>TG - Триглицериды <br> R-4×40 mL</a></li>
+                    <li><a>HDL-C - Липопротеины высокой плотности <br> R1-1×40 mL; R2-1×14 mL</a></li>
+                    <li><a>LDL-C - Липопротеины низкой плотности <br> R1-1×40 mL; R2-1×14 mL</a></li>
+                    <li><a>Apo-A1 - Аполипопротеин-А1 <br> R1-1×35 mL; R2-1×12 mL</a></li>
+                    <li><a>Apo-B - Аполипопротеин-В <br> R1-1×35 mL; R2-1×12 mL</a></li>
+                    <li><a>Lp(a) - Липопротеин (а) <br> R1-1×23 mL; R2-1×7 mL</a></li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-23">
+                    <p>Иммунологическая панель</p>
+                </div>
+                <ul class="list-reag">
+                    <li><a href="#">IgA - Иммуноглобулин А <br> R1-1×36 mL; R2-1×18 mL</a></li>
+                    <li><a href="#">IgG- Иммуноглобулин G <br> R1-1×36 mL; R2-1×18 mL</a></li>
+                    <li><a href="#">IgM - Иммуноглобулин М <br> R1-1×40 mL; R2-1×10 mL</a></li>
+                    <li><a href="#">IgE - Иммуноглобулин E <br> R1- 1×20 mL ; R2- 1×11 mL</a></li>
+                    <li><a href="#">C3 - Комплимент С3 <br> R1-1×36 mL; R2-1×18 mL</a></li>
+                    <li><a href="#">C4 - Комплимент С4 <br> R1-1×40 mL; R2-1×15 mL</a></li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-7">
+                    <p>Диабетическая панель</p>
+                </div>
+                <ul class="list-reag">
+                    <li><a href="#">Glu- G - Глюкоза (оксидазный метод) <br> R1-4×40 mL; R2-2×20 mL</a></li>
+                    <li><a href="#">Glu-HK - Глюкоза (гексокиназный метод) <br> R1-4×36 mL; R2-2×34 mL</a></li>
+                    <li><a href="#">HbA1c - Гликированный гемоглобин <br> R1-1×40 mL; R2-1×15 mL; Pretreatment Solution:1×200 mL</a></li>
+                    <li><a href="#">FUN - Фруктозамин <br> R1-2×30 mL; R2-1×15 mL; Calibrator: 1×1.5 mL; Control:1×1 mL</a></li>
+                    <li><a href="#">β-HB – бета-гидроксибутират <br> R1-2×8 mL; R2-2×4 mL; Calibrator:1×1 mL</a></li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-8">
+                    <p>Ревматическая панель</p>
+                </div>
+                <ul class="list-reag">
+                    <li><a href="#">CRP - С-реактивный белок <br> R1-1×40 mL; R2-1×10 mL</a></li>
+                    <li><a href="#">RF - Ревматоидный фактор <br> R1-1×40 mL; R2-1×11 mL</a></li>
+                    <li><a href="#">HS-CRP - Высокочувствительный С-реактивный белок <br> R1 1×40 mL ; R2 1×40 mL ; Calibrator: 5×1 mL</a></li>
+                    <li><a href="#">АSО - анти-стрептолизин О <br> R1-1×40 mL; R2-1×40 mL</a></li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-24">
+                    <p>Панкреатическая панель</p>
+                </div>
+                <ul class="list-reag">
+                    <li><a href="#">α-Amylasa - Альфа-амилаза <br> R1-1×38 mL; R2-1×10 mL</a></li>
+                    <li><a href="#">LIP – Липаза <br> R1-1×35 mL; R2-1×9 mL; Calibrator: 1×3 mL; Control:1×5 mL</a></li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-24">
+                    <p>Легочная панель</p>
+                </div>
+                <ul class="list-reag">
+                    <li><a href="#">ACE - Ангиотензинпревращающий фермент <br> R-2×14 mL</a></li>
+                    <li><a href="#">ADA – Аденозиндезаминаза <br> R1-1×40 mL; R2-1×20 mL</a></li>
+                </ul>
+            </div>
+        </div>
+        <a class="store-drg-international" href="https://store.drg-international.com/">Более>></a>
+    </div>
+    <div class="bg"></div>
+</section>

@@ -1,0 +1,129 @@
+
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Гематология"
+    });
+}
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Автоматический гематологический анализатор ELITE 580 (Erba)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/imgHematology/ELITE580Erba-1.png" alt="">
+                <img class="box1 img-big" src="/images/imgHematology/ELITE580Erba-11.png" alt="">
+                <img class="box2 img-min" src="/images/imgHematology/ELITE580Erba-2.png" alt="">
+                <img class="box3 img-min img-c" src="/images/imgHematology/ELITE580Erba-3.png" alt="">
+                <img class="box4 img-min" src="/images/imgHematology/ELITE580Erba-4.png" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описаниe</h3>
+                <ul class="big-list">
+                    <li>Дифференциация лейкоцитов по 5 популяциям, 29 регистрируемых параметра, 3 гистограммы (RBC,WBC,PLT) и 4 скатерограммы (DIFF*3, BASO)</li>
+                    <li>Доступность двух режимов тестирования - общий анализ СВС и общий анализ с дифференцированием 5 субпопуляций лейкоцитов СВС+Diff</li>
+                    <li>Режим цельной крови, капиллярной цельной крови и предварительного разведения</li>
+                    <li>Измерения уровня гемоглобина проводится по безцианидной технологии.</li>
+                    <li>Расширенный анализ тромбоцитов (P-LCR, P-LCC, PDW- SD, PDW-CV)</li>
+                    <li>Большой объем памяти, до 100.000 результатов</li>
+                    <li>Объем образца составляет всего 15 мкл, идеально для педиатрии</li>
+                    <li>Гарантированная точность разбавления с использованием автоматического дозирования разбавителя</li>
+                    <li>Анализ одним нажатием кнопки</li>
+                    <li>Автоматический пробозаборник на 60 пробирок</li>
+                    <li>Индикатор состояния</li>
+                    <li>Высококачественные компоненты для длительного срока службы</li>
+                    <li>Небольшая занимаемая площадь</li>
+                    <li>Сенсорный TFT-экран с диагональю 10,4 дюйма с простым программным обеспечением</li>
+                    <li>USB-интерфейс с поддержкой подключения: компьютера, клавиатуры, ручного считывателя штрих-кодов, внешнего устройства памяти</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Производительность: 80 образцов в час</li>
+                        <li>Определяемые параметры: 29 параметров - WBC, LYM, LYM%, MON, MON%, NEU, NEU%, EOS, EOS%, BAS, BAS%, RBC, HGB, HCT, MCV, MCH, MCHC, RDW-CV, RDW-SD, PLT, PDW, MPV, PCT, P-LCR, P-LCC; 4 исследовательских параметра: ALY, ALY%, LIC, LIC%</li>
+                        <li>Принцип измерения: импедансный метод для подсчета лейкоцитов, эритроцитов и тромбоцитов, реагент без цианида для определения содержания гемоглобина, Проточная цитометрия (SFC), рассеяние лазерного излучения под тремя углами и использование химических красителей для подсчета лейкоцитов и дифференцировки их на 5 субпопуляций</li>
+                        <li>Объем образца: режим предварительного разведения - 20 мкл, режим цельной крови - 15 мкл, режим цельной капиллярной крови - 15 мкл</li>
+                        <li>Дисплей: Full HD 22 дюйма</li>
+                        <li>Объем памяти: до 100 000 результатов, включая числовую и графическую информацию</li>
+                        <li>Интерфейс: 4 USB, 1 порт LAN поддерживает протокол HL7, поддержка двунаправленный ЛИС</li>
+                        <li>Рабочие условия: температура - 15°C - 30°C; атмосферное давление - 70 кПа – 106 кПА</li>
+                        <li>Электропитание: 100-240В переменного тока, 50/60 Гц</li>
+                        <li>Размеры: 620 (длина) x 620 (ширина) x 535 (высота) мм</li>
+                        <li>Вес: 56 кг</li>
+                    </ul>
+                </div> 
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="img">
+                            <img src="/images/imgHematology/ELITE580Erba.jpg" alt="">
+                        </div>
+                        <ul class="big-list">
+                            <li>Erba Dil (20L)</li>
+                            <li>ErbaLyse 1 (200mL)</li>
+                            <li>Erba Lyse 2 (500mL)</li>
+                            <li>Elite H Clean (50mL)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p></p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

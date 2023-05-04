@@ -1,0 +1,66 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+	ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "One Product"
+    });
+}
+<section id="at-the-right-edge" class="at-the-right-edge one-product">
+    <div class="items">
+        <div class="oneItem">
+            <div class="img">
+                <img src="/images/img/OneProdTest.jpg" alt="">
+            </div>
+            <div class="top-title">
+                <p>
+                    BeneHeart D6, a professional biphasic defibrillator-monitor, meets the requirements of medical professionals in hospitals and clinics worldwide. The compact, durable, and ergonomic design of D6 makes it suitable for emergency use. Proven technologies ensure a robust unit, ready to be used in different environments. With different operation modes (manual defibrillation, AED, pacer, and monitoring mode) you are in control of any situation.
+                </p>
+            </div>
+            <div class="bot-title">
+                <h3>Features</h3>
+                <ul>
+                    <li>
+                        4-in-one design including: monitoring, Manual Defib, AED and pacer
+                    </li>
+                    <li>
+                        Power on within 2s, Charging to 200J within 3s, ECG recovery within 2.5s
+                    </li>
+                    <li>
+                        Up to 360J escalating dose energy to maximize defibrillation success
+                    </li>
+                    <li>
+                        Powerful power capacity with battery to support continuous long time monitoring and shocks during transport without external power supply
+                    </li>
+                    <li>
+                        Effective IT solution avoiding manual recording, improving efficiency and reducing the workload of clinical staff
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

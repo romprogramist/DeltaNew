@@ -1,0 +1,166 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+    
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Биохимия"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Полуавтоматический биохимический анализатор BA-88A (Mindray)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/biochemistry/biochemistryBA88A-1-1.jpg" alt="">
+                <img class="box1 img-big" src="/images/biochemistry/biochemistryBA88A-11-1.jpg" alt="">
+                <img class="box2 img-min" src="/images/biochemistry/biochemistryBA88A-2-1.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/biochemistry/biochemistryBA88A-3-1.jpg" alt="">
+                <img class="box4 img-min" src="/images/biochemistry/biochemistryBA88A-4-1.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Полуавтоматический биохимический анализатор с открытой системой, которая позволяет работать с любыми реагентами промышленного производства</li>
+                    <li>Два режима тестирования: проточная кювета или сменные кюветы</li>
+                    <li>Встроенная проточная кювета обеспечивает экономичный расход реагентов</li>
+                    <li>Автоматическое колесо фильтра на 8 позиций</li>
+                    <li>Длины волн в диапазоне 340 - 670 нм</li>
+                    <li>Лёгкое обслуживание, лёгкая замена лампы</li>
+                    <li>Поддержка бихроматических тестов для всех трёх методов</li>
+                    <li>Широкий набор пользовательских методик</li>
+                    <li>Программа работы с нелинейными калибровками и построение карт Леви-Дженнингса</li>
+                    <li>Система Контроля Качества исследований с объемом памяти на 1000 анализов</li>
+                    <li>Объем памяти более чем на 3000 анализов</li>
+                    <li>Интерфейс на основе большого цветного сенсорного ЖК-дисплея обеспечивает непревзойденное удобство управления прибором</li>
+                    <li>Возможность подключения внешней клавиатуры и мыши через USB-порт</li>
+                    <li>Русифицированное меню</li>
+                    <li>Встроенный термопринтер</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Вид аналитической системы: полуавтомат</li>
+                        <li>Тип системы: открытая система</li>
+                        <li>Тип работы: непрерывный</li>
+                        <li>Конструкция блока для реагентов: встроенная проточная кювета (+термостат на 24 пробирки)</li>
+                        <li>Методы расчета и измерений: конечная точка по стандарту, по фактору (бланк по каждой пробе); кинетика по стандарту, по фактору; кинетика по двум точкам; кинетика фиксированного времени; абсорбция; турбодиметрия; линейная и нелинейная калибровка.</li>
+                        <li>Настройка параметров: метод; длина волны; температура; бланк по каждой пробе; время задержки; время измерения; тип реакции; предельное значение абсорбции; аспирируемый объем; стандарты; проверка линейности; единицы измерения</li>
+                        <li>Оптическая система: монохроматическое и бихроматическое считывание; колесо фильтров на 8 позиций.</li>
+                        <li>Источник света: вольфрамо-галоидная лампа, 6В/10Вт, режим автоматического отключения</li>
+                        <li>Диапазон длин волн: 330-700 нм</li>
+                        <li>Фильтры: 340, 405, 510, 546, 578, 630 нм и 2 свободных позиции: 450 и 670 нм</li>
+                        <li>Ширина полосы пропускания: < 8 нм</li>
+                        <li>Рассеивание света: на длине волн 340 нм <0.1%</li>
+                        <li>Фотометрический диапазон: от 0,0000 до 3,5000А</li>
+                        <li>Дрейф нуля: при 340 нм <0,005 А/20 мин</li>
+                        <li>Разрешение, единица оптической плотности: 0,0001 А</li>
+                        <li>Проточная кювета: корпус из нержавеющей стали с кварцевым окошком</li>
+                        <li>Объем измерения: 32 мкл</li>
+                        <li>Световод: 10 мм</li>
+                        <li>Аспирируемый объем: 200-9000 мкл</li>
+                        <li>Память: 200 программируемых тестов; 3000 результатов стандартных анализов; 1000 анализов Контроля Качества (КК)</li>
+                        <li>Контроль температуры: посредством элементов Пельтье</li>
+                        <li>Температура: комнатная, 25, 30 и 37°C</li>
+                        <li>Интерфейс ввода данных: сенсорный ЖК-дисплей</li>
+                        <li>Разрешение: 320х240</li>
+                        <li>Программа Контроля Качества: сохранение данных контроля качества в течение 31 дня; построение кривых Леви-Дженнингса</li>
+                        <li>Количество программируемых методик: 40-встроенных (часто используемых) и 60-пользовательских методик</li>
+                        <li>Принтер: встроенный термопринтер</li>
+                        <li>Подключение к компьютеру: последовательный порт RS-232</li>
+                        <li>Интерфейс: порт RS-232; порт USB</li>
+                        <li>Условия окружающей среды при работе: температура - 15-30°C; влажность - 20-80%; давление - от 70 кПа до 106 кПа</li>
+                        <li>Электропитание: АС100-240В, 50/60Гц, 140ВА</li>
+                        <li>Габариты: 420 (В) х 350 (Ш) х 158(Г) мм</li>
+                        <li>Вес: 7 кг</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="img">
+                            <img src="/images/biochemistry/biochemistry-BA88A.jpg" alt="">
+                        </div>
+                        <div class="list">
+                            <a href="/home/semiAutomaticMindray" class="hed img-20">
+                                <p>MIndray</p>
+                            </a>
+                            <a href="/home/Biosystems" class="hed img-21">
+                                <p>Biosystems</p>
+                            </a>
+                            <a href="#" class="hed img-22">
+                                <p>Delta</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Расходные материалы</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="img">
+                            <img src="/images/biochemistry/biochemistry-BA88A-1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

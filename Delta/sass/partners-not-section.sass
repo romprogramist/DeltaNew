@@ -1,0 +1,38 @@
+@import "map"
+@import "contacts"
+@import "not-main"
+@import "at-the-right-edge"
+
+
+
+
+.not-main
+  background: url(/images/img/main-partners.jpg) center center / cover no-repeat
+  
+.at-the-right-edge
+  .items
+    .item
+      max-width: 1290px
+      margin: 0 auto
+      a        
+        img
+          max-width: 404px
+          display: flex
+          margin: 0 auto
+          width: 100%
+      & > div
+        p
+          text-align: center
+          font-weight: 500
+          font-size: 18px
+          line-height: 28px
+          color: $darkGrey-color
+    
+@media screen and ( min-width: 800px )
+  .at-the-right-edge
+    .items
+      .item
+        & > div
+          p
+            font-size: 32px
+            line-height: 48px

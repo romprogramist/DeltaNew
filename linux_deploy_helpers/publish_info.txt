@@ -1,0 +1,20 @@
+For deploying on linux server (e.g. ubuntu) do this one time:
+
+1. Publish to folder your project +
+2. Open and adapt local-script.sh +
+3. Run local-script.sh +
+4. Open and adapt server-script.sh then copy to server + 
+5. Install web server (e.g. nginx) +
+6. Create folder on server "/var/www/your_project_name" +
+7. For nginx case rename, adapt and copy to server file "your_project_name" in "/etc/nginx/sites-enabled/" folder +
+8. Rename and adapt your_project_name.service then copy to server in service folder (e.g. "/etc/systemd/system/") +
+9. Install proper version of dotnet on server +
+10. Run second and third commands from server-script.sh
+11. Enable service on boot up run by command "systemctl enable your_project_name"
+12. Run service by command "systemctl start your_project_name"
+
+Then for redeploying:
+
+1. Publish to folder your project
+2. Run local-script.sh
+3. Run server-script.sh on server

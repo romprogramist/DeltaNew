@@ -1,0 +1,168 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Исследование Мочы"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Aвтоматический анализатор мочи Mindray EU-8600 (Mindray)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/mocciStudy/EU8600-1-1.jpg" alt="">
+                <img class="box1 img-big" src="/images/mocciStudy/EU8600-11-1.jpg" alt="">
+                <img class="box2 img-min" src="/images/mocciStudy/EU8600-2-1.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/mocciStudy/EU8600-3-1.jpg" alt="">
+                <img class="box4 img-min" src="/images/mocciStudy/EU8600-4-1.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Полностью автоматизированный биохимический анализатор мочи UA-5600 и анализатор осадка мочи EH-2090</li>
+                    <li>Четкие изображения - улучшенный морфологический анализ для лучшей предварительной классификации осадка</li>
+                    <li>SIF-технология: многоглубинная четкость, защита от вибрации, цветовое изображение высокого разрешения - 2K</li>
+                    <li>Точная классификация - 18 регистрируемых параметров осадка</li>
+                    <li>9 дополнительных фаз эритроцитов поддерживают более точные патологические диагнозы</li>
+                    <li>60 реальных кадров изображений, полноэкранное сканирование</li>
+                    <li>Морфологический анализ по Золотому стандарту</li>
+                    <li>Полноэкранное изображение во избежание гиподиагностики</li>
+                    <li>Повышенная эффективность - модульная конструкция отвечает требованиям различных лабораторий</li>
+                    <li>Максимально удобный интерфейс, понятный каждому</li>
+                    <li>Малые расходы промывающего раствора</li>
+                    <li>Технология динамической интеллектуальной фокусировки в реальном времени, нет необходимости в фокусирующем реагенте, что снижает стоимость теста</li>
+                    <li>Расширена идентификация форменных частей</li>
+                    <li>Русифицированное меню</li>
+                    <li>Понятный интерфейс, в стиле всего оборудования Mindray</li>
+                    <li>Возможность подачи проб в ручную, для быстрого тестирования</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <p>Автоматический биохимический анализатор мочи UA-5600</p>
+                        <li>Производительность: 240 т/ч</li>
+                        <li>Принцип: фотоэлектрическая колориметрия, рефрактометрия</li>
+                        <li>Определяемые биохимические параметры: сухая химия - GLU, PRO, BLD, BIL, pH, KET, VitC, URO, NIT, LEU, S.G., MCA, CRE, CA; физические - S.G., Turb, Color</li>
+                        <li>Расчетные параметры – P/C, Micro A/C</li>
+                        <li>Загрузка образцов: 100</li>
+                        <li>Загрузка стрипов: 200 стрипов</li>
+                        <li>STAT - независимая автоматическая загрузка STAT образцов</li>
+                        <li>Штрих-код(опция): внутренний сканер штрих-кода с поворотом на 360°</li>
+                        <li>Интерфейс: LAN порт, двусторонний ЛИС</li>
+                        <li>Температура: 5-40 °С</li>
+                        <li>Влажность: 15-80 %</li>
+                        <li>Требования к сети: 220 В ± 10 %, 50/60 Г</li>
+                        <li>Потребляемая мощность: 40 Вт</li>
+                        <li>Вес: 65 кг</li>
+                        <p>Автоматический анализатор осадка мочи EH-2090</p>
+                        <li>Производительность: модель C (четырехканальный) - 120 т/ч, модель B (двухканальный) - 80 т/ч</li>
+                        <li>Принцип: технология машинного видения</li>
+                        <li>Определяемые параметры форменных элементов: измеряемые параметры - RBC, WBC, WBCC, BACT, BACTc, BACTr, YST, SEC, NEC, CRYS, Caoxm, Caoxd, URA, TRP, HYAC, UNCC, MUC, SPRM; расчетные параметры - POI, Normocyte(#), Normocyte(%), Poikilocyte(#), Poikilocyte(%), AcaRBC(%), GhoRBC(%), SphRBC(%), UncRBC(%)</li>
+                        <li>Загрузка образцов: 100</li>
+                        <li>Метод фокусирования: автоматическая фокусировка без фокусирующего реагента</li>
+                        <li>STAT - независимая автоматическая загрузка STAT образцов</li>
+                        <li>Разрешение изображения: 5 мегапикселей</li>
+                        <li>Интерфейс: LAN порт, двусторонний ЛИС</li>
+                        <li>Штрих-код(опция): внутренний сканер штрих-кода с поворотом на 360°</li>
+                        <li>Температура: 5-40 °С</li>
+                        <li>Влажность: 15-80 %</li>
+                        <li>Требования к сети: 220 В ± 10 %, 50/60 Г</li>
+                        <li>Потребляемая мощность: 40 Вт</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>UA-5600</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>Стрипы- URS-11/14</li>
+                                <li>Reagent A</li>
+                                <li>Controls</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>EH-2090</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>Cleanser</li>
+                                <li>EU-70</li>
+                                <li>Controls</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Расходные материалы</p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>
+
+

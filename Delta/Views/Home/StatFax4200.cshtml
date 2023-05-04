@@ -1,0 +1,138 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "ИФА"
+    });
+}
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Иммуноферментный анализатор StatFax 4200 (Awareness)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/imgIfa/StatFax4200-1.jpg" alt="">
+                <img class="box1 img-big" src="/images/imgIfa/StatFax4200-11.jpg" alt="">
+                <img class="box2 img-min" src="/images/imgIfa/StatFax4200-2.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/imgIfa/StatFax4200-3.jpg" alt="">
+                <img class="box4 img-min" src="/images/imgIfa/StatFax4200-4.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Компактный планшетный иммуноферментный анализатор</li>
+                    <li>8-канальный фотометрический модуль</li>
+                    <li>Считывание полного 96-луночного планшета за 8 сек</li>
+                    <li>Анализ производится в стандартных планшетах</li>
+                    <li>Микропроцессор обеспечивает все существующие в ИФА методы расчета, построение и сохранение калибровочных кривых</li>
+                    <li>Открытая система для любых методик и реагентов</li>
+                    <li>Встроенный принтер</li>
+                    <li>Цветной сенсорный экран для управления прибором</li>
+                    <li>4 стандартных фильтра: 405, 450, 492, 630 нм</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Вид аналитической системы: полуавтомат</li>
+                        <li>Тип системы: открытая</li>
+                        <li>Диапазон линейности измерения: 0,0–4,0 единиц абсорбции (A)</li>
+                        <li>Точность фотометра: ± 1 %</li>
+                        <li>Стабильность: не более 0,005 А за 8 ч</li>
+                        <li>Источник света: вольфрамовая ксеноновая лампа, с функцией сохранения</li>
+                        <li>Фильтры: стандартная модель - 405, 450, 492 и 630 нм; модель с 6 фильтрами - 405, 450, 492, 545, 600 и 630 нм; опциональные фильтры - от 405 до 700 нм</li>
+                        <li>Тип фильтров: интерференционные с ионным напылением, с полосой полупропускания 10 нм</li>
+                        <li>Планшет: стандартный 96-ти луночный или 8-ми или 12-ти луночные стрипы</li>
+                        <li>Скорость: измерение одного 96-луночного планшета занимает примерно 10 с</li>
+                        <li>Механизм перемещения планшета: шаговый электродвигатель</li>
+                        <li>Методы расчета: абсорбция, по одноточечной калибровке, по точке отсечения Cut-off, по обратно пропорциональной зависимости, по многоточечной калибровке, по параболической калибровке, по линейной калибровке</li>
+                        <li>Дополнительные функции: программируемая пользователем открытая система, выбираемое форматирование планшета, алфавитно-цифровое обозначение теста, автоматические опции интерпретации, опции дубликата лунки, отображение и редактирование кривой, флаги и сообщения об ошибках</li>
+                        <li>Дисплей: цветной, интерактивный жидкокристаллический дисплей 5,7” (14,5 см) с сенсорным экраном</li>
+                        <li>Корпус: пластиковый, огнестойкий</li>
+                        <li>Принтер: термопринтер с возможностью печати графиков</li>
+                        <li>Интерфейс: USB 2.0, USB для подключения мыши (опция)</li>
+                        <li>Электропитание: 115 В или 230 В переменного тока, 50–60 Гц</li>
+                        <li>Размеры: 21(Д)х34,3(Ш)х43,2(В) см</li>
+                        <li> Вес: 5,4 кг</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="list">
+                            <a href="/home/IfaPng" class="hed img-1">
+                                <p>DRG</p>
+                            </a>
+                            <a href="/home/IfaMonoBindR" class="hed img-2">
+                                <p>MONIBIND</p>
+                            </a>
+                            <a href="/home/IfaIBL" class="hed img-3">
+                                <p>IBL</p>
+                            </a>
+                            <a href="/home/IfaCanAg" class="hed img-4">
+                                <p>CANAG</p>
+                            </a>
+                            <a href="/home/IfaCTK" class="hed img-5">
+                                <p>CTK</p>
+                            </a>
+                            <a href="#" class="hed img-6">
+                                <p>ЭКОЛАБ</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p></p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg"></div>
+</section>

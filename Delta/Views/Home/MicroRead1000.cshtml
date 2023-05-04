@@ -1,0 +1,147 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "ИФА"
+    });
+}
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Иммуноферментный анализатор Micro Read 1000 (Global Diagnostics)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/imgIfa/MicroRead10001.jpg" alt="">
+                <img class="box1 img-big" src="/images/imgIfa/MicroRead100011.jpg" alt="">
+                <img class="box2 img-min" src="/images/imgIfa/MicroRead10002.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/imgIfa/MicroRead10003.jpg" alt="">
+                <img class="box4 img-min" src="/images/imgIfa/MicroRead10004.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Встроенный термопринтер</li>
+                    <li>Автоматическая обработка данных</li>
+                    <li>Открытая система работы с реагентами</li>
+                    <li>Регулировка интенсивности и времени встряхивания</li>
+                    <li>Способность считывать в течение нескольких секунд</li>
+                    <li>Вариант режима экономии лампы</li>
+                    <li>Матричный режим для печати результатов</li>
+                    <li>Интеллектуальная программа отключения</li>
+                    <li>Хранение калибровочных кривых</li>
+                    <li>Хранение результатов планшета</li>
+                    <li>Различные режимы подгонки кривой, такие как: одноточечная калибровка</li>
+                    <li>многоточечная калибровка с регрессией или кусочно-линейной кривой, по</li>
+                    <li>точке отсечения Cutoff, по контролю Cutoff, многоточечная калибровка с</li>
+                    <li>%Abs, определение ОП</li>
+                    <li>Несколько режимов калибратора</li>
+                    <li>Подбор дубликатов как для калибраторов, так и для образцов</li>
+                    <li>Универсальный блок питания.</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Дисплей: сенсорная панель/клавиатура;</li>
+                        <li>Диапазон линейности измерения: 0.000 – 3.000 A;</li>
+                        <li>Точность фотометрирования: ± 2% или 0.007 для 0 - 1.5 A , ± 3% для 1.5 A - 3.0</li>
+                        <li>A;</li>
+                        <li>Стабильность: Дрейф не более 0,005А/ч;</li>
+                        <li>Оптическое измерение: 2 канала;</li>
+                        <li>Фильтры: 405nm, 450nm, 492nm,560 nm 630nm и 2 свободные позиции;</li>
+                        <li>Ширина пропускания фильтров: 10nm ± 2nm;</li>
+                        <li>Источник света: Вольфрамовая галогеновая лампа;</li>
+                        <li>Дисплей: ЖК, диагональ 7;</li>
+                        <li>Разрешение: 480*800;</li>
+                        <li>Принтер: Встроенный термопринтер;</li>
+                        <li>Память: 2MB FRAM;</li>
+                        <li>Режимы расчета: Absorbance; Single Standard; Cut-off; Multi-Standard; %</li>
+                        <li>Absorbance; Uptake; Ratio;</li>
+                        <li>Электропитание: 115-230 В ± 10%, 50/60 ГЦ;</li>
+                        <li>Мощность: 75 ВА;</li>
+                        <li>Рабочая температура: + 18°C to 35°C;</li>
+                        <li>Относительная влажность: 80%;</li>
+                        <li>Основное устройство: 360 мм * 360 мм * 220мм (Ш * Г * В) 36 x 36 x 22;</li>
+                        <li>Вес: 10кг.</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="list">
+                            <a href="/home/IfaPng" class="hed img-1">
+                                <p>DRG</p>
+                            </a>
+                            <a href="/home/IfaMonoBindR" class="hed img-2">
+                                <p>MONIBIND</p>
+                            </a>
+                            <a href="/home/IfaIBL" class="hed img-3">
+                                <p>IBL</p>
+                            </a>
+                            <a href="/home/IfaCanAg" class="hed img-4">
+                                <p>CANAG</p>
+                            </a>
+                            <a href="/home/IfaCTK" class="hed img-5">
+                                <p>CTK</p>
+                            </a>
+                            <a href="#" class="hed img-6">
+                                <p>ЭКОЛАБ</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p></p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

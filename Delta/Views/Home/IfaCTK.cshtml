@@ -1,0 +1,116 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "ИФА"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title header-title-red">
+            <h3>
+                Реагенти
+            </h3>
+        </div>
+        <div class="header-title header-mt">
+            <h3>
+                CTK
+            </h3>
+        </div>
+        <div class="wrapper wrapper-reag">
+            <div class="block">
+                <div class="hed img img-1">
+                    <p>Щитовидная панель</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">TSH - тиреотропный гормон</a>
+                    </li>
+                    <li>
+                        <a href="#">T3 - трийодтиронин</a>
+                    </li>
+                    <li>
+                        <a href="#">T4 - тироксин</a>
+                    </li>
+                </ul>
+            </div>  
+            <div class="block">
+                <div class="hed img img-3">
+                    <p>Репродуктивная панель</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">FSH - фолликулостимулирующий гормон</a>
+                    </li>
+                    <li>
+                        <a href="#">PRL - пролактин</a>
+                    </li>
+                    <li>
+                        <a href="#">Progesteron - прогестерон</a>
+                    </li>
+                    <li>
+                        <a href="#">LH - лютеинизирующий гормон</a>
+                    </li>
+                    <li>
+                        <a href="#">Test – тестостерон</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-2">
+                    <p>Инфекционные заболевания</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">Anti-HIV1/2 - антитела ВИЧ</a>
+                    </li>
+                    <li>
+                        <a href="#">HIV Combo - ВИЧ</a>
+                    </li>
+                    <li>
+                        <a href="#">HBsAg - поверхностный антиген вирусного гепатита B</a>
+                    </li>
+                    <li>
+                        <a href="#">Anti-НВs - антитела к HBs-антигену вируса гепатита B</a>
+                    </li>
+                    <li>
+                        <a href="#">НВеАg - НВе антиген</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a class="store-drg-international" href="https://ctkbiotech.com/product-category/product-line/elisas/">Более&gt;&gt;</a>
+    </div>
+    <div class="bg"></div>
+</section>

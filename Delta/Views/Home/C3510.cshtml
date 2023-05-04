@@ -1,0 +1,186 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Гемостаз"
+    });
+}
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Полуавтоматический анализатор коагуляции C3510 (Mindray)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/Hemostasis/C3510_1.png" alt="">
+                <img class="box1 img-big" src="/images/Hemostasis/C3510_11.png" alt="">
+                <img class="box2 img-min" src="/images/Hemostasis/C3510_2.png" alt="">
+                <img class="box3 img-min img-c" src="/images/Hemostasis/C3510_3.png" alt="">
+                <img class="box4 img-min" src="/images/Hemostasis/C3510_4.png" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описаниe</h3>
+                <ul class="big-list">
+                    <li>Полностью автоматизированный, высокопроизводительный, компактный анализатор</li>
+                    <li>Эффективно обрабатывает стандартные и специальные тесты на свертываемость крови</li>
+                    <li>Оснащенный технологией механического (на основе вязкости) обнаружения для тестирования элементов свертывания, а также оптическим каналом для хромогенных и иммунотурбидиметрических тестов</li>
+                    <li>Он является идеальным выбором для средних и крупных лабораторий</li>
+                    <li>Классический механический метод (обнаружение на основе вязкости) для проверки свертываемости крови</li>
+                    <li>Нечувствителен к желтушным, липемическим, хилезным и гемолизным образцам</li>
+                    <li>Загрузка проб в виде выдвижных секций для повышения автоматизации и гибкости</li>
+                    <li>Независимые каналы тестирования увеличивают производительность и предлагают больше параметров</li>
+                    <li>4 независимых канала свертывания, максимальная производительность 300 тестов в час</li>
+                    <li>6 независимых оптических каналов, максимальная производительность 100 тестов в час</li>
+                    <li>4 параметра для комбинированной коагуляциии (PT/APTT/Fib/TT), 60 тестов в час</li>
+                    <li>5 параметров для комбинированной коагуляции (PT/APTT/Fib/TT/D-Dimer), 40 тестов в час</li>
+                    <li>Отдельный зонд для проб/реагентов обеспечивает низкий уровень переноса</li>
+                    <li>Оба зонда оснащены функцией определения уровня жидкости и защитой от столкновений в вертикальном направлении</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Вид аналитической системы: автоматический</li>
+                        <li>Принцип: механический метод (коагуляция - 640 нм); отический метод (хромогенный - 405 нм и иммунотурбидиметрический – 575 нм)</li>
+                        <li>Определяемые параметры: клоттинговые тесты - протромбиновое время, МНО, АЧТВ, фибриноген, тромбиновое время, LA, факторы свертывания (II, V, VII, X, VIII, IX, XI, XII), гепарин и LMWH, протеины С и S; хромогенные тесты: Антитромбин III, Плазминоген, Протеин C; иммунологические тесты: Д-Димер</li>
+                        <li>Производительность: PT - 300 т/ч; D-dimer - 100 т/ч</li>
+                        <li>Отсек инкубации проб: 16 позиции</li>
+                        <li>Измерительные каналы: коагулологический - 4; оптический канал 575 нм - 5 (совместно с инкубационным каналом); оптический канал 405 нм -1 (общий с инкубационным каналом)</li>
+                        <li>Штрих-код: встроенный сканер штрих-кода</li>
+                        <li>Позиции образцов: 80, random access</li>
+                        <li>Позиции STAT образцов: 3</li>
+                        <li>Позиции реагентов: 24 (охлаждающие) + 4 позиции реагента; 5 позиций с функцией перемешивания</li>
+                        <li>Автоматическая загрузка кювет: 1000 кювет</li>
+                        <li>Система отбора проб: отдельный зонд для образца и реагента, меньше перекрестных загрязнений, оба зонда с определением уровня жидкости, пробирка для реагентов с функцией подогрева, обеспечивающая точный результат анализа, реагентный зонд оснащен функцией нагрева</li>
+                        <li>Калибровка: aвтоматическая калибровка по 2-6 точкам</li>
+                        <li>Источник питания: 200–240 В, 50 Гц, 1500 ВА или 220–230 В, 60 Гц, 1500 ВА или 110–115 В, 60 Гц, 1500 ВА</li>
+                        <li>Температура: 15–30 °C</li>
+                        <li>Влажность: 35–85%</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="img">
+                            <img src="/images/Hemostasis/HemostasisReg2.jpg" alt="">
+                        </div> 
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>Клоттинговые тесты</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>PT - протромбиновое время</li>
+                                <li>APTT - активированное частичное тромбопластиновое время</li>
+                                <li>CaCl2 – хлорид кальция</li>
+                                <li>FBG - фибриноген</li>
+                                <li>TT – тромбиновое время</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>Хромогенные тесты</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>AT III – антитромбин III</li>
+                                <li>Protein C – протеин C</li>
+                                <li>Protein S – протеин S</li>
+                                <li>LA Screen - волчаночный антикоагулянт (скрининговый тест)</li>
+                                <li>LA Confirm - волчаночный антикоагулянт (подтверждающий тест)</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>Иммунологические тесты</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>DD – Д-димер</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>Факторы (внешний путь)</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>F II – фактор II</li>
+                                <li>F V - фактор V</li>
+                                <li>F VII - фактор VII</li>
+                                <li>F X - фактор X</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>Факторы (внутренний путь)</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>F VIII – фактор VIII</li>
+                                <li>F IX – фактор IX</li>
+                                <li>F XI – фактор XI</li>
+                                <li>F XII – фактор XII</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Расходные материалы</p>
+                    </div>
+                    <div class="emptyTable">
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

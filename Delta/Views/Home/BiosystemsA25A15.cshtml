@@ -1,0 +1,476 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "ИФА"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title header-title-red">
+            <h3>
+                Реагенти
+            </h3>
+        </div>
+        <div class="header-title header-mt">
+            <h4>
+                Реагенты для автоматических анализатров
+            </h4>
+        </div>
+        <div class="header-title header-mt">
+            <h3>
+                Biosystems A25/A15
+            </h3>
+        </div>
+        <div class="wrapper wrapper-reag">
+            <div class="block">
+                <div class="hed img img-7">
+                    <p>Биохимия</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">
+                            α-Amylasa direct - α-амилаза (прямой субстрат)
+                            <br>RA-5x20 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            α-Amylasa EPS - α-амилаза
+                            <br>RA-1x32 mL; RB-1x8 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            α -amylase pancreatic – Панкреатическая амилаза
+                            <br>RA-1x40 mL ; RB-1x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            α – Glucosidase - α –глюкозидаза
+                            <br>RA-2x20 mL; RB-2x5 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            ADA – Аденозиндезаминаза
+                            <br>RA-4x8 mL; RB-1x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            ALT/GPT - Аланинаминотрансфераза
+                            <br>RA-5x40 mL; RB-5x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            ALB - Альбумин
+                            <br>RA-5x50 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            ALP - Щелочная фосфатаза-AMP
+                            <br>RA-5x16 mL; RB-2x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            ALP - Щелочная фосфатаза-DEA
+                            <br>RA-5x16 mL; RB-2x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            NH3 – Аммиак
+                            <br>RA-1x20 mL; RB-1x7 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            ACE - Ангиотензинпревращающий фермент
+                            <br>RA-1x50mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            AST/GOT - Аспартатаминотрансфераза
+                            <br>RA-5x40 mL; RB-5x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            β-HB – бета-гидроксибутират
+                            <br>RA-1x40 mL; RB-1x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Bil-D-DPD - Прямой билирубин
+                            <br>RA-5x40 mL; RB-5x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Bil-T-DPD - Общий билирубин
+                            <br>RA-5x40 mL; RB-5x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Ca Arsenazo - Кальций (Арсеназо III)
+                            <br>RA-10x50 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Ca-CP - Кальций-крезолфталеин
+                            <br>RA-5x40 mL; RB-5x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            CO2 - Бикарбонат
+                            <br>RA-1x50mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Chol. total - Холестерин общий
+                            <br>RA-10x50mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            HDL-C-D- Липопротеины высокой плотности (прямой)
+                            <br>RA-3x20 mL; RB-1x20 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            LDL-C-D - Липопротеины низкой плотности (прямой)
+                            <br>RA-3x20 mL; RB-1x20 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            CHE - Холинэстераза
+                            <br>RA-1x40 mL; RB-1x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Citrate – Цитрат
+                            <br>RA-1x20 mL; RB-1x5 mL
+                            <br>RA-2x20 mL; RB-2x5 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            CK – Креатинкиназа
+                            <br>RA-3x12 mL; RB-1x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            CK-MB - Креатинкиназа MB
+                            <br>RA-3x12 mL; RB-1x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            CREA - Креатинин
+                            <br>RA-5x50 mL; RB-5x50 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            CREA-ENZ - Креатинин (энзиматический)
+                            <br>RA-1x45 mL; RB-1x15 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Ethanol - Спирт этиловый
+                            <br>RA-1x20 mL; RB-1x7 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Fructose – Фруктоза
+                            <br>RA-1x40 mL; RB-1x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            γ-GT - γ-глутамилтрансфераза
+                            <br>RA-5x40 mL; RB-5x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            GLU - Глюкоза
+                            <br>RA-10x50 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            G6PD - Глюкозо-6-фосфатдегидрогеназа
+                            <br>RA-1x40 mL; RB-1x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Glu-HK - Глюкоза (гексокиназный метод)
+                            <br>RA-2x40 mL; RB-2x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            HCY – Гомоцистеин
+                            <br>RA-1x40 mL; RB-1x10,8 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Fe - Железо (Феррозин)
+                            <br>RA-5x40 mL; RB-5x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Lactate – Лактат
+                            <br>RA-2x40 mL; RB-2x10 mL
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            LDH – Лактатдегидрогеназа
+                            <br>RA-5x40 mL; RB-5x10 mL
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            LDH-IFCC – Лактатдегидрогеназа - IFCC
+                            <br>RA-1x40 mL; RB-1x10 mL
+                            <br>RA-1x160 mL; RB-1x40 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            LIP - Липаза
+                            <br>RA-1x20 mL; RB-1x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Mg - Магний
+                            <br>RA-5x16 mL; RB-2x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            P - Фосфор
+                            <br>RA-3x24 mL; RB-2x15 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            TP - белок (общий)
+                            <br>RA-10x50 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            PU - белок (в моче)
+                            <br>RA-5x50 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            TBA - Общие желчные кислоты
+                            <br>RA-1x18 mL; RB-1x6 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            TG - триглицериды
+                            <br>RA-10x50 mL
+                        </a>
+                    </li>
+                    <li>
+                    <a href="#">
+                        UIBC - Ненасыщенная железосвязывающая способность
+                        <br>RA - 1x40 mL; RB-1x10 mL
+                    </a>
+                </li>
+                    <li>
+                        <a href="#">
+                            Urea/ BUN/UV - Мочевина
+                            <br>RA-5x40 mL; RB-5x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            UA - Mочевая кислота
+                            <br>RA-10x50mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Zn - Цинк
+                            <br>RA-2x20 mL; RB-1x10 mL
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-7">
+                    <p>Турбидиметрия</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">
+                            ALB - альбумин (микроальбуминурия)
+                            <br>RA-1x40 mL; RB-1x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            АSО - анти-стрептолизин О
+                            <br>RA-1x40 mL; RB-1x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Ceruloplasmin- Церулоплазмин
+                            <br>RA-1x40 mL; RB-1x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            C3 - компонент комплемента С3
+                            <br>RA - 1x50 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            C4 - компонент комплемента С4
+                            <br>RA - 1x50 mL
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            CRP - C-реактивный белок
+                            <br>RA-2x40 mL; RB-2x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            HS-CRP - Высокочувствительный С-реактивный белок
+                            <br>RA-1x40 mL; RB-1x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            D-Dimer – Д-димер
+                            <br>RA-1x20 mL; RB-1x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Ferritin - ферритин
+                            <br>RA-1x30 mL; RB-1x15 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            FBG - фибриноген
+                            <br>RA-1x40 mL; RB-1x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Hp - гаптоглобин
+                            <br>RA-1x40 mL; RB-1x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            HbA1c - Гликированный гемоглобин
+                            <br>RA-1x50 mL; RB-1x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            IgA - иммуноглобулин A
+                            <br>RA - 1x50 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            IgG - иммуноглобулин G
+                            <br>RA - 1x50 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            IgM - иммуноглобулин M
+                            <br>RA - 1x50 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            RF - ревматоидный фактор
+                            <br>RA-1x40 mL; RB-1x10 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Transferin - трансферин
+                            <br>RA - 1x50 mL
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a class="store-drg-international" href="https://store.drg-international.com/">Более>></a>
+    </div>
+    <div class="bg"></div>
+</section>

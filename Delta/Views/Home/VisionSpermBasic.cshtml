@@ -1,0 +1,110 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Исследование эякулята"
+    });
+}
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Компьютерный анализ спермы Vision Sperm® Basic (West Medica)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/ejaculateStudy/VisionSpermBasic_1.png" alt="">
+                <img class="box1 img-big" src="/images/ejaculateStudy/VisionSpermBasic_11.png" alt="">
+                <img class="box2 img-min" src="/images/ejaculateStudy/VisionSpermBasic_2.png" alt="">
+                <img class="box3 img-min img-c" src="/images/ejaculateStudy/VisionSpermBasic_3.png" alt="">
+                <img class="box4 img-min" src="/images/ejaculateStudy/VisionSpermBasic_4.png" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описаниe</h3>
+                <ul class="big-list">
+                    <li>Микроскопия спермы и получение качественного цифрового препарата</li>
+                    <li>Предустановленный алгоритм проведения анализа спермы</li>
+                    <li>Анализ, измерения и классификация изображений микроскопии образца спермы</li>
+                    <li>Удобная организация и профессиональные инструменты</li>
+                    <li>Создание отчетов в соответствии с современными требованиями</li>
+                    <li>Метки и комментарии</li>
+                    <li>Удаленный доступ для обмена данными с коллегами</li>
+                    <li>Улучшение качества работы</li>
+                    <li>Правильная эргономика вашей работы</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Аппликационный модуль: Vision Sperm (MOT модуль - анализ подвижности и определение концентрации сперматозоидов, VIT модуль - анализ жизнеспособности сперматозоидов, MRF модуль - анализ морфологии сперматозоидов, DNA модуль - анализ степени фрагментации ДНК, LEU модуль - cодержание лейкоцитов в сперме, ACR модуль - проверка сперматозоидов на акросомную реакци)</li>
+                        <li>Ручное сканирование</li>
+                        <li>1 слайд</li>
+                        <li>Ручная подача через замену слайда</li>
+                        <li>Ручная подача масла</li>
+                        <li>Ручная идентификация слайдов</li>
+                        <li>Микроскоп</li>
+                        <li>Персональный компьютер</li>
+                        <li>Монитор</li>
+                        <li>Объективы: 10x, 20x, 40x, 100x МИ</li>
+                        <li>Светлое поле, фазовый контраст</li>
+                        <li>Освещение по Келлеру, LED</li>
+                        <li>Двунаправленное подключение к ЛИС, LIS2-A2 (ASTM), HL7</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable"> 
+                        
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Расходные материалы</p>
+                    </div>
+                    <div class="emptyTable">
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

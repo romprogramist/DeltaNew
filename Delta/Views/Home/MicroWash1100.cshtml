@@ -1,0 +1,121 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "ИФА"
+    });
+}
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Промывочная машина для планшетов ИФА 
+                Micro Wash 1100 (Global Diagnostics)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/imgIfa/MicroWash11001.jpg" alt="">
+                <img class="box1 img-big" src="/images/imgIfa/MicroWash110011.jpg" alt="">
+                <img class="box2 img-min" src="/images/imgIfa/MicroWash110012.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/imgIfa/MicroWash110013.jpg" alt="">
+                <img class="box4 img-min" src="/images/imgIfa/MicroWash110014.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Со встроенной функцией инкубации</li>
+                    <li>Автоматическая промывка</li>
+                    <li>Индикатор о заполнении емкости для отходов звуковым сигналом.</li>
+                    <li>Защита от переполнения за счет непрерывной аспирации</li>
+                    <li>Специально разработанная сборка гребенки для предотвращения царапин на дне</li>
+                    <li>лунок</li>
+                    <li>Функция автоматической промывки при выключении</li>
+                    <li>Возможность промывки одного стрипа из 8 лунок</li>
+                    <li>Регулируемое пользователем время замачивания, промывки и объем</li>
+                    <li>Дозирования</li>
+                    <li>Наличие двухпланшетного инкубатора (37 ℃) с программируемым таймером</li>
+                    <li>Съемная гребенка</li>
+                    <li>Встроенный стабилизатор</li>
+                    <li>Автоматическое определение дна лунок и предотвращение от столкновений.</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Тип гребенки: 8 канальный автоклавируемый;</li>
+                        <li>Дозирование: Программируемое от 50 до 500 µl;</li>
+                        <li>Аспирация: Непрерывная, дозирование осуществляется посредством</li>
+                        <li>мембранного насоса, предотвращая перелив;</li>
+                        <li>Остаточный объем аспирации: &lt; 2 µl;</li>
+                        <li>Waste Bottle : Одна (с емкостью 2 литра) со звуковым сигналом;</li>
+                        <li>Wash Bottle: Одна (с емкостью 2 литра);</li>
+                        <li>Rinse Bottle: Одна (с емкостью 2 литра);</li>
+                        <li>Дисплей: 16-ти значный буквенно-цифровой;</li>
+                        <li>Память: 100 открытых каналов;</li>
+                        <li>Методы промывки: Plate Wash, Strip Wash, Bottom Wash Overflow Wash, Rinsing;</li>
+                        <li>Priming, Disinfect;</li>
+                        <li>Встряхивание: Многоступенчатое;</li>
+                        <li>Инкубатор: Двухпланшетный (37 ℃);</li>
+                        <li>Таймер: Индивидуально программируемые (2шт);</li>
+                        <li>Мощность: 50 Вт/11 - 240 Вs ± 10 %, 50/60 ГЦ;</li>
+                        <li>Вес: 6 кг</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p></p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

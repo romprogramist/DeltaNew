@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="sass folder" pattern="file:RSiteTemplate/sass//*||file:Delta/sass//*" />
+</component>

@@ -1,0 +1,78 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/contact-us.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/contact-us-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Связаться с нами"
+    });
+}
+
+
+<section id="ContactUs" class="contact-us">
+    <div class="items">
+        <div class="img">
+            <img src="/images/img/office-photo.jpg" alt="" title="">
+        </div>
+        <div class="location-data">
+            <div class="number">
+                <h3>Как найти нас</h3>
+                <div>
+                    <img class="imgPhoneS" src="/images/icon/map_icon.svg" alt="" title="">
+                    <p>Yerevan,Armenia Komitas 55/3</p>
+                </div>
+                <div class="num">
+                    <img class="imgPhoneS" src="/images/icon/contactUsIconPhone.svg" alt="" title="">
+                    <img class="imgPhoneW" src="/images/icon/phone.svg" alt="" title="">
+                    <p>+374 (10) 23-08-51</p>
+                </div>
+                <div class="num">
+                    <img class="imgPhoneS" src="/images/icon/contactUsIconPhone.svg" alt="" title="">
+                    <img class="imgPhoneW" src="/images/icon/phone.svg" alt="" title="">
+                    <p>+374 (55) 77-66-99</p>
+                </div>
+            </div>
+            <div class="time">
+                <h3>
+                    Рабочие часы
+                </h3>
+                <div>
+                    <p>Понедельник <span>09:00-19:00</span></p>
+                    <p>Пятница <span>09:00-19:00</span></p>
+                    <p>Суббота <span>09:00-19:00</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="subtitle">
+        <h3>
+            Где я могу получить немного?
+        </h3>
+        <p>
+            Доступно множество вариаций отрывков из Lorem Ipsum, но большинство из них претерпели изменения в той или иной форме, путем добавления юмора или случайных слов, которые даже немного не кажутся правдоподобными. Если вы собираетесь использовать отрывок из Lorem Ipsum, вы должны быть уверены, что в нем не скрыто ничего смущающего.
+        </p>
+    </div>
+    <div class="bg"></div>
+</section>

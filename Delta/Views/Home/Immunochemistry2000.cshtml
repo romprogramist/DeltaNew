@@ -1,0 +1,338 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-doc.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-doc-bundle.js" asp-append-version="true"></script>
+    </environment>
+    
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Иммунохимия"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Хемилюминесцентный анализатор Mindray CL-2000i
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/immunochemistry/immunochemistry-1-2.jpg" alt="">
+                <img class="box1 img-big" src="/images/immunochemistry/immunochemistry-11-2.jpg" alt="">
+                <img class="box2 img-min" src="/images/immunochemistry/immunochemistry-2-2.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/immunochemistry/immunochemistry-3-2.jpg" alt="">
+                <img class="box4 img-min" src="/images/immunochemistry/immunochemistry-4-2.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Один из самых быстрых напольных хемилюминесцентных анализаторов</li>
+                    <li>Высокая производительность до 240 тестов в час</li>
+                    <li>Непрерывная загрузка и выгрузка образцов и реагентов во время работы</li>
+                    <li>Охлаждаемый до 2~8 °C постоянно вращающийся карусельный механизм с реагентами на 36 мест</li>
+                    <li>Реагенты остаются в аппарате стабильным до 56 дней</li>
+                    <li>Зона загрузки образцов на 300 проб</li>
+                    <li>Возможно приоритетное ускорение теста STAT</li>
+                    <li>Точно контролируемые шприцевые моторы обеспечивают всасывание жидкости с высокой точностью</li>
+                    <li>Программируемое определение уровня жидкости, обнаружение сгустков, защита от столкновения в горизонтальной и вертикальной плоскостях</li>
+                    <li>Эффективная промывка зонда изнутри и снаружи промывочным буферным раствором под высоким давлением</li>
+                    <li>Программируемая улучшенная промывка зонда с моющим средством</li>
+                    <li>Стабильная надежность в работе с улучшенной системой детекции при использовании ФЭУ</li>
+                    <li>Автоматизированное смешивание реакционного раствора на вортексе без какой-либо контаминации</li>
+                    <li>Интуитивно понятное программное обеспечение</li>
+                    <li>Возможность объединения в интегрированную систему с биохимическими анализаторами серии BS-800M / BS-2000M.</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Производительность: до 240 тестов/час</li>
+                        <li>Принцип измерения : платформа микронных суперпарамагнитных частиц с реагентами, мечеными щелочной фосфатазой (ЩФ), и субстратом в виде AMPPD</li>
+                        <li>Устройство загрузки образцов: загрузка и выгрузка штативов с образцами без прерывания процесса</li>
+                        <li>Штатив для образцов: 10-местный штатив</li>
+                        <li>Вместимость для образцов: до 300 образцов в одной партии</li>
+                        <li>Зонд для взятия образцов: стальной зонд, определение уровня жидкости, обнаружение сгустков, защита от столкновения в горизонтальной и вертикальной плоскостях</li>
+                        <li>Объем отбираемого образца: 10~200 мкл, с шагом 1 мкл</li>
+                        <li>Разведение образца: автоматическое разведение 1: 2 ~ 1: 40</li>
+                        <li>Диск для реагентов: 36 мест для реагентов, непрерывная загрузка, смешивание магнитных частиц в режиме реального времени</li>
+                        <li>Система охлаждения: 2~8 °C</li>
+                        <li>Упаковка реагентов: 50/100 тестов в упаковке</li>
+                        <li>Сканирование реагентов: автоматическое</li>
+                        <li>Зонд для взятия реагентов: стальной зонд, определение уровня жидкости, обнаружение пузырьков, защита от столкновения в горизонтальной и вертикальной плоскостях</li>
+                        <li>Объем отбираемого реагента: 20~135 мкл, с шагом 1 мкл</li>
+                        <li>Субстратная система: флакон субстрата с прокалываемым дном на 500 тестов</li>
+                        <li>Загрузка субстрата: возможна непрерывная загрузка во время проведения анализа</li>
+                        <li>Подогрев субстрата: постоянное подогревание</li>
+                        <li>Объем аспирации: 200 мкл</li>
+                        <li>Блок сепарации: 4-этапная магнитная сепарация</li>
+                        <li>Температура: точность - 37±0,3 °C, колебания: ±0,1°C</li>
+                        <li>Режим детекции: подсчет фотонов</li>
+                        <li>Детектор сигналов: фотоэлектронный умножитель (ФЭУ)</li>
+                        <li>Калибровка ФЭУ: эталонный светодиодный модуль</li>
+                        <li>Инкубационная карусель для проведения реакций: 150 мест</li>
+                        <li>Температура: 37±0,3 °C, колебания: ±0,2°C</li>
+                        <li>Блок смешивания: автоматизированное смешивание на вортексе</li>
+                        <li>Кювета: одноразовые пластиковые кюветы</li>
+                        <li>Загрузка кювет: за один раз могут быть загружены 9 блоков, по 126 кювет в одном блоке; загрузка и выгрузка без прерывания процесса</li>
+                        <li>Сбор отходов: наличие 2 контейнеров для отходов, обнаружение переполнения</li>
+                        <li>Электропитание: 110В/115В~, 60 Гц; 220В-240В~, 50 Гц; 220В/230В~, 60 Гц</li>
+                        <li>Входная мощность: 3200 ВА</li>
+                        <li>Рабочая температура: 15~30 °C</li>
+                        <li>Относительная влажность: 35~80% отн.влаж., без конденсации</li>
+                        <li>Размеры: основной модуль - 1450 мм*1020 мм*1200 мм (Ш*Г*В); Модуль загрузки образцов - 710мм*1020мм*1200мм (Ш*Г*В); Всего - 2150мм*1020мм*1200мм (Ш*Г*В))</li>
+                        <li>Вес: 750 кг</li>
+                        <li>Высота над уровнем моря: 400 м ~ 4000 м</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="img">
+                            <img src="/images/immunochemistry/immunochemistry-increasing.jpg" alt="">
+                        </div>
+                        <div class="list">
+                            <div class="hed img-7">
+                                <p>Щитовидная панель</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>TSH - тиреотропный гормон</li>
+                                <li>Т3 - общий трийодтиронин</li>
+                                <li>FT3 - свободный трийодтиронин</li>
+                                <li>T4 - общий тироксин</li>
+                                <li>FT4 - свободный тироксин</li>
+                                <li>Anti-TG - антитела к тиреоглобулину</li>
+                                <li>Anti - TPO - антитела к тиреоидной пероксидазе</li>
+                                <li>TG - тиреоглобулин</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-9">
+                                <p>Репродуктивная панель</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>FSH - фолликулостимулирующий гормон</li>
+                                <li>LH - лютеинизирующий гормон</li>
+                                <li>PRL - пролактин</li>
+                                <li>E2 - эстрадиол</li>
+                                <li>E3 free - свободный эстриол</li>
+                                <li>Progesteron - прогестерон</li>
+                                <li>Testosterone - тестостерон</li>
+                                <li>DHEA-S - дегидроэпиандростерон-сульфат</li>
+                                <li>HCG - хорионический гонадотропин</li>
+                                <li>AMH - антимюллеровый гормон</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-11">
+                                <p>Панель костной ткани</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>PTH-паратиреоидный гормон</li>
+                                <li>Calcitonin-кальцитонин</li>
+                                <li>Vit D tot.-25-ОН витамин D</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-8">
+                                <p>Инфекционные заболевания</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>HIV Combo - ВИЧ</li>
+                                <li>HBsAg - поверхностный антиген вирусного гепатита B</li>
+                                <li>Anti-НВs - антитела к HBs-антигену вируса гепатита B</li>
+                                <li>НВеАg - НВе антиген</li>
+                                <li>Anti-HBe - антитела к НВе антигену вируса гепатита B</li>
+                                <li>Anti-HBc - антитела к НВc антигену вируса гепатита B</li>
+                                <li>Aпtі-НСV - антитела к антигенам вируса гепатита C</li>
+                                <li>Anti-TP - антитела к Тreponema раІІіdum</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-10">
+                                <p>Опухолевые маркеры</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>CEA - раковый эмбриональный антиген</li>
+                                <li>CA125 - раковый антиген 125</li>
+                                <li>CA15-3 - раковый антиген 15-3</li>
+                                <li>CA19-9 - раковый антиген 19-9</li>
+                                <li>PSA total - простат-специфический антиген (общий)</li>
+                                <li>PSA free - простат-специфический антиген (свободный)</li>
+                                <li>NSE - нейрон-специфическая энолаза</li>
+                                <li>CYFRA 21-1 - растворимый фрагмент цитокератина 19</li>
+                                <li>CA 72-4 - раковый антиген 72-4</li>
+                                <li>PG I - пепсиноген I</li>
+                                <li>PG II - пепсиноген II</li>
+                                <li>SCCA - антиген плоскоклеточной карциномы</li>
+                                <li>HE4 - человеческий эпидидимальный белок 4</li>
+                                <li>Pro GRP - маркер мелкоклеточного бронхогенного рака</li>
+                                <li>CA50 - раковый антиген 50</li>
+                                <li>CA 242 - раковый антиген 242</li>
+                                <li>Ferritin – ферритин</li>
+                                <li>AFP - альфа-фетопротеин</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-12">
+                                <p>Сердечные маркеры</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>CK-MB-креатинкиназа МВ</li>
+                                <li>MYO-миоглобин</li>
+                                <li>Trop I-тропонин I</li>
+                                <li>PгоВNP -натрийуретический пептид типа В</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>Сахарный диабет</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>Insulin-инсулин</li>
+                                <li>C-peptide-C-пептида</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-14">
+                                <p>Функция надпочечников</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>Cortisol-кортизол</li>
+                                <li>AKTG-адренокортикотропный гормон</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-15">
+                                <p>Фиброз печени</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>LN-ламинин</li>
+                                <li>HA-гиалуроновая кислота</li>
+                                <li>PIIINP-аминоконцевой пропептид проколлагена III типа</li>
+                                <li>CIV-коллаген IV</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-16">
+                                
+                                <p>Анемия</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>Ferritin-ферритин</li>
+                                <li>Vit B12-витамина В12</li>
+                                <li>Vit B9-витамин В9 (Фолиевая кислота)</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-17">
+                                <p>Гипертензия</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>Renin-ренин</li>
+                                <li>Aldosteron-альдостерон</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-18">
+                                <p>Воспаление</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>PCT-прокальцитонин</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Расходные материалы</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="img">
+                            <img src="/images/img/consumables.jpg" alt="">
+                        </div>
+                        <div class="item-title">
+                            <ul class="big-list">
+                                <li>Reaction Cuvette</li>
+                                <li>Substrate solution</li>
+                                <li>Wash buffer</li>
+                                <li>CD80</li>
+                                <li>Sample Diluent  (auto/manual)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <div class="column column-4">
+                <div class="hed-card">
+                    <p>Сертификаты</p>
+                </div>
+                <div class="emptyTable">
+                    <div class="img document">
+                        <img src="/images/immunochemistry/immunochemistry9001.jpg" alt="">
+                    </div>
+                    <div class="doc">
+                        <p>
+                            ISO 9001
+                        </p>
+                    </div>
+                    <div class="img document">
+                        <img src="/images/immunochemistry/immunochemistry13485.jpg" alt="">
+                    </div>
+                    <div class="doc">
+                        <p>
+                            ISO 13485
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

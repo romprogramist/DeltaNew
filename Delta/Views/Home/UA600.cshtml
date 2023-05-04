@@ -1,0 +1,126 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Исследование Мочы"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Полуавтоматический анализатор мочи UA-600 (Mindray)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/mocciStudy/UA600-1-1.jpg" alt="">
+                <img class="box1 img-big" src="/images/mocciStudy/UA600-11-1.jpg" alt="">
+                <img class="box2 img-min" src="/images/mocciStudy/UA600-2-1.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/mocciStudy/UA600-3-1.jpg" alt="">
+                <img class="box4 img-min" src="/images/mocciStudy/UA600-4-1.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Высокая скорость, 600 тест-полосок в час</li>
+                    <li>Источник холодного света с высокой яркостью, длительный срок эксплуатации</li>
+                    <li>Автоматическое обнаружение тест-полосок и их тестирование</li>
+                    <li>Большой сенсорный ЖК-экран (UA600T)</li>
+                    <li>Автоматический сбор использованных тест-полосок и сигнал о необходимости опорожнения</li>
+                    <li>Стандартный интерфейс RS-232 для подключения к внешнему компьютеру</li>
+                    <li>Встроенный высокоскоростной термопринтер с низким уровнем шума</li>
+                    <li>Память: 2000 результатов</li>
+                    <li>Регулировка чувствительности каждого параметра через интерфейс</li>
+                    <li>Многофункциональное программное обеспечение с удобным интерфейсом</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Производительность: 600 тестов в час</li>
+                        <li>Стрипы: 11 параметров</li>
+                        <li>Тестируемые параметры: лейкоциты; нитриты; уробилиноген; белок; pH; кровь; удельный вес; кетоны; билирубин; глюкоза; аскорбиновая кислота</li>
+                        <li>Длина волны: 557 нм, 620 нм, 656 нм</li>
+                        <li>Принцип измерения: фотометрия коэффициента отражения</li>
+                        <li>Дисплей: LCD-монитор - 5.3”</li>
+                        <li>Память: 2000 результатов</li>
+                        <li>Принтер: встроенный термопринтер, ширина бумаги 57 мм, интерфейс для внешнего принтера</li>
+                        <li>Интерфейс: стандартный RS 232</li>
+                        <li>Температура: 10-40 °С</li>
+                        <li>Влажность: 15-80 %</li>
+                        <li>Требования к сети: 220 В ± 10 %, 50/60 Г</li>
+                        <li>Потребляемая мощность: 40 Вт</li>
+                        <li>Размеры: 210 мм (Д) х 330 мм (Ш) х 390 мм (В)</li>
+                        <li>Вес: 5,5 кг</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="list">
+                            <ul class="none-ul show">
+                                <li>Стрипы - U-11</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Расходные материалы</p>
+                    </div>
+                    <div class="emptyTable">
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>
+
+

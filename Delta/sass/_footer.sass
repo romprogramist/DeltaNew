@@ -1,0 +1,97 @@
+footer
+  background: $red-color
+  padding: 10px 10px 39px
+  color: $white-color
+  .wrapper
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    nav
+      margin: 16px 10px 0 10px
+      max-width: 195px
+      li
+        list-style-type: none
+        margin-top: 10px
+        a
+          color: $white-color
+          font-weight: 400
+          
+    .phone
+      max-width: 195px
+      display: flex
+      flex-direction: column
+      margin: 16px 10px 0 10px
+      div:nth-child(2)
+        margin-top: 12px
+        & > a
+          display: flex
+          align-items: center
+          color: $white-color
+          font-weight: 400
+          & > img
+            margin-right: 5px
+          .phone-black
+            display: none
+    .location
+      margin: 16px 10px 0 10px
+      max-width: 195px   
+      .header
+        & > p
+          font-weight: 400
+      div:nth-child(2)
+        display: flex
+        align-items: center  
+        margin-top: 7px
+        & > img
+          margin-right: 8px
+        .map-icon-black
+          display: none
+        & > div
+            font-weight: 400
+            line-height: 22px
+  .social-network
+    display: none
+@media screen and ( min-width: 954px )
+  footer
+    background: $white-color
+    padding: 10px 10px 39px    
+    color: #000000
+    .wrapper
+      max-width: 1287px
+      margin: 0 auto
+      nav
+        margin-top: 11px
+        li
+          margin-top: 10px
+          a
+            color: #000000
+      .phone
+        div:nth-child(2)
+          & > a
+            color: #000000
+            img:first-child
+              display: none
+            .phone-black
+              width: 30px
+              display: block
+      .location
+        div:last-child
+          img:first-child
+            display: none
+          .map-icon-black
+            display: block
+    .social-network
+      margin-top: 26px
+      position: absolute
+      left: 0
+      width: 100%
+      background: #F4F4F4
+      display: flex
+      padding: 9px 0      
+      justify-content: flex-end
+      .items
+        width: 166px
+        
+          
+            
+          

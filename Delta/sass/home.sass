@@ -1,0 +1,75 @@
+@import "variables"
+@import "advertising-cards"
+@import "one-product"
+@import "news"
+@import "slider-products"
+@import "about-us-home"
+@import "partners"
+@import "map"
+@import "contacts"
+
+
+
+.main
+  padding: 30px 20px
+  background: url(/images/img/bg-main.jpg) center center / cover no-repeat
+  border-radius: 16px
+  margin: 152px 15px 0 15px
+  position: relative
+  .wrapper
+    color: $white-color
+    //height: 250px
+    h1
+      font-weight: 700
+      font-size: 16px
+      line-height: 19px      
+    p
+      font-weight: 300
+      font-size: 12px
+      line-height: 18px
+      margin-top: 2px
+  &:after
+    content: ''
+    position: absolute
+    background: url(/images/icon/bg-main-decoration.svg)
+    width: 73px
+    right: 0
+    height: 61px
+    bottom: -6.3px
+  &:before
+    content: ''
+    position: absolute
+    background: url(/images/icon/bg-main-decoration-min.svg)
+    width: 61px
+    height: 37px
+    bottom: -0.3px
+    right: 60px
+    
+@media screen and ( min-width: 800px )
+  .main
+    padding: 150px 63px 300px
+    border-radius: 0
+    min-width: 100%
+    margin: 0 
+    &:after
+      display: none
+    &:before
+      display: none
+    .wrapper
+      height: 200px
+      h1
+        font-weight: 700
+        font-size: 46px
+        line-height: 56px
+      p
+        font-size: 29px
+        margin-top: 10px
+        
+@media screen and ( min-width: 1200px )
+  .main
+    padding: 150px 150px 300px
+
+
+
+
+        

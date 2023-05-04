@@ -1,0 +1,160 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "ИФА"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title header-title-red">
+            <h3>
+                Реагенти
+            </h3>
+        </div>
+        <div class="header-title header-mt">
+            <h3>
+                IBL
+            </h3>
+        </div>
+        <div class="wrapper wrapper-reag">
+            <div class="block">
+                <div class="hed img img-1">
+                    <p>Щитовидная панель</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">Anti-TG - антитела к тиреоглобулину</a>
+                    </li>
+                    <li>
+                        <a href="#">Anti - TPO - антитела к тиреоидной пероксидазе</a>
+                    </li>
+                </ul>
+            </div>  
+            <div class="block">
+                <div class="hed img img-5">
+                    <p>Панель костной ткани</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">PTH - паратиреоидный гормон</a>
+                    </li>
+                    <li>
+                        <a href="#">CTN - кальцитонин</a>
+                    </li>
+                    <li>
+                        <a href="#">Vit D - 25-ОН витамин D</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-7">
+                    <p>Сахарный диабет</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">Insulin - инсулин</a>
+                    </li>
+                    <li>
+                        <a href="#">Proinsulin - проинсулин</a>
+                    </li>
+                    <li>
+                        <a href="#">C-peptide - C-пептида</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-2">
+                    <p>Инфекционные заболевания</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">HSV 2 IgG</a>
+                    </li>
+                    <li>
+                        <a href="#">HSV 2 IgM</a>
+                    </li>
+                    <li>
+                        <a href="#">EBV IgM</a>
+                    </li>
+                    <li>
+                        <a href="#">EBV IgG</a>
+                    </li>
+                    <li>
+                        <a href="#">CMV IgM</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-8">
+                    <p>Функция надпочечников</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">ACTH - адренокортикотропный гормон</a>
+                    </li>
+                    <li>
+                        <a href="#">TriCat – адреналин/норадреналин/дофамин</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="block">
+                <div class="hed img img-14">
+                    <p>Витамины</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">Vit. B12 - Витамин В12</a>
+                    </li>
+                    <li>
+                        <a href="#">Vit. D - витамин Д</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-12">
+                    <p>Гипертензия</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">Aldosteron - альдостерон</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a class="store-drg-international" href="https://www.ibl-international.com/en_us/">Более&gt;&gt;</a> 
+    </div>
+    <div class="bg"></div>
+</section>

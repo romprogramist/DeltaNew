@@ -1,0 +1,112 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "ИФА"
+    });
+}
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Автоматическое промывочное устройство StatFax 2600 (Awareness)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/imgIfa/StatFax2600-1.jpg" alt="">
+                <img class="box1 img-big" src="/images/imgIfa/StatFax2600-11.jpg" alt="">
+                <img class="box2 img-min" src="/images/imgIfa/StatFax2600-2.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/imgIfa/StatFax2600-3.jpg" alt="">
+                <img class="box4 img-min" src="/images/imgIfa/StatFax2600-4.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Предназначен для промывки микропланшетов с плоским, сферическим и V-образным дном</li>
+                    <li>Не требует каких-либо подстроек, автоматически калибруется и определяет положение плашки</li>
+                    <li>Большая память, способная хранить до 50 программ промывки, 6 из которых уже запрограммированы изготовителем</li>
+                    <li>Программируемая, автоматическая сушка</li>
+                    <li>Установка автоматической регулярной промывки прибора</li>
+                    <li>Время однократного цикла промывки целого планшета 55 с</li>
+                    <li>Очень точный и бесшумный прибор, постоянное отображение вакуума и избыточного давления. Насос включается лишь в случаях очень интенсивной промывки;</li>
+                    <li>Поставляется в комплекте с тремя бутылями, защитной крышкой и 8-канальной насадкой.</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Вид аналитической системы: полуавтомат</li>
+                        <li>Вид планшет : 96 луночные планшеты</li>
+                        <li>Форма планшет: плоское, U- и V-образное дно</li>
+                        <li>Остаточный объем: < 3 мкл на лунку</li>
+                        <li>Воспроизводимость диспенсирования: коэффицент вариации < 3 % при 300 мкл</li>
+                        <li>Время однократного цикла промывки (полный планшет): 55 сек дозирования/аспирации с одиночной аспирацией</li>
+                        <li>Количество сохраняемых программ промывки: 50</li>
+                        <li>Дисплей: двухстрочный жидкокристаллический дисплей, буквенно-цифровой, 24 символа в строке</li>
+                        <li>Клавиатура: 16 мембранных клавиш, 4х4</li>
+                        <li>Энергонезависимая память: аккумулятор поддерживает оперативную память, содержит около 50 методик промывки</li>
+                        <li>Программы промывки: одиночная или двойная аспирация, выбор скорости и объема дозирования, смешивание, замачивание до 99 мин 99 сек</li>
+                        <li>Бутыли: бутыль для промывающего раствора и для отходов 2 л, бутыль для очищающего раствора 1 л, пластмассовая бутыль с датчиками объема</li>
+                        <li>Дополнительная модель 2600 Plus: с целью повышения универсальности и удобства установлена дополнительная 2-литровая емкость для промывки и дополнительный соленоид</li>
+                        <li>Размеры: 39×34×19</li>
+                        <li>Вес: 8,6 кг</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p></p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg"></div>
+</section>

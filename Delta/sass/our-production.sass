@@ -1,0 +1,72 @@
+@import "map"
+@import "contacts"
+@import "not-main"
+@import "at-the-right-edge"
+@import "one-product-description"
+@import "variables"
+@import "ifaPng"
+.not-main
+  background: url(/images/img/main-ourProd.jpg) center center / cover no-repeat
+
+.at-the-right-edge
+  position: relative
+  .items   
+    display: flex
+    flex-wrap: wrap
+    .item
+      max-width: 360px
+      margin: 36px auto 0 auto    
+      padding: 0 11.5px
+      img
+        width: 100%
+      & > div, a
+        margin-top: 25px
+        position: relative
+        display: flex
+        justify-content: flex-end
+        & > div
+          position: absolute
+          left: 0
+          top: 0
+          transform: rotate(-90deg) translateY(-295%) translateX(-50%)
+          max-width: 100%   
+          h3
+            font-weight: 700
+        p
+          font-weight: 500
+          font-size: 13px
+          line-height: 20px
+          text-align: justify
+          color: $darkGrey-color
+          width: 92%
+@media screen and ( min-width: 800px )
+  .at-the-right-edge
+    padding-bottom: 200px
+    .items
+      padding: 0 30px 60px
+      margin: -444px 0 0 12%
+      border-radius: 0
+      .item
+        margin-top: 80px !important
+        & > div
+          p
+            font-size: 16px
+            line-height: 24px
+          & > div
+            transform: rotate(-90deg) translateY(-315%) translateX(-50%)
+            h3
+              font-size: 24px
+    .bg
+      top: 444px
+      &:before
+        content: ''
+        position: absolute
+        background: url(/images/img/not-main-mini-logo.svg)
+        width:  170px
+        height: 100%
+        left: 13px
+
+@import "one-product-description"
+@import "products"
+@import "product-and-description"
+

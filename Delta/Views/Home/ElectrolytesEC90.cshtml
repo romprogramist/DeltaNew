@@ -1,0 +1,124 @@
+
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Электролиты"
+    });
+}
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Автоматический анализатор электролитов EC-90 (Erba)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/electrolytes/EC90-1.png" alt="">
+                <img class="box1 img-big" src="/images/electrolytes/EC90-11.png" alt="">
+                <img class="box2 img-min" src="/images/electrolytes/EC90-2.png" alt="">
+                <img class="box3 img-min img-c" src="/images/electrolytes/EC90-3.png" alt="">
+                <img class="box4 img-min" src="/images/electrolytes/EC90-4.png" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описаниe</h3>
+                <ul class="big-list">
+                    <li>Безэлектродный автоматический анализатор электролитов</li>
+                    <li>Используя передовую технологию, новый анализатор EC 90 поднимает лабораторные измерения электролитов на новую высоту</li>
+                    <li>Измерение электролитов осуществляется с помощью биосенсорных картриджей</li>
+                    <li>Все необходимые реагенты для анализа содержатся в одном картридже</li>
+                    <li>Картриджи сохраняют свою чувствительность и первоклассную производительность в течение 90 дней со дня их установки в анализатор</li>
+                    <li>Простой в управлении, надежный и легкий в обслуживании</li>
+                    <li>Удобное интерактивное меню и большой сенсорный экран делают прибор удобным в работе</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Производительность: 90 тестов/ч</li>
+                        <li>Измеряемые параметры: Na+, K+, Ca++, Cl-</li>
+                        <li>Тип образца: плазма, сыворотка, цельная крови, разведенная моча</li>
+                        <li>Память: 10 000 результатов</li>
+                        <li>Объем образца: 35 и ≥70 мкл</li>
+                        <li>Температура сыворотки: +15-35 °C</li>
+                        <li>Время анализа: 35 сек на анализ</li>
+                        <li>Печать: встроенный термопринтер</li>
+                        <li>Контроль качества: встроенная система контроля качества с построением карт Леви-Дженингса</li>
+                        <li>Калибровка: автоматическая по 1 и 2 точкам</li>
+                        <li>Точность: в пределах запуска < 1% CV</li>
+                        <li>Передача данных: поддержка двунаправленный ЛИС</li>
+                        <li>Размеры: 337 мм x 273 мм x 422 мм</li>
+                        <li>Вес: 8 кг</li>
+                    </ul>
+                </div> 
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="img">
+                            <img src="/images/electrolytes/electrolytes.jpg" alt="">
+                        </div>
+                        <ul class="big-list">
+                            <li>XS - картридж (250 определений)</li>
+                            <li>S - картридж (500 определений)</li>
+                            <li>M - картридж (1000 определений)</li>
+                            <li>L - картридж (3000 определений)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p></p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

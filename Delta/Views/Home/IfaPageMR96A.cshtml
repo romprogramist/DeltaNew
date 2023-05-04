@@ -1,0 +1,143 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "ИФА"
+    });
+}
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Иммуноферментный анализатор Mindray MR-96A
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/imgIfa/MR-96A1.jpg" alt="">
+                <img class="box1 img-big" src="/images/imgIfa/MR-96A11.jpg" alt="">
+                <img class="box2 img-min" src="/images/imgIfa/MR-96A2.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/imgIfa/MR-96A3.jpg" alt="">
+                <img class="box4 img-min" src="/images/imgIfa/MR-96A4.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Автоматическая обработка данных.</li>
+                    <li>Открытая система работы с реагентами.</li>
+                    <li>Экономичность эксплуатации благодаря автоматическому отключению лампы.</li>
+                    <li>Спектральный диапазон волн 400-700 нм.</li>
+                    <li>Бихроматическое считывание.</li>
+                    <li>Программирование до 100 тестов.</li>
+                    <li>Возможность длительного хранения данных (до 20000 тестов)</li>
+                    <li>Большой ЖК интерактивный дисплей</li>
+                    <li>Регулировка интенсивности и времени встряхивания</li>
+                    <li>Встроенная программа Контроля Качества(КК)</li>
+                    <li>Создание репликаты образца</li>
+                    <li>Встроенный термопринтер</li>
+                    <li>Возможность подсоединения внешнего принтера чрез порт USB</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Вид аналитической системы: Полуавтомат</li>
+                        <li>Тип системы: Открытая;</li>
+                        <li>Источник света: Галогеновая лампа с автоматическим управлением;</li>
+                        <li>Оптическая система: 8-канальная волоконная оптика; бихроматическое считывание;</li>
+                        <li>Фильтры: Интерференционные на 8 позиций 405,450,492,630нм + 4 свободные позиции;</li>
+                        <li>Фотоприемник: Кремниевый фотоэлемент;</li>
+                        <li>Интерфейс ввода данных: Сенсорный экран/ стилус /клавиатура;</li>
+                        <li>Дисплей: ЖК, диагональ 7.8;</li>
+                        <li>Разрешение: 640х480;</li>
+                        <li>Тип планшета: Планшеты на 96/48 лунок;</li>
+                        <li>Спектральный диапазон: 400 - 700нм;</li>
+                        <li>Диапазон измерений: 0.000 - 2.500 A;</li>
+                        <li>Доступная зона регистрации сигнала: 0.000 - 3.500 A;</li>
+                        <li>Точность: 0.001 А;</li>
+                        <li>Производительность в пошаговом режиме: 12сек/планшет для одиночной волны; <br> 26сек/планшет для двойной волны;</li>
+                        <li>Производительность в непрерывном режиме: 5сек/планшет для одиночной волны; <br> 12 сек/планшет для двойной волны;</li>
+                        <li>Режим размещения планшета: Горизонтальное/Вертикальное;</li>
+                        <li>Шейкер: встроенный;</li>
+                        <li>Интенсивность шейкирования: Регулируется - высокая, средняя и низкая скорость;</li>
+                        <li>Время встряхивания: Регулируется - от 5 до 90 сек;</li>
+                        <li>Повторы образцов: Одиночный/двойной образец;</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="list">
+                            <a href="/home/IfaPng" class="hed img-1">
+                                <p>DRG</p>
+                            </a>
+                            <a href="/home/IfaMonoBindR" class="hed img-2">
+                                <p>MONIBIND</p>
+                            </a>
+                            <a href="/home/IfaIBL" class="hed img-3">
+                                <p>IBL</p>
+                            </a>
+                            <a href="/home/IfaCanAg" class="hed img-4">
+                                <p>CANAG</p>
+                            </a>
+                            <a href="/home/IfaCTK" class="hed img-5">
+                                <p>CTK</p>
+                            </a>
+                            <a href="#" class="hed img-6">
+                                <p>ЭКОЛАБ</p>
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p></p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>

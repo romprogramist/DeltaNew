@@ -1,0 +1,105 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "ИФА"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title header-title-red">
+            <h3>
+                Реагенти
+            </h3>
+        </div>
+        <div class="header-title header-mt">
+            <h3>
+                CanAg
+            </h3>
+        </div>
+        <div class="wrapper wrapper-reag">
+            <div class="block">
+                <div class="hed img img-4">
+                    <p>Опухолевые маркеры</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">CA242 - раковый антиген 242</a>
+                    </li>
+                    <li>
+                        <a href="#">CA19-9 - раковый антиген 19-9</a>
+                    </li>
+                    <li>
+                        <a href="#">CA15-3 - раковый антиген 15-3</a>
+                    </li>
+                    <li>
+                        <a href="#">Cyfra 21-1 - растворимый фрагмент цитокератина 19</a>
+                    </li>
+                    <li>
+                        <a href="#">ProGRP - маркер мелкоклеточного бронхогенного рака</a>
+                    </li>
+                    <li>
+                        <a href="#">PSA - простат-специфический антиген (общий)</a>
+                    </li>
+                    <li>
+                        <a href="#">FreePSA - простат-специфический антиген (свободный)</a>
+                    </li>
+                    <li>
+                        <a href="#">CA125 - раковый антиген 125</a>
+                    </li>
+                    <li>
+                        <a href="#">CEA - раковый эмбриональный антиген</a>
+                    </li>
+                    <li>
+                        <a href="#">HE4 - человеческий эпидидимальный белок 4</a>
+                    </li>
+                    <li>
+                        <a href="#">NSE - нейрон-специфическая энолаза</a>
+                    </li>
+                    <li>
+                        <a href="#">AFP - альфа-фетопротеин</a>
+                    </li>
+                    <li>
+                        <a href="#">S100 - онкомаркер меланомы</a>
+                    </li>
+                    <li>
+                        <a href="#">SCCA - антиген плоскоклеточной карциномы</a>
+                    </li>
+                </ul>
+            </div>  
+        </div>
+        <a class="store-drg-international" href="https://www.fujirebio.com/en/products-solutions">Более&gt;&gt;</a>
+    </div>
+    <div class="bg"></div>
+</section>

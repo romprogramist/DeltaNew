@@ -1,0 +1,146 @@
+@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/hematology.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Исследование Мочи"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title">
+            <h3>
+                Автоматическая станция анализа мочи Laura XL (Erba)
+            </h3>
+        </div>
+        <div class="wrapper-d">
+            <div class="item-images">
+                <img class="box1 img-min1" src="/images/mocciStudy/LauraXL-1-1.jpg" alt="">
+                <img class="box1 img-big" src="/images/mocciStudy/LauraXL-11-1.jpg" alt="">
+                <img class="box2 img-min" src="/images/mocciStudy/LauraXL-2-1.jpg" alt="">
+                <img class="box3 img-min img-c" src="/images/mocciStudy/LauraXL-3-1.jpg" alt="">
+                <img class="box4 img-min" src="/images/mocciStudy/LauraXL-4-1.jpg" alt="">
+            </div>
+            <div class="item-title">
+                <h3>Описание</h3>
+                <ul class="big-list">
+                    <li>Анализатор, обладающий большими возможностями, требуя минимум места</li>
+                    <li>Инновационный гибрид для анализа мочи</li>
+                    <li>Гибридная система позволяет одновременно исследовать, как показатели осадка, так и химические показатели образца мочи</li>
+                    <li>Емкость памяти – 30.000 результатов</li>
+                    <li>Автоматическое определение цвета и мутности образца</li>
+                    <li>Обработка образцов в автоматическом режиме благодаря автоподаче, гомогенизации и дозированию</li>
+                    <li>Точное количественное нанесение образца на зоны тест-полосок встроенным дозатором</li>
+                    <li>Автоматическая коррекция правильности расположения тест-полосок</li>
+                    <li>Принцип измерения форменных элементов основан на автоматической микроскопии</li>
+                    <li>Для идентификации элементов мочи используется модель нейронной сети</li>
+                    <li>Запатентованная технология концентрирования форменных элементов мочи на дне кюветы без центрифугирования</li>
+                    <li>Максимально быстрое и простое обслуживание</li>
+                    <li>Встроенный рефрактометр</li>
+                    <li>Возможность распечатки результатов на встроенном термопринтере</li>
+                    <li>Русифицированное программное обеспечение с широким выбором опций</li>
+                    <li>Возможность идентификации анализируемых образцов с помощью встроенного сканера штрих-кода</li>
+                    <li>Возможность подключения к ЛИС (RS 232) и внешней клавиатуры (USB)</li>
+                    <li>Русифицированное программное обеспечение с широким выбором опций</li>
+                    <li>Нет необходимости в использовании расходных материалов и реагентов.</li>
+                </ul>
+            </div>
+            <div class="item-table">
+                <div class="column column-1">
+                    <div class="hed-card">
+                        <p>Технческие характеристики</p>
+                    </div>
+                    <ul class="emptyTable big-list">
+                        <li>Вид аналитической системы: автоматический</li>
+                        <li>Производительность: биохимия - 160 т/ч, форменные элементы - 125 т/ч, гибридный режим (форменные элементы/биохимия) – 125 т/ч</li>
+                        <li>Загрузка образцов: 120 (12 штативов по 10 образцов)</li>
+                        <li>Объем образца: 2 мл</li>
+                        <li>Принцип метода: отражательная фотометрия</li>
+                        <li>Определяемые биохимические параметры: удельный вес/относительная плотность, лейкоциты, нитриты, pH, белок, глюкоза, кетоны, уробилиноген, билирубин, кровь</li>
+                        <li>Определяемые параметры форменных элементов: лейкоциты (WBC), лейкоцитарные сгустки (WBCс), эритроциты (RBC), клетки плоского эпителия (SQEP), клетки переходного эпителия (NSE), оксалат кальция (CaOX), кристаллы мочевой кислоты (UA), кристаллы трехзамещенного фосфата (TRIP), бактерии кокки (BACC), бактерии палочки (BACR), дрожжевые клетки (YST), цилиндры (CAST), сперматозоиды (SPRM), слизь (MUC), неклассифицируемые элементы (UNCC); возможность определения дополнительных категорий вручную - сгустки эритроцитов (RBCc), гранулированные цилиндры (GRAN), клеточные цилиндры (CELL), восковые цилиндры (WAXY), цилиндры RBC (RBCT), цилиндры WBC (WBCT), цилиндры почечного эпителия (RECT), жировые цилиндры (FACT), фосфат кальция (CAPH), кристаллы лейцина (LEU), тирозин (TYR), аморфные вещества (AMO), холестерин (CHOL), жир (FAT), трихомонады (TRICH)</li>
+                        <li>Емкость податчика для полосок: 200 тест-полосок</li>
+                        <li>Емкость контейнера для использованных полосок: 300 тест-полосок</li>
+                        <li>Интерфейс: RS-232 USB</li>
+                        <li>Дисплей: сенсорный жидкокристаллический 23"</li>
+                        <li>Память: 500 000 результатов</li>
+                        <li>Принтер (опция): термопринтер встроенный внешний</li>
+                        <li>Параметры электропитания: 90-230 В / 50-60 Гц</li>
+                        <li>Температура: оптимальный диапазон 20-25 °C</li>
+                        <li>Относительная влажность: 20-90%.</li>
+                        <li>Габариты: 94,3 см x 56,3 см x 67,5 см</li>
+                        <li>Вес анализатора: 70 кг</li>
+                    </ul>
+                </div>
+                <div class="column column-2">
+                    <div class="hed-card">
+                        <p>Реагенты</p>
+                    </div>
+                    <div class="emptyTable">
+                        <div class="list">
+                            <ul class="none-ul show">
+                                <li>ДекаФАН Лаура</li>
+                                <li>Промывочный раствор (400мл)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="column column-3">
+                    <div class="hed-card">
+                        <p>Расходные материалы</p>
+                    </div>
+                    <div class="emptyTable">
+                        
+                    </div>
+                </div>
+                <div class="column column-4">
+                    <div class="hed-card">
+                        <p>Сертификаты</p>
+                    </div>
+                    <div class="emptyTable">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="bg"></div>
+</section>
+
+
