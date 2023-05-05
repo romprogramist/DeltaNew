@@ -1,0 +1,122 @@
+﻿@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+        <script src="~/js/open-list.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Гемостаз"
+    });
+}
+
+
+<section id="at-the-right-edge" class="at-the-right-edge">
+    <div class="items">
+        <div class="header-title header-title-red">
+            <h3>
+                Реагенты
+            </h3>
+        </div>
+        <div class="header-title header-mt">
+            <h3>
+                Mindray
+            </h3>
+        </div>
+        <div class="wrapper wrapper-reag">
+            <div class="block">
+                <div class="hed img img-7">
+                    <p>Клоттинговые тесты</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">
+                            PT <br>
+                            10 x 2 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            10 x 4 mL <br>
+                            APTT
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            10 x 2 mL <br>
+                            10 x 4 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            CaCl2 <br>
+                            10 x 4 mL
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Fibrinogen <br>
+                            6 x 2 ml ; 1 x 1ml cal; 2 x 75ml IBS buffer
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            Fibrinogen - Erba Thrombin Reagent <br>
+                            6 x 4 ml; 1 x 1ml cal; 2 x 75ml IBS buffer
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Thrombin Time <br>
+                            10 x 2 mL <br>
+                            10 x 5 mL
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="block">
+                <div class="hed img img-7">
+                    <p>Иммунологические тесты</p>
+                </div>
+                <ul class="list-reag">
+                    <li>
+                        <a href="#">
+                            DDimer <br>
+                            2 x 4 ml Latex
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            DDimer <br>
+                            6 x 4 ml Latex
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a class="store-drg-international" href="https://store.drg-international.com/">Более>></a>
+    </div>
+    <div class="bg"></div>
+</section>

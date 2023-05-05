@@ -5,7 +5,6 @@
     ViewData["Title"] = "Home Page";
 }
 
-
 @section Styles {
     <environment include="Development">
         <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
@@ -18,14 +17,10 @@
 @section Scripts {
     <environment include="Development">
         <script src="~/js/home.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
-    </environment>
-    <environment include="Development">
         <script src="~/js/hematology.js" asp-append-version="true"></script>
     </environment>
     <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
         <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
     </environment>
 }
@@ -94,12 +89,14 @@
                         <div class="img">
                             <img src="/images/electrolytes/electrolytes.jpg" alt="">
                         </div>
-                        <ul class="big-list">
-                            <li>XS - картридж (250 определений)</li>
-                            <li>S - картридж (500 определений)</li>
-                            <li>M - картридж (1000 определений)</li>
-                            <li>L - картридж (3000 определений)</li>
-                        </ul>
+                        <div class="list">
+                            <ul class="none-ul show">
+                                <li>XS - картридж (250 определений)</li>
+                                <li>S - картридж (500 определений)</li>
+                                <li>M - картридж (1000 определений)</li>
+                                <li>L - картридж (3000 определений)</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="column column-3">

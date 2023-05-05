@@ -353,8 +353,25 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult Solea100()
+    {
+        return View();
+    }
     
+    public IActionResult HemostasisMindray()
+    {
+        return View();
+    }
     
+    public IActionResult HemostasisBioLabo()
+    {
+        return View();
+    }
+    
+    public IActionResult HemostasisDelta()
+    {
+        return View();
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
