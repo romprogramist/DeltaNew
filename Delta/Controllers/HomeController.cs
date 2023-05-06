@@ -372,6 +372,23 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult URS12()
+    {
+        return View();
+    }
+    public IActionResult URS10T()
+    {
+        return View();
+    }
+    public IActionResult URS2K()
+    {
+        return View();
+    }
+    public IActionResult DeltaReg()
+    {
+        return View();
+    }
+    
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

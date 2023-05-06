@@ -17,26 +17,14 @@
 @section Scripts {
     <environment include="Development">
         <script src="~/js/home.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
-    </environment>
-    <environment include="Development">
         <script src="~/js/hematology.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
-    </environment>
-    <environment include="Development">
         <script src="~/js/open-list.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
-    </environment>
-    <environment include="Development">
         <script src="~/js/open-doc.js" asp-append-version="true"></script>
     </environment>
     <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
+        <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
         <script src="~/js/open-doc-bundle.js" asp-append-version="true"></script>
     </environment>
     
@@ -130,7 +118,7 @@
                             <div class="hed img-13">
                                 <p>Биохимия</p>
                             </div>
-                            <ul>
+                            <ul class="none-ul">
                                 <li>Uric acid - мочевая кислота</li>
                                 <li>ALB-альбумин </li>
                                 <li>Bil. direct-прямой билирубин</li>
@@ -163,7 +151,7 @@
                             <div class="hed img-13">
                                 <p>Турбидиметрия</p>
                             </div>
-                            <ul>
+                            <ul class="none-ul">
                                 <li>АSО - анти-стрептолизин О</li>
                                 <li>CRP - C-реактивный белок</li>
                                 <li>CRP hs - С-реактивный белок высокочувствительный</li>
@@ -185,7 +173,17 @@
                         <p>Расходные материалы</p>
                     </div>
                     <div class="emptyTable">
-                                        
+                        <div class="img">
+                            <img src="/images/biochemistry/biochemistry-consumables.jpg" alt="">
+                        </div>
+                        <div class="list">
+                            <ul class="none-ul show">
+                                <li>Concentrated system liquid – 1000 mL</li>
+                                <li>Concentrated washing solition – 100 mL</li>
+                                <li>Reaction rotor – 10 units</li>
+                                <li>Sample wells – 1000 units</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="column column-4">

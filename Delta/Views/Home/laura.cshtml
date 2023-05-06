@@ -17,20 +17,12 @@
 @section Scripts {
     <environment include="Development">
         <script src="~/js/home.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
-    </environment>
-    <environment include="Development">
         <script src="~/js/hematology.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
-    </environment>
-    <environment include="Development">
         <script src="~/js/open-list.js" asp-append-version="true"></script>
     </environment>
     <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+        <script src="~/js/hematology-bundle.js" asp-append-version="true"></script>
         <script src="~/js/open-list-bundle.js" asp-append-version="true"></script>
     </environment>
 }
@@ -108,12 +100,63 @@
                     </div>
                     <div class="emptyTable">
                         <div class="list">
-                            <ul class="none-ul show">
-                                <li>ДекаФАН  Лаура</li>
-                                <li>ГептаФАН  Лаура</li>
-                                <li>ПентаФАН  Лаура</li>
-                                <li>ДиаФАН  Лаура</li>
-                                <li>МикроАльбуФАН Лаура</li>
+                            <div class="hed img-13">
+                                <p>ДекаФАН</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>Нитриты</li>
+                                <li>рН</li>
+                                <li>Белок</li>
+                                <li>Глюкоза</li>
+                                <li>Уробилиноген</li>
+                                <li>Билирубин</li>
+                                <li>Кетоны</li>
+                                <li>Кровь</li>
+                                <li>Удельный вес</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>ГептаФАН</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>рН</li>
+                                <li>Белок</li>
+                                <li>Глюкоза</li>
+                                <li>Уробилиноген</li>
+                                <li>Билирубин</li>
+                                <li>Кетоны</li>
+                                <li>Кровь</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>ПентаФАН</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>рН</li>
+                                <li>Белок</li>
+                                <li>Глюкоза</li>
+                                <li>Кетоны</li>
+                                <li>Кровь</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>ДиаФАН</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>Глюкоза</li>
+                                <li>Кетоны</li>
+                            </ul>
+                        </div>
+                        <div class="list">
+                            <div class="hed img-13">
+                                <p>МикроальбуФАН</p>
+                            </div>
+                            <ul class="none-ul">
+                                <li>Mикроальбумин</li>
+                                <li>Kреатинин</li>
                             </ul>
                         </div>
                     </div>

@@ -52,7 +52,7 @@
     .img-24
       background: linear-gradient(90.03deg, #910165 54.81%, rgba(187, 15, 27, 0) 101.7%)
       
-    .list-reag
+    .list-reag, .list-reag-not-button
       margin-top: 20px
       padding: 0 8px
       max-width: 500px
@@ -82,6 +82,12 @@
           position: absolute
           left: 0
           bottom: -10px
+    .list-reag-not-button
+      display: block
+      li
+        & > a
+          &:before
+            display: none
 .store-drg-international
   font-size: 18px
   line-height: 229.5%
@@ -114,7 +120,7 @@
             & > p
               font-size: 22px
               line-height: 120.5%
-          .list-reag
+          .list-reag, .list-reag-not-button
             margin-top: 20px
             padding: 0 8px
             max-width: 500px

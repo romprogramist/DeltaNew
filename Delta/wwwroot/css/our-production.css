@@ -304,25 +304,25 @@
 .wrapper-reag .block .img-24 {
   background: linear-gradient(90.03deg, #910165 54.81%, rgba(187, 15, 27, 0) 101.7%);
 }
-.wrapper-reag .block .list-reag {
+.wrapper-reag .block .list-reag, .wrapper-reag .block .list-reag-not-button {
   margin-top: 20px;
   padding: 0 8px;
   max-width: 500px;
   width: 100%;
   display: none;
 }
-.wrapper-reag .block .list-reag li {
+.wrapper-reag .block .list-reag li, .wrapper-reag .block .list-reag-not-button li {
   position: relative;
   margin-top: 20px;
   padding-right: 22px;
 }
-.wrapper-reag .block .list-reag li > a {
+.wrapper-reag .block .list-reag li > a, .wrapper-reag .block .list-reag-not-button li > a {
   font-weight: 500;
   font-size: 10px;
   line-height: 14px;
   color: black;
 }
-.wrapper-reag .block .list-reag li > a:before {
+.wrapper-reag .block .list-reag li > a:before, .wrapper-reag .block .list-reag-not-button li > a:before {
   position: absolute;
   content: "";
   background: url(/images/icon/savePdf.svg);
@@ -331,13 +331,19 @@
   width: 19px;
   height: 23px;
 }
-.wrapper-reag .block .list-reag li:after {
+.wrapper-reag .block .list-reag li:after, .wrapper-reag .block .list-reag-not-button li:after {
   content: "";
   width: 100%;
   border: 0.5px solid #E1E1E1;
   position: absolute;
   left: 0;
   bottom: -10px;
+}
+.wrapper-reag .block .list-reag-not-button {
+  display: block;
+}
+.wrapper-reag .block .list-reag-not-button li > a:before {
+  display: none;
 }
 
 .store-drg-international {
@@ -374,13 +380,13 @@
     font-size: 22px;
     line-height: 120.5%;
   }
-  .at-the-right-edge .items .wrapper-reag .block .list-reag {
+  .at-the-right-edge .items .wrapper-reag .block .list-reag, .at-the-right-edge .items .wrapper-reag .block .list-reag-not-button {
     margin-top: 20px;
     padding: 0 8px;
     max-width: 500px;
     width: 100%;
   }
-  .at-the-right-edge .items .wrapper-reag .block .list-reag li > a {
+  .at-the-right-edge .items .wrapper-reag .block .list-reag li > a, .at-the-right-edge .items .wrapper-reag .block .list-reag-not-button li > a {
     font-size: 20px;
     line-height: 30px;
     font-weight: 400;
