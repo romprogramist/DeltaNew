@@ -2,7 +2,21 @@
 	ViewData["Title"] = "Home Page";
 }
 
+
+@* @section scripts *@
+@* { *@
+@*     <script src="~/js/swiper-bundle.min.js"></script> *@
+@*     $1$ @Scripts.Render("~/bundles/servicesMotoCategoryMainPageScripts") #1# *@
+@* } *@
+@* *@
+@* @section styles *@
+@* { *@
+@*     <link rel="stylesheet" href="~/css/swiper-bundle.min.css"> *@
+@*     $1$ @Styles.Render("~/Content/servicesMotoCategoryMainPageCss") #1# *@
+@* } *@
+
 @section Styles {
+	<link rel="stylesheet" href="~/css/swiper-bundle.min.css">
 	<environment include="Development">
 		<link rel="stylesheet" href="~/css/home.css" asp-append-version="true">
 	</environment>
@@ -12,6 +26,7 @@
 }
 
 @section Scripts {
+	<script src="~/js/swiper-bundle.min.js"></script>
 	<environment include="Development">
     	<script src="~/js/home.js" asp-append-version="true"></script>
     </environment>
@@ -30,10 +45,159 @@
 		</p>
 	</div>
 </section>
-
-
-
-
+<section class="with-one-item">
+	<div class="wrapper">
+		<div class="item-img">
+			<img src="/images/img/one-item-new-main.png" alt="">
+		</div>
+		<div class="item-title">
+			<h2>BC-720</h2>
+			<ul class="top-ul">
+				<li>Tехнология SF Cube</li>
+                <li>Измерение СОЭ</li>
+                <li>NRBC/RET*, PLT-H/PLT-O*/IPF</li>
+                <li>Автоматическая калибровка</li>
+                <li>Хранение до 130 000 результатов</li>
+			</ul>
+			<div>
+				<p>Производительность:</p>
+				<ul class="bot-ul">
+					<li>1 CD - 80 тестов/ч </li>
+					<li>2 CDR - 45 тестов/ч </li>
+					<li>3 CD+ESR - 40 тестов/ч </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="news">
+	<div class="wrapper">
+		<div class="item-red">
+			<p>
+				НОВОСТИ
+			</p>
+		</div>
+		<div class="item-bg">
+			<h3>
+				ВСТРЕЧА ОФИЦИАЛЬНЫХ ДИСТРИБЮТОРОВ MINDRAY
+			</h3>
+			<p>
+				Представители ООО «Дельта» присутствовали на ежегодной встрече официальных дистрибьюторов Mindray (страны СНГ), состоявшейся в г. Алматы 26 февраля 2023 года.
+			</p>
+		</div>
+	</div>
+</section>
+<section class="swiper-section">
+	<div class="swiper mySwiper">
+		<h2>
+			Продукты
+		</h2>
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<img src="/images/img/swiper-BC-700BC-720.png" alt="">
+				<div class="text">
+					<h3>BC-700 BC-720</h3>
+					<p>
+						Дифференцировка лейкоцитов: 5 субпопуляций
+					</p>
+					<a href="#">
+						Показать
+					</a>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<img src="/images/img/swiper-BC-760BC-780.png" alt="">
+				<div class="text">
+					<h3>BC-760 BC-780</h3>
+					<p>
+						Дифференцировка лейкоцитов: 5 субпопуляций
+					</p>
+					<a href="#">
+						Показать
+					</a>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<img src="/images/img/swiper-BC-5150.png" alt="">
+				<div class="text">
+					<h3>BC-5150</h3>
+					<p>
+						Дифференцировка лейкоцитов: 5 субпопуляций
+					</p>
+					<a href="#">
+						Показать
+					</a>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<img src="/images/img/swiper-Mythic22.png" alt="">
+				<div class="text">
+					<h3>Mythic 22</h3>
+					<p>
+						Дифференцировка лейкоцитов: 5 субпопуляций
+					</p>
+					<a href="#">
+						Показать
+					</a>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<img src="/images/img/swiper-ElyteH580.png" alt="">
+				<div class="text">
+					<h3>Elyte H580</h3>
+					<p>
+						Дифференцировка лейкоцитов: 5 субпопуляций
+					</p>
+					<a href="#">
+						Показать
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="swiper-pagination"></div>
+		<div class="swiper-button-next"></div>
+		<div class="swiper-button-prev"></div>
+	</div>
+</section>
+<section class="about-us-new">
+	<div class="wrapper">
+		<h2>
+			О нас
+		</h2>
+		<div>
+			<p>
+				Основная деятельность компании является разработка и производство диагностических тест-систем для клинической химии и биохимии. При этом Дельта импортирует и поставляет реагенты, лабораторные материалы и оборудование для диагностических, исследовательских и экологических целей более чем из 20 европейских, американских и других компаний. Основной целью компании является удовлетворение потребностей клиентов путем предоставления надежного оборудования и тест-наборов, в основном адаптированных к условиям и оборудованию различных диагностических лабораторий.
+			</p>
+		</div>
+	</div>
+</section>
+<section class="swiper-section partners-new">
+	<div class="swiper mySwiper">
+    	<h2>
+    		Партнеры
+    	</h2>
+    	<div class="swiper-wrapper">
+    		<div class="swiper-slide">
+    			<img src="/images/img/partners-new-item-1.png" alt="">
+            </div>
+    		<div class="swiper-slide">
+    			<img src="/images/img/partners-new-item-2.png" alt="">
+            </div>
+    		<div class="swiper-slide">
+    			<img src="/images/img/partners-new-item-3.png" alt="">
+    		</div>
+    		<div class="swiper-slide">
+    			<img src="/images/img/partners-new-item-4.png" alt="">
+    		</div>
+    		<div class="swiper-slide">
+    			<img src="/images/img/partners-new-item-5.png" alt="">
+    		</div>
+    	</div>
+    	<div class="swiper-pagination"></div>
+    	<div class="swiper-button-next"></div>
+    	<div class="swiper-button-prev"></div>
+    </div>
+</section>
 
 
 

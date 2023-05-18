@@ -47,6 +47,7 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/js/modal.js",
         "/js/helpers.js",
         "/js/form-request.js",
+        "/js/swiper-bundle.min.js",  //FIX
         "/js/layout.js");
     pipeline.AddJavaScriptBundle("/js/home-bundle.js",
         "/js/home.js");

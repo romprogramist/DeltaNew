@@ -24,17 +24,236 @@
       font-weight: 400
       margin-top: 3px
       font-size: calc(6px + 18 * (100vw / 1440))
+
+.with-one-item
+  .wrapper
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    .item-img
+      position: relative
+      max-width: 327px
+      margin: 0 auto
+      img
+        padding: 0 20px
+        display: flex
+        width: 100%
+      &:after
+        content: ''
+        position: absolute
+        background: #D31C24
+        height: 5px
+        width: 100%
+        right: 0
+        bottom: 0
+    .item-title
+      max-width: 335px
+      margin: 0 auto
+      padding: 23px 53px 32px 26px
+      h2
+        font-size: 20px
+        line-height: 23px
+        font-weight: 700
+      .top-ul
+        margin-top: 8px
+        margin-left: 18px
+        & > li
+          font-weight: 600
+          font-size: 16px
+          line-height: 19px
+          margin-top: 15px
+          list-style: disc
+      & > div
+        margin-top: 20px
+        & > p
+          font-weight: 600
+          font-size: 20px
+          line-height: 23px
+        .bot-ul
+          & > li
+            font-weight: 600
+            font-size: 16px
+            line-height: 19px
+            position: relative      
+            margin-top: 12px
+            &:before
+              content: ''
+              position: absolute
+              width: 100%
+              height: 1px
+              background: #C72930
+              bottom: -5px
+          li:last-child
+            &:before
+              display: none
+          & > li::first-letter
+            color: #C72930
+              
+.news
+  .wrapper
+    display: flex
+    .item-red
+      background: #ED090A
+      width: 16%
+      display: flex
+      justify-content: center
+      align-items: center
+      & > p
+        transform: rotate(-90deg)
+        display: inline-block
+        font-size: calc(12px + 27 * (100vw / 1940))        
+        font-weight: 600
+        color: #fff
+    .item-bg
+      padding: 4% 7%
+      background: url("/images/img/news-new-main.jpg") center center / cover no-repeat
+      color: #fff      
+      & > h3
+        line-height: 130%
+        font-size: calc(10px + 27 * (100vw / 1940))
+        font-weight: 700
+      & > p
+        line-height: 120%
+        font-size: calc(4px + 27 * (100vw / 1940))
+        margin-top: 3%
+        font-weight: 400
+
+.swiper-section
+  position: relative
+  padding: 35px 0 30px
+  .swiper-wrapper
+    margin-top: 20px
+  .swiper 
+    max-width: 1280px
+    height: 100%
+    padding: 0 10px 30px   
+    h2
+      font-size: calc(16px + 37 * (100vw / 1940))
+      font-weight: 600
+    .swiper-slide 
+      text-align: center
+      font-size: 18px
+      margin: 5px 0
+      background: #FFFFFF
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15)
+      padding: 15px 0 20px
+      .text
+        margin-top: 20px
+        padding: 0 24px
+        h3
+          font-weight: 600
+          font-size: 20px
+          line-height: 107%
+        & > p
+          font-weight: 400
+          font-size: 16px
+          line-height: 19px
+          margin-top: 15px
+          color: #535353
+        & > a
+          display: block
+          margin-top: 30px
+          color: #D30536
+          font-weight: 400
+          font-size: 16px
     
+    .swiper-slide img 
+      display: block
+      width: 100%
+      height: 100%
+      object-fit: cover
+      
+    .swiper-pagination
+      bottom: -2px
+  
+.about-us-new
+  background: url("/images/img/about-us-new-main.jpg") center center / cover no-repeat
+  padding: 3% 12% 4%
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 9px
+    background: #C72930
+  .wrapper
+    h2
+      font-weight: 700
+      font-size: calc(16px + 37 * (100vw / 1940))
+      line-height: 19px
+      text-align: justify
+      color: #fff
+    & > div
+      & > p
+        color: #fff
+        margin-top: 2%
+        font-size: calc(8px + 24 * (100vw / 1940))
+        line-height: 125%
+  
+
 @media screen and ( min-width: 625px )
   .main
     & > .wrapper
       h1
         font-size: calc(13px + 27 * (100vw / 1440))
-      
+@media screen and ( min-width: 662px )
+  .with-one-item
+    .wrapper
+      max-width: 720px
+      width: 100%
+      padding: 5% 3%
+      margin: 0 auto
+      .item-title
+        padding: 0
+        margin: 0
+      .item-img
+        margin: 0
+        img
+          padding: 0
 @media screen and ( min-width: 800px )
   .main
     margin-top: 56px
-
+@media screen and ( min-width: 1100px )
+  .with-one-item
+    background: linear-gradient(to left, #F8F8F8 50%, transparent 50%)
+    .wrapper
+      max-width: 1130px
+      .item-img
+        max-width: 414px
+      .item-title
+        max-width: 480px
+        h2
+          font-size: 45px
+          line-height: 53px
+        .top-ul
+          & > li
+            font-size: 27px
+            line-height: 32px
+        & > div
+          & > p
+            font-size: 22px
+            line-height: 26px
+          .bot-ul
+            & > li
+              font-size: 29px
+              line-height: 34px
+@media screen and ( min-width: 1400px )
+  .news
+    .wrapper
+      .item-red
+        min-width: 50%
+              
+    
+        
+        
+        
+        
+        
+ 
+        
+        
 //old code
 //.main
 //  padding: 30px 20px
@@ -103,5 +322,6 @@
 //old code
     
     
+
 .old-code
   display: none
