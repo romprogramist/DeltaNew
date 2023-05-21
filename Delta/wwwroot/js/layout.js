@@ -24,7 +24,7 @@
     
     const lis = document.querySelectorAll('header ul li');
     lis.forEach(li => {
-        li.addEventListener('click', () => {
+        li.addEventListener('click', (e) => {
             hamburger.parentElement.classList.remove('active-nav');
         })
         if(li.classList.contains('submenu-open')){
@@ -33,7 +33,6 @@
                 submenu.classList.add('submenu-active');
                 body.classList.add('no-scroll');
                 li.classList.add('product-active');
-                //product-active
             })
             submenu.addEventListener('mouseleave', (e) => {
                 submenu.classList.remove('submenu-active');
@@ -43,6 +42,33 @@
             }, )
         }
     })
+
+
+    function calculatesTheRoute(item) {
+        let urlParts = item.split('/');
+        let currentPage = urlParts[urlParts.length - 1];
+        currentPage = currentPage.split('?')[0];
+        return currentPage;
+    }
+    function addClassActiveHeader(href) {
+        lis.forEach(li => {
+            if(calculatesTheRoute(li.lastElementChild.href) === href) {
+                li.classList.add('active-btn-h');
+            }
+            if(href === 'home' && calculatesTheRoute(li.lastElementChild.href) === href) {
+                li.classList.add('active-btn-h');
+            }
+        })
+    }
+    let currentUrl = window.location.href;
+    function getCurrentPage(url) {
+        addClassActiveHeader(calculatesTheRoute(url))
+    }
+    getCurrentPage(currentUrl);
+    
+    
+    
+    
     
     const plusMinus = document.querySelector('.submenu .arrow');
     plusMinus.addEventListener('click', () => {
@@ -62,4 +88,9 @@
     btn.addEventListener('click', (e) => {
         scrollTo(0, 0)
     })
+
+
+    
+    
+    
 });

@@ -50,42 +50,32 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
-    // const swiper = new Swiper('.swiper', {
-    //     // Optional parameters
-    //     // direction: 'harizontal',
-    //     loop: true,
-    //
-    //     // If we need pagination
-    //     pagination: {
-    //         el: '.swiper-pagination',
-    //     },
-    //
-    //     // Navigation arrows
-    //     navigation: {
-    //         nextEl: '.swiper-button-next',
-    //         prevEl: '.swiper-button-prev',
-    //     },
-    //
-    //     // And if we need scrollbar
-    //     scrollbar: {
-    //         el: '.swiper-scrollbar',
-    //     },
-    // });
 
-    // var swiper = new Swiper('.swiper', {
-    //     slidesPerView: 'auto',
-    //     spaceBetween: 20,
-    //     centeredSlides: true,
-    //     loop: true, // Добавляем параметр loop: true
-    //     pagination: {
-    //         el: '.swiper-pagination',
-    //         clickable: true,
-    //     },
-    //     navigation: {
-    //         nextEl: '.swiper-button-next',
-    //         prevEl: '.swiper-button-prev',
-    //     },
-    // });
 
+    
+    function addHoverClass(elements, className) {
+        function containsMyElement(element) {
+            return element.classList.contains("swiper-slide-active") || element.closest(".swiper-slide");
+        }
+        function handleMouseEnter(event) {
+            var targetElement = event.target;
+            if (containsMyElement(targetElement)) {
+                targetElement.closest(".swiper-slide").classList.add(className);
+            }
+        }
+        function handleMouseLeave(event) {
+            var targetElement = event.target;
+            if (containsMyElement(targetElement)) {
+                targetElement.closest(".swiper-slide").classList.remove(className);
+            }
+        }
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].addEventListener("mouseenter", handleMouseEnter);
+            elements[i].addEventListener("mouseleave", handleMouseLeave);
+        }
+    }
+    
+    const myElementsSlide = document.getElementsByClassName("swiper-slide");
+    addHoverClass(myElementsSlide, "swiper-slide-active");
 
 });

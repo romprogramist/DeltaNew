@@ -47,7 +47,6 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/js/modal.js",
         "/js/helpers.js",
         "/js/form-request.js",
-        "/js/swiper-bundle.min.js",  //FIX
         "/js/layout.js");
     pipeline.AddJavaScriptBundle("/js/home-bundle.js",
         "/js/home.js");
@@ -58,9 +57,7 @@ builder.Services.AddWebOptimizer(pipeline =>
     pipeline.AddJavaScriptBundle("/js/open-list-bundle.js",
         "/js/open-list.js");
     pipeline.AddJavaScriptBundle("/js/open-doc-bundle.js",
-        "/js/open-doc.js");
-    
-    
+        "/js/open-doc.js");  
 });
 
 var app = builder.Build();

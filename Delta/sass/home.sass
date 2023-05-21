@@ -93,7 +93,7 @@
   .wrapper
     display: flex
     .item-red
-      background: #ED090A
+      background: #C72930
       width: 16%
       display: flex
       justify-content: center
@@ -101,7 +101,7 @@
       & > p
         transform: rotate(-90deg)
         display: inline-block
-        font-size: calc(12px + 27 * (100vw / 1940))        
+        font-size: calc(17px + 30 * (100vw / 1940))        
         font-weight: 600
         color: #fff
     .item-bg
@@ -131,6 +131,7 @@
       font-size: calc(16px + 37 * (100vw / 1940))
       font-weight: 600
     .swiper-slide 
+      cursor: pointer
       text-align: center
       font-size: 18px
       margin: 5px 0
@@ -139,32 +140,33 @@
       padding: 15px 0 20px
       .text
         margin-top: 20px
-        padding: 0 24px
+        padding: 0 10px
         h3
           font-weight: 600
           font-size: 20px
           line-height: 107%
         & > p
           font-weight: 400
-          font-size: 16px
+          font-size: 14px
           line-height: 19px
           margin-top: 15px
           color: #535353
+          height: 80px
         & > a
           display: block
           margin-top: 30px
           color: #D30536
           font-weight: 400
-          font-size: 16px
-    
+          font-size: 16px    
     .swiper-slide img 
       display: block
       width: 100%
       height: 100%
-      object-fit: cover
-      
+      object-fit: cover      
     .swiper-pagination
       bottom: -2px
+    
+      
   
 .about-us-new
   background: url("/images/img/about-us-new-main.jpg") center center / cover no-repeat
@@ -214,7 +216,7 @@
           padding: 0
 @media screen and ( min-width: 800px )
   .main
-    margin-top: 56px
+    margin-top: 96px
 @media screen and ( min-width: 1100px )
   .with-one-item
     background: linear-gradient(to left, #F8F8F8 50%, transparent 50%)
@@ -244,6 +246,12 @@
     .wrapper
       .item-red
         min-width: 50%
+        align-items: flex-end
+        justify-content: flex-end
+        & > p
+          margin-bottom: 12%
+          margin-right: -4%
+        
               
     
         
