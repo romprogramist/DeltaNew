@@ -73,14 +73,15 @@ header
         transition: all .3s
         width: 18px 
   .desktop-form
+    position: relative
     input
       transition: all .3s
       position: absolute
       width: 0
       height: 0
-      border: none      
-      border-radius: 8px
-      background: rgba(217, 217, 217, 0.4)
+      border: none
+      border-radius: 28px
+      background: rgba(217, 217, 217, 0.4)  
   .mobail-form
     margin-top: 20px
     position: relative
@@ -202,7 +203,7 @@ header
             &:before
               display: block                    
           .product-active
-            position: relative
+            position: relative            
             &:before
               content: ''
               position: absolute
@@ -238,6 +239,7 @@ header
           width: 100%
           height: 100%
     .desktop-form-active
+      position: relative
       width: 400px
       input
         transition: all .3s
@@ -247,6 +249,15 @@ header
         position: static
       .open-search-btn
         display: none
+      &:before        
+        content: ''
+        position: absolute
+        bottom: 0
+        height: 1.5px
+        width: 90%
+        background: #C72930
+        left: 50%
+        transform: translateX(-50%)
           
 @media screen and ( min-width: 1440px )
   header

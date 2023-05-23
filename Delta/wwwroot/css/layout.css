@@ -325,13 +325,16 @@ header > .wrapper .hamburger :nth-child(3) {
   transition: all 0.3s;
   width: 18px;
 }
+header .desktop-form {
+  position: relative;
+}
 header .desktop-form input {
   transition: all 0.3s;
   position: absolute;
   width: 0;
   height: 0;
   border: none;
-  border-radius: 8px;
+  border-radius: 28px;
   background: rgba(217, 217, 217, 0.4);
 }
 header .mobail-form {
@@ -519,6 +522,7 @@ header .active-nav .hamburger :nth-child(3) {
     height: 100%;
   }
   header .desktop-form-active {
+    position: relative;
     width: 400px;
   }
   header .desktop-form-active input {
@@ -530,6 +534,16 @@ header .active-nav .hamburger :nth-child(3) {
   }
   header .desktop-form-active .open-search-btn {
     display: none;
+  }
+  header .desktop-form-active:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 1.5px;
+    width: 90%;
+    background: #C72930;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 @media screen and (min-width: 1440px) {
@@ -669,11 +683,6 @@ footer .social-network {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-}
-
-.swiper-slide-active {
-  margin-top: -3px !important;
-  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.25) !important;
 }
 
 button {

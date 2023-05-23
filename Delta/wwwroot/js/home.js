@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
+        
         breakpoints: {
             370: {
                 slidesPerView: 1.4,
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function addHoverClass(elements, className) {
         function containsMyElement(element) {
-            return element.classList.contains("swiper-slide-active") || element.closest(".swiper-slide");
+            return element.classList.contains("swiper-slide-active-new") || element.closest(".swiper-slide");
         }
         function handleMouseEnter(event) {
             var targetElement = event.target;
@@ -74,8 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
             elements[i].addEventListener("mouseleave", handleMouseLeave);
         }
     }
-    
+
     const myElementsSlide = document.getElementsByClassName("swiper-slide");
-    addHoverClass(myElementsSlide, "swiper-slide-active");
+    addHoverClass(myElementsSlide, "swiper-slide-active-new");
 
 });
