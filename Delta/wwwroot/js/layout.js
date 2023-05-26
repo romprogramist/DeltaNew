@@ -44,27 +44,85 @@
     })
 
 
-    function calculatesTheRoute(item) {
-        let urlParts = item.split('/');
-        let currentPage = urlParts[urlParts.length - 1];
-        currentPage = currentPage.split('?')[0];
-        return currentPage;
-    }
-    function addClassActiveHeader(href) {
-        lis.forEach(li => {
-            if(calculatesTheRoute(li.lastElementChild.href) === href) {
-                li.classList.add('active-btn-h');
+
+
+    lis.forEach(function(li) {
+        li.addEventListener('mouseover', function() {
+            this.classList.add('active-btn-h');
+        });
+    
+        li.addEventListener('mouseout', function() {
+            this.classList.remove('active-btn-h');
+        });
+    });
+
+
+
+    // window.addEventListener('scroll', function() {
+    //     var sections = document.getElementsByTagName('section');
+    //     for (var i = 0; i < sections.length; i++) {
+    //         var section = sections[i];
+    //         var position = section.getBoundingClientRect();
+    //
+    //         // Проверяем, если секция видима в окне просмотра
+    //         if (position.top < window.innerHeight) {
+    //             section.style.opacity = 1; // Устанавливаем полную прозрачность
+    //         }
+    //     }
+    // });
+
+
+
+
+
+
+    window.addEventListener('DOMContentLoaded', function() {
+        var sections = document.getElementsByTagName('section');
+        for (var i = 0; i < sections.length; i++) {
+            var section = sections[i];
+            var position = section.getBoundingClientRect();
+
+            // Проверяем, если секция видима при загрузке страницы
+            if (position.top >= 0 && position.top < window.innerHeight) {
+                section.style.opacity = 1; // Устанавливаем полную прозрачность
             }
-            if(href === 'home' && calculatesTheRoute(li.lastElementChild.href) === href) {
-                li.classList.add('active-btn-h');
+        }
+    });
+
+    window.addEventListener('scroll', function() {
+        var sections = document.getElementsByTagName('section');
+        for (var i = 0; i < sections.length; i++) {
+            var section = sections[i];
+            var position = section.getBoundingClientRect();
+
+            // Проверяем, если секция видима в окне просмотра
+            if (position.top < window.innerHeight) {
+                section.style.opacity = 1; // Устанавливаем полную прозрачность
             }
-        })
-    }
-    let currentUrl = window.location.href;
-    function getCurrentPage(url) {
-        addClassActiveHeader(calculatesTheRoute(url))
-    }
-    getCurrentPage(currentUrl);
+        }
+    });
+
+    // function calculatesTheRoute(item) {
+    //     let urlParts = item.split('/');
+    //     let currentPage = urlParts[urlParts.length - 1];
+    //     currentPage = currentPage.split('?')[0];
+    //     return currentPage;
+    // }
+    // function addClassActiveHeader(href) {
+    //     lis.forEach(li => {
+    //         if(calculatesTheRoute(li.lastElementChild.href) === href) {
+    //             li.classList.add('active-btn-h');
+    //         }
+    //         if(href === 'home' && calculatesTheRoute(li.lastElementChild.href) === href) {
+    //             li.classList.add('active-btn-h');
+    //         }
+    //     })
+    // }
+    // let currentUrl = window.location.href;
+    // function getCurrentPage(url) {
+    //     addClassActiveHeader(calculatesTheRoute(url))
+    // }
+    // getCurrentPage(currentUrl);
     
     
     

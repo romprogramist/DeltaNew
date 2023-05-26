@@ -519,11 +519,14 @@
   justify-content: space-between;
   align-items: center;
 }
+.contacts .wrapper > a img {
+  max-width: 100px;
+}
 .contacts .wrapper > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 162px;
+  max-width: 146px;
   width: 100%;
 }
 
