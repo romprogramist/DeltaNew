@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("zhopa");
+    
     if(!document.getElementById('development-mode')){
         // if production mode
 

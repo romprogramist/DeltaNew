@@ -124,7 +124,7 @@
     // }
     // getCurrentPage(currentUrl);
     
-    
+    console.log('1');
     
     
     
