@@ -28,6 +28,8 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/css/home.css");
     pipeline.AddCssBundle("/css/our-production-bundle.css", 
         "/css/our-production.css");
+    pipeline.AddCssBundle("/css/product-category-bundle.css", 
+        "/css/product-category.css");
     pipeline.AddCssBundle("/css/about-us-bundle.css", 
         "/css/about-us.css");
     pipeline.AddCssBundle("/css/partners-not-section-bundle.css", 

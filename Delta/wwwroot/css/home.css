@@ -502,7 +502,7 @@
 
 @media screen and (min-width: 954px) {
   .map {
-    margin-top: 0;
+    margin-top: 14px;
   }
   .map .wrapper > div iframe {
     height: 460px;
@@ -840,6 +840,22 @@
   .with-one-item .wrapper .item-title > div .bot-ul > li {
     font-size: 29px;
     line-height: 34px;
+  }
+}
+@media screen and (min-width: 1350px) {
+  .swiper-section {
+    overflow: hidden;
+  }
+  .swiper-section .swiper {
+    padding: 0 26px 30px;
+  }
+  .swiper-section .swiper .swiper-button-next {
+    z-index: 999;
+    right: -7px;
+  }
+  .swiper-section .swiper .swiper-button-prev {
+    z-index: 999;
+    left: -7px;
   }
 }
 @media screen and (min-width: 1400px) {

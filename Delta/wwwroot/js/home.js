@@ -18,10 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // })
     
     // code here
-    const openSearchBtn = document.querySelector('.open-search-btn');
-    openSearchBtn.addEventListener('click', () => {
-        openSearchBtn.parentElement.classList.add('desktop-form-active');
-    })
+    // const openSearchBtn = document.querySelector('.open-search-btn');
+    // openSearchBtn.addEventListener('click', () => {
+    //     openSearchBtn.parentElement.classList.add('desktop-form-active');
+    // })
 
 
 

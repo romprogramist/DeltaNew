@@ -76,7 +76,6 @@
       <Folder Include="Data\Migrations" />
       <Folder Include="wwwroot\css" />
       <Folder Include="wwwroot\fonts" />
-      <Folder Include="wwwroot\images\biochemistry" />
       <Folder Include="wwwroot\images\ejaculateStudy\" />
       <Folder Include="wwwroot\images\electrolytes" />
       <Folder Include="wwwroot\images\Hemostasis\" />

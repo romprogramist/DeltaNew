@@ -123,8 +123,7 @@
     //     addClassActiveHeader(calculatesTheRoute(url))
     // }
     // getCurrentPage(currentUrl);
-    
-    console.log('1');
+  
     
     
     

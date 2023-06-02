@@ -390,6 +390,9 @@ header .active-nav .hamburger :nth-child(3) {
   transform: rotate(45deg);
   right: 25px;
 }
+header .desktop-form {
+  display: none;
+}
 
 @media screen and (min-width: 800px) {
   header {
@@ -506,7 +509,7 @@ header .active-nav .hamburger :nth-child(3) {
     display: none;
   }
   header .desktop-form {
-    display: block;
+    display: flex;
   }
   header .desktop-form .open-search-btn {
     cursor: pointer;
@@ -514,33 +517,46 @@ header .active-nav .hamburger :nth-child(3) {
     height: 24px;
     position: relative;
   }
-  header .desktop-form .open-search-btn:before {
-    position: absolute;
-    content: "";
-    background: url(/images/icon/magnifying-glass.svg) no-repeat;
-    width: 100%;
-    height: 100%;
+  header .desktop-form .f-i {
+    display: flex;
   }
   header .desktop-form-active {
-    position: relative;
     width: 400px;
   }
-  header .desktop-form-active input {
-    transition: all 0.3s;
+  header .desktop-form-active .input-line {
+    position: relative;
+    width: 70%;
+    margin-right: 20px;
+  }
+  header .desktop-form-active .input-line:after {
+    content: "";
+    background: url(/images/icon/magnifying-glass.svg) no-repeat;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+  }
+  header .desktop-form-active .input-line input {
     padding: 7px 0 7px 13px;
     width: 100%;
     height: 100%;
     position: static;
+    background: #FFFFFF;
+    border: 2px solid #D9D9D9;
+    border-radius: 20px;
   }
-  header .desktop-form-active .open-search-btn {
+  header .desktop-form-active .input-line .open-search-btn {
     display: none;
   }
-  header .desktop-form-active:before {
+  header .desktop-form-active .input-line:before {
     content: "";
     position: absolute;
     bottom: 0;
     height: 1.5px;
-    width: 90%;
+    width: 80%;
     background: #C72930;
     left: 50%;
     transform: translateX(-50%);
@@ -670,7 +686,7 @@ footer .social-network {
 
 section {
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 button {
@@ -706,6 +722,10 @@ a {
 
 .show {
   display: block !important;
+}
+
+input:focus {
+  outline: none;
 }
 
 .no-scroll {
