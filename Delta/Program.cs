@@ -59,7 +59,9 @@ builder.Services.AddWebOptimizer(pipeline =>
     pipeline.AddJavaScriptBundle("/js/open-list-bundle.js",
         "/js/open-list.js");
     pipeline.AddJavaScriptBundle("/js/open-doc-bundle.js",
-        "/js/open-doc.js");  
+        "/js/open-doc.js"); 
+    pipeline.AddJavaScriptBundle("/js/add-hover-class-bundle.js",
+        "/js/add-hover-class.js"); 
 });
 
 var app = builder.Build();

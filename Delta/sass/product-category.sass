@@ -59,7 +59,9 @@
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
       text-align: center
       position: relative
-      margin: 15px 8px 0 8px      
+      margin: 15px 8px 0 8px    
+      cursor: pointer
+      transition: all 0.2s
       .prod-img
         width: 100%
       .wrapper-text
@@ -99,7 +101,9 @@
             bottom: 60px
           img
             margin-top: 22px
-          
+    .item-category-active
+      box-shadow: 0 14px 14px rgba(0, 0, 0, 0.25)
+      transition: all 0.2s
 @media screen and ( min-width: 588px )
   .product-category
     .header-product-category
@@ -117,6 +121,7 @@
           line-height: 28px
 @media screen and ( min-width: 800px )
   .product-category
+    position: relative
     .header-product-category
       padding: 29px 0 29px 9%
       & > h2
@@ -133,11 +138,17 @@
           line-height: 47px
       & > .item
         margin-top: 25px
+    .btn-reg
+      position: absolute
+      top: 0
+      right: 9%
         
 @media screen and ( min-width: 1125px )
   .product-category
     .header-product-category
       padding: 29px 0 29px 5%
+    .btn-reg
+      right: 5%
       
       
       

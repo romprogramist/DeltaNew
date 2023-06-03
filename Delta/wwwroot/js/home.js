@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("zhopa");
     
     if(!document.getElementById('development-mode')){
         // if production mode
@@ -53,32 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
-
-
     
-    function addHoverClass(elements, className) {
-        function containsMyElement(element) {
-            return element.classList.contains("swiper-slide-active-new") || element.closest(".swiper-slide");
-        }
-        function handleMouseEnter(event) {
-            var targetElement = event.target;
-            if (containsMyElement(targetElement)) {
-                targetElement.closest(".swiper-slide").classList.add(className);
-            }
-        }
-        function handleMouseLeave(event) {
-            var targetElement = event.target;
-            if (containsMyElement(targetElement)) {
-                targetElement.closest(".swiper-slide").classList.remove(className);
-            }
-        }
-        for (var i = 0; i < elements.length; i++) {
-            elements[i].addEventListener("mouseenter", handleMouseEnter);
-            elements[i].addEventListener("mouseleave", handleMouseLeave);
-        }
-    }
-
-    const myElementsSlide = document.getElementsByClassName("swiper-slide");
-    addHoverClass(myElementsSlide, "swiper-slide-active-new");
 
 });
