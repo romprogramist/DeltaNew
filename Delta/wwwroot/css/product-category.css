@@ -1,48 +1,25 @@
-.product-category {
+.product-category, .reagents-page {
   padding-bottom: 250px;
 }
-.product-category .header-product-category {
-  background: #FFFFFF;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  padding: 3.62% 4.5%;
-}
-.product-category .header-product-category > h2 {
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 15px;
-}
-.product-category .btn-reg {
-  display: block;
-  max-width: 206px;
-  text-align: center;
-  margin: 26px auto 0 auto;
-  background: #D31C24;
-  border-radius: 8px;
-  padding: 6px 40px 7px;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 23px;
-  color: #FFF;
-}
-.product-category .wrapper {
-  padding: 0 30px;
-  max-width: 1337px;
+.product-category .wrapper, .reagents-page .wrapper {
+  padding: 0 15px;
+  max-width: 1480px;
   margin: 30px auto 0 auto;
 }
-.product-category .wrapper .model-title {
+.product-category .wrapper .model-title, .reagents-page .wrapper .model-title {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
   min-width: 100%;
 }
-.product-category .wrapper .model-title > h3 {
+.product-category .wrapper .model-title > h3, .reagents-page .wrapper .model-title > h3 {
   font-weight: 700;
   font-size: 21.7647px;
   line-height: 26px;
   margin-right: 9px;
   position: relative;
 }
-.product-category .wrapper .model-title > h3:before {
+.product-category .wrapper .model-title > h3:before, .reagents-page .wrapper .model-title > h3:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -50,21 +27,22 @@
   background: #C72930;
   bottom: -2px;
 }
-.product-category .wrapper .model-title > p {
+.product-category .wrapper .model-title > p, .reagents-page .wrapper .model-title > p {
   font-weight: 400;
   font-size: 18.1372px;
   line-height: 21px;
   text-transform: lowercase;
 }
-.product-category .wrapper .model-title-margin {
+.product-category .wrapper .model-title-margin, .reagents-page .wrapper .model-title-margin {
   margin-top: 40px;
 }
-.product-category .wrapper .wrapper-model {
+.product-category .wrapper .wrapper-model, .reagents-page .wrapper .wrapper-model {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.product-category .wrapper .wrapper-model .item {
+.product-category .wrapper .wrapper-model .item, .reagents-page .wrapper .wrapper-model .item {
+  display: block;
   max-width: 248px;
   min-width: 144.51px;
   width: 100%;
@@ -75,28 +53,29 @@
   margin: 15px 8px 0 8px;
   cursor: pointer;
 }
-.product-category .wrapper .wrapper-model .item .prod-img {
+.product-category .wrapper .wrapper-model .item .prod-img, .reagents-page .wrapper .wrapper-model .item .prod-img {
   width: 100%;
 }
-.product-category .wrapper .wrapper-model .item .wrapper-text {
+.product-category .wrapper .wrapper-model .item .wrapper-text, .reagents-page .wrapper .wrapper-model .item .wrapper-text {
   padding: 7px 16px 10px;
 }
-.product-category .wrapper .wrapper-model .item .wrapper-text > h4 {
+.product-category .wrapper .wrapper-model .item .wrapper-text > h4, .reagents-page .wrapper .wrapper-model .item .wrapper-text > h4 {
   font-weight: 600;
   font-size: 17.3342px;
+  color: #000000;
 }
-.product-category .wrapper .wrapper-model .item .wrapper-text .black-title {
+.product-category .wrapper .wrapper-model .item .wrapper-text .black-title, .reagents-page .wrapper .wrapper-model .item .wrapper-text .black-title {
   margin-top: 13px;
   background: #000000;
   border-radius: 11.5561px;
   padding: 3.3px 0;
 }
-.product-category .wrapper .wrapper-model .item .wrapper-text .black-title > p {
+.product-category .wrapper .wrapper-model .item .wrapper-text .black-title > p, .reagents-page .wrapper .wrapper-model .item .wrapper-text .black-title > p {
   font-weight: 400;
   font-size: 14.4452px;
   color: #FFFFFF;
 }
-.product-category .wrapper .wrapper-model .item .wrapper-text > p {
+.product-category .wrapper .wrapper-model .item .wrapper-text > p, .reagents-page .wrapper .wrapper-model .item .wrapper-text > p {
   font-weight: 500;
   font-size: 11.5561px;
   line-height: 14px;
@@ -104,14 +83,14 @@
   text-align: left;
   margin-top: 15px;
 }
-.product-category .wrapper .wrapper-model .item .wrapper-text > .to-learn-more {
+.product-category .wrapper .wrapper-model .item .wrapper-text > .to-learn-more, .reagents-page .wrapper .wrapper-model .item .wrapper-text > .to-learn-more {
   color: #D31C24;
   font-weight: 400;
   font-size: 11.5561px;
   display: block;
   margin-top: 16px;
 }
-.product-category .wrapper .wrapper-model .item .wrapper-text > .logo-img:before {
+.product-category .wrapper .wrapper-model .item .wrapper-text > .logo-img:before, .reagents-page .wrapper .wrapper-model .item .wrapper-text > .logo-img:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -119,72 +98,166 @@
   right: 0;
   top: 395px;
 }
-.product-category .wrapper .wrapper-model .item .wrapper-text > .logo-img img {
+.product-category .wrapper .wrapper-model .item .wrapper-text > .logo-img img, .reagents-page .wrapper .wrapper-model .item .wrapper-text > .logo-img img {
   margin-top: 22px;
 }
-.product-category .wrapper .wrapper-model .item-category-active {
+.product-category .wrapper .wrapper-model .item-category-active, .reagents-page .wrapper .wrapper-model .item-category-active {
   margin-top: 12px;
   box-shadow: 0 7px 10px rgba(0, 0, 0, 0.25) !important;
   transition: all 0.2s;
 }
 
 @media screen and (min-width: 588px) {
-  .product-category .header-product-category > h2 {
-    font-size: 16px;
-    line-height: 19px;
-  }
-  .product-category .wrapper .model-title > h3 {
+  .product-category .wrapper .model-title > h3, .reagents-page .wrapper .model-title > h3 {
     font-size: 28.3314px;
     line-height: 33px;
   }
-  .product-category .wrapper .model-title > p {
+  .product-category .wrapper .model-title > p, .reagents-page .wrapper .model-title > p {
     font-size: 23.6095px;
     line-height: 28px;
   }
-  .product-category .wrapper .wrapper-model {
+  .product-category .wrapper .wrapper-model, .reagents-page .wrapper .wrapper-model {
     justify-content: flex-start;
   }
 }
 @media screen and (min-width: 800px) {
-  .product-category {
+  .product-category, .reagents-page {
     position: relative;
   }
-  .product-category .header-product-category {
-    padding: 29px 0 29px 9%;
-  }
-  .product-category .header-product-category > h2 {
-    font-size: 20px;
-    line-height: 23px;
-  }
-  .product-category .wrapper {
+  .product-category .wrapper, .reagents-page .wrapper {
     padding: 0 80px;
   }
-  .product-category .wrapper .model-title > h3 {
+  .product-category .wrapper .model-title > h3, .reagents-page .wrapper .model-title > h3 {
     font-size: 48px;
     line-height: 56px;
   }
-  .product-category .wrapper .model-title > p {
+  .product-category .wrapper .model-title > p, .reagents-page .wrapper .model-title > p {
     font-size: 40px;
     line-height: 47px;
   }
-  .product-category .wrapper .wrapper-model > .item {
+  .product-category .wrapper .wrapper-model > .item, .reagents-page .wrapper .wrapper-model > .item {
     margin-top: 25px;
   }
-  .product-category .wrapper .wrapper-model .item-category-active {
+  .product-category .wrapper .wrapper-model .item-category-active, .reagents-page .wrapper .wrapper-model .item-category-active {
     margin-top: 22px;
   }
-  .product-category .btn-reg {
-    position: absolute;
-    top: 0;
-    right: 9%;
+}
+.reagents-page .wrapper-reg .dropdown-btn {
+  background: #FFFFFF;
+  border: 1px solid #BABABA;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 107%;
+  height: 47px;
+  padding: 0 30px 0 10px;
+  position: relative;
+  width: 100%;
+}
+.reagents-page .wrapper-reg .dropdown-btn:before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  top: -1.5px;
+  left: 0;
+  background: #D30536;
+}
+.reagents-page .wrapper-reg .dropdown-content {
+  display: none;
+}
+.reagents-page .wrapper-reg .dropdown-content > a {
+  background: #FFFFFF;
+  border: 1px solid #BABABA;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  height: 47px;
+  padding: 0 3% 0 2%;
+  color: #000000;
+  display: flex;
+  align-items: center;
+}
+.reagents-page .wrapper-reg .dropdown-content > a:hover {
+  background: #F3F3F3;
+}
+.reagents-page .wrapper-reg .dropdown-content > .additional-style {
+  color: #D31C24;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 15px;
+}
+.reagents-page .wrapper-reg .show {
+  display: block;
+}
+.reagents-page .wrapper-reg .dropdown-btn:hover {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  margin-top: -3px;
+  margin-bottom: 3px;
+  transition: all 0.2s;
+}
+.reagents-page .wrapper-reg .min-dropdown-wrapper .pdf .dropdown-content {
+  border: 1px solid #BABABA;
+}
+.reagents-page .wrapper-reg .min-dropdown-wrapper .pdf .dropdown-content > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 0;
+  position: relative;
+}
+.reagents-page .wrapper-reg .min-dropdown-wrapper .pdf .dropdown-content > a:before {
+  content: "";
+  position: absolute;
+  background: #D31C24;
+  height: 1px;
+  width: 95%;
+  left: 50%;
+  top: 99%;
+  transform: translateX(-50%);
+}
+.reagents-page .wrapper-reg .min-dropdown-wrapper .pdf .dropdown-content > a:after {
+  content: "";
+  background: url(/images/icon/savePdf.png) center center/cover no-repeat;
+  min-width: 20.34px;
+  height: 24.74px;
+}
+.reagents-page .wrapper-reg .min-dropdown-wrapper .pdf .dropdown-content > a:last-child:before {
+  display: none;
+}
+
+@media screen and (min-width: 650px) {
+  .reagents-page .wrapper-reg {
+    margin-top: 80px;
+  }
+  .reagents-page .wrapper-reg .dropdown-btn {
+    height: 93px;
+    font-size: 24px;
+    padding-left: 35px;
+  }
+  .reagents-page .wrapper-reg .dropdown-btn:before {
+    height: 5px;
+  }
+  .reagents-page .wrapper-reg .dropdown-content > a {
+    height: 93px;
+    font-size: 20px;
+    line-height: 23px;
+  }
+  .reagents-page .wrapper-reg .dropdown-content > .additional-style {
+    font-size: 24px;
+    line-height: 28px;
   }
 }
-@media screen and (min-width: 1125px) {
-  .product-category .header-product-category {
-    padding: 29px 0 29px 5%;
+@media screen and (min-width: 950px) {
+  .reagents-page .wrapper-reg .min-dropdown-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
-  .product-category .btn-reg {
-    right: 5%;
+  .reagents-page .wrapper-reg .min-dropdown-wrapper > .dropdown {
+    max-width: 49.8%;
+    width: 100%;
   }
 }
 

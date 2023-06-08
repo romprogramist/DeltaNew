@@ -690,6 +690,7 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
   padding: 15px 0 20px;
   transition: all 0.2s;
+  display: block;
 }
 .swiper-section .swiper .swiper-slide .text {
   margin-top: 20px;
@@ -699,6 +700,7 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 107%;
+  color: black;
 }
 .swiper-section .swiper .swiper-slide .text > p {
   font-weight: 400;
@@ -708,7 +710,7 @@
   color: #535353;
   height: 80px;
 }
-.swiper-section .swiper .swiper-slide .text > a {
+.swiper-section .swiper .swiper-slide .text .and {
   display: block;
   margin-top: 30px;
   color: #D30536;

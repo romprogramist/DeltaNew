@@ -62,6 +62,9 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/js/open-doc.js"); 
     pipeline.AddJavaScriptBundle("/js/add-hover-class-bundle.js",
         "/js/add-hover-class.js"); 
+    pipeline.AddJavaScriptBundle("/js/dropdown-bundle.js",
+        "/js/dropdown.js"); 
+    
 });
 
 var app = builder.Build();

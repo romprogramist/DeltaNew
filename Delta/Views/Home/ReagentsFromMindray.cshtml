@@ -1,0 +1,292 @@
+﻿@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/css/product-category.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+        <link rel="stylesheet" href="/css/product-category-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+        <script src="~/js/dropdown.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+        <script src="~/js/dropdown-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "Биохимия",
+        ClassTitle = "not-main-biochemistry-bg"
+    });
+}
+
+
+
+<section class="reagents-page">
+    <div class="header-product-category">
+        <ul class="min-nav-menu">
+            <li>
+                <a href="#">Продукты</a> /
+            </li>
+            <li>
+                <a href="/home/Biochemistry">Биохимия</a> /
+            </li>
+            <li>
+                <a href="/home/BiochemistryReagents">Реагенты</a> /
+            </li>
+            <li>
+                <a href="/home/ReagentsFromMindray">Реагенты от Mindray</a>
+            </li>
+        </ul>
+    </div>
+    <a class="btn-reg" href="/home/Biochemistry">
+        Приборы
+    </a>
+    <div class="wrapper wrapper-reg">
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                Реагенты для автоматических биохимических анализаторов
+            </button>
+            <div class="dropdown-content show">
+                <a class="additional-style" href="#">
+                    Реагенты от Mindray
+                </a>
+            </div>
+        </div>
+        <div class="min-dropdown-wrapper">
+            <div class="dropdown pdf">
+                <button class="dropdown-btn">
+                    Печеночная панель
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">
+                        ALT - Аланинаминотрансфераза <br> 
+                        R1-4×35 mL; R2-2×18 mL
+                    </a>            
+                    <a href="#">
+                        AST - Аспартатаминтрансфераза <br> 
+                        R1-4×35 mL; R2-2×18 mL
+                    </a>
+                    <a href="#">
+                        γ-GT - Гама-глутамилтрансфераза <br>
+                        R1-4×35 mL; R2-2×18 mL
+                    </a>
+                    <a href="#">
+                        ALP - Щелочная фосфатаза <br>
+                        R1-4×35 mL; R2-2×18 mL
+                    </a>
+                    <a href="#">
+                        Bil-D - Прямой билирубин (DSA) <br>
+                        R1-4×20 mL; R2-1×20 mL
+                    </a>
+                    <a href="#">
+                        Bil-D - Прямой билирубин (VOX) <br>
+                        R1-4×35 mL; R2-2×18 mL
+                    </a>
+                    <a href="#">
+                        Bil-T - Общий билирубин (DSA) <br>
+                        R1-4×20 mL; R2-1×20 mL
+                    </a>
+                    <a href="#">
+                        Bil-T - Общий билирубин (VOX) <br>
+                        R1-4×35 mL; R2-2×18 mL
+                    </a>
+                    <a href="#">
+                        TP - Общий белок <br>
+                        R-4×40 mL
+                    </a>
+                    <a href="#">
+                        TPUC - Общий белок в моче <br>
+                        R-3×18 mL; Calibrator: 1×1 mL
+                    </a>
+                    <a href="#">
+                        ALB – Альбумин <br>
+                        R-4×40 mL
+                    </a>
+                    <a href="#">
+                        TBA - Общие желчные кислоты <br>
+                        R1-2×27 mL; R2-1×18 mL; Calibrator: 1×1.5 mL
+                    </a>
+                    <a href="#">
+                        PA - Преальбумин <br>
+                        R1-1×40 mL; R2-1×15 mL
+                    </a>
+                    <a href="#">
+                        CHE - Холинэстераза <br>
+                        R1-2×40 mL; R2-1×16 mL; Calibrator:1×3 mL; Control:1×5 mL
+                    </a>
+                </div>
+            </div>
+            <div class="dropdown pdf">
+                <button class="dropdown-btn">
+                    Функция надпочечников
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">UREA - Мочевина <br> R1-4×35 mL; R2-2×18 mL</a>
+                    <a href="#">CREA - Креатинин <br> R1-2×27 mL; R2-1×18 mL</a>
+                    <a href="#">UA - Мочевая кислота <br> R1-4×40 mL; R2-2×20 mL</a>
+                    <a href="#">CO2 – Бикарбонат <br> R-2×20 mL; Calibrator: 1×1.5 mL; Control:1×5 mL</a>
+                    <a href="#">β2-MG - β2-микроглобулин <br> R1-1×40 mL; R2-1×12 mL</a>
+                    <a href="#">Cys-C II – Цистатин <br> C R1-1×40 mL; R2-1×12 mL</a>
+                    <a href="#">RBP - Ретинол-связывающий белок <br> R1-2×18 mL; R2-2×8 mL; Calibrator: 1×1 mL</a>
+                    <a href="#">MALB - Микроальбумин <br> R1-2×18 mL; R2-2×5 mL</a>
+                </div>
+            </div>
+            <div class="dropdown pdf">
+                <button class="dropdown-btn">
+                    Кардиологическая панель
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">CK - Креатининкиназа <br>
+                    R1-2×35 mL; R2-1×18 mL </a>
+                    
+                    <a href="#">CK-MB - Креатининкиназа-МВ <br> 
+                    R1-2×35 mL; R2-1×18 mL </a>
+                    
+                    <a href="#">MYO – Миоглобин <br> 
+                    R1 1×20 mL ; R2 1×8 mL; Calibrator: 4×1 Ml </a>
+                    
+                    <a href="#">LDH - Лактатдегидрогеназа <br> 
+                    R1-4×35 mL; R2-2×18 mL </a>
+                    
+                    <a href="#">α-HBDH - Альфа-гидроксибутиратдегидрогеназа <br>
+                    R1-4×35 mL; R2-2×18 mL </a>
+                    
+                    <a href="#">HCY – Гомоцистеин <br> 
+                    R1-1×25 mL; R2-1×8 mL; Calibrator: 5×1 mL </a>
+                </div>
+            </div>
+            <div class="dropdown pdf">
+                <button class="dropdown-btn">
+                    Анемия и электролиты
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Fe - Железо <br>
+                    R1-2×40 mL; R2-1×16 mL; Calibrator: 1×1.5 mL; Control:1×5 mL</a>
+                    <a href="#">FER - Ферритин <br> R1-2×18 mL; R2-2×10 mL</a>
+                    <a href="#">TRF - Трансферрин <br>
+                    R1-2×32 mL; R2-2×6 mL</a>
+                    <a href="#">Ca – Кальций <br> R-4×40 mL</a>
+                    <a href="#">Mg - Магний <br> R-4×40 mL</a>
+                    <a href="#">P - Фосфор <br> R-4×40 mL</a>
+                    <a href="#">G6PD - Глюкозо-6-фосфатдегидрогеназа <br> R1-1×20 mL; R2-1×7 mL</a>
+                    <a href="#">UIBC - Ненасыщенная железосвязывающая способность <br> R1-1×20 mL; R2-1×7 mL; Calibrator: 1×1 mL</a>
+                </div>
+            </div>
+            <div class="dropdown pdf">
+                <button class="dropdown-btn">
+                    Липидная панель
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">TC - Общий холестерин <br> 
+                    R-4×40 mL</a>
+                    <a href="#">TG - Триглицериды <br> 
+                    R-4×40 mL</a>
+                    <a href="#">HDL-C - Липопротеины высокой плотности <br> 
+                    R1-1×40 mL; R2-1×14 mL</a>
+                    <a href="#">LDL-C - Липопротеины низкой плотности <br> 
+                    R1-1×40 mL; R2-1×14 mL</a>
+                    <a href="#">Apo-A1 - Аполипопротеин-А1 <br> 
+                    R1-1×35 mL; R2-1×12 mL</a>
+                    <a href="#">Apo-B - Аполипопротеин-В <br> 
+                    R1-1×35 mL; R2-1×12 mL</a>
+                    <a href="#">Lp(a) - Липопротеин (а) <br> 
+                    R1-1×23 mL; R2-1×7 mL</a>
+                </div>
+            </div>
+            <div class="dropdown pdf">
+                <button class="dropdown-btn">
+                    Иммунологическая панель
+                </button>
+                <div class="dropdown-content">
+                    <a href="#"> IgA - Иммуноглобулин А <br> 
+                    R1-1×36 mL; R2-1×18 mL</a>
+                    
+                    <a href="#"> IgG- Иммуноглобулин G <br> 
+                    R1-1×36 mL; R2-1×18 mL</a>
+                    
+                    <a href="#"> IgM - Иммуноглобулин М <br> 
+                    R1-1×40 mL; R2-1×10 mL</a>
+                    
+                    <a href="#"> IgE - Иммуноглобулин E <br> 
+                    R1- 1×20 mL ; R2- 1×11 mL</a>
+                    
+                    <a href="#"> C3 - Комплимент С3 <br> 
+                    R1-1×36 mL; R2-1×18 mL</a>
+                    
+                    <a href="#"> C4 - Комплимент С4 <br> 
+                    R1-1×40 mL; R2-1×15 mL</a>
+                </div>
+            </div>
+            <div class="dropdown pdf">
+                <button class="dropdown-btn">
+                    Диабетическая панель
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Glu- G - Глюкоза (оксидазный метод)
+                    R1-4×40 mL; R2-2×20 mL</a>
+                    <a href="#">Glu-HK - Глюкоза (гексокиназный метод)
+                    R1-4×36 mL; R2-2×34 mL</a>
+                    <a href="#">HbA1c - Гликированный гемоглобин
+                    R1-1×40 mL; R2-1×15 mL; Pretreatment Solution:1×200 mL</a>
+                    <a href="#">FUN - Фруктозамин
+                    R1-2×30 mL; R2-1×15 mL; Calibrator: 1×1.5 mL; Control:1×1 mL</a>
+                    <a href="#">β-HB – бета-гидроксибутират
+                    R1-2×8 mL; R2-2×4 mL; Calibrator:1×1 mL</a>
+                </div>
+            </div>
+            <div class="dropdown pdf">
+                <button class="dropdown-btn">
+                    Ревматическая панель
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">CRP - С-реактивный белок <br>
+                    R1-1×40 mL; R2-1×10 mL</a>
+                    <a href="#">RF - Ревматоидный фактор <br>
+                    R1-1×40 mL; R2-1×11 mL</a>
+                    <a href="#">HS-CRP - Высокочувствительный С-реактивный белок <br>
+                    R1 1×40 mL ; R2 1×40 mL ; Calibrator: 5×1 mL</a>
+                    <a href="#">АSО - анти-стрептолизин О <br>
+                    R1-1×40 mL; R2-1×40 mL</a>
+                </div>
+            </div>
+            <div class="dropdown pdf">
+                <button class="dropdown-btn">
+                    Панкреатическая панель
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">α-Amylasa - Альфа-амилаза <br>
+                    R1-1×38 mL; R2-1×10 mL </a>
+                    <a href="#">LIP – Липаза <br>
+                    R1-1×35 mL; R2-1×9 mL; Calibrator: 1×3 mL; Control:1×5 mL </a>
+                </div>
+            </div>
+            <div class="dropdown pdf">
+                <button class="dropdown-btn">
+                    Легочная панель
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">ACE - Ангиотензинпревращающий фермент <br>
+                    R-2×14 mL </a>
+                    <a href="#">ADA – Аденозиндезаминаза <br>
+                    R1-1×40 mL; R2-1×20 mL </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

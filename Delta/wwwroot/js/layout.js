@@ -22,12 +22,13 @@
         body.classList.toggle('no-scroll');
     })
     
-    const lis = document.querySelectorAll('header ul li');
+    const lis = document.querySelectorAll('ul li');
     lis.forEach(li => {
         li.addEventListener('click', (e) => {
             hamburger.parentElement.classList.remove('active-nav');
         })
         if(li.classList.contains('submenu-open')){
+            window.scrollTo(0, 0);
             const submenu = document.querySelector('.submenu')
             li.addEventListener('click', () => {
                 submenu.classList.add('submenu-active');
@@ -38,7 +39,6 @@
                 submenu.classList.remove('submenu-active');
                 body.classList.remove('no-scroll')
                 li.classList.remove('product-active');
-                
             }, )
         }
     })
@@ -76,18 +76,18 @@
 
 
 
-    window.addEventListener('DOMContentLoaded', function() {
-        var sections = document.getElementsByTagName('section');
-        for (var i = 0; i < sections.length; i++) {
-            var section = sections[i];
-            var position = section.getBoundingClientRect();
 
-            // Проверяем, если секция видима при загрузке страницы
-            if (position.top >= 0 && position.top < window.innerHeight) {
-                section.style.opacity = 1; // Устанавливаем полную прозрачность
-            }
+    var sections = document.getElementsByTagName('section');
+    for (var i = 0; i < sections.length; i++) {
+        var section = sections[i];
+        var position = section.getBoundingClientRect();
+
+        // Проверяем, если секция видима при загрузке страницы
+        if (position.top >= 0 && position.top < window.innerHeight) {
+            section.style.opacity = 1; // Устанавливаем полную прозрачность
         }
-    });
+    }
+    
 
     window.addEventListener('scroll', function() {
         var sections = document.getElementsByTagName('section');

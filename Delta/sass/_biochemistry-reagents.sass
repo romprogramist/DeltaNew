@@ -1,0 +1,108 @@
+﻿.reagents-page
+  .wrapper-reg
+    .dropdown-btn
+      background: #FFFFFF
+      border: 1px solid #BABABA
+      text-align: left
+      font-weight: 600
+      font-size: 13px
+      line-height: 107%
+      height: 47px
+      padding: 0 30px 0 10px
+      position: relative
+      width: 100%
+      &:before
+        content: ''
+        position: absolute
+        height: 2px
+        width: 100%
+        top: -1.5px
+        left: 0
+        background: #D30536
+    .dropdown-content      
+      display: none
+      & > a
+        background: #FFFFFF
+        border: 1px solid #BABABA
+        font-weight: 400
+        font-size: 13px
+        line-height: 15px
+        height: 47px
+        padding: 0 3% 0 2%
+        color: #000000
+        display: flex
+        align-items: center
+      & > a:hover
+        background: #F3F3F3
+      & > .additional-style
+        color: #D31C24
+        font-weight: 700
+        font-size: 13px
+        line-height: 15px
+    .show
+      display: block
+    .dropdown-btn:hover
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15)
+      margin-top: -3px
+      margin-bottom: 3px
+      transition: all 0.2s
+    .min-dropdown-wrapper
+      .pdf
+        .dropdown-content
+          border: 1px solid #BABABA
+          & > a
+            display: flex
+            justify-content: space-between
+            align-items: center
+            width: 100%
+            border: 0
+            position: relative
+            &:before
+              content: ''
+              position: absolute
+              background: #D31C24
+              height: 1px
+              width: 95%
+              left: 50%
+              top: 99%
+              transform: translateX(-50%)
+            &:after
+              content: ''
+              background: url(/images/icon/savePdf.png) center center / cover no-repeat
+              min-width: 20.34px
+              height: 24.74px
+          & > a:last-child
+            &:before
+              display: none
+ 
+
+@media screen and ( min-width: 650px )
+  .reagents-page
+    .wrapper-reg
+      margin-top: 80px
+      .dropdown-btn
+        height: 93px
+        font-size: 24px
+        padding-left: 35px
+        &:before
+          height: 5px
+      .dropdown-content
+        & > a
+          height: 93px
+          font-size: 20px
+          line-height: 23px
+        & > .additional-style
+          font-size: 24px
+          line-height: 28px
+          
+@media screen and ( min-width: 950px )
+  .reagents-page
+    .wrapper-reg
+      .min-dropdown-wrapper
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        & > .dropdown
+          max-width: 49.8%
+          width: 100%
+        

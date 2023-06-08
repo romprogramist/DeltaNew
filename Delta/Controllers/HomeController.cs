@@ -389,6 +389,15 @@ public class HomeController : Controller
         return View();
     }
     
+    public IActionResult BiochemistryReagents()
+    {
+        return View();
+    }
+    public IActionResult ReagentsFromMindray()
+    {
+        return View();
+    }
+
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

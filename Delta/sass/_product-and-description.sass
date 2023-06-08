@@ -1,20 +1,6 @@
 .at-the-right-edge
   .items
     display: block
-    .header-title
-      position: relative
-      max-width: 411px
-      margin: 0 auto
-      & > h3
-        font-weight: 700
-        font-size: 14px
-        line-height: 21px
-      &:after
-        content: ""
-        position: absolute
-        background: #C72930
-        width: 50%
-        height: 6px
     .header-title-red
       h3
         color: rgba(211, 28, 36, 1)
@@ -32,6 +18,9 @@
       display: flex
       flex-direction: column
       align-items: center
+      justify-content: center
+      max-width: 1150px
+      margin: 0 auto
       
       .item-images
         margin-top: 25px
@@ -74,9 +63,18 @@
         margin-top: 50px
         .column          
           .hed-card
-            background: #D9D9D9
+            background: #FFFFFF
+            border: 1px solid #D9D9D9
             padding: 9px 0
             height: 42px
+            position: relative
+            &:before
+              content: ''
+              position: absolute
+              background: #C72930
+              height: 2px
+              width: 100%
+              bottom: 0
             & > p
               text-align: center
               line-height: 24px
@@ -305,7 +303,7 @@
           .img-min1
             display: none
         .item-title
-          max-width: 511px    
+          max-width: 600px    
           margin-top: 30px
         .item-table
           max-width: 511px
@@ -313,8 +311,8 @@
 @media screen and ( min-width: 600px )
   .at-the-right-edge
     .items
-      .header-title
-        max-width: 511px
+      //.header-title
+        //max-width: 600px
       .wrapper-d
         .item-images
           max-width: 511px
@@ -330,27 +328,10 @@
     .items
       .wrapper-d
         align-items: flex-start
-      .header-title
-        padding-top: 51px
-        margin: 0
-        & > h3
-          font-size: 25px
-          line-height: 33px
-        & > h4          
-          font-size: 24px
-          line-height: 28px
-        .item-images
-          margin-top: 50px
-@media screen and ( min-width: 1387px )
+      
+@media screen and ( min-width: 1100px )
   .at-the-right-edge    
-    .items
-      .header-title
-        min-width: 1052px
-        padding-left: 7.5px
-        margin: 0
-        h3
-          font-size: 32px
-          line-height: 48px
+    .items      
       .wrapper-d
         display: flex
         flex-direction: row

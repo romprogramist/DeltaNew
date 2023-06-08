@@ -122,19 +122,13 @@
 }
 .at-the-right-edge .items, .contact-us .items {
   background: #FFFFFF;
-  border-radius: 16px;
   padding: 30px;
-  margin: -155px 10px 0 10px;
+  margin-top: 10px;
 }
 
 @media screen and (min-width: 800px) {
   .at-the-right-edge {
     padding-bottom: 200px;
-  }
-  .at-the-right-edge .items {
-    padding: 0 84px 60px;
-    margin: -444px 0 0 12%;
-    border-radius: 0;
   }
   .at-the-right-edge .bg {
     top: 444px;
