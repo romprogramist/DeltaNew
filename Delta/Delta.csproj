@@ -78,6 +78,7 @@
       <Folder Include="wwwroot\fonts" />
       <Folder Include="wwwroot\images\ejaculateStudy\" />
       <Folder Include="wwwroot\images\electrolytes" />
+      <Folder Include="wwwroot\images\GeneralLaboratoryConsumable\" />
       <Folder Include="wwwroot\images\Hemostasis\" />
       <Folder Include="wwwroot\images\icon" />
       <Folder Include="wwwroot\images\img" />
