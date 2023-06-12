@@ -1,0 +1,291 @@
+﻿@using Delta.Models.PartialModels
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Styles {
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/our-production.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/css/product-category.css" asp-append-version="true">
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="/css/our-production-bundle.css" asp-append-version="true">
+        <link rel="stylesheet" href="/css/product-category-bundle.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {
+    <environment include="Development">
+        <script src="~/js/home.js" asp-append-version="true"></script>
+        <script src="~/js/add-hover-class.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
+        <script src="~/js/add-hover-class-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+
+@{
+    await Html.RenderPartialAsync("NotMainSectionPartial", new NotMainSectionModal
+    {
+        Title = "ОБЩЕЛАБОРАТОРНЫЕ РАСХОДНЫЕ МАТЕРИАЛЫ",
+        ClassTitle = "general-laboratory-consumable"
+    });
+}
+
+<section class="product-category">
+    <div class="header-product-category">
+        <ul class="min-nav-menu">
+            <li>
+                <a href="/home/GeneralLaboratoryConsumable">Продукты/</a>
+            </li>
+            <li>
+                <a href="/home/GeneralLaboratoryConsumable"> Общелабораторные расходные материалы/</a>
+            </li>
+            <li>
+                <a href="/home/GeneralLaboratoryConsumableEnd">Наконечники</a>
+            </li>
+        </ul>
+    </div>
+    <div class="wrapper">
+        <div class="model-title">
+            <h3>Наконечники</h3>
+        </div>
+        <div class="wrapper-model">
+            <a href="#" class="item">
+                <img class="prod-img" src="/images/GeneralLaboratoryConsumable/end-1-1.png" alt="" title="">
+                <div class="wrapper-text">
+                    <h4>НАКОНЕЧНИКИ</h4>
+                    <div class="black-title">
+                        <p>
+                            без фильтра
+                        </p>
+                    </div>
+                    <p>
+                        - Объем: 0.1 - 10 мкл <br>
+                        - Стерильность: нет <br>
+                        - Упаковка: россыпью <br>
+                        - Количество в упаковке: 1000 шт <br>
+                        - Градуировка: да
+                    </p>
+                    <div class="logo-img" href="#">
+                        <img src="/images/GeneralLaboratoryConsumable/logo-img-delta.png" alt="">
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="item">
+                <img class="prod-img" src="/images/GeneralLaboratoryConsumable/end-1-2.png" alt="" title="">
+                <div class="wrapper-text">
+                    <h4>НАКОНЕЧНИКИ</h4>
+                    <div class="black-title">
+                        <p>
+                            без фильтра
+                        </p>
+                    </div>
+                    <p>
+                        - Объем: 20-200 мкл <br>
+                        - Стерильность: нет <br>
+                        - Упаковка: россыпью <br>
+                        - Количество в упаковке: 1000 шт <br>
+                        - Градуировка: да
+                    </p>
+                    <div class="logo-img" href="#">
+                        <img src="/images/GeneralLaboratoryConsumable/logo-img-delta.png" alt="">
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="item">
+                <img class="prod-img" src="/images/GeneralLaboratoryConsumable/end-1-3.png" alt="" title="">
+                <div class="wrapper-text">
+                    <h4>НАКОНЕЧНИКИ</h4>
+                    <div class="black-title">
+                        <p>
+                            без фильтра
+                        </p>
+                    </div>
+                    <p>
+                        - Объем: 20-200 мкл <br>
+                        - Стерильность: нет <br>
+                        - Упаковка: россыпью <br>
+                        - Количество в упаковке: 1000 шт <br>
+                        - Градуировка: да
+                    </p>
+                    <div class="logo-img" href="#">
+                        <img src="/images/GeneralLaboratoryConsumable/logo-img-delta.png" alt="">
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="item">
+                <img class="prod-img" src="/images/GeneralLaboratoryConsumable/end-1-4.png" alt="" title="">
+                <div class="wrapper-text">
+                    <h4>НАКОНЕЧНИКИ</h4>
+                    <div class="black-title">
+                        <p>
+                            с фильтром
+                        </p>
+                    </div>
+                    <p>
+                        - Объем: 0.1-10 мкл <br>
+                        - Размеры: 4,5 см <br>
+                        - Стерильность: да, без ДНКаз, РНКаз <br>
+                        - Упаковка: в штативе <br>
+                        - Количество в упаковке: 96 шт
+                    </p>
+                    <div class="logo-img" href="#">
+                        <img src="/images/GeneralLaboratoryConsumable/logo-img-delta.png" alt="">
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="item">
+                <img class="prod-img" src="/images/GeneralLaboratoryConsumable/end-1-5.png" alt="" title="">
+                <div class="wrapper-text">
+                    <h4>НАКОНЕЧНИКИ</h4>
+                    <div class="black-title">
+                        <p>
+                            с фильтром
+                        </p>
+                    </div>
+                    <p>
+                        - Объем: 0.1-10 мкл <br>
+                        - Размеры: 3,12 см <br>
+                        - Стерильность: да, без ДНКаз, РНКаз, <br>
+                        - Упаковка: в штативе <br>
+                        - Количество в упаковке: 96 шт
+                    </p>
+                    <div class="logo-img" href="#">
+                        <img src="/images/GeneralLaboratoryConsumable/logo-img-boeco.png" alt="">
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="item">
+                <img class="prod-img" src="/images/GeneralLaboratoryConsumable/end-1-6.png" alt="" title="">
+                <div class="wrapper-text">
+                    <h4>НАКОНЕЧНИКИ</h4>
+                    <div class="black-title">
+                        <p>
+                            с фильтром
+                        </p>
+                    </div>
+                    <p>
+                        - Объем: 1-20/30 мкл <br>
+                        - Размеры: 4.57 см <br>
+                        - Стерильность: да, без ДНКаз, РНКаз, <br>
+                        - Упаковка: в штативе <br>
+                        - Количество в упаковке: 96 шт
+                    </p>
+                    <div class="logo-img" href="#">
+                        <img src="/images/GeneralLaboratoryConsumable/logo-img-boeco.png" alt="">
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="item">
+                <img class="prod-img" src="/images/GeneralLaboratoryConsumable/end-1-7.png" alt="" title="">
+                <div class="wrapper-text">
+                    <h4>НАКОНЕЧНИКИ</h4>
+                    <div class="black-title">
+                        <p>
+                            с фильтром
+                        </p>
+                    </div>
+                    <p>
+                        - Объем: 20-200 мкл <br>
+                        - Размеры: 5,9 см <br>
+                        - Стерильность: да, без ДНКаз, РНКаз <br>
+                        - Упаковка: в штативе <br>
+                        - Количество в упаковке: 96 шт
+                    </p>
+                    <div class="logo-img" href="#">
+                        <img src="/images/GeneralLaboratoryConsumable/logo-img-delta.png" alt="">
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="item">
+                <img class="prod-img" src="/images/GeneralLaboratoryConsumable/end-1-8.png" alt="" title="">
+                <div class="wrapper-text">
+                    <h4>НАКОНЕЧНИКИ</h4>
+                    <div class="black-title">
+                        <p>
+                            с фильтром
+                        </p>
+                    </div>
+                    <p>
+                        - Объем: 1-100 мкл <br>
+                        - Размеры: 5,34 см <br>
+                        - Стерильность: да, без ДНКаз, РНКаз <br>
+                        - Упаковка: в штативе <br>
+                        - Количество в упаковке: 96 шт
+                    </p>
+                    <div class="logo-img" href="#">
+                        <img src="/images/GeneralLaboratoryConsumable/logo-img-boeco.png" alt="">
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="item">
+                <img class="prod-img" src="/images/GeneralLaboratoryConsumable/end-1-8.png" alt="" title="">
+                <div class="wrapper-text">
+                    <h4>НАКОНЕЧНИКИ</h4>
+                    <div class="black-title">
+                        <p>
+                            с фильтром
+                        </p>
+                    </div>
+                    <p>
+                        - Объем: 1-200 мкл <br>
+                        - Размеры: 5,34 см <br>
+                        - Стерильность: да, без ДНКаз, РНКаз <br>
+                        - Упаковка: в штативе <br>
+                        - Количество в упаковке: 96 шт
+                    </p>
+                    <div class="logo-img" href="#">
+                        <img src="/images/GeneralLaboratoryConsumable/logo-img-boeco.png" alt="">
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="item">
+                <img class="prod-img" src="/images/GeneralLaboratoryConsumable/end-1-9.png" alt="" title="">
+                <div class="wrapper-text">
+                    <h4>НАКОНЕЧНИКИ</h4>
+                    <div class="black-title">
+                        <p>
+                            с фильтром
+                        </p>
+                    </div>
+                    <p>
+                        - Объем: 100-1000 мкл <br>
+                        - Размеры: 7,8 см <br>
+                        - Стерильность: да, без ДНКаз, РНКаз <br>
+                        - Упаковка: в штативе <br>
+                        - Количество в упаковке: 96 шт
+                    </p>
+                    <div class="logo-img" href="#">
+                        <img src="/images/GeneralLaboratoryConsumable/logo-img-delta.png" alt="">
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="item">
+                <img class="prod-img" src="/images/GeneralLaboratoryConsumable/end-1-10.png" alt="" title="">
+                <div class="wrapper-text">
+                    <h4>НАКОНЕЧНИКИ</h4>
+                    <div class="black-title">
+                        <p>
+                            с фильтром
+                        </p>
+                    </div>
+                    <p>
+                        - Объем: 100-1000 мкл <br>
+                        - Размеры: 8.43 см <br>
+                        - Фильтр: с фильтром <br>
+                        - Стерильность: да, без ДНКаз, РНКаз <br>
+                        - Упаковка: в штативе <br>
+                        - Количество в упаковке: 96 шт
+                    </p>
+                    <div class="logo-img" href="#">
+                        <img src="/images/GeneralLaboratoryConsumable/logo-img-boeco.png" alt="">
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>

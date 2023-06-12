@@ -831,7 +831,7 @@ input:focus {
 
 .header-title {
   position: relative;
-  max-width: 411px;
+  min-width: 100%;
 }
 .header-title > h3 {
   font-weight: 700;
@@ -952,7 +952,6 @@ input:focus {
 }
 @media screen and (min-width: 1100px) {
   .header-title {
-    min-width: 100%;
     margin: 0 auto 30px auto;
   }
   .header-title h3 {

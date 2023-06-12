@@ -405,6 +405,22 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult GeneralLaboratoryConsumableNeedles()
+    {
+        return View();
+    }
+    public IActionResult GeneralLaboratoryConsumableEnd()
+    {
+        return View();
+    }
+    public IActionResult GeneralLaboratoryConsumableEppendorfs()
+    {
+        return View();
+    }
+    public IActionResult GeneralLaboratoryConsumableNotMain()
+    {
+        return View();
+    }
     
     
 
