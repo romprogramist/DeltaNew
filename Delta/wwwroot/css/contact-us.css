@@ -37,30 +37,6 @@
     background: #FFFFFF;
   }
 }
-.contacts {
-  padding: 7px 16px 12px 16px;
-}
-.contacts .wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.contacts .wrapper > a img {
-  max-width: 100px;
-}
-.contacts .wrapper > div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 146px;
-  width: 100%;
-}
-
-@media screen and (min-width: 954px) {
-  .contacts {
-    display: none;
-  }
-}
 .not-main {
   background: url(/images/img/main-ourProd.jpg) center center/cover no-repeat;
   max-height: 479px;
@@ -145,144 +121,166 @@
     left: 13px;
   }
 }
+.contacts {
+  padding: 7px 16px 12px 16px;
+}
+.contacts .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contacts .wrapper > a img {
+  max-width: 100px;
+}
+.contacts .wrapper > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 146px;
+  width: 100%;
+}
+
+@media screen and (min-width: 954px) {
+  .contacts {
+    display: none;
+  }
+}
 .not-main {
   background: url(/images/img/main-contactUs.jpg) center center/cover no-repeat;
 }
 
-.contact-us .items .img img {
+.contact-us .wrapper {
+  max-width: 1280px;
+  margin: 25px auto 0 auto;
+  padding: 0 15px;
+}
+.contact-us .wrapper .img > img {
   width: 100%;
-  border-radius: 8px;
   object-fit: cover;
 }
-.contact-us .items .number h3 {
-  margin-top: 13px;
-}
-.contact-us .items .number > div {
-  display: flex;
-  align-items: center;
-}
-.contact-us .items .number > div > p {
-  line-height: 19px;
-  color: #535353;
-}
-.contact-us .items .number > div .imgPhoneW {
-  display: none;
-}
-.contact-us .items .number div:nth-child(2) {
-  margin-top: 13px;
-}
-.contact-us .items .number div:nth-child(3) {
-  margin-top: 24px;
-}
-.contact-us .items .number div:nth-child(4) {
-  margin-top: 8px;
-}
-.contact-us .items .time {
-  margin-top: 27px;
-}
-.contact-us .items .time > div {
-  margin-top: 13px;
-}
-.contact-us .items .time > div p {
-  margin-top: 12px;
-  font-weight: 700;
-  color: #535353;
-  max-width: 208px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-.contact-us .items .time > div p span {
-  font-weight: 400;
-}
-.contact-us .subtitle {
-  display: none;
-}
-.contact-us h3 {
+.contact-us .wrapper .address-office-hours > div > p {
   font-weight: 700;
   font-size: 20px;
+  line-height: 23px;
+}
+.contact-us .wrapper .address-office-hours .contacts-page {
+  margin-top: 15px;
+}
+.contact-us .wrapper .address-office-hours .contacts-page .map-page {
+  display: flex;
+  align-items: center;
+  margin-top: 11px;
+}
+.contact-us .wrapper .address-office-hours .contacts-page .map-page > img {
+  margin-right: 8px;
+  width: 18px;
+}
+.contact-us .wrapper .address-office-hours .contacts-page .map-page > p {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+}
+.contact-us .wrapper .address-office-hours .contacts-page .number {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+.contact-us .wrapper .address-office-hours .contacts-page .number > img {
+  margin-right: 11px;
+  width: 23px;
+}
+.contact-us .wrapper .address-office-hours .contacts-page .number > p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+}
+.contact-us .wrapper .address-office-hours .office-hours {
+  margin-top: 40px;
+  position: relative;
+}
+.contact-us .wrapper .address-office-hours .office-hours > .days {
+  margin-top: 8px;
+}
+.contact-us .wrapper .address-office-hours .office-hours > .days > div {
+  display: flex;
+  align-items: center;
+  margin-top: 11px;
+}
+.contact-us .wrapper .address-office-hours .office-hours > .days > div > p {
+  width: 65px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  margin-right: 60px;
+}
+.contact-us .wrapper .address-office-hours .office-hours:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  background: #C72930;
+  height: 4px;
+  top: -20px;
 }
 
-@media screen and (min-width: 800px) {
-  .contact-us {
-    padding-bottom: 200px;
+@media screen and (min-width: 954px) {
+  .contact-us .wrapper {
+    padding-bottom: 50px;
   }
-  .contact-us .items {
-    padding: 0;
-    margin: -444px 12% 0 0;
+}
+@media screen and (min-width: 1100px) {
+  .contact-us .wrapper {
+    margin-top: 38px;
     display: flex;
     flex-direction: row-reverse;
-    border-radius: 0;
+    justify-content: space-between;
+    padding: 0 80px 76px;
   }
-  .contact-us .items .img {
-    min-width: 38%;
+  .contact-us .wrapper .img > img {
+    min-height: 100%;
   }
-  .contact-us .items .img img {
-    height: 100%;
-    border-radius: 0;
+  .contact-us .wrapper .address-office-hours {
+    width: 50%;
   }
-  .contact-us .items .location-data {
-    padding: 0;
-    width: 62%;
-  }
-  .contact-us .items .location-data .number {
-    background: #002294;
-    padding: 5% 10%;
-  }
-  .contact-us .items .location-data .number h3 {
-    color: #FFFFFF;
-    margin-top: 0;
+  .contact-us .wrapper .address-office-hours > div > p {
     font-size: 40px;
+    line-height: 47px;
   }
-  .contact-us .items .location-data .number div p {
-    color: #FFFFFF;
+  .contact-us .wrapper .address-office-hours .contacts-page .map-page {
+    margin-top: 38px;
+  }
+  .contact-us .wrapper .address-office-hours .contacts-page .map-page > p {
     font-size: 24px;
-    line-height: 36px;
+    line-height: 28px;
   }
-  .contact-us .items .location-data .number div img {
-    margin-right: 10px;
+  .contact-us .wrapper .address-office-hours .contacts-page > .number {
+    margin-top: 39px;
   }
-  .contact-us .items .location-data .number div .imgPhoneS {
-    display: none;
-  }
-  .contact-us .items .location-data .number div .imgPhoneW {
-    display: block;
-  }
-  .contact-us .items .location-data .number .num p {
+  .contact-us .wrapper .address-office-hours .contacts-page > .number > p {
     font-size: 20px;
+    line-height: 23px;
   }
-  .contact-us .items .location-data .time {
-    background: #00AFD8;
-    padding: 5% 10%;
-    margin-top: 0;
-    color: #FFFFFF;
+  .contact-us .wrapper .address-office-hours .contacts-page a:last-child {
+    margin-top: 14px;
   }
-  .contact-us .items .location-data .time h3 {
-    font-size: 40px;
+  .contact-us .wrapper .address-office-hours .office-hours {
+    margin-top: 115px;
   }
-  .contact-us .items .location-data .time > div p {
-    color: #FFFFFF;
-    font-size: 20px;
-    min-width: 70%;
-    margin-top: 20px;
+  .contact-us .wrapper .address-office-hours .office-hours .days > div {
+    margin-top: 22px;
   }
-  .contact-us .subtitle {
-    display: block;
-    background: #FFFFFF;
-    margin-right: 12%;
-    padding: 10% 3%;
-  }
-  .contact-us .subtitle h3 {
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 48px;
-  }
-  .contact-us .subtitle > p {
-    font-weight: 400;
+  .contact-us .wrapper .address-office-hours .office-hours .days > div > p {
     font-size: 24px;
-    line-height: 36px;
-    color: #535353;
-    margin-top: 20px;
+    line-height: 28px;
+    margin-right: 70px;
+  }
+  .contact-us .wrapper .address-office-hours .office-hours .days > div > span {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .contact-us .wrapper .address-office-hours .office-hours:before {
+    top: -57px;
+    height: 8px;
   }
 }
 
