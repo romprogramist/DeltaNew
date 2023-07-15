@@ -3,10 +3,18 @@
   <component name="EfCoreDialogsState">
     <option name="keyValueStorage">
       <map>
+        <entry key="Common:0b61a9f5-b0d6-41ed-b50f-1b01eaa70cef:dbContext" value="Delta.Data.DataContext" />
         <entry key="Common:buildConfiguration" value="Debug" />
         <entry key="Common:dbContext" value="RSiteTemplate.Data.DataContext" />
+        <entry key="Common:dbContextFolder" value="Data" />
+        <entry key="Common:dbContextName" value="DataContext" />
+        <entry key="Common:generateOnConfiguring" value="true" />
         <entry key="Common:noBuild" value="false" />
-        <entry key="Common:outputFolder" value="Migrations" />
+        <entry key="Common:outputFolder" value="Data\Migrations" />
+        <entry key="Common:provider" value="Npgsql.EntityFrameworkCore.PostgreSQL" />
+        <entry key="Common:useAttributes" value="false" />
+        <entry key="Common:useDatabaseNames" value="false" />
+        <entry key="Common:usePluralizer" value="true" />
       </map>
     </option>
   </component>

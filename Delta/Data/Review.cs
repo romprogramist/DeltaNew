@@ -1,17 +1,29 @@
-﻿namespace Delta.Data;
+﻿using System;
+using System.Collections.Generic;
 
-public class Review
+namespace Delta.Data;
+
+public partial class Review
 {
     public int Id { get; set; }
-    public string Name { get; set; } = string.Empty;
-    public string Phone { get; set; } = string.Empty;
-    public string Text { get; set; } = string.Empty;
-    public string Email { get; set; } = string.Empty;
-    public DateTime CreationDateTime { get; set; }
-    public string UtmInfo { get; set; } = string.Empty;
-    public string SitePage { get; set; } = string.Empty;
-    public string AdditionalInfo { get; set; } = string.Empty;
+
+    public string Name { get; set; } = null!;
+
+    public string Phone { get; set; } = null!;
+
+    public string Text { get; set; } = null!;
+
+    public string Email { get; set; } = null!;
+
+    public string UtmInfo { get; set; } = null!;
+
+    public string SitePage { get; set; } = null!;
+
+    public string AdditionalInfo { get; set; } = null!;
+
     public bool IsApproved { get; set; }
+
+    public DateTime CreationDateTime { get; set; }
 
     public int Rate { get; set; }
 }

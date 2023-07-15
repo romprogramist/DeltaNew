@@ -1,12 +1,21 @@
-﻿namespace Delta.Data;
+﻿using System;
+using System.Collections.Generic;
 
-public class ClientApplication
+namespace Delta.Data;
+
+public partial class ClientApplication
 {
     public int Id { get; set; }
+
     public DateTime CreationDateTime { get; set; }
-    public string Name { get; set; } = string.Empty;
-    public string Phone { get; set; } = string.Empty;
-    public string SitePage { get; set; } = string.Empty;
-    public string AdditionalInfo { get; set; } = string.Empty;
-    public string UtmInfo { get; set; } = string.Empty;
+
+    public string Name { get; set; } = null!;
+
+    public string Phone { get; set; } = null!;
+
+    public string SitePage { get; set; } = null!;
+
+    public string AdditionalInfo { get; set; } = null!;
+
+    public string UtmInfo { get; set; } = null!;
 }
