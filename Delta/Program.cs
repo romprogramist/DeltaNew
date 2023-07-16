@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Delta.Data;
 using Delta.Middleware;
 using Delta.Services.ApplicationService;
+using Delta.Services.CompanyService;
 using Delta.Services.EmailService;
 using Delta.Services.ReviewService;
 
@@ -18,6 +19,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IApplicationService, ApplicationService>();
 builder.Services.AddScoped<IReviewService, ReviewService>();
+builder.Services.AddScoped<ICompanyService, CompanyService>();
 
 builder.Services.AddWebOptimizer(pipeline =>
 {

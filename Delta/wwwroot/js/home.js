@@ -6,15 +6,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // get reviews
-    const reviewsContent = document.querySelector('.reviews-content');
+    const reviewsContent = document.querySelector('.test');
     
-    // apiRequest('/api/review/approved', 'GET', null, (response) => {
-    //     if(response) {
-    //         reviewsContent.textContent = JSON.stringify(response);
-    //     }
-    // }, (error, response) => {
-    //     console.log('Something goes wrong with getting reviews', error, response);
-    // })
+    apiRequest('/api/company/approved', 'GET', null, (response) => {
+        console.log(1)
+        if(response) {
+            // reviewsContent.textContent = JSON.stringify(response);
+            reviewsContent.textContent = response[0].name;
+            console.log(response[0].name);
+        }
+    }, (error, response) => {
+        console.log('Something goes wrong with getting reviews', error, response);
+    })
     
     // code here
     // const openSearchBtn = document.querySelector('.open-search-btn');
