@@ -4,6 +4,7 @@ using Delta.Middleware;
 using Delta.Services.ApplicationService;
 using Delta.Services.CompanyService;
 using Delta.Services.EmailService;
+using Delta.Services.PhotoAddition;
 using Delta.Services.ReviewService;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,12 +16,15 @@ builder.Services.AddDbContext<DataContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
+
+
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IApplicationService, ApplicationService>();
 builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
-
+builder.Services.AddTransient<IPhotoAddition, PhotoAddition>();
+ 
 builder.Services.AddWebOptimizer(pipeline =>
 {
     //css bundles
@@ -112,3 +116,4 @@ app.MapControllerRoute(
 app.UseUtm();
 
 app.Run();
+

@@ -74,6 +74,7 @@
 
     <ItemGroup>
       <Folder Include="Data\Migrations" />
+      <Folder Include="Uploads\StaticContent\" />
       <Folder Include="wwwroot\css" />
       <Folder Include="wwwroot\fonts" />
       <Folder Include="wwwroot\images\ejaculateStudy\" />
