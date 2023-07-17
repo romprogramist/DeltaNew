@@ -4,6 +4,6 @@ namespace Delta.Services.CompanyService;
 
 public interface ICompanyService
 {
-    // Task SaveNewCompanyAsync(ReviewModel company);
-    Task<IEnumerable<ReviewModel>> GetApprovedCompaniesAsync();
+    Task SaveNewCompanyAsync(CompanyModel company);
+    Task<List<CompanyModel>> GetApprovedCompaniesAsync();
 }

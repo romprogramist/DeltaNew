@@ -1,7 +1,6 @@
 ﻿using Delta.Models;
 using Delta.Services.ReviewService;
 using Microsoft.AspNetCore.Mvc;
-
 namespace Delta.Controllers.API;
 
 [ApiController]

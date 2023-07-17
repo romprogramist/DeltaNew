@@ -426,6 +426,10 @@ public class HomeController : Controller
         return View();
     }
     
+    public IActionResult AddACompany()
+    {
+        return View();
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()

@@ -14,6 +14,12 @@
     const reviewCompletedModal = document.getElementById('review-success');
     const reviewCrashedModal = document.getElementById('review-error');
     formRequest(reviewForms, '/api/review/send', reviewCompletedModal, reviewCrashedModal, ['name', 'phone', 'email', 'text', 'rate']);
+
+    const companyForms = document.querySelectorAll('form.company-form');
+    const companyCompletedModal = document.getElementById('company-success');
+    const companyCrashedModal = document.getElementById('company-error');
+    console.log(companyCompletedModal, companyCrashedModal);
+    formRequest(companyForms, '/api/companies/send', companyCompletedModal, companyCrashedModal, ['name', 'description', 'img']);
     
     
     const hamburger = document.querySelector('.hamburger');

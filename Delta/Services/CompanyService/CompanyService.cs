@@ -14,18 +14,26 @@ public class CompanyService : ICompanyService
     }
     
     
-    public Task SaveNewCompanyAsync(ReviewModel application)
+    public async Task SaveNewCompanyAsync(CompanyModel company)
     {
-        throw new NotImplementedException();
-    }
-    
+        _context.Companies.Add(new Company
+        {
+            Name = company.Name,
+            Description = company.Description,
+            Logo = company.Logo
+        });
 
-    public async Task<IEnumerable<ReviewModel>> GetApprovedCompaniesAsync()
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task<List<CompanyModel>> GetApprovedCompaniesAsync()
     {
         return await _context.Companies
-            .Select(r => new ReviewModel
+            .Select(r => new CompanyModel
             {
-                Name = r.Name
+                Name = r.Name,
+                Description = r.Description,
+                Logo = r.Logo
             }).ToListAsync();
     }
 }
