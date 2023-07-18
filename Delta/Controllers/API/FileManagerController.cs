@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Delta.Controllers.API;
 
 
-[Route("api/companies")]
+[Route("api/companiesImg")]
 [ApiController]
 public class FileManagerController : ControllerBase
 {

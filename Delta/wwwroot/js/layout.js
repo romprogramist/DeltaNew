@@ -19,7 +19,7 @@
     const companyCompletedModal = document.getElementById('company-success');
     const companyCrashedModal = document.getElementById('company-error');
     console.log(companyCompletedModal, companyCrashedModal);
-    formRequest(companyForms, '/api/companies/send', companyCompletedModal, companyCrashedModal, ['name', 'description', 'img']);
+    formRequest(companyForms, '/api/companiesImg/send', companyCompletedModal, companyCrashedModal, ['logo']);
     
     
     const hamburger = document.querySelector('.hamburger');
