@@ -1,7 +1,6 @@
 function formRequest(forms, apiURL, requestCompletedModal, requestCrashedModal, inputNames) {
     forms.forEach(f => {
         f.addEventListener('submit', (e) => {
-            console.log(1);
             e.preventDefault();
 
             const inputs = [];

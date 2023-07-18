@@ -1,6 +1,4 @@
-﻿using System.Security.AccessControl;
-using Delta.Helper;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
+﻿using Delta.Helper;
 
 namespace Delta.Services.PhotoAddition;
 
@@ -8,25 +6,22 @@ public class PhotoAddition: IPhotoAddition
 {
     public async Task<string> UploadFile(IFormFile _IFormFile)
     {
-        string FileName = "";
         try
         {
-            FileInfo _FileInfo = new FileInfo(_IFormFile.FileName);
-            FileName = _IFormFile.FileName + "_" + DateTime.Now.Ticks.ToString() + _FileInfo.Extension;
-            var _GetFilePath = Common.GetFilePath(FileName);
-            using (var _FileStream = new FileStream(_GetFilePath, FileMode.Create))
+            var fileName = Path.GetFileName(_IFormFile.FileName); // Получаем оригинальное имя файла
+            var filePath = Common.GetFilePath(fileName);
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
             {
-                await _IFormFile.CopyToAsync(_FileStream);
+                await _IFormFile.CopyToAsync(fileStream);
             }
-            return FileName;
+
+            return fileName;
         }
         catch (Exception ex)
         {
             throw ex;
         }
     }
-    
-    
 
     public Task<(byte[], string, string)> DownloadFile(string FileName)
     {

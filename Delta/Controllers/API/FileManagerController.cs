@@ -16,9 +16,9 @@ public class FileManagerController : ControllerBase
 
     [HttpPost]
     [Route("send")]
-    public async Task<IActionResult> UploadFile(IFormFile _IFormFile)
+    public async Task<IActionResult> UploadFile(IFormFile iFormFile)
     {
-        var result = await _iManageImage.UploadFile(_IFormFile);
+        var result = await _iManageImage.UploadFile(iFormFile);
         return Ok(result);
     }
 

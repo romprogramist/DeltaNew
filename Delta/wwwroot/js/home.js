@@ -7,15 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // get company
 
-
-    const companyContent = document.querySelector('.list-companies .list');
-
-    apiRequest('/api/companies/approved', 'GET', null, (response) => {
-        if(response) {
-            let imgPath;
-            for (let i = 0; i < response.length; i++) {
-                imgPath = '/imagesAdditionAdmin/company/' + response[i].logo;
-                let companyOne = `
+    if (document.querySelector('.list-companies .list'))
+    {
+        const companyContent = document.querySelector('.list-companies .list');
+        apiRequest('/api/companies/approved', 'GET', null, (response) => {
+            if(response) {
+                let imgPath;
+                for (let i = 0; i < response.length; i++) {
+                    imgPath = '/imagesAdditionAdmin/company/' + response[i].logo;
+                    let companyOne = `
                     <tr>
                         <th>${response[i].name}</th>
                         <th>${response[i].description}</th>
@@ -24,12 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         </th>                        
                     </tr>                                                 
                 `
-                companyContent.innerHTML += companyOne; 
+                    companyContent.innerHTML += companyOne;
+                }
             }
-        }
-    }, (error, response) => {
-        console.log('Something goes wrong with getting company', error, response);
-    })
+        }, (error, response) => {
+            console.log('Something goes wrong with getting company', error, response);
+        })   
+    }
     
     
     // code here
