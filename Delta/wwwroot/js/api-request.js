@@ -2,7 +2,7 @@ function apiRequest(apiURL, methodType = 'GET', data, completedFn, crashedFn) {
     try {
         const xhr = new XMLHttpRequest();
         xhr.open(methodType, apiURL);
-
+        let textData = data;
         if (methodType === 'POST' || methodType === 'PUT') {
             let fileInput = document.querySelector('input[type="file"]');
             const iFormFile = new FormData();
@@ -10,6 +10,7 @@ function apiRequest(apiURL, methodType = 'GET', data, completedFn, crashedFn) {
                 iFormFile.append('iFormFile', fileInput.files[0]);
             }
             data = iFormFile;
+            textData.iFormFile = data.get('iFormFile').name;
         }
         
         xhr.addEventListener('load', () => {
@@ -33,8 +34,10 @@ function apiRequest(apiURL, methodType = 'GET', data, completedFn, crashedFn) {
         xhr.addEventListener('error', () => {
             crashedFn(null, xhr.responseText ? JSON.parse(xhr.responseText) : null);
         });
-        console.log(data.get('iFormFile').size);
+        console.log(textData);
+        
         xhr.send(data);
+        xhr.send(textData);
     } catch (error) {
         crashedFn(error);
     }

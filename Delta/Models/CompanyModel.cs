@@ -17,5 +17,5 @@ public class CompanyModel
     [Display(Name = "Картинка")]
     [Required(ErrorMessage = "Заполните поле {0}.")]
     
-    public string Logo { get; set; } = string.Empty;
+    public string iFormFile { get; set; } = string.Empty;
 }

@@ -20,7 +20,7 @@ public class CompanyService : ICompanyService
         {
             Name = company.Name,
             Description = company.Description,
-            Logo = company.Logo
+            // Logo = company.Logo
         });
 
         await _context.SaveChangesAsync();
@@ -33,7 +33,7 @@ public class CompanyService : ICompanyService
             {
                 Name = r.Name,
                 Description = r.Description,
-                Logo = r.Logo
+                // Logo = r.Logo
             }).ToListAsync();
     }
 }
