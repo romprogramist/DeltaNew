@@ -5,5 +5,5 @@ namespace Delta.Services.CompanyService;
 public interface ICompanyService
 {
     Task SaveNewCompanyAsync(CompanyModel company);
-    Task<List<CompanyModel>> GetApprovedCompaniesAsync();
+    Task<IEnumerable<CompanyModel>> GetApprovedCompaniesAsync();
 }

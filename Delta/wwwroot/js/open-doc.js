@@ -1,7 +1,6 @@
 let imgDoc = document.querySelectorAll('.emptyTable .doc');
 
 imgDoc.forEach(d => {
-    console.log(d);
         d.addEventListener('click', () => {
         d.previousElementSibling.classList.add('active-img');
         body.classList.add('no-scroll');     

@@ -18,9 +18,9 @@
     const companyForms = document.querySelectorAll('form.company-form');
     const companyCompletedModal = document.getElementById('company-success');
     const companyCrashedModal = document.getElementById('company-error');
-    console.log(companyCompletedModal, companyCrashedModal);
+    
+    formRequest(companyForms, '/api/companies/send', companyCompletedModal, companyCrashedModal, ['name', 'description', 'iFormFile'], {'Content-Type': 'application/json; charset=utf-8'});
     formRequest(companyForms, '/api/companiesImg/send', companyCompletedModal, companyCrashedModal, ['iFormFile']);
-    formRequest(companyForms, '/api/companies/send', companyCompletedModal, companyCrashedModal, ['name', 'description', 'iFormFile']);
     
     
     const hamburger = document.querySelector('.hamburger');

@@ -20,5 +20,4 @@ const myElementsSlide = document.getElementsByClassName("swiper-slide");
 addHoverClass(myElementsSlide,"swiper-slide-active-new");
 
 const itemCategoryActive = document.querySelectorAll(".product-category .item");
-console.log(itemCategoryActive);
 addHoverClass(itemCategoryActive,"item-category-active");

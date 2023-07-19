@@ -1,5 +1,7 @@
-function formRequest(forms, apiURL, requestCompletedModal, requestCrashedModal, inputNames) {
+function formRequest(forms, apiURL, requestCompletedModal, requestCrashedModal, inputNames, headers) {
+    
     forms.forEach(f => {
+        
         f.addEventListener('submit', (e) => {
             e.preventDefault();
 
@@ -16,7 +18,6 @@ function formRequest(forms, apiURL, requestCompletedModal, requestCrashedModal, 
                 validation.classList.remove('show');
                 validation.textContent = '';
             }
-        
 
             const requestData = {};
             inputs.forEach(i => {
@@ -53,6 +54,8 @@ function formRequest(forms, apiURL, requestCompletedModal, requestCrashedModal, 
                         showModal(requestCrashedModal);
                     }
                 }, 400);
+            }, {
+                headers
             });
             showLoader();
         });

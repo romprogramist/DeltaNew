@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Delta.Data;
 
-public partial class Company
+public sealed partial class Company
 {
     public int Id { get; set; }
 
@@ -13,7 +13,7 @@ public partial class Company
 
     public string Logo { get; set; } = null!;
 
-    public virtual ICollection<Product> Products { get; } = new List<Product>();
+    public ICollection<Product> Products { get; } = new List<Product>();
 
-    public virtual ICollection<Reagent> Reagents { get; } = new List<Reagent>();
+    public ICollection<Reagent> Reagents { get; } = new List<Reagent>();
 }

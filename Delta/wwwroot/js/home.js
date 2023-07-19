@@ -10,11 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('.list-companies .list'))
     {
         const companyContent = document.querySelector('.list-companies .list');
-        apiRequest('/api/companies/approved', 'GET', null, (response) => {
+        apiRequest('/api/companies/approved', 'GET', null,  (response) => {
             if(response) {
+                console.log(response);
                 let imgPath;
                 for (let i = 0; i < response.length; i++) {
-                    imgPath = '/imagesAdditionAdmin/company/' + response[i].logo;
+                    imgPath = '/imagesAdditionAdmin/' + response[i].iFormFile;
+                    console.log(imgPath);
                     let companyOne = `
                     <tr>
                         <th>${response[i].name}</th>
@@ -29,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, (error, response) => {
             console.log('Something goes wrong with getting company', error, response);
+        }, {
+            'Content-Type': 'application/json; charset=utf-8'
         })   
     }
     

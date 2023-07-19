@@ -9,7 +9,7 @@ public static class Common
     }
     public static string GetStaticContentDirectory()
     {
-        var result = Path.Combine(Directory.GetCurrentDirectory(), "Uploads");
+        var result = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/imagesAdditionAdmin");
         if (!Directory.Exists(result))
         {
             Directory.CreateDirectory(result);

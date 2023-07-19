@@ -20,20 +20,20 @@ public class CompanyService : ICompanyService
         {
             Name = company.Name,
             Description = company.Description,
-            // Logo = company.Logo
+            Logo = company.iFormFile
         });
 
         await _context.SaveChangesAsync();
     }
 
-    public async Task<List<CompanyModel>> GetApprovedCompaniesAsync()
+    public async Task<IEnumerable<CompanyModel>> GetApprovedCompaniesAsync()
     {
         return await _context.Companies
             .Select(r => new CompanyModel
             {
                 Name = r.Name,
                 Description = r.Description,
-                // Logo = r.Logo
+                iFormFile = r.Logo
             }).ToListAsync();
     }
 }
