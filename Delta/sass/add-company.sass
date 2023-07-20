@@ -2,109 +2,112 @@
   margin: 0
   padding: 0
 
-html
+html  
+  background: linear-gradient(rgb(0 0 0 / 60%), rgb(87 87 87 / 60%)) 
   height: 100%
-  background: linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6))
 
+header
+  display: none
+.map
+  display: none
+footer
+  display: none
+.contacts
+  display: none
 
-#msform
-  max-width: 700px
-  margin: 50px auto
-  text-align: center
-  position: relative
-  fieldset
-    background: white
-    border: 0 none
-    border-radius: 3px
-    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4)
-    padding: 20px 30px
-    box-sizing: border-box
-    width: 80%
-    margin: 0 10%
-    position: relative
-    &:not(:first-of-type)
-      display: none
+.wrapper
+  max-width: 670px
+  width: 100%
+  background: #f8f8f8
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  padding: 40px 30px 60px
 
+.link-transition
+  display: block
+  margin-top: 20px
+  font-size: 18px
+  
+  
+.add-company-admin
+  form
+    fieldset
+      display: flex
+      flex-direction: column      
+      .fs-title
+        font-size: 25px
+        font-weight: 700
+      label
+        margin-top: 30px
+        input
+          border: none
+          padding: 15px 0 15px 15px
+          border-radius: 3px
+          width: 100%
+      button
+        padding: 10px
+        background: #943539
+        color: #fff
 
-  input, textarea
-    padding: 15px
-    border: 1px solid #ccc
-    border-radius: 3px
-    margin-bottom: 10px
+        
+
+.list-companies
+  margin-top: 150px
+  padding: 50px 50px
+  .table
     width: 100%
+    margin-bottom: 20px
+    border: 1px solid #dddddd
+    border-collapse: collapse
+    padding: 0 20px
+
+  .table th
+    padding: 10px 15px 15px
+    //background: #efefef
+    border: 1px solid #dddddd
+    font-weight: 400
+    line-height: 20px
+    color: #fff
+
+  .table td
+    border: 1px solid #dddddd
+    padding: 5px
+    
+.admin-nav
+  .btn 
+    display: inline-block
     box-sizing: border-box
-    color: #2C3E50
-    font-size: 13px
-
-  .action-button
-    width: 100px
-    background: #27AE60
-    font-weight: bold
-    color: white
-    border: 0 none
-    border-radius: 1px
-    cursor: pointer
-    padding: 10px
-    margin: 10px 5px
-    text-decoration: none
+    padding: 0 25px
+    margin: 0 15px 15px 0
+    outline: none
+    border: 1px solid #fff
+    border-radius: 50px
+    height: 46px
+    line-height: 46px
     font-size: 14px
-    &:hover, &:focus
-      box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60
-
-
-
-.fs-title
-  font-size: 15px
-  text-transform: uppercase
-  color: #2C3E50
-  margin-bottom: 10px
-
-.fs-subtitle
-  font-weight: normal
-  font-size: 13px
-  color: #666
-  margin-bottom: 20px
-
-#progressbar
-  margin-bottom: 30px
-  overflow: hidden
-  counter-reset: step
-  li
-    list-style-type: none
-    color: white
-    text-transform: uppercase
-    font-size: 9px
-    width: 33.33%
-    float: left
-    position: relative
-    &:before
-      content: counter(step)
-      counter-increment: step
-      width: 20px
-      line-height: 20px
-      display: block
-      font-size: 10px
-      color: #333
-      background: white
-      border-radius: 3px
-      margin: 0 auto 5px auto
-
-    &:after
-      content: ''
-      width: 100%
-      height: 2px
-      background: white
-      position: absolute
-      left: -50%
-      top: 9px
-      z-index: -1
-
-    &:first-child:after
-      content: none
-
-    &.active:before, &.active:after
-      background: #27AE60
-      color: white
-		
-	
-
+    font-weight: 600
+    text-decoration: none
+    color: #444
+    background-color: #fff
+    box-shadow: 0 4px 6px rgb(65 132 144 / 10%), 0 1px 3px rgb(0 0 0 / 8%)
+    cursor: pointer
+    user-select: none
+    appearance: none
+    touch-action: manipulation
+    vertical-align: top
+    transition: box-shadow 0.2s
+  .btn:focus-visible 
+    border: 1px solid #4c51f9
+    outline: none
+  .btn:hover 
+    transition: all 0.2s
+    box-shadow: 0 7px 14px rgb(65 132 144 / 10%), 0 3px 6px rgb(0 0 0 / 8%)
+  .btn:active 
+    background-color: #808080
+  .btn:disabled 
+    background-color: #eee
+    border-color: #eee
+    color: #444
+    cursor: not-allowed

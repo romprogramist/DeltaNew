@@ -29,24 +29,23 @@
     </environment>
 }
 
-<section class="add-company">
-    <form enctype="multipart/form-data" method="post" class="company-form" id="msform">
-        <fieldset>
-            <h2 class="fs-title">Добавление компании</h2>
-            <h3 class="fs-subtitle">This is step 1</h3>
+<section class="add-company-admin">
+    <form enctype="multipart/form-data" method="post" class="wrapper company-form" id="msform">
+        <a style="margin-bottom: 20px; display: block; font-size: 18px" href="/home/AdminPanel">Вернуться на главное меню</a>
+        <fieldset style="padding: 0">
+            <h2 class="fs-title">Добавить компанию</h2>
             <label>
-                <input type="text" name="name" placeholder="Name"/>
+                <input type="text" name="name" placeholder="Название"/>
             </label>
             <label>
-                <input type="text" name="description" placeholder="Description"/>
+                <input type="text" name="description" placeholder="Описание"/>
             </label>
             <label>
                 <input type="file" name="iFormFile"/>
             </label>
             <div class="validation"></div>
-            <button class="next action-button">Next</button>
+            <button class="next">Добавить компанию</button>
+            <a class="link-transition" href="/home/test">Таблица со списком компании</a>
         </fieldset>
-        
-        @* <button type="button" name="next" class="next action-button">Next</button> *@
     </form>
 </section>

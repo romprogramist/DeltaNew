@@ -12,18 +12,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const companyContent = document.querySelector('.list-companies .list');
         apiRequest('/api/companies/approved', 'GET', null,  (response) => {
             if(response) {
-                console.log(response);
                 let imgPath;
                 for (let i = 0; i < response.length; i++) {
                     imgPath = '/imagesAdditionAdmin/' + response[i].iFormFile;
-                    console.log(imgPath);
                     let companyOne = `
                     <tr>
                         <th>${response[i].name}</th>
                         <th>${response[i].description}</th>
                         <th>
                             <img style="width: 100px; height: 30px; object-fit: cover;" src="${imgPath}" alt="" title="">
-                        </th>                        
+                        </th> 
+                        <th>
+                            <a href="">
+                                <img src="/images/icon/garbage.svg" alt="">
+                            </a>
+                        </th>     
                     </tr>                                                 
                 `
                     companyContent.innerHTML += companyOne;

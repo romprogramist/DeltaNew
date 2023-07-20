@@ -967,28 +967,6 @@ input:focus {
     right: 5%;
   }
 }
-.list-companies {
-  margin-top: 150px;
-  padding: 50px 0;
-}
-.list-companies .table {
-  width: 100%;
-  margin-bottom: 20px;
-  border: 1px solid #dddddd;
-  border-collapse: collapse;
-}
-.list-companies .table th {
-  padding: 5px 10px;
-  background: #efefef;
-  border: 1px solid #dddddd;
-  font-weight: 400;
-  line-height: 20px;
-}
-.list-companies .table td {
-  border: 1px solid #dddddd;
-  padding: 5px;
-}
-
 .add-company {
   margin-top: 150px;
 }

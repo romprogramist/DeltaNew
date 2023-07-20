@@ -44,6 +44,9 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/css/contact-us.css");
     pipeline.AddCssBundle("/css/one-product-description-bundle.css", 
         "/css/one-product-description.css");
+    pipeline.AddCssBundle("/css/add-company-bundle.css", 
+        "/css/add-company.css");
+    
     
     
     
@@ -75,20 +78,22 @@ builder.Services.AddWebOptimizer(pipeline =>
 
 var app = builder.Build();
 
+using var scope = app.Services.CreateScope();
+var context = scope.ServiceProvider.GetRequiredService<DataContext>();
+var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+try
+{
+    context.Database.Migrate();
+}
+catch (Exception ex)
+{
+    logger.LogError(ex, "Problem with migration data");
+}
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    using var scope = app.Services.CreateScope();
-    var context = scope.ServiceProvider.GetRequiredService<DataContext>();
-    var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
-    try
-    {
-        context.Database.Migrate();
-    }
-    catch (Exception ex)
-    {
-        logger.LogError(ex, "Problem with migration data");
-    }
+    
     
     app.UseSwagger();
     app.UseSwaggerUI();
