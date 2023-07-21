@@ -53,8 +53,6 @@ apiRequest('/api/companies/approved', 'GET', null,  (response) => {
         let companyDeletion = document.querySelectorAll('.company-deletion');
         companyDeletion.forEach(el => {
             el.parentElement.addEventListener('click', (e) => {
-                // e.preventDefault()
-                // console.log(el.parentElement.getAttribute('data-index'));
                 deleteItemDada('/api/companies/id', el.parentElement.getAttribute('data-index'))
             })
         })

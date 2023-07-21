@@ -1,14 +1,17 @@
-function apiRequest(apiURL, methodType = 'GET', data, completedFn, crashedFn, headers, fileInput) {
+function apiRequest(apiURL, methodType = 'GET', data, completedFn, crashedFn, headers) {
     
     try {
-        
+
         let iFormFile = new FormData();
-        if (methodType === 'POST') {
-            iFormFile.append('iFormFile', fileInput.files[0]);
-            data.iFormFile = iFormFile.get('iFormFile').name;
-            delete data.utmInfo;
-            delete data.sitePage;
-            delete data.FormFile;
+        if(document.querySelector('input[type="file"]')) {
+            let fileInput = document.querySelector('input[type="file"]');
+            if (methodType === 'POST') {
+                iFormFile.append('iFormFile', fileInput.files[0]);
+                data.iFormFile = iFormFile.get('iFormFile').name;
+                delete data.utmInfo;
+                delete data.sitePage;
+                delete data.FormFile;
+            }
         }
         
         
@@ -19,6 +22,7 @@ function apiRequest(apiURL, methodType = 'GET', data, completedFn, crashedFn, he
             Object.entries(headers).forEach(([key, value]) => {
                 if(value) {
                     xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+                    // xhr.setRequestHeader(key, value.toString());
                     xhr.send(JSON.stringify(data));
                 }
             });

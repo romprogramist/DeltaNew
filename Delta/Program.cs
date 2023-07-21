@@ -73,6 +73,10 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/js/add-hover-class.js"); 
     pipeline.AddJavaScriptBundle("/js/dropdown-bundle.js",
         "/js/dropdown.js"); 
+    pipeline.AddJavaScriptBundle("/js/delete-item-dada-b-bundle.js",
+        "/js/delete-item-dada-b.js"); 
+    
+    
     
 });
 
