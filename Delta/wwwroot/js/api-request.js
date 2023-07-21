@@ -50,7 +50,8 @@ function apiRequest(apiURL, methodType = 'GET', data, completedFn, crashedFn, he
         xhr.addEventListener('error', () => {
             crashedFn(null, xhr.responseText ? JSON.parse(xhr.responseText) : null);
         });
-        if(iFormFile) {
+        
+        if(iFormFile.get(name)) {
             xhr.send(iFormFile);
         }
     } catch(error) {
