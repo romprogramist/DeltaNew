@@ -33,9 +33,23 @@ public class CompanyService : ICompanyService
             {
                 Name = r.Name,
                 Description = r.Description,
-                iFormFile = r.Logo
+                iFormFile = r.Logo,
+                id = r.Id
             }).ToListAsync();
     }
+    
+    public async Task<List<Company>> DeleteCompany(int id)
+    {
+        var company = await _context.Companies.FindAsync(id);
+        if (company is null)
+            return null;
+
+        _context.Companies.Remove(company);
+        await _context.SaveChangesAsync();
+
+        return await _context.Companies.ToListAsync();
+    }
+    
 }
 
 

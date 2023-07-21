@@ -1,8 +1,7 @@
-function apiRequest(apiURL, methodType = 'GET', data, completedFn, crashedFn, headers) {
+function apiRequest(apiURL, methodType = 'GET', data, completedFn, crashedFn, headers, fileInput) {
     
     try {
-
-        let fileInput = document.querySelector('input[type="file"]');
+        
         let iFormFile = new FormData();
         if (methodType === 'POST') {
             iFormFile.append('iFormFile', fileInput.files[0]);
@@ -20,7 +19,6 @@ function apiRequest(apiURL, methodType = 'GET', data, completedFn, crashedFn, he
             Object.entries(headers).forEach(([key, value]) => {
                 if(value) {
                     xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
-                    // xhr.setRequestHeader(key, value.toString());
                     xhr.send(JSON.stringify(data));
                 }
             });

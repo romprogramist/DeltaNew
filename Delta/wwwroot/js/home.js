@@ -7,37 +7,39 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // get company
 
-    if (document.querySelector('.list-companies .list'))
-    {
-        const companyContent = document.querySelector('.list-companies .list');
-        apiRequest('/api/companies/approved', 'GET', null,  (response) => {
-            if(response) {
-                let imgPath;
-                for (let i = 0; i < response.length; i++) {
-                    imgPath = '/imagesAdditionAdmin/' + response[i].iFormFile;
-                    let companyOne = `
-                    <tr>
-                        <th>${response[i].name}</th>
-                        <th>${response[i].description}</th>
-                        <th>
-                            <img style="width: 100px; height: 30px; object-fit: cover;" src="${imgPath}" alt="" title="">
-                        </th> 
-                        <th>
-                            <a href="">
-                                <img src="/images/icon/garbage.svg" alt="">
-                            </a>
-                        </th>     
-                    </tr>                                                 
-                `
-                    companyContent.innerHTML += companyOne;
-                }
-            }
-        }, (error, response) => {
-            console.log('Something goes wrong with getting company', error, response);
-        }, {
-            'Content-Type': 'application/json; charset=utf-8'
-        })   
-    }
+    // if (document.querySelector('.list-companies .list'))
+    // {
+    //     const companyContent = document.querySelector('.list-companies .list');
+    //     apiRequest('/api/companies/approved', 'GET', null,  (response) => {
+    //         if(response) {
+    //             let imgPath;
+    //             for (let i = 0; i < response.length; i++) {
+    //                 imgPath = '/imagesAdditionAdmin/' + response[i].iFormFile;
+    //                 let companyOne = `
+    //                 <tr>
+    //                     <th>${response[i].name}</th>
+    //                     <th>${response[i].description}</th>
+    //                     <th>
+    //                         <img style="width: 100px; height: 30px; object-fit: cover;" src="${imgPath}" alt="" title="">
+    //                     </th> 
+    //                     <th data-index="${response[i].id}">
+    //                         <form class="company-deletion">
+    //                             <button>
+    //                                 <img src="/images/icon/garbage.svg" alt="">
+    //                             </button>
+    //                         </form>
+    //                     </th>     
+    //                 </tr>                                                 
+    //             `
+    //                 companyContent.innerHTML += companyOne;
+    //             }
+    //         }
+    //     }, (error, response) => {
+    //         console.log('Something goes wrong with getting company', error, response);
+    //     }, {
+    //         'Content-Type': 'application/json; charset=utf-8'
+    //     })   
+    // }
     
     
     // code here

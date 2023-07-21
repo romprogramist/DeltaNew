@@ -24,6 +24,15 @@ footer {
   display: none;
 }
 
+li {
+  list-style-type: none;
+  cursor: pointer;
+}
+
+button {
+  background: none;
+}
+
 .wrapper {
   max-width: 670px;
   width: 100%;

@@ -1,4 +1,4 @@
-function formRequest(forms, apiURL, requestCompletedModal, requestCrashedModal, inputNames, headers) {
+function formRequest(forms, apiURL, requestCompletedModal, requestCrashedModal, inputNames, headers, fileInput) {
     
     forms.forEach(f => {
         
@@ -56,7 +56,7 @@ function formRequest(forms, apiURL, requestCompletedModal, requestCrashedModal, 
                 }, 400);
             }, {
                 headers
-            });
+            }, fileInput);
             showLoader();
         });
     });

@@ -28,4 +28,14 @@ public class CompanyController : ControllerBase
     {
         return Ok(await _companyService.GetApprovedCompaniesAsync());
     }
+    
+    [HttpDelete("id")]
+    public async Task<ActionResult<List<CompanyModel>>> DeleteCompany(int id)
+    {
+        var result = await _companyService.DeleteCompany(id);
+        if (result is null)
+            return NotFound("Hero not found.");
+
+        return Ok(result);
+    }
 }

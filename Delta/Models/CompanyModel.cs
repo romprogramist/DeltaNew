@@ -18,4 +18,8 @@ public class CompanyModel
     [Required(ErrorMessage = "Заполните поле {0}.")]
     
     public string iFormFile { get; set; } = string.Empty;
+    
+    
+    // public int Id { get; set; } = 0;
+    public int id { get; set; }
 }
