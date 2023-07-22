@@ -4,15 +4,15 @@ namespace Delta.Services.PhotoAddition;
 
 public class PhotoAddition: IPhotoAddition
 {
-    public async Task<string> UploadFile(IFormFile _IFormFile)
+    public async Task<string> UploadFile(IFormFile file)
     {
         try
         {
-            var fileName = Path.GetFileName(_IFormFile.FileName); // Получаем оригинальное имя файла
+            var fileName = Path.GetFileName(file.FileName); // Получаем оригинальное имя файла
             var filePath = Common.GetFilePath(fileName);
             using (var fileStream = new FileStream(filePath, FileMode.Create))
             {
-                await _IFormFile.CopyToAsync(fileStream);
+                await file.CopyToAsync(fileStream);
             }
 
             return fileName;
