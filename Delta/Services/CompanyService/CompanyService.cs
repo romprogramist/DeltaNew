@@ -42,7 +42,7 @@ public class CompanyService : ICompanyService
     {
         var company = await _context.Companies.FindAsync(id);
         if (company is null)
-            return null;
+            return null!;
     
         _context.Companies.Remove(company);
         await _context.SaveChangesAsync();

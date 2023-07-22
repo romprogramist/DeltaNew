@@ -2,6 +2,6 @@ namespace Delta.Models.PartialModels;
 
 public class NotMainSectionModal
 {
-    public object Title { get; set; }
-    public object ClassTitle { get; set; }
+    public string Title { get; set; } = string.Empty;
+    public string ClassTitle { get; set; } = string.Empty;
 }
