@@ -18,7 +18,7 @@ public class CompanyController : ControllerBase
     [Route("send")]
     public async Task<IActionResult> SendCompany(CompanyModel сompany)
     {
-        await _companyService.SaveNewCompanyAsync(сompany);
+        // await _companyService.SaveNewCompanyAsync(сompany);
         return Ok();
     }
     
@@ -26,16 +26,16 @@ public class CompanyController : ControllerBase
     [Route("approved")]
     public async Task<IActionResult> GetCompanies()
     {
-        return Ok(await _companyService.GetApprovedCompaniesAsync());
+        return Ok(); // await _companyService.GetApprovedCompaniesAsync()
     }
     
     [HttpDelete("id")]
     public async Task<ActionResult<List<CompanyModel>>> DeleteCompany(int id)
     {
-        var result = await _companyService.DeleteCompany(id);
-        if (result is null)
-            return NotFound("Hero not found.");
+        // var result = await _companyService.DeleteCompany(id);
+        // if (result is null)
+        //     return NotFound("Hero not found.");
 
-        return Ok(result);
+        return Ok(); // result
     }
 }

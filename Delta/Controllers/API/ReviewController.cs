@@ -18,7 +18,7 @@ public class ReviewController : ControllerBase
     [Route("send")]
     public async Task<IActionResult> SendReview(ReviewModel review)
     {
-        await _reviewService.SaveNewReviewAsync(review);
+        // await _reviewService.SaveNewReviewAsync(review);
         return Ok();
     }
     
@@ -26,6 +26,6 @@ public class ReviewController : ControllerBase
     [Route("approved")]
     public async Task<IActionResult> GetReviews()
     {
-        return Ok(await _reviewService.GetApprovedReviewsAsync());
+        return Ok(); // await _reviewService.GetApprovedReviewsAsync()
     }
 }

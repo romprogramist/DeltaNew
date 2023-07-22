@@ -11,8 +11,8 @@ using System.Linq;
 
 namespace Delta.Services.UserService;
 
-// public class UserService : IUserService
-// {
+public class UserService : IUserService
+{
     // private readonly DataContext _context;
     //
     //
@@ -53,4 +53,4 @@ namespace Delta.Services.UserService;
     //         })
     //         .SingleOrDefaultAsync();
     // }
-// }
+}

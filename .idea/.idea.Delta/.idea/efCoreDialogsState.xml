@@ -10,7 +10,7 @@
         <entry key="Common:dbContextName" value="DataContext" />
         <entry key="Common:generateOnConfiguring" value="true" />
         <entry key="Common:noBuild" value="false" />
-        <entry key="Common:outputFolder" value="Data\Migrations" />
+        <entry key="Common:outputFolder" value="Data/Migrations" />
         <entry key="Common:provider" value="Npgsql.EntityFrameworkCore.PostgreSQL" />
         <entry key="Common:useAttributes" value="false" />
         <entry key="Common:useDatabaseNames" value="false" />
