@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Delta.Data;
 using Delta.Middleware;
 using Delta.Services.ApplicationService;
 using Delta.Services.CompanyService;
@@ -11,7 +12,6 @@ using Delta.Services.PhotoAddition;
 using Delta.Services.ReviewService;
 using Delta.Services.UserService;
 using Swashbuckle.AspNetCore.Filters;
-using Delta.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -81,6 +81,8 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/css/add-company.css");
     pipeline.AddCssBundle("/css/admin-bundle.css", 
         "/css/admin.css");
+    pipeline.AddCssBundle("/css/review-bundle.css", 
+        "/css/review.css");
     
     
     
@@ -113,6 +115,8 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/js/dropdown.js"); 
     pipeline.AddJavaScriptBundle("/js/delete-item-dada-b-bundle.js",
         "/js/delete-item-dada-b.js"); 
+    pipeline.AddJavaScriptBundle("/js/admin-review-bundle.js",
+        "/js/admin/review.js");
     
     
     
@@ -159,7 +163,7 @@ app.UseAuthorization();
 app.UseAuthentication();
 
 app.MapControllerRoute(
-    name: "Admin",
+    name: "area",
     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
