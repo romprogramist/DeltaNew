@@ -11,9 +11,7 @@ using Delta.Services.PhotoAddition;
 using Delta.Services.ReviewService;
 using Delta.Services.UserService;
 using Swashbuckle.AspNetCore.Filters;
-using System;
-using System.Linq;
-using System.Collections.Generic;
+using Delta.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,10 +19,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews().AddNewtonsoftJson();
 
 
-// builder.Services.AddDbContext<DataContext>(options =>
-// {
-//     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultMacConnection"));
-// });
+builder.Services.AddDbContext<DeltaDbContext>(options =>
+{
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultMacConnection"));
+});
 
 
 
@@ -47,7 +45,7 @@ builder.Services.AddScoped<IApplicationService, ApplicationService>();
 builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddTransient<IPhotoAddition, PhotoAddition>();
-// builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserService, UserService>();
 // builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 //     .AddJwtBearer(options =>
 //     {
@@ -122,17 +120,17 @@ builder.Services.AddWebOptimizer(pipeline =>
 
 var app = builder.Build();
 
-// using var scope = app.Services.CreateScope();
-// var context = scope.ServiceProvider.GetRequiredService<DataContext>();
-// var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
-// try
-// {
-//     context.Database.Migrate();
-// }
-// catch (Exception ex)
-// {
-//     logger.LogError(ex, "Problem with migration data");
-// }
+using var scope = app.Services.CreateScope();
+var context = scope.ServiceProvider.GetRequiredService<DeltaDbContext>();
+var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+try
+{
+    context.Database.Migrate();
+}
+catch (Exception ex)
+{
+    logger.LogError(ex, "Problem with migration data");
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

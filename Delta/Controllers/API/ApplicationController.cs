@@ -33,7 +33,7 @@ public class ApplicationController : ControllerBase
             Body = html
         };
         
-        // await _applicationService.SaveApplicationAsync(application);
+        await _applicationService.SaveApplicationAsync(application);
 
         if (_env.IsDevelopment()) return Ok();
         

@@ -22,11 +22,11 @@ public class FileManagerController : ControllerBase
         return Ok(result);
     }
 
-    // [HttpGet]
-    // [Route("downloadfile")]
-    // public async Task<IActionResult> DownloadFile(string FileName)
-    // {
-    //     var result = await _iManageImage.DownloadFile(FileName);
-    //     return File(result.Item1, result.Item2, result.Item2);
-    // }
+    [HttpGet]
+    [Route("downloadfile")]
+    public async Task<IActionResult> DownloadFile(string FileName)
+    {
+        var result = await _iManageImage.DownloadFile(FileName);
+        return File(result.Item1, result.Item2, result.Item2);
+    }
 }
