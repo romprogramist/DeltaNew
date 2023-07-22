@@ -81,7 +81,6 @@
 
     <ItemGroup>
       <Folder Include="Data\Migrations" />
-      <Folder Include="imagesAdditionAdmin\" />
       <Folder Include="wwwroot\css" />
       <Folder Include="wwwroot\fonts" />
       <Folder Include="wwwroot\imagesAdditionAdmin\" />
