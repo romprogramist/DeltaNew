@@ -1,5 +1,4 @@
-﻿using Delta.Data;
-using Delta.Models;
+﻿using Delta.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Delta.Services.ReviewService;

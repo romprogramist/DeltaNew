@@ -80,7 +80,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Data\Migrations" />
       <Folder Include="wwwroot\css" />
       <Folder Include="wwwroot\fonts" />
       <Folder Include="wwwroot\imagesAdditionAdmin\" />
@@ -94,10 +93,6 @@
       <Folder Include="wwwroot\images\immunochemistry" />
       <Folder Include="wwwroot\images\mocciStudy" />
       <Folder Include="wwwroot\pdf" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Compile Include="Data\DataContext.cs" />
     </ItemGroup>
 
 </Project>

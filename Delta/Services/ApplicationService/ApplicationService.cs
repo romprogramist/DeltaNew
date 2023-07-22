@@ -1,5 +1,4 @@
-﻿using Delta.Data;
-using Delta.Models;
+﻿using Delta.Models;
 
 namespace Delta.Services.ApplicationService;
 

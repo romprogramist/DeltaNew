@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using Delta.Data;
 using Delta.Middleware;
 using Delta.Services.ApplicationService;
 using Delta.Services.CompanyService;
@@ -22,10 +21,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews().AddNewtonsoftJson();
 
 
-builder.Services.AddDbContext<DataContext>(options =>
-{
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultMacConnection"));
-});
+// builder.Services.AddDbContext<DataContext>(options =>
+// {
+//     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultMacConnection"));
+// });
 
 
 
@@ -123,17 +122,17 @@ builder.Services.AddWebOptimizer(pipeline =>
 
 var app = builder.Build();
 
-using var scope = app.Services.CreateScope();
-var context = scope.ServiceProvider.GetRequiredService<DataContext>();
-var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
-try
-{
-    context.Database.Migrate();
-}
-catch (Exception ex)
-{
-    logger.LogError(ex, "Problem with migration data");
-}
+// using var scope = app.Services.CreateScope();
+// var context = scope.ServiceProvider.GetRequiredService<DataContext>();
+// var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+// try
+// {
+//     context.Database.Migrate();
+// }
+// catch (Exception ex)
+// {
+//     logger.LogError(ex, "Problem with migration data");
+// }
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
