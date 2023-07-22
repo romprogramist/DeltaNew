@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Delta.Models;
 
 namespace Delta.Data;
 
-public partial class DataContext : DbContext
+public class DataContext : DbContext
 {
     public DataContext()
     {
@@ -13,6 +14,7 @@ public partial class DataContext : DbContext
     public DataContext(DbContextOptions<DataContext> options)
         : base(options)
     {
+        
     }
 
     public virtual DbSet<Certificate> Certificates { get; set; }
@@ -34,4 +36,9 @@ public partial class DataContext : DbContext
     public virtual DbSet<ReagentCategory> ReagentCategories { get; set; }
 
     public virtual DbSet<Review> Reviews { get; set; }
+    
+    
+    public virtual DbSet<User> Users { get; set; }
 }
+
+

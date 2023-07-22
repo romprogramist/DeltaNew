@@ -40,7 +40,7 @@ namespace Delta.Data.Migrations
                     b.HasKey("Id")
                         .HasName("Certificates_pkey");
 
-                    b.ToTable("Certificates");
+                    b.ToTable("Certificates", (string)null);
                 });
 
             modelBuilder.Entity("Delta.Data.ClientApplication", b =>
@@ -76,7 +76,7 @@ namespace Delta.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ClientApplications");
+                    b.ToTable("ClientApplications", (string)null);
                 });
 
             modelBuilder.Entity("Delta.Data.Company", b =>
@@ -101,7 +101,7 @@ namespace Delta.Data.Migrations
                     b.HasKey("Id")
                         .HasName("Companies_pkey");
 
-                    b.ToTable("Companies");
+                    b.ToTable("Companies", (string)null);
                 });
 
             modelBuilder.Entity("Delta.Data.Consumable", b =>
@@ -117,7 +117,7 @@ namespace Delta.Data.Migrations
                     b.HasKey("Id")
                         .HasName("Consumables_pkey");
 
-                    b.ToTable("Consumables");
+                    b.ToTable("Consumables", (string)null);
                 });
 
             modelBuilder.Entity("Delta.Data.Product", b =>
@@ -172,7 +172,7 @@ namespace Delta.Data.Migrations
 
                     b.HasIndex("ProductCategoriesId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Delta.Data.ProductCategory", b =>
@@ -203,7 +203,7 @@ namespace Delta.Data.Migrations
 
                     b.HasIndex("ParentCategoryId");
 
-                    b.ToTable("ProductCategories");
+                    b.ToTable("ProductCategories", (string)null);
                 });
 
             modelBuilder.Entity("Delta.Data.ProductImage", b =>
@@ -227,7 +227,7 @@ namespace Delta.Data.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductImages");
+                    b.ToTable("ProductImages", (string)null);
                 });
 
             modelBuilder.Entity("Delta.Data.Reagent", b =>
@@ -248,7 +248,7 @@ namespace Delta.Data.Migrations
 
                     b.HasIndex("CompanyId");
 
-                    b.ToTable("Reagents");
+                    b.ToTable("Reagents", (string)null);
                 });
 
             modelBuilder.Entity("Delta.Data.ReagentCategory", b =>
@@ -264,7 +264,7 @@ namespace Delta.Data.Migrations
                     b.HasKey("Id")
                         .HasName("ReagentCategories_pkey");
 
-                    b.ToTable("ReagentCategories");
+                    b.ToTable("ReagentCategories", (string)null);
                 });
 
             modelBuilder.Entity("Delta.Data.Review", b =>
@@ -316,7 +316,7 @@ namespace Delta.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Reviews");
+                    b.ToTable("Reviews", (string)null);
                 });
 
             modelBuilder.Entity("ProductCertificate", b =>
@@ -332,7 +332,7 @@ namespace Delta.Data.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductCertificate");
+                    b.ToTable("ProductCertificate", (string)null);
                 });
 
             modelBuilder.Entity("ProductConsumable", b =>
@@ -348,7 +348,7 @@ namespace Delta.Data.Migrations
 
                     b.HasIndex("ConsumableId");
 
-                    b.ToTable("ProductConsumable");
+                    b.ToTable("ProductConsumable", (string)null);
                 });
 
             modelBuilder.Entity("ProductReagent", b =>
@@ -364,7 +364,7 @@ namespace Delta.Data.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductReagent");
+                    b.ToTable("ProductReagent", (string)null);
                 });
 
             modelBuilder.Entity("ReagentCategoryReagent", b =>
@@ -380,7 +380,7 @@ namespace Delta.Data.Migrations
 
                     b.HasIndex("ReagentId");
 
-                    b.ToTable("ReagentCategoryReagent");
+                    b.ToTable("ReagentCategoryReagent", (string)null);
                 });
 
             modelBuilder.Entity("Delta.Data.Product", b =>

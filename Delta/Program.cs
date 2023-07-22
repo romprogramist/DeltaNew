@@ -1,4 +1,8 @@
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using Delta.Data;
 using Delta.Middleware;
 using Delta.Services.ApplicationService;
@@ -6,11 +10,18 @@ using Delta.Services.CompanyService;
 using Delta.Services.EmailService;
 using Delta.Services.PhotoAddition;
 using Delta.Services.ReviewService;
+using Delta.Services.UserService;
+using Swashbuckle.AspNetCore.Filters;
+using System;
+using System.Linq;
+using System.Collections.Generic;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews().AddNewtonsoftJson();
+
+
 builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
@@ -18,12 +29,37 @@ builder.Services.AddDbContext<DataContext>(options =>
 
 
 
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+    {
+        Description = "Standard Authorization header using the Bearer scheme. Example: \"bearer {token}\"",
+        In = ParameterLocation.Header,
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey
+    });
+    
+    options.OperationFilter<SecurityRequirementsOperationFilter>();
+});
+
+
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IApplicationService, ApplicationService>();
 builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddTransient<IPhotoAddition, PhotoAddition>();
+// builder.Services.AddScoped<IUserService, UserService>();
+// builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+//     .AddJwtBearer(options =>
+//     {
+//         options.TokenValidationParameters = new TokenValidationParameters
+//         {
+//             ValidateIssuer = false,
+//             ValidateAudience = false,
+//             ValidateIssuerSigningKey = true,
+//             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration.GetSection("AppSettings:Token").Value!))
+//         };
+//     });
  
 builder.Services.AddWebOptimizer(pipeline =>
 {
@@ -46,6 +82,8 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/css/one-product-description.css");
     pipeline.AddCssBundle("/css/add-company-bundle.css", 
         "/css/add-company.css");
+    pipeline.AddCssBundle("/css/admin-bundle.css", 
+        "/css/admin.css");
     
     
     
@@ -58,9 +96,12 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/js/modal.js",
         "/js/helpers.js",
         "/js/form-request.js",
-        "/js/layout.js");
+        "/js/layout.js",
+        "/js/admin/layout.js");
     pipeline.AddJavaScriptBundle("/js/home-bundle.js",
         "/js/home.js");
+    pipeline.AddJavaScriptBundle("/js/user-bundle.js",
+        "/js/user.js");
     pipeline.AddJavaScriptBundle("/js/hematology-bundle.js",
         "/js/hematology.js");
     pipeline.AddJavaScriptBundle("/js/switch-in-products-bundle.js",
@@ -117,6 +158,12 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseAuthentication();
+
+app.MapControllerRoute(
+    name: "Admin",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "default",
