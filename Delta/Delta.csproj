@@ -27,7 +27,6 @@
     <ItemGroup>
       <Folder Include="wwwroot\css" />
       <Folder Include="wwwroot\fonts" />
-      <Folder Include="wwwroot\imagesAdditionAdmin\" />
       <Folder Include="wwwroot\images\ejaculateStudy\" />
       <Folder Include="wwwroot\images\electrolytes" />
       <Folder Include="wwwroot\images\GeneralLaboratoryConsumable\" />
