@@ -333,7 +333,6 @@ header:before {
   position: absolute;
   width: 100%;
   left: 50%;
-  height: 100vh;
   transform: translateX(-50%);
   margin: 0 auto;
 }
@@ -345,12 +344,12 @@ header:before {
 .add-product .wrapper .fields-to-be-added {
   min-width: 75%;
   background: #FFFFFF;
-  height: 100vh;
 }
 .add-product .wrapper .fields-to-be-added form {
   display: flex;
   flex-direction: column;
   padding: 30px 30px 50px;
+  height: 100%;
 }
 .add-product .wrapper .fields-to-be-added form .button-and-header {
   display: flex;

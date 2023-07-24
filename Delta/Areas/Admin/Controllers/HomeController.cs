@@ -6,6 +6,7 @@ public class HomeController : BaseAdminController
 {
     public IActionResult Index()
     {
-        return RedirectToAction("Index", "Company");
+        return RedirectToAction("Index", "Product");
     }
+    
 }

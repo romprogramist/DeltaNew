@@ -96,8 +96,6 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/js/admin/layout.js");
     pipeline.AddJavaScriptBundle("/js/home-bundle.js",
         "/js/home.js");
-    pipeline.AddJavaScriptBundle("/js/user-bundle.js",
-        "/js/user.js");
     pipeline.AddJavaScriptBundle("/js/hematology-bundle.js",
         "/js/hematology.js");
     pipeline.AddJavaScriptBundle("/js/switch-in-products-bundle.js",
@@ -116,7 +114,8 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/js/admin/review.js");
     pipeline.AddJavaScriptBundle("/js/user-bundle.js",
         "/js/api-request.js",
-        "/js/user.js");
+        "/js/user.js",
+        "/js/api-request.js");
 });
 
 var app = builder.Build();
