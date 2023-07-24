@@ -1,5 +1,6 @@
 ﻿using Delta.Models;
 using Delta.Services.CompanyService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 namespace Delta.Controllers.API;
 
@@ -16,6 +17,7 @@ public class CompanyController : ControllerBase
 
     [HttpPost]
     [Route("send")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> SendCompany(CompanyModel сompany)
     {
         await _companyService.SaveNewCompanyAsync(сompany);
@@ -30,6 +32,7 @@ public class CompanyController : ControllerBase
     }
     
     [HttpDelete("id")]
+    [Authorize(Roles = "Admin")]
     public async Task<ActionResult<List<CompanyModel>>> DeleteCompany(int id)
     {
         var result = await _companyService.DeleteCompany(id);

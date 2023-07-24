@@ -238,8 +238,149 @@ template {
   display: block;
 }
 
+html {
+  background: #11182A;
+}
+
 * {
-  background: beige;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+}
+
+.inlet .form-login {
+  padding: 50px;
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border-radius: 10px;
+}
+.inlet .form-login .wrapper {
+  margin-top: 30px;
+}
+.inlet .form-login .wrapper label {
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+  font-weight: 500;
+}
+.inlet .form-login .wrapper label input {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 8px 0 8px 10px;
+  margin-top: 10px;
+}
+.inlet .form-login .wrapper button {
+  border-radius: 10px;
+  max-width: 180px;
+  width: 100%;
+  display: block;
+  margin: 25px auto;
+  padding: 8px 0;
+  border: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+header img {
+  width: 240px;
+}
+header button {
+  background: #FE0000;
+  border: none;
+  width: 127px;
+  height: 39px;
+  border-radius: 35px;
+  font-weight: 700;
+  color: #fff;
+}
+header:before {
+  content: "";
+  background: #FE0000;
+  position: absolute;
+  top: 120px;
+  right: 0;
+  width: 100%;
+  height: 3px;
+}
+
+.add-product .wrapper {
+  display: flex;
+  max-width: 1200px;
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  height: 100vh;
+  transform: translateX(-50%);
+  margin: 0 auto;
+}
+.add-product .wrapper .menu {
+  background: #000;
+  min-width: 25%;
+  width: 100%;
+}
+.add-product .wrapper .fields-to-be-added {
+  min-width: 75%;
+  background: #FFFFFF;
+  height: 100vh;
+}
+.add-product .wrapper .fields-to-be-added form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 30px 50px;
+}
+.add-product .wrapper .fields-to-be-added form .button-and-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.add-product .wrapper .fields-to-be-added form .button-and-header h2 {
+  font-weight: 700;
+  font-size: 35px;
+}
+.add-product .wrapper .fields-to-be-added form .button-and-header button {
+  border-radius: 18px;
+  background: #072387;
+  color: #fff;
+  padding: 5px 13px;
+  border: none;
+}
+.add-product .wrapper .fields-to-be-added form label {
+  margin-top: 20px;
+}
+.add-product .wrapper .fields-to-be-added form label input {
+  width: 100%;
+  border: 1px solid #000;
+  height: 65px;
+  flex-shrink: 0;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+.add-product .wrapper .fields-to-be-added form .lower-input {
+  display: flex;
 }
 
 /*# sourceMappingURL=admin.css.map */

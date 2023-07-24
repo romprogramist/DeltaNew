@@ -24,35 +24,11 @@
 <environment include="Development">
 	<div id="development-mode"></div>
 </environment>
-<header>
-	<nav>
-		<ul>
-			@* <li> *@
-			@* 	<a asp-area="" asp-controller="Home" asp-action="Index">Home</a> *@
-			@* </li> *@
-			@* <li> *@
-			@* 	<a asp-area="" asp-controller="Review" asp-action="Index">Review</a> *@
-			@* </li> *@
-			@* <li> *@
-			@* 	<a asp-area="" asp-controller="User" asp-action="Login">User Login</a> *@
-			@* </li> *@
-			@* <li> *@
-			@* 	<a asp-area="" asp-controller="User" asp-action="Register">User Register</a> *@
-			@* </li> *@
-		</ul>
-	</nav>
-	<br>
-    <br>
-    <br>
-    <button class="logout">Logout</button>
-    <br>
-    <br>
-    <br>
-</header>
 
-<br>
-<br>
-<br>
+<header>
+	<img src="/images/admin/logo-admin.svg" alt="" title="">
+    <button class="logout">Logout</button>
+</header>
 
 <main>
 	@RenderBody()
@@ -64,13 +40,14 @@
 
 <footer>
 	<div>
-		&copy; 2023 - RSiteTemplate Admin Panel
+		
 	</div>
 </footer>
 <div class="overlay" id="loader">
 	@* place loader html here *@
 </div>
 <div class="overlay" id="overlay">
+	
 	@* <div class="modal" id="application"> *@
 	@* 	<form class="application-form"> *@
 	@* 		<span class="close-m" title="Закрыть">&times;</span> *@

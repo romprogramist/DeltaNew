@@ -80,7 +80,6 @@ builder.Services.AddWebOptimizer(pipeline =>
     
     
     
-    
     // js bundles
     pipeline.AddJavaScriptBundle("/js/layout-bundle.js", 
         "/js/phone-mask.js",
@@ -111,6 +110,9 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/js/delete-item-dada-b.js"); 
     pipeline.AddJavaScriptBundle("/js/admin-review-bundle.js",
         "/js/admin/review.js");
+    
+    
+    
     
     
     
