@@ -115,6 +115,7 @@ builder.Services.AddWebOptimizer(pipeline =>
     pipeline.AddJavaScriptBundle("/js/admin-review-bundle.js",
         "/js/admin/review.js");
     pipeline.AddJavaScriptBundle("/js/user-bundle.js",
+        "/js/api-request.js",
         "/js/user.js");
 });
 
