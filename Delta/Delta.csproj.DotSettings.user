@@ -1,3 +1,9 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=WWWROOT_005CCSS_005CADMIN_002DBUNDLE_002ECSS/@EntryIndexedValue">wwwroot\css\admin-bundle.css</s:String>
 	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=WWWROOT_005CCSS_005CREVIEW_002DBUNDLE_002ECSS/@EntryIndexedValue">wwwroot\css\review-bundle.css</s:String>
-	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=WWWROOT_005CCSS_005CREVIEW_002DBUNDLE_002ECSS/@EntryIndexedValue">wwwroot\css\review-bundle.css</s:String></wpf:ResourceDictionary>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=WWWROOT_005CJS_005CAPI_002DREQUEST_002DBUNDLE_002EJS/@EntryIndexedValue">wwwroot\js\api-request-bundle.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/IgnoredPaths/=WWWROOT_005CJS_005CUSER_002DBUNDLE_002EJS/@EntryIndexedValue">wwwroot\js\user-bundle.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=WWWROOT_005CCSS_005CADMIN_002DBUNDLE_002ECSS/@EntryIndexedValue">wwwroot\css\admin-bundle.css</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=WWWROOT_005CCSS_005CREVIEW_002DBUNDLE_002ECSS/@EntryIndexedValue">wwwroot\css\review-bundle.css</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=WWWROOT_005CJS_005CAPI_002DREQUEST_002DBUNDLE_002EJS/@EntryIndexedValue">wwwroot\js\api-request-bundle.js</s:String>
+	<s:String x:Key="/Default/CodeInspection/WebPathMapping/PathsInCorrectCasing/=WWWROOT_005CJS_005CUSER_002DBUNDLE_002EJS/@EntryIndexedValue">wwwroot\js\user-bundle.js</s:String></wpf:ResourceDictionary>

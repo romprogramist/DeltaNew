@@ -2,5 +2,63 @@
     ViewBag.Title = "Companies";
 }
 
-<h1>Companies</h1>
+@section Styles {    
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true">
+    </environment>
+}
 
+<section class="add-product">
+    <div class="wrapper min-product">
+        <div class="menu"></div>
+        <div class="fields-to-be-added">
+            <form>
+                <div class="button-and-header">
+                    <h2>
+                        Приборы
+                    </h2>
+                    <button>
+                        Добавить
+                    </button>
+                </div>
+                <label>
+                    Раздел
+                    <input type="text" placeholder="- Выбрать раздел -">
+                </label>
+                <label>
+                    Назване
+                    <input type="text" placeholder="- Название прибора -">
+                </label>
+                <label>
+                    Подраздел
+                    <input type="text" placeholder="- Выбрать подраздел в меню если есть -">
+                </label>
+                <label>
+                    Тип
+                    <input type="text">
+                </label>
+                <label>
+                    Краткое описание
+                    <input type="text">
+                </label>
+                <label>
+                    Компания
+                    <input type="text">
+                </label>
+                <div class="lower-input">
+                    <label>
+                        Место в ряде
+                        <input type="text">
+                    </label>
+                    <label>
+                        Фото оборудвания
+                        <input type="file" name="iFormFile">
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="product">
+        
+    </div>
+</section>

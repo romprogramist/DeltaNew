@@ -18,11 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const loginButton = document.querySelector('.login');
     loginButton.addEventListener('click', (e) => {
         e.preventDefault()
+        const name = document.getElementById("name");
+        const password = document.getElementById("password");
         const data = {
-            userName: 'arm',
-            password: 'Test1234'
+            userName: name.value,
+            password: password.value
         };
-        
         apiRequest('/api/user/login', 'POST', data,
             (response) => {
                 console.log(response);

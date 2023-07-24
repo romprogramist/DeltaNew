@@ -81,6 +81,8 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/css/admin.css");
     pipeline.AddCssBundle("/css/review-bundle.css", 
         "/css/review.css");
+    pipeline.AddCssBundle("/css/admin-bundle.css", 
+        "/css/admin.css");
     
     // js bundles
     pipeline.AddJavaScriptBundle("/js/layout-bundle.js", 
@@ -112,6 +114,8 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/js/delete-item-dada-b.js"); 
     pipeline.AddJavaScriptBundle("/js/admin-review-bundle.js",
         "/js/admin/review.js");
+    pipeline.AddJavaScriptBundle("/js/user-bundle.js",
+        "/js/user.js");
 });
 
 var app = builder.Build();

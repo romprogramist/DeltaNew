@@ -3,11 +3,6 @@
   padding: 0;
 }
 
-html {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(87, 87, 87, 0.6));
-  height: 100%;
-}
-
 header {
   display: none;
 }
@@ -71,70 +66,6 @@ button {
   padding: 10px;
   background: #943539;
   color: #fff;
-}
-
-.list-companies {
-  margin-top: 150px;
-  padding: 50px 50px;
-}
-.list-companies .table {
-  width: 100%;
-  margin-bottom: 20px;
-  border: 1px solid #dddddd;
-  border-collapse: collapse;
-  padding: 0 20px;
-}
-.list-companies .table th {
-  padding: 10px 15px 15px;
-  border: 1px solid #dddddd;
-  font-weight: 400;
-  line-height: 20px;
-  color: #fff;
-}
-.list-companies .table td {
-  border: 1px solid #dddddd;
-  padding: 5px;
-}
-
-.admin-nav .btn {
-  display: inline-block;
-  box-sizing: border-box;
-  padding: 0 25px;
-  margin: 0 15px 15px 0;
-  outline: none;
-  border: 1px solid #fff;
-  border-radius: 50px;
-  height: 46px;
-  line-height: 46px;
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-  color: #444;
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(65, 132, 144, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  cursor: pointer;
-  user-select: none;
-  appearance: none;
-  touch-action: manipulation;
-  vertical-align: top;
-  transition: box-shadow 0.2s;
-}
-.admin-nav .btn:focus-visible {
-  border: 1px solid #4c51f9;
-  outline: none;
-}
-.admin-nav .btn:hover {
-  transition: all 0.2s;
-  box-shadow: 0 7px 14px rgba(65, 132, 144, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
-}
-.admin-nav .btn:active {
-  background-color: #808080;
-}
-.admin-nav .btn:disabled {
-  background-color: #eee;
-  border-color: #eee;
-  color: #444;
-  cursor: not-allowed;
 }
 
 /*# sourceMappingURL=add-company.css.map */
