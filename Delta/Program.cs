@@ -16,6 +16,10 @@ using Swashbuckle.AspNetCore.Filters;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddCors(options => options.AddDefaultPolicy(policy => {
+    policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+}));
+
 builder.Services.AddControllersWithViews().AddNewtonsoftJson();
 
 builder.Services.AddDbContext<DeltaDbContext>();
@@ -142,6 +146,8 @@ else
 }
 
 // app.UseHttpsRedirection();
+app.UseCors();
+
 app.UseStaticFiles();
 
 app.UseRouting();
