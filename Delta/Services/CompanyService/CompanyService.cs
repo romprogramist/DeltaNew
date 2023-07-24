@@ -14,40 +14,42 @@ public class CompanyService : ICompanyService
     }
     
     
-    public async Task SaveNewCompanyAsync(CompanyModel company)
+    public async Task<bool> AddCompanyAsync(CompanyModel company)
     {
         _context.Companies.Add(new Company
         {
             Name = company.Name,
             Description = company.Description,
-            Logo = company.iFormFile
+            Logo = company.Logo
         });
     
-        await _context.SaveChangesAsync();
+        var saveCount = await _context.SaveChangesAsync();
+    
+        return saveCount > 0;
     }
     
-    public async Task<IEnumerable<CompanyModel>> GetApprovedCompaniesAsync()
+    public async Task<IEnumerable<CompanyModel>> GetCompaniesAsync()
     {
         return await _context.Companies
             .Select(r => new CompanyModel
             {
+                Id = r.Id,
                 Name = r.Name,
                 Description = r.Description,
-                iFormFile = r.Logo,
-                id = r.Id
+                Logo = r.Logo
             }).ToListAsync();
     }
     
-    public async Task<List<Company>> DeleteCompany(int id)
+    public async Task<bool> DeleteCompanyAsync(int id)
     {
         var company = await _context.Companies.FindAsync(id);
         if (company is null)
-            return null!;
+            return false;
     
         _context.Companies.Remove(company);
-        await _context.SaveChangesAsync();
+        var saveCount = await _context.SaveChangesAsync();
     
-        return await _context.Companies.ToListAsync();
+        return saveCount > 0;
     }
     
 }

@@ -1,5 +1,4 @@
 using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -11,6 +10,7 @@ using Delta.Services.EmailService;
 using Delta.Services.PhotoAddition;
 using Delta.Services.ReviewService;
 using Delta.Services.UserService;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Swashbuckle.AspNetCore.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -78,8 +78,6 @@ builder.Services.AddWebOptimizer(pipeline =>
     pipeline.AddCssBundle("/css/review-bundle.css", 
         "/css/review.css");
     
-    
-    
     // js bundles
     pipeline.AddJavaScriptBundle("/js/layout-bundle.js", 
         "/js/phone-mask.js",
@@ -110,12 +108,6 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/js/delete-item-dada-b.js"); 
     pipeline.AddJavaScriptBundle("/js/admin-review-bundle.js",
         "/js/admin/review.js");
-    
-    
-    
-    
-    
-    
 });
 
 var app = builder.Build();

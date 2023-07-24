@@ -4,8 +4,8 @@ using System.Text;
 using Delta.Models;
 using Delta.Models.Dtos;
 using Delta.Services.UserService;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using Org.BouncyCastle.Crypto.Generators;
 
 namespace Delta.Controllers.API;

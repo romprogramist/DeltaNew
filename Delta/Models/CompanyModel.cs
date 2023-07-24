@@ -4,6 +4,8 @@ namespace Delta.Models;
 
 public class CompanyModel
 {
+    public int Id { get; set; }
+    
     [Display(Name = "Имя")]
     [Required(ErrorMessage = "Заполните поле {0}.")]
     
@@ -17,9 +19,5 @@ public class CompanyModel
     [Display(Name = "Картинка")]
     [Required(ErrorMessage = "Заполните поле {0}.")]
     
-    public string iFormFile { get; set; } = string.Empty;
-    
-    
-    // public int Id { get; set; } = 0;
-    public int id { get; set; }
+    public string Logo { get; set; } = string.Empty;
 }

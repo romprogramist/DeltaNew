@@ -14,31 +14,34 @@ public class CompanyController : ControllerBase
     {
         _companyService = companyService;
     }
-
-    [HttpPost]
-    [Route("send")]
-    [Authorize(Roles = "Admin")]
-    public async Task<IActionResult> SendCompany(CompanyModel сompany)
-    {
-        await _companyService.SaveNewCompanyAsync(сompany);
-        return Ok();
-    }
     
     [HttpGet]
-    [Route("approved")]
+    [Route("get")]
     public async Task<IActionResult> GetCompanies()
     {
-        return Ok(await _companyService.GetApprovedCompaniesAsync());
+        var companies = await _companyService.GetCompaniesAsync();
+        return Ok(companies);
     }
-    
-    [HttpDelete("id")]
-    [Authorize(Roles = "Admin")]
-    public async Task<ActionResult<List<CompanyModel>>> DeleteCompany(int id)
-    {
-        var result = await _companyService.DeleteCompany(id);
-        if (result is null)
-            return NotFound("Hero not found.");
 
-        return Ok(result);
+    [HttpPost]
+    [Route("add")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> AddCompany(CompanyModel сompany)
+    {
+        var saved = await _companyService.AddCompanyAsync(сompany);
+        if(!saved)
+            return BadRequest();
+        return Ok();
+    }
+
+    [HttpDelete]
+    [Route("delete/{id:int}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> DeleteCompany(int id)
+    {
+        var deleted = await _companyService.DeleteCompanyAsync(id);
+        if(!deleted)
+            return BadRequest();
+        return Ok();
     }
 }

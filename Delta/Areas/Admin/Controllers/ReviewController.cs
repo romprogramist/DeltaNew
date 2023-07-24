@@ -2,8 +2,7 @@
 
 namespace Delta.Areas.Admin.Controllers;
 
-[Area("Admin")]
-public class ReviewController : Controller
+public class ReviewController : BaseAdminController
 {
     public IActionResult Index()
     {
