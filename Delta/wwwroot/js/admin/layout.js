@@ -9,6 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const logoutButton = document.querySelector('.logout');
     logoutButton.addEventListener('click', () => {
         localStorage.removeItem('token');
-        console.log(localStorage);
+        window.location.href = '/user/login';
     });
 });

@@ -8,9 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             (error) => {
                 console.log("Error  getting reviews: " + error);
-            }, {
-                'Authorization': 'bearer ' + localStorage.getItem('token')
-            });
+            }, null, true);
     });
 
 

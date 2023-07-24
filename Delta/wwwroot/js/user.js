@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault()
         const data = {
             userName: 'arm',
-            password: 'test'
+            password: 'Test1234'
         };
         
         apiRequest('/api/user/login', 'POST', data,
@@ -31,9 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 console.log(localStorage);
+                window.location.href = '/admin';
             }, (error) => {
                 console.log("Error registering user: " + error);
-            });
+            },
+            null, 
+            true);
     });
 });
 

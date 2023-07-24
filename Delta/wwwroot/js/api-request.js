@@ -1,35 +1,17 @@
-function apiRequest(apiURL, methodType = 'GET', data, completedFn, crashedFn, headers) {
-    
+function apiRequest(apiURL, methodType = 'GET', data, completedFn, crashedFn, headers, auth = false) {
     try {
-
-        let iFormFile = new FormData();
-        if(document.querySelector('input[type="file"]')) {
-            let fileInput = document.querySelector('input[type="file"]');
-            if (methodType === 'POST') {
-                iFormFile.append('iFormFile', fileInput.files[0]);
-                data.iFormFile = iFormFile.get('iFormFile').name;
-                delete data.utmInfo;
-                delete data.sitePage;
-                delete data.FormFile;
-            }
-        }
-        
-        
-        
         const xhr = new XMLHttpRequest();
         xhr.open(methodType, apiURL);
         if(headers) {
             Object.entries(headers).forEach(([key, value]) => {
-                if(value) {
-                    xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
-                    // xhr.setRequestHeader(key, value.toString());
-                    xhr.send(JSON.stringify(data));
-                }
+                xhr.setRequestHeader(key, value.toString());
             });
+        } else {
+            xhr.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
         }
-        
-        
-        
+        if(auth) {
+            xhr.setRequestHeader('Authorization', 'bearer ' + localStorage.getItem('token'));
+        }
         xhr.addEventListener('load', () => {
             if (Math.floor(xhr.status / 100) !== 2) {
                 let response = null;
@@ -50,7 +32,7 @@ function apiRequest(apiURL, methodType = 'GET', data, completedFn, crashedFn, he
         xhr.addEventListener('error', () => {
             crashedFn(null, xhr.responseText ? JSON.parse(xhr.responseText) : null);
         });
-        xhr.send(iFormFile);
+        xhr.send(data ? JSON.stringify(data) : null);
     } catch(error) {
         crashedFn(error);
     }
