@@ -2,4 +2,27 @@
     ViewBag.Title = "Company edit";
 }
 
-<h1>Company edit</h1>
+@section Styles {    
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true">
+    </environment>
+}
+
+
+<div >
+    <a href="/Admin/Company/Add">
+        Добавить компанию
+    </a>
+    <table>
+        <tr>
+            <th>Логотип</th>
+            <th>Описание</th>
+            <th>Удаление</th>
+        </tr>
+        <tr>
+            <td>Microsoft</td>
+            <td>20.3</td>
+            <td>30.5</td>
+        </tr>
+    </table>
+</div>

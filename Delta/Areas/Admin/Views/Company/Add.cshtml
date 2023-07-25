@@ -2,55 +2,50 @@
     ViewBag.Title = "Add company";
 }
 
-<h1>Add company</h1>
-
 @{
     ViewData["Title"] = "Home Page";
-    // Layout = null;
 }
 
-@section Styles {
+@section Styles {    
     <environment include="Development">
-        <link rel="stylesheet" href="~/css/home.css" asp-append-version="true">
-        <link rel="stylesheet" href="~/css/add-company.css" asp-append-version="true">
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="/css/home-bundle.css" asp-append-version="true">
-        <link rel="stylesheet" href="/css/add-company-bundle.css" asp-append-version="true">
+        <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true">
     </environment>
 }
 
-@section Scripts {
-    <script src="~/js/swiper-bundle.min.js"></script>
-    <environment include="Development">
-        <script src="~/js/home.js" asp-append-version="true"></script>
-        <script src="~/js/add-hover-class.js" asp-append-version="true"></script>
-        <script src="~/js/add-company.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="~/js/home-bundle.js" asp-append-version="true"></script>
-        <script src="~/js/add-hover-class-bundle.js" asp-append-version="true"></script>
-        <script src="~/js/add-company-bundle.js" asp-append-version="true"></script>
-    </environment>
-}
 
-<section class="add-company-admin">
-    <form enctype="multipart/form-data" method="post" class="wrapper company-form" id="msform">
-        <a style="margin-bottom: 20px; display: block; font-size: 18px" href="/home/AdminPanel">Вернуться на главное меню</a>
-        <fieldset style="padding: 0">
-            <h2 class="fs-title">Добавить компанию</h2>
-            <label>
-                <input type="text" name="name" placeholder="Название"/>
-            </label>
-            <label>
-                <input type="text" name="description" placeholder="Описание"/>
-            </label>
-            <label>
-                <input type="file" name="iFormFile"/>
-            </label>
-            <div class="validation"></div>
-            <button class="next">Добавить компанию</button>
-            <a class="link-transition" href="/home/test">Таблица со списком компании</a>
-        </fieldset>
-    </form>
-</section>
+
+<form>
+	<div class="button-and-header">
+		<h2>
+			Добавить компанию
+		</h2>
+		<button class="add-btn">
+			Добавить
+		</button>
+	</div>
+    <label>
+        <input id="name" type="text" name="name" placeholder="Название"/>
+    </label>
+    <label>
+        <input id="description" type="text" name="description" placeholder="Описание"/>
+    </label>
+    <div class="lower-input">
+        <label>
+            <input type="file" name="iFormFile"/>
+        </label>
+    </div>
+    <div class="validation"></div>
+    <a class="link-transition" href="/Admin/Company/Edit">Таблица со списком компании</a>
+</form>
+
+
+
+
+@* *@
+@* <form enctype="multipart/form-data" method="post" class="wrapper company-form" id="msform"> *@
+@*     <a href="#">Вернуться на главное меню</a> *@
+@*     <fieldset style="padding: 0"> *@
+@*         <h2 class="fs-title"</h2> *@
+@*          *@
+@*     </fieldset> *@
+@* </form> *@

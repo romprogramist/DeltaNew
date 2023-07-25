@@ -9,4 +9,8 @@ public class HomeController : BaseAdminController
         return RedirectToAction("Index", "Product");
     }
     
+    public IActionResult Company()
+    {
+        return RedirectToAction("Index", "Company");
+    }
 }

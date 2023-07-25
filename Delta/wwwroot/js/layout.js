@@ -65,29 +65,15 @@
 
 
 
-    // window.addEventListener('scroll', function() {
-    //     var sections = document.getElementsByTagName('section');
-    //     for (var i = 0; i < sections.length; i++) {
-    //         var section = sections[i];
-    //         var position = section.getBoundingClientRect();
-    //
-    //         // Проверяем, если секция видима в окне просмотра
-    //         if (position.top < window.innerHeight) {
-    //             section.style.opacity = 1; // Устанавливаем полную прозрачность
-    //         }
-    //     }
-    // });
+    
+    console.log(1);
 
 
 
-
-
-
-
-    var sections = document.getElementsByTagName('section');
-    for (var i = 0; i < sections.length; i++) {
-        var section = sections[i];
-        var position = section.getBoundingClientRect();
+    const sections = document.getElementsByTagName('section');
+    for (const i = 0; i < sections.length; i++) {
+        const section = sections[i];
+        const position = section.getBoundingClientRect();
 
         // Проверяем, если секция видима при загрузке страницы
         if (position.top >= 0 && position.top < window.innerHeight) {

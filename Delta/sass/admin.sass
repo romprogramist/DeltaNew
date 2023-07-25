@@ -19,8 +19,8 @@ html
 h1
   text-align: center
   font-weight: 700
-  
-.inlet 
+
+.inlet
   .form-login
     padding: 50px
     max-width: 450px
@@ -43,9 +43,9 @@ h1
         font-weight: 500
         input
           width: 100%
-          border: 1px solid #d9d9d9           
+          border: 1px solid #d9d9d9
           border-radius: 10px
-          padding: 8px 0 8px 10px 
+          padding: 8px 0 8px 10px
           margin-top: 10px
       button
         border-radius: 10px
@@ -55,8 +55,7 @@ h1
         margin: 25px auto
         padding: 8px 0
         border: 0
-          
-          
+
 header
   display: flex
   justify-content: space-between
@@ -96,13 +95,28 @@ header
       background: #000
       min-width: 25%
       width: 100%
+      padding: 22px 10px
+      h2
+        color: #fff
+        font-size: 23px
+      a
+        color: #8E8E8E
+        display: block
+        margin-top: 10px
+      .active-link
+        a
+          font-weight: 600
+          color: #fff
+          font-size: 19px
+
+
     .fields-to-be-added
       min-width: 75%
       background: #FFFFFF
+      padding: 30px 30px 50px
       form
         display: flex
-        flex-direction: column
-        padding: 30px 30px 50px 
+        flex-direction: column        
         height: 100%
         .button-and-header
           display: flex
@@ -128,6 +142,42 @@ header
             padding-left: 20px
         .lower-input
           display: flex
-          //input
-          //  border: none
-            
+          input
+            border: none
+            padding: 0
+            font-size: 11px
+            height: auto
+          .input
+            border: 1px solid #000
+            width: 25px
+            height: 25px
+            margin-right: 20px
+            margin-top: 0
+        .link-transition
+          display: block
+          margin-top: 20px
+
+
+
+
+
+
+table 
+  font-size: 14px
+  border-collapse: collapse
+  text-align: center
+  margin-top: 30px
+  th, td:first-child 
+    background: #AFCDE7
+    color: white
+    padding: 10px 20px
+  th, td 
+    border-style: solid
+    border-width: 0 1px 1px 0
+    border-color: white  
+  td 
+    background: #D8E6F3
+  th:first-child, td:first-child 
+    text-align: left
+
+

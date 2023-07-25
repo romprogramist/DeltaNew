@@ -33,8 +33,21 @@
 <main>
 	<section class="add-product">
         <div class="wrapper min-product">
-            <div class="menu"></div>
-            <div class="fields-to-be-added">
+	        <div class="menu">
+		        <ul>
+			        <li>
+				        <a href="/Admin/Product" class="active-link">
+					        Продукт
+				        </a>
+			        </li>
+			        <li>
+				        <a href="/Admin/Company/Edit">
+					        Компания
+				        </a>
+			        </li>
+		        </ul>
+	        </div>
+	        <div class="fields-to-be-added">
 				@RenderBody()           
             </div>
         </div>

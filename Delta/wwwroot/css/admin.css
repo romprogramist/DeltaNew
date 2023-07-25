@@ -340,15 +340,30 @@ header:before {
   background: #000;
   min-width: 25%;
   width: 100%;
+  padding: 22px 10px;
+}
+.add-product .wrapper .menu h2 {
+  color: #fff;
+  font-size: 23px;
+}
+.add-product .wrapper .menu a {
+  color: #8E8E8E;
+  display: block;
+  margin-top: 10px;
+}
+.add-product .wrapper .menu .active-link a {
+  font-weight: 600;
+  color: #fff;
+  font-size: 19px;
 }
 .add-product .wrapper .fields-to-be-added {
   min-width: 75%;
   background: #FFFFFF;
+  padding: 30px 30px 50px;
 }
 .add-product .wrapper .fields-to-be-added form {
   display: flex;
   flex-direction: column;
-  padding: 30px 30px 50px;
   height: 100%;
 }
 .add-product .wrapper .fields-to-be-added form .button-and-header {
@@ -380,6 +395,46 @@ header:before {
 }
 .add-product .wrapper .fields-to-be-added form .lower-input {
   display: flex;
+}
+.add-product .wrapper .fields-to-be-added form .lower-input input {
+  border: none;
+  padding: 0;
+  font-size: 11px;
+  height: auto;
+}
+.add-product .wrapper .fields-to-be-added form .lower-input .input {
+  border: 1px solid #000;
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+  margin-top: 0;
+}
+.add-product .wrapper .fields-to-be-added form .link-transition {
+  display: block;
+  margin-top: 20px;
+}
+
+table {
+  font-size: 14px;
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 30px;
+}
+table th, table td:first-child {
+  background: #AFCDE7;
+  color: white;
+  padding: 10px 20px;
+}
+table th, table td {
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  border-color: white;
+}
+table td {
+  background: #D8E6F3;
+}
+table th:first-child, table td:first-child {
+  text-align: left;
 }
 
 /*# sourceMappingURL=admin.css.map */
