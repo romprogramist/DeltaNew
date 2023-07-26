@@ -36,7 +36,7 @@ public class CompanyController : ControllerBase
 
     [HttpDelete]
     [Route("delete/{id:int}")]
-    [Authorize(Roles = "Admin")]
+    // [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteCompany(int id)
     {
         var deleted = await _companyService.DeleteCompanyAsync(id);

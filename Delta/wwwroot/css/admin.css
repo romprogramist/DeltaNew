@@ -432,6 +432,11 @@ table th, table td {
 }
 table td {
   background: #D8E6F3;
+  padding: 10px 0;
+}
+table td form button {
+  background: none;
+  border: 0;
 }
 table th:first-child, table td:first-child {
   text-align: left;
