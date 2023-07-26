@@ -18,8 +18,6 @@ if(document.querySelector('.add-btn')) {
                 setTimeout(function() {
                     successfully.textContent = '';
                 }, 4000);
-                
-                
             },
             (error, response) => {
                 console.log('crashed', error, response);

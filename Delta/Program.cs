@@ -125,6 +125,8 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/js/api-request.js");
     pipeline.AddJavaScriptBundle("/js/admin/company-bundle.js",
         "/js/admin/company.js");
+    pipeline.AddJavaScriptBundle("/js/admin/reagent-bundle.js",
+        "/js/admin/reagent.js");
 });
 
 var app = builder.Build();

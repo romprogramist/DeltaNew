@@ -13,4 +13,8 @@ public class HomeController : BaseAdminController
     {
         return RedirectToAction("Index", "Company");
     }
+    public IActionResult Reagent()
+    {
+        return RedirectToAction("Index", "Reagent");
+    }
 }
