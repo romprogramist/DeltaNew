@@ -10,9 +10,16 @@ if(document.querySelector('.add-btn')) {
             Name: name.value,
             Description: description.value
         };
+        description.parentElement.parentElement.reset();
         apiRequest('/api/companies/add', 'POST', data,
             (response) => {
-                console.log('completed', response);
+                const successfully = document.querySelector('.successfully');
+                successfully.textContent = 'Компания успешно добавлена';
+                setTimeout(function() {
+                    successfully.textContent = '';
+                }, 4000);
+                
+                
             },
             (error, response) => {
                 console.log('crashed', error, response);
@@ -39,35 +46,33 @@ apiRequest('/api/companies/get', 'GET', null,
                     <td>${el.name}</td>
                     <td>${el.description}</td>        
                     <td>
-                        <button class="delete-company">
-                            <img src="/images/icon/garbage.svg" alt="delete">
+                        <button>
+                            <img class="delete-company" src="/images/icon/garbage.svg" alt="delete">
                         </button>
                     </td>
                 </tr>                                                                                     
             `;
                 tableCompany.innerHTML += company;
-
             });
         }
-        
-        // fragment
-        tableCompany.addEventListener('click', (e) => {
-            e.preventDefault();
-            if(e.target.classList.contains('delete-company')) {
-                const tr = e.target.closest('tr');
-                const id = tr.dataset.index;
-                apiRequest('/api/companies/delete/'+id, 'DELETE', null,
-                    (response) => {
-                        console.log('completed', response);
-                        tr.remove();
-                    },
-                    (error, response) => {
-                        console.log('crashed', error, response);
-                    }, null,
-                    true)
-            }
-        });
-        
+        if(tableCompany) {
+            tableCompany.addEventListener('click', (e) => {
+                e.preventDefault();
+                if(e.target.classList.contains('delete-company')) {
+                    const tr = e.target.closest('tr');
+                    const id = tr.dataset.index;
+                    apiRequest('/api/companies/delete/'+id, 'DELETE', null,
+                        (response) => {
+                            console.log('completed', response);
+                            tr.remove();
+                        },
+                        (error, response) => {
+                            console.log('crashed', error, response);
+                        }, null,
+                        true)
+                }
+            });
+        }
     },
     (error) => {
         console.log("Error  getting reviews: " + error);

@@ -382,6 +382,12 @@ header:before {
   padding: 5px 13px;
   border: none;
 }
+.add-product .wrapper .fields-to-be-added form .successfully {
+  position: relative;
+  top: 15px;
+  color: rgba(20, 184, 0, 0.53);
+  height: 25px;
+}
 .add-product .wrapper .fields-to-be-added form label {
   margin-top: 20px;
 }
