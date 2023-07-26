@@ -92,8 +92,7 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/js/modal.js",
         "/js/helpers.js",
         "/js/form-request.js",
-        "/js/layout.js",
-        "/js/admin/layout.js");
+        "/js/layout.js");
     pipeline.AddJavaScriptBundle("/js/home-bundle.js",
         "/js/home.js");
     pipeline.AddJavaScriptBundle("/js/hematology-bundle.js",
@@ -112,10 +111,20 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/js/delete-item-dada-b.js"); 
     pipeline.AddJavaScriptBundle("/js/admin-review-bundle.js",
         "/js/admin/review.js");
+    pipeline.AddJavaScriptBundle("/js/admin-layout-bundle.js", 
+        "/js/phone-mask.js",
+        "/js/api-request.js",
+        "/js/loader.js",
+        "/js/modal.js",
+        "/js/helpers.js",
+        "/js/form-request.js",
+        "/js/admin/layout.js");
     pipeline.AddJavaScriptBundle("/js/user-bundle.js",
         "/js/api-request.js",
         "/js/user.js",
         "/js/api-request.js");
+    pipeline.AddJavaScriptBundle("/js/admin/company-bundle.js",
+        "/js/admin/company.js");
 });
 
 var app = builder.Build();

@@ -18,10 +18,6 @@ function modalsInit() {
         });
     });
 }
-const searchOptions = document.querySelector('.search-options');
-searchOptions.addEventListener('click', () => {
-    searchOptions.classList.toggle('search-options-active');
-})
 
 function showModal(modal) {
     const overlay = modal.parentElement;

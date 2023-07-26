@@ -62,16 +62,9 @@
             this.classList.remove('active-btn-h');
         });
     });
-
-
-
     
-    console.log(1);
-
-
-
     const sections = document.getElementsByTagName('section');
-    for (const i = 0; i < sections.length; i++) {
+    for (let i = 0; i < sections.length; i++) {
         const section = sections[i];
         const position = section.getBoundingClientRect();
 

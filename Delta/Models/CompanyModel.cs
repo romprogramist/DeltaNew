@@ -17,7 +17,5 @@ public class CompanyModel
     public string Description { get; set; } = string.Empty;
     
     [Display(Name = "Картинка")]
-    [Required(ErrorMessage = "Заполните поле {0}.")]
-    
     public string Logo { get; set; } = string.Empty;
 }

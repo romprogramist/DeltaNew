@@ -2,13 +2,16 @@
     ViewBag.Title = "Add company";
 }
 
-@{
-    ViewData["Title"] = "Home Page";
-}
+@* @{ *@
+@*     ViewData["Title"] = "Home Page"; *@
+@* } *@
 
-@section Styles {    
+@section Scripts {    
     <environment include="Development">
-        <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true">
+    	<script src="~/js/admin/company.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+    	<script src="~/js/admin/company-bundle.js" asp-append-version="true"></script>
     </environment>
 }
 

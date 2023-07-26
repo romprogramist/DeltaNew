@@ -34,16 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    document.querySelector('.add-btn').addEventListener('click', (e) => {
-        e.preventDefault();
-        const name = document.getElementById("name");
-        const password = document.getElementById("description");
-        const data = {
-            Name: name.value,
-            Description: password.value
-        };
-        apiRequest('/api/companies/send', 'POST', data, null, null, );
-    });
+    
 
 
     //

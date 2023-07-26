@@ -33,7 +33,6 @@ function apiRequest(apiURL, methodType = 'GET', data, completedFn, crashedFn, he
         xhr.addEventListener('error', () => {
             crashedFn(null, xhr.responseText ? JSON.parse(xhr.responseText) : null);
         });
-        console.log(JSON.stringify(data));
         xhr.send(data ? JSON.stringify(data) : null);
     } catch(error) {
         crashedFn(error);
