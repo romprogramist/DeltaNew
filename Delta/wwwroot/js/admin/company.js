@@ -25,45 +25,59 @@ if(document.querySelector('.add-btn')) {
                 
 
 
-const tabelCompany = document.querySelector('table');
 
-if(tabelCompany){
-    apiRequest('/api/companies/get', 'GET', null,
-        (response) => {
+
+
+apiRequest('/api/companies/get', 'GET', null,
+    (response) => {
+
+        const tableCompany = document.querySelector('table');
+        if(tableCompany) {
             response.forEach(el => {
-                let companyOne = `
-                    <tr class="tr" data-index="${el.id}">
-                        <td>${el.name}</td>
-                        <td>${el.description}</td>        
-                        <td>
-                            <form class="company-deletion">
-                                <button>
-                                    <img src="/images/icon/garbage.svg" alt="">
-                                </button>
-                            </form>
-                        </td>
-                    </tr>                                                                                     
-                `
-                tabelCompany.innerHTML += companyOne;
-                
-            })
-        },
-        (error) => {
-            console.log("Error  getting reviews: " + error);
-        }, null, true);
+                const company = `
+                <tr class="tr" data-index="${el.id}">
+                    <td>${el.name}</td>
+                    <td>${el.description}</td>        
+                    <td>
+                        <button class="delete-company">
+                            <img src="/images/icon/garbage.svg" alt="delete">
+                        </button>
+                    </td>
+                </tr>                                                                                     
+            `;
+                tableCompany.innerHTML += company;
+
+            });
+        }
+        
+        // fragment
+        tableCompany.addEventListener('click', (e) => {
+            e.preventDefault();
+            if(e.target.classList.contains('delete-company')) {
+                const tr = e.target.closest('tr');
+                const id = tr.dataset.index;
+                apiRequest('/api/companies/delete/'+id, 'DELETE', null,
+                    (response) => {
+                        console.log('completed', response);
+                        tr.remove();
+                    },
+                    (error, response) => {
+                        console.log('crashed', error, response);
+                    }, null,
+                    true)
+            }
+        });
+        
+    },
+    (error) => {
+        console.log("Error  getting reviews: " + error);
+    }, null, false);
 
     
 
     
-    // apiRequest('/api/companies/delete/11', 'DELETE', null,
-    //     (response) => {
-    //         console.log('completed', response);
-    //     },
-    //     (error, response) => {
-    //         console.log('crashed', error, response);
-    //     }, null,
-    //     true);
     
     
     
-}
+    
+
