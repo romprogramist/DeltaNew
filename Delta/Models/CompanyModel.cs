@@ -18,4 +18,5 @@ public class CompanyModel
     
     [Display(Name = "Картинка")]
     public string Logo { get; set; } = string.Empty;
+
 }

@@ -27,12 +27,6 @@ if(document.querySelector('.add-btn')) {
 }
 
 
-                
-
-
-
-
-
 apiRequest('/api/companies/get', 'GET', null,
     (response) => {
 

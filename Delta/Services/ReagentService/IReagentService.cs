@@ -1,6 +1,10 @@
-﻿namespace Delta.Services.ReagentService;
+﻿using Delta.Data;
+using Delta.Models;
 
-public class IReagentService
+namespace Delta.Services.ReagentService;
+
+public interface IReagentService
 {
-    
+    Task<bool> AddReagentAsync(ReagentModel reagent);
+    Task<IEnumerable<ReagentModel>> GetReagentsAsync();
 }
