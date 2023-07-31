@@ -35,4 +35,17 @@ public class ReagentController : ControllerBase
             return BadRequest();
         return Ok();
     }
+    
+    
+    [HttpDelete]
+    [Route("delete/{id:int}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> DeleteReagent(int id)
+    {
+        var deleted = await _reagentService.DeleteReagentAsync(id);
+        if(!deleted)
+            return BadRequest();
+        return Ok();
+    }
+    
 }

@@ -36,4 +36,19 @@ public class ReagentService : IReagentService
                 CompanyId = r.CompanyId
             }).ToListAsync();
     }
+    
+    
+    public async Task<bool> DeleteReagentAsync(int id)
+    {
+        var reagent = await _context.Reagents.FindAsync(id);
+        if (reagent is null)
+            return false;
+    
+        _context.Reagents.Remove(reagent);
+        var saveCount = await _context.SaveChangesAsync();
+    
+        return saveCount > 0;
+    }
+    
+    
 }

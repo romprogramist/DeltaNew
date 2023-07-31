@@ -28,32 +28,32 @@ if(document.querySelector('.add-btn')) {
 }
 
 
-apiRequest('/api/reagents/get', 'GET', null,
-    (response) => {
-        const fragment = document.createDocumentFragment();
-        const tableCompany = document.querySelector('table');
-        if(tableCompany) {
-            
-            response.forEach((reagent, i) => {
-
-                const tr = document.createElement('tr');
-                // const headingElement = document.createElement('h1');
-                // const paragraphElement = document.createElement('p');
-                // const buttonElement = document.createElement('button');
-                
-                apiRequest('/api/companies/get', 'GET', null,
-                    (response) => {
-                        if(response[i].id === reagent.companyId) {
-                            console.log(response[i]);
-                        }
-                    },
-                    (error, response) => {
-                        console.log('crashed', error, response);
-                    }, null,
-                    true)        
-            });
-        }
-    },
-    (error) => {
-        console.log("Error  getting reviews: " + error);
-    }, null, false);
+// apiRequest('/api/reagents/get', 'GET', null,
+//     (response) => {
+//         const fragment = document.createDocumentFragment();
+//         const tableCompany = document.querySelector('table');
+//         if(tableCompany) {
+//            
+//             response.forEach((reagent, i) => {
+//
+//                 const tr = document.createElement('tr');
+//                 // const headingElement = document.createElement('h1');
+//                 // const paragraphElement = document.createElement('p');
+//                 // const buttonElement = document.createElement('button');
+//                
+//                 apiRequest('/api/companies/get', 'GET', null,
+//                     (response) => {
+//                         if(response[i].id === reagent.companyId) {
+//                             console.log(response[i]);
+//                         }
+//                     },
+//                     (error, response) => {
+//                         console.log('crashed', error, response);
+//                     }, null,
+//                     true)        
+//             });
+//         }
+//     },
+//     (error) => {
+//         console.log("Error  getting reviews: " + error);
+//     }, null, false);
