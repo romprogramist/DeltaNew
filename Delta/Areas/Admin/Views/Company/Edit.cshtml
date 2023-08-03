@@ -1,3 +1,6 @@
+@model CompanyModel
+
+
 @{
     ViewBag.Title = "Company edit";
 }
@@ -11,15 +14,20 @@
     </environment>
 }
 
-<div>
-    <a href="/Admin/Company/Add">
-        Добавить компанию
-    </a>
-    <table>
-        <tr>
-            <th>Имя</th>
-            <th>Описание</th>
-            <th>Удаление</th>
-        </tr>
-    </table>
-</div>
+
+
+
+<form class="company-edit">
+    <input type="hidden" name="id" value="@Model.Id"/>
+    <label>
+        Name
+        <input value="@Model.Name" type="text" name="name"/>
+    </label>
+    <label>
+        Description
+        <input value="@Model.Description" type="text" name="description"/>
+    </label>
+    <img src="/images/companies/@Model.Logo" alt="@Model.Name"/>
+    <input class="form-file" type="file" name="logo" accept="image/*"/>
+    <button type="submit">Edit product</button>
+</form>

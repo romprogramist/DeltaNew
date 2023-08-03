@@ -1,20 +1,56 @@
 ﻿using Delta.Data;
+using Delta.Helpers;
 using Delta.Models;
+using Delta.Models.Dtos;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace Delta.Services.CompanyService;
 
 public class CompanyService : ICompanyService
 {
     private readonly DeltaDbContext _context;
-    
-    public CompanyService(DeltaDbContext context)
+    private readonly IWebHostEnvironment _environment;
+
+    public CompanyService(DeltaDbContext context, IWebHostEnvironment environment)
     {
         _context = context;
+        _environment = environment;
+    }
+
+
+    public async Task<IEnumerable<CompanyDto>> GetCompaniesAsync(int? categoryId = null)
+    {
+        return await _context.Companies
+            .Where(p => categoryId == null || p.Id == categoryId)
+            // .Include(p => p.Category)
+            .Select(p => new CompanyDto
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Description = p.Description,
+                Logo = p.Logo,
+            }).ToListAsync();
+    }
+
+
+
+    public async Task<CompanyDto?> GetCompanyAsync(int id)
+    {
+        return await _context.Companies
+            .Where(p => p.Id == id)
+            // .Include(p => p.Category)
+            .Select(p => new CompanyDto
+            {
+                Id = p.Id,
+                Name = p.Name,
+                Description = p.Description,
+                Logo = p.Logo
+            }).FirstOrDefaultAsync();
     }
     
-    
-    public async Task<bool> AddCompanyAsync(CompanyModel company)
+
+    public async Task<bool> AddCompanyAsync(CompanyDto company)
     {
         _context.Companies.Add(new Company
         {
@@ -23,22 +59,33 @@ public class CompanyService : ICompanyService
             Logo = company.Logo
         });
     
-        var saveCount = await _context.SaveChangesAsync();
+        var savedCount = await _context.SaveChangesAsync();
     
-        return saveCount > 0;
+        return savedCount > 0;
     }
     
-    public async Task<IEnumerable<CompanyModel>> GetCompaniesAsync()
+    
+    public async Task<string> SaveCompanyImageAsync(IFormFile file)
     {
-        return await _context.Companies
-            .Select(r => new CompanyModel
-            {
-                Id = r.Id,
-                Name = r.Name,
-                Description = r.Description,
-                Logo = r.Logo
-            }).ToListAsync();
+        var uniqueFileName = FileHelper.GetUniqueFileName(file.FileName);
+        var uploadDirectory = Path.Combine(_environment.WebRootPath, "images", "companies");
+        var filePath = Path.Combine(uploadDirectory, uniqueFileName);
+        Directory.CreateDirectory(Path.GetDirectoryName(filePath) ?? throw new InvalidOperationException());
+        await file.CopyToAsync(new FileStream(filePath, FileMode.Create));
+        return uniqueFileName;
     }
+
+    // public async Task<IEnumerable<CompanyModel>> GetCompaniesAsync()
+    // {
+    //     return await _context.Companies
+    //         .Select(r => new CompanyModel
+    //         {
+    //             Id = r.Id,
+    //             Name = r.Name,
+    //             Description = r.Description,
+    //             Logo = r.Logo
+    //         }).ToListAsync();
+    // }
     
     public async Task<bool> DeleteCompanyAsync(int id)
     {
@@ -51,7 +98,32 @@ public class CompanyService : ICompanyService
     
         return saveCount > 0;
     }
-    
+
+    public async Task<CompanyDto?> UpdateCompanyAsync(CompanyDto company)
+    {
+        var companyToUpdate = await _context.Companies.FindAsync(company.Id);
+        if (companyToUpdate is null)
+            return null;
+        
+        companyToUpdate.Name = company.Name;
+        companyToUpdate.Description = company.Description;
+        companyToUpdate.Logo = company.Logo;
+        _context.Companies.Update(companyToUpdate);
+        
+        var savedCount = await _context.SaveChangesAsync();
+        if (savedCount <= 0)
+            return null;
+
+        var companyDto = new CompanyDto
+        {
+            Id = companyToUpdate.Id,
+            Name = companyToUpdate.Name,
+            Description = companyToUpdate.Description,
+            Logo = companyToUpdate.Logo
+        };
+
+        return companyDto;
+    }
 }
 
 

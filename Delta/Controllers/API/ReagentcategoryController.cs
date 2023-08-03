@@ -1,4 +1,5 @@
 ﻿using Delta.Models;
+using Delta.Models.Dtos;
 using Delta.Services.ReagentcategoryService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -25,20 +26,54 @@ public class ReagentcategoryController : ControllerBase
     public async Task<IActionResult> GetReagentcategories()
     {
         var reagentcategories = await _reagentcategoryService.GetReagentcategoriesAsync();
-        return Ok(reagentcategories);
+        return Ok(reagentcategories.Select(p => new ReagentcategoryModel
+        {
+            Id = p.Id,
+            Name = p.Name
+        }).OrderBy(p => p.Id));
     }
     
     
     [HttpPost]
     [Route("add")]
-    [Authorize(Roles = "Admin")]
+    // [Authorize(Roles = "Admin")]
     public async Task<IActionResult> AddReagentcategory(ReagentcategoryModel reagentcategory)
     {
-        var saved = await _reagentcategoryService.AddReagentcategoryAsync(reagentcategory);
+        
+        var reagentcategoryDto = new ReagentcategoryDto
+        {
+            Name = reagentcategory.Name
+        };
+        var saved = await _reagentcategoryService.AddReagentcategoryAsync(reagentcategoryDto);
         if(!saved)
             return BadRequest();
         return Ok();
     }
+    
+    
+    
+    [HttpPost]
+    [Route("update")]
+    // [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> UpdateReagentcategory(ReagentcategoryModel reagentcategory)
+    {
+        var reagentcategoryDto = new ReagentcategoryDto
+        {
+            Id = reagentcategory.Id,
+            Name = reagentcategory.Name
+        };
+        var savedReagentcategory = await _reagentcategoryService.UpdateReagentcategoryAsync(reagentcategoryDto);
+        if(savedReagentcategory == null)
+            return BadRequest();
+        
+        var reagentcategoryModel = new ReagentcategoryModel
+        {
+            Id = savedReagentcategory.Id,
+            Name = savedReagentcategory.Name
+        };
+        return Ok(reagentcategoryModel);
+    }
+    
     
     [HttpDelete]
     [Route("delete/{id:int}")]

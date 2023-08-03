@@ -1,80 +1,102 @@
 ﻿
-
-
-if(document.querySelector('.add-btn')) {
-    document.querySelector('.add-btn').addEventListener('click', (e) => {
-        e.preventDefault();
-        const name = document.getElementById("name");
-        const description = document.getElementById("description");
-        const data = {
-            Name: name.value,
-            Description: description.value
-        };
-        description.parentElement.parentElement.reset();
-        apiRequest('/api/companies/add', 'POST', data,
+document.addEventListener("DOMContentLoaded", () => {
+    const productTable = document.querySelector("div.companies");
+    if(productTable) {
+        apiRequest("/api/companies/get", "GET", null,
             (response) => {
-                const successfully = document.querySelector('.successfully');
-                successfully.textContent = 'Компания успешно добавлена';
-                setTimeout(function() {
-                    successfully.textContent = '';
-                }, 4000);
+                const tbody = productTable.querySelector("tbody");
+                let tbodyInnerHtml = '';
+                response.forEach((product) => {
+                    const rowHtml = `
+                        <tr>
+                            <td><a href="/admin/company/edit/${product.id}">${product.name}</a></td>
+                            <td>${product.description}</td>
+                            <td><img src="/images/companies/${product.logo}" alt="${product.name}"/></td>
+                            <td><img class="delete-company" src="/images/icon/garbage.svg" alt=""></td>
+                        </tr>
+                    `;
+                    tbodyInnerHtml += rowHtml;
+                });
+                tbody.innerHTML = tbodyInnerHtml;
             },
             (error, response) => {
-                console.log('crashed', error, response);
-            }, null,
-            true);
-    });    
-}
+                console.log("error", error);
+            },
+            null,
+            false);
+    }
+
+    const addCompanyForm = document.querySelector('form.company-add');
+
+    if(addCompanyForm) {
+        addCompanyForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const formData = new FormData();
+            formData.append("name", addCompanyForm.elements["name"].value);
+            formData.append("description", addCompanyForm.elements["description"].value);
+            const logo = document.querySelector(".form-file").files[0];
+            formData.append("logo", logo);
 
 
-apiRequest('/api/companies/get', 'GET', null,
-    (response) => {
-
-        const tableCompany = document.querySelector('table');
-        if(tableCompany) {
-            response.forEach(el => {
-                const company = `
-                <tr class="tr" data-index="${el.id}">
-                    <td>${el.name}</td>
-                    <td>${el.description}</td>        
-                    <td>
-                        <button>
-                            <img class="delete-company" src="/images/icon/garbage.svg" alt="delete">
-                        </button>
-                    </td>
-                </tr>                                                                                     
-            `;
-                tableCompany.innerHTML += company;
+            const successfully = document.querySelector('.successfully');
+            successfully.textContent = 'Компания успешно добавлена';
+            setTimeout(function() {
+                successfully.textContent = '';
+            }, 4000);
+            addCompanyForm.reset()
+            
+            fetch("/api/companies/add", {
+                method: "POST",
+                body: formData
+            }).then(data => {
+                console.log("Success:", data);
             });
-        }
-        if(tableCompany) {
-            tableCompany.addEventListener('click', (e) => {
-                e.preventDefault();
-                if(e.target.classList.contains('delete-company')) {
-                    const tr = e.target.closest('tr');
-                    const id = tr.dataset.index;
-                    apiRequest('/api/companies/delete/'+id, 'DELETE', null,
-                        (response) => {
-                            console.log('completed', response);
-                            tr.remove();
-                        },
-                        (error, response) => {
-                            console.log('crashed', error, response);
-                        }, null,
-                        true)
-                }
+        });
+    }
+
+    const updateCompanyForm = document.querySelector('form.company-edit');
+    if(updateCompanyForm) {
+        updateCompanyForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            console.log(updateCompanyForm.elements["id"].value);
+            const formData = new FormData();
+            formData.append("id", updateCompanyForm.elements["id"].value);
+            formData.append("name", updateCompanyForm.elements["name"].value);
+            formData.append("description", updateCompanyForm.elements["description"].value);
+            const logo = document.querySelector(".form-file").files[0];
+            formData.append("logo", logo);
+
+            fetch("/api/companies/update", {
+                method: "POST",
+                body: formData
+            }).then(data => {
+                console.log("Success:", data);
             });
-        }
-    },
-    (error) => {
-        console.log("Error  getting reviews: " + error);
-    }, null, false);
+        });
+    }
 
-    
 
+    //
+    // if(productTable) {
+    //     productTable.addEventListener('click', (e) => {
+    //         e.preventDefault();
+    //         if(e.target.classList.contains('delete-company')) {
+    //             console.log('1');
+    //             const tr = e.target.closest('tr');
+    //             const id = tr.dataset.index;
+    //            
+    //             apiRequest('/api/companies/delete/'+id, 'DELETE', null,
+    //                 (response) => {
+    //                     console.log('completed', response);
+    //                     tr.remove();
+    //                 },
+    //                 (error, response) => {
+    //                     console.log('crashed', error, response);
+    //                 }, null,
+    //                 true)
+    //         }
+    //     });
+    // }
     
-    
-    
-    
-    
+});
 

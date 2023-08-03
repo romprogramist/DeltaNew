@@ -1,5 +1,6 @@
 ﻿using Delta.Data;
 using Delta.Models;
+using Delta.Models.Dtos;
 using Microsoft.EntityFrameworkCore;
 
 namespace Delta.Services.ReagentcategoryService;
@@ -13,8 +14,20 @@ public class ReagentcategoryService : IReagentcategoryService
         _context = context;
     }
 
+
+    public async Task<bool> AddReagentcategory(ReagentcategoryDto reagentcategory)
+    {
+        _context.ReagentCategories.Add(new ReagentCategory
+        {
+            Name = reagentcategory.Name
+        });
     
-    public async Task<bool> AddReagentcategoryAsync(ReagentcategoryModel reagentcategory)
+        var savedCount = await _context.SaveChangesAsync();
+    
+        return savedCount > 0;
+    }
+
+    public async Task<bool> AddReagentcategoryAsync(ReagentcategoryDto reagentcategory)
     {
         _context.ReagentCategories.Add(new ReagentCategory
         {
@@ -26,14 +39,15 @@ public class ReagentcategoryService : IReagentcategoryService
         return saveCount > 0;
     }
     
-    
-    public async Task<IEnumerable<ReagentcategoryModel>> GetReagentcategoriesAsync()
+    public async Task<IEnumerable<ReagentcategoryDto>> GetReagentcategoriesAsync(int? categoryId = null)
     {
         return await _context.ReagentCategories
-            .Select(r => new ReagentcategoryModel
+            .Where(p => categoryId == null || p.Id == categoryId)
+            // .Include(p => p.Category)
+            .Select(p => new ReagentcategoryDto
             {
-                Id = r.Id,
-                Name = r.Name
+                Id = p.Id,
+                Name = p.Name
             }).ToListAsync();
     }
     
@@ -50,6 +64,26 @@ public class ReagentcategoryService : IReagentcategoryService
     
         return saveCount > 0;
     }
-    
-    
+
+    public async Task<ReagentcategoryDto?> UpdateReagentcategoryAsync(ReagentcategoryDto reagentcategory)
+    {
+        var reagentcategoryToUpdate = await _context.ReagentCategories.FindAsync(reagentcategory.Id);
+        if (reagentcategoryToUpdate is null)
+            return null;
+        
+        reagentcategoryToUpdate.Name = reagentcategory.Name;
+        _context.ReagentCategories.Update(reagentcategoryToUpdate);
+        
+        var savedCount = await _context.SaveChangesAsync();
+        if (savedCount <= 0)
+            return null;
+
+        var reagentcategoryDto = new ReagentcategoryDto
+        {
+            Id = reagentcategoryToUpdate.Id,
+            Name = reagentcategoryToUpdate.Name
+        };
+
+        return reagentcategoryDto;
+    }
 }
