@@ -1,4 +1,4 @@
-﻿using Delta.Helper;
+﻿using Delta.Helpers;
 
 namespace Delta.Services.PhotoAddition;
 
@@ -19,11 +19,3 @@ public class PhotoAddition: IPhotoAddition
         throw new NotImplementedException();
     }
 }
-
-// public class Common
-// {
-//     public static string GetFilePath(string fileName)
-//     {
-//         throw new NotImplementedException();
-//     }
-// }

@@ -1,4 +1,4 @@
-﻿namespace Delta.Helper;
+﻿namespace Delta.Helpers;
 
 public static class Common
 {
