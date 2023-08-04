@@ -116,8 +116,11 @@ header
       padding: 30px 30px 50px
       form
         display: flex
-        flex-direction: column        
+        flex-direction: column
         height: 100%
+        img
+          margin: 20px 0
+          width: 150px
         .button-and-header
           display: flex
           align-items: center
@@ -164,30 +167,39 @@ header
 
 
 
+.delete-company
+  cursor: pointer
+  width: 45px
 
-
-
-table 
+table
   font-size: 14px
   border-collapse: collapse
   text-align: center
   margin-top: 30px
-  th, td:first-child 
-    background: #AFCDE7
-    color: white
-    padding: 10px 20px
-  th, td 
-    border-style: solid
-    border-width: 0 1px 1px 0
-    border-color: white  
-  td 
-    background: #D8E6F3
-    padding: 10px 0
-    form
-      button
-        background: none
-        border: 0
-  th:first-child, td:first-child 
-    text-align: left
-
-
+  width: 100%
+  tbody
+    min-width: 100%
+    th, td:first-child
+      background: #AFCDE7
+      color: white
+      padding: 10px 20px
+    th, td
+      border-style: solid
+      border-width: 0 1px 1px 0
+      border-color: white
+    td
+      background: #D8E6F3
+      padding: 10px 10px
+      vertical-align: middle
+      img
+        width: 55px        
+      a
+        font-size: 19px
+        font-weight: 600
+        text-decoration: underline
+      form
+        button
+          background: none
+          border: 0
+    th:first-child, td:first-child
+      text-align: left

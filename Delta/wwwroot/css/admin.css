@@ -366,6 +366,10 @@ header:before {
   flex-direction: column;
   height: 100%;
 }
+.add-product .wrapper .fields-to-be-added form img {
+  margin: 20px 0;
+  width: 150px;
+}
 .add-product .wrapper .fields-to-be-added form .button-and-header {
   display: flex;
   align-items: center;
@@ -420,31 +424,49 @@ header:before {
   margin-top: 20px;
 }
 
+.delete-company {
+  cursor: pointer;
+  width: 45px;
+}
+
 table {
   font-size: 14px;
   border-collapse: collapse;
   text-align: center;
   margin-top: 30px;
+  width: 100%;
 }
-table th, table td:first-child {
+table tbody {
+  min-width: 100%;
+}
+table tbody th, table tbody td:first-child {
   background: #AFCDE7;
   color: white;
   padding: 10px 20px;
 }
-table th, table td {
+table tbody th, table tbody td {
   border-style: solid;
   border-width: 0 1px 1px 0;
   border-color: white;
 }
-table td {
+table tbody td {
   background: #D8E6F3;
-  padding: 10px 0;
+  padding: 10px 10px;
+  vertical-align: middle;
 }
-table td form button {
+table tbody td img {
+  width: 55px;
+}
+table tbody td a {
+  font-size: 19px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+table tbody td form button {
   background: none;
   border: 0;
 }
-table th:first-child, table td:first-child {
+table tbody th:first-child, table tbody td:first-child {
   text-align: left;
 }
 
