@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Companies";
+}
+
+@section Styles {    
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true">
+    </environment>
+}
+
+
+@section Scripts {    
+    <environment include="Development">
+        <script src="~/js/admin/reagent-category.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/admin/reagent-category-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+<div class="companies">
+    <a href="/Admin/Reagentcategory/Add">
+        Добавить компанию
+    </a>
+    <table>
+        <tr>
+            <th>Имя</th>
+            <th>Удаление</th>
+        </tr>
+    </table>
+    <tbody>
+    		
+    </tbody>
+</div>

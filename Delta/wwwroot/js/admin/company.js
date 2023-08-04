@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <td><a href="/admin/company/edit/${product.id}">${product.name}</a></td>
                             <td>${product.description}</td>
                             <td><img src="/images/companies/${product.logo}" alt="${product.name}"/></td>
-                            <td><img class="delete-company" src="/images/icon/garbage.svg" alt=""></td>
+                            <td><img data-id="${product.id}" class="delete-company" src="/images/icon/garbage.svg" alt=""></td>
                         </tr>
                     `;
                     tbodyInnerHtml += rowHtml;
@@ -24,6 +24,30 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             null,
             false);
+
+
+
+
+
+        productTable.addEventListener('click', (e) => {
+            if(e.target.classList.contains('delete-company')) {
+                
+                const tr = e.target.closest('tr');
+                let id = e.target.dataset.id;
+                console.log(id)
+                apiRequest('/api/companies/delete/'+id, 'DELETE', null,
+                    (response) => {
+                        console.log('completed', response);
+                        tr.remove();
+                    },
+                    (error, response) => {
+                        console.log('crashed', error, response);
+                    }, null,
+                    true)
+            }
+        });
+        
+        
     }
 
     const addCompanyForm = document.querySelector('form.company-add');
@@ -76,27 +100,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    //
-    // if(productTable) {
-    //     productTable.addEventListener('click', (e) => {
+    // document.querySelectorAll('.delete-company').forEach(del => {
+    //     del.addEventListener('click', (e) => {
     //         e.preventDefault();
-    //         if(e.target.classList.contains('delete-company')) {
-    //             console.log('1');
-    //             const tr = e.target.closest('tr');
-    //             const id = tr.dataset.index;
-    //            
-    //             apiRequest('/api/companies/delete/'+id, 'DELETE', null,
-    //                 (response) => {
-    //                     console.log('completed', response);
-    //                     tr.remove();
-    //                 },
-    //                 (error, response) => {
-    //                     console.log('crashed', error, response);
-    //                 }, null,
-    //                 true)
-    //         }
+    //         const tr = e.target.closest('tr');
+    //         const id = document.querySelector('tr[data-id]').dataset.id;
+    //
+    //         apiRequest('/api/companies/delete/'+id, 'DELETE', null,
+    //             (response) => {
+    //                 console.log('completed', response);
+    //                 tr.remove();
+    //             },
+    //             (error, response) => {
+    //                 console.log('crashed', error, response);
+    //             }, null,
+    //             true)
+    //
     //     });
-    // }
-    
+    // })
+  
 });
 

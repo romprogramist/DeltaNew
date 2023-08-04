@@ -11,5 +11,6 @@ public interface IReagentcategoryService
     // Task<ReagentcategoryDto?> GetReagentcategoryAsync(int id);
     Task<bool> DeleteReagentcategoryAsync(int id);
     
+    Task<ReagentcategoryDto?> GetReagentcategoryAsync(int id);
     Task<ReagentcategoryDto?> UpdateReagentcategoryAsync(ReagentcategoryDto reagentcategory);
 }

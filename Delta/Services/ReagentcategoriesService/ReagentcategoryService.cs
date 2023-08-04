@@ -65,6 +65,18 @@ public class ReagentcategoryService : IReagentcategoryService
         return saveCount > 0;
     }
 
+    public async Task<ReagentcategoryDto?> GetReagentcategoryAsync(int id)
+    {
+        return await _context.ReagentCategories
+            .Where(p => p.Id == id)
+            // .Include(p => p.Category)
+            .Select(p => new ReagentcategoryDto
+            {
+                Id = p.Id,
+                Name = p.Name
+            }).FirstOrDefaultAsync();
+    }
+
     public async Task<ReagentcategoryDto?> UpdateReagentcategoryAsync(ReagentcategoryDto reagentcategory)
     {
         var reagentcategoryToUpdate = await _context.ReagentCategories.FindAsync(reagentcategory.Id);

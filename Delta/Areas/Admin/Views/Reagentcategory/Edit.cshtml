@@ -1,7 +1,4 @@
-﻿@{
-    ViewBag.Title = "Add company";
-}
-
+﻿@model ReagentcategoryModel
 
 @section Scripts {    
     <environment include="Development">
@@ -12,4 +9,11 @@
     </environment>
 }
 
-
+<form class="company-edit">
+    <input type="hidden" name="id" value="@Model.Id"/>
+    <label>
+        Name
+        <input value="@Model.Name" type="text" name="name"/>
+    </label>
+    <button type="submit">Edit product</button>
+</form>
