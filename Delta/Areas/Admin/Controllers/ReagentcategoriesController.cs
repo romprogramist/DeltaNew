@@ -4,11 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Delta.Areas.Admin.Controllers;
 
-public class ReagentcategoryController : BaseAdminController
+public class ReagentcategoriesController : BaseAdminController
 {
     private readonly IReagentcategoryService _reagentcategoryService;
     
-    public ReagentcategoryController(IReagentcategoryService reagentcategoryService)
+    public ReagentcategoriesController(IReagentcategoryService reagentcategoryService)
     {
         _reagentcategoryService = reagentcategoryService;
     }
@@ -31,12 +31,12 @@ public class ReagentcategoryController : BaseAdminController
         if(reagentcategory == null)
             return NotFound("reagentcategory not found.");
         
-        var ReagentcategoryModel = new ReagentcategoryModel
+        var reagentcategoryModel = new ReagentcategoryModel
         {
             Id = reagentcategory.Id,
             Name = reagentcategory.Name,
         };
-        return View(ReagentcategoryModel);
+        return View(reagentcategoryModel);
     }
     
 }

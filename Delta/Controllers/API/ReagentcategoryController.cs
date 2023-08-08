@@ -36,7 +36,7 @@ public class ReagentcategoryController : ControllerBase
     
     [HttpPost]
     [Route("add")]
-    // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> AddReagentcategory(ReagentcategoryModel reagentcategory)
     {
         
@@ -54,7 +54,7 @@ public class ReagentcategoryController : ControllerBase
     
     [HttpPost]
     [Route("update")]
-    // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> UpdateReagentcategory(ReagentcategoryModel reagentcategory)
     {
         var reagentcategoryDto = new ReagentcategoryDto
@@ -77,7 +77,7 @@ public class ReagentcategoryController : ControllerBase
     
     [HttpDelete]
     [Route("delete/{id:int}")]
-    // [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteReagentcategory(int id)
     {
         var deleted = await _reagentcategoryService.DeleteReagentcategoryAsync(id);

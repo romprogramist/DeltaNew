@@ -18,9 +18,9 @@ public class HomeController : BaseAdminController
         return RedirectToAction("Index", "Reagent");
     }
     
-    public IActionResult Reagentcategory()
+    public IActionResult Reagentcategories()
     {
-        return RedirectToAction("Index", "Reagentcategory");
+        return RedirectToAction("Index", "Reagentcategories");
     }
 }
 

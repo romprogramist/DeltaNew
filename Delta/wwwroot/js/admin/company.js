@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             <td><a href="/admin/company/edit/${product.id}">${product.name}</a></td>
                             <td>${product.description}</td>
                             <td><img src="/images/companies/${product.logo}" alt="${product.name}"/></td>
-                            <td><img data-id="${product.id}" class="delete-company" src="/images/icon/garbage.svg" alt=""></td>
+                            <td><img data-id="${product.id}" class="delete" src="/images/icon/garbage.svg" alt=""></td>
                         </tr>
                     `;
                     tbodyInnerHtml += rowHtml;
@@ -30,7 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         productTable.addEventListener('click', (e) => {
-            if(e.target.classList.contains('delete-company')) {
+            
+            if(e.target.classList.contains('delete')) {
                 
                 const tr = e.target.closest('tr');
                 let id = e.target.dataset.id;
@@ -51,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const addCompanyForm = document.querySelector('form.company-add');
-
+    // console.log(addCompanyForm);
     if(addCompanyForm) {
         addCompanyForm.addEventListener("submit", (e) => {
             e.preventDefault();
@@ -60,35 +61,47 @@ document.addEventListener("DOMContentLoaded", () => {
             formData.append("description", addCompanyForm.elements["description"].value);
             const logo = document.querySelector(".form-file").files[0];
             formData.append("logo", logo);
-
-
+            
             const successfully = document.querySelector('.successfully');
+            console.log(successfully);
             successfully.textContent = 'Компания успешно добавлена';
             setTimeout(function() {
                 successfully.textContent = '';
             }, 4000);
-            addCompanyForm.reset()
+            
             
             fetch("/api/companies/add", {
                 method: "POST",
                 body: formData
             }).then(data => {
                 console.log("Success:", data);
+                addCompanyForm.reset()
             });
         });
     }
 
     const updateCompanyForm = document.querySelector('form.company-edit');
+    
     if(updateCompanyForm) {
         updateCompanyForm.addEventListener("submit", (e) => {
             e.preventDefault();
-            console.log(updateCompanyForm.elements["id"].value);
             const formData = new FormData();
             formData.append("id", updateCompanyForm.elements["id"].value);
             formData.append("name", updateCompanyForm.elements["name"].value);
             formData.append("description", updateCompanyForm.elements["description"].value);
+            console.log(updateCompanyForm.elements["description"].value);
+            
             const logo = document.querySelector(".form-file").files[0];
+            console.log(logo);
             formData.append("logo", logo);
+
+
+            const successfully = document.querySelector('.successfully');
+            successfully.textContent = 'Компания успешно отредактирована';
+            setTimeout(function() {
+                successfully.textContent = '';
+            }, 4000);
+            
 
             fetch("/api/companies/update", {
                 method: "POST",
@@ -98,26 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
-
-
-    // document.querySelectorAll('.delete-company').forEach(del => {
-    //     del.addEventListener('click', (e) => {
-    //         e.preventDefault();
-    //         const tr = e.target.closest('tr');
-    //         const id = document.querySelector('tr[data-id]').dataset.id;
-    //
-    //         apiRequest('/api/companies/delete/'+id, 'DELETE', null,
-    //             (response) => {
-    //                 console.log('completed', response);
-    //                 tr.remove();
-    //             },
-    //             (error, response) => {
-    //                 console.log('crashed', error, response);
-    //             }, null,
-    //             true)
-    //
-    //     });
-    // })
+    
   
 });
 

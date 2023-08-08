@@ -1,17 +1,16 @@
-console.log(1);
+
 document.addEventListener("DOMContentLoaded", () => {
-    const productTable = document.querySelector("div.companies");
-    if(productTable) {
+    const reagentCategoryTable = document.querySelector("div.reagent-category");
+    if(reagentCategoryTable) {
         apiRequest("/api/reagentcategories/get", "GET", null,
             (response) => {
-            // console.log(response);
-                const tbody = productTable.querySelector("tbody");
+                const tbody = reagentCategoryTable.querySelector("tbody");
                 let tbodyInnerHtml = '';
                 response.forEach((product) => {
                     const rowHtml = `
                         <tr>
-                            <td><a href="/admin/company/edit/${product.id}">${product.name}</a></td>
-                            <td><img data-id="${product.id}" class="delete-company" src="/images/icon/garbage.svg" alt=""></td>
+                            <td><a href="/admin/reagentcategories/edit/${product.id}">${product.name}</a></td>
+                            <td><img data-id="${product.id}" class="delete" src="/images/icon/garbage.svg" alt=""></td>
                         </tr>
                     `;
                     tbodyInnerHtml += rowHtml;
@@ -23,17 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             null,
             false);
-
-
-
-
-    //
-        productTable.addEventListener('click', (e) => {
-            if(e.target.classList.contains('delete-company')) {
-
+        
+        reagentCategoryTable.addEventListener('click', (e) => {
+            if(e.target.classList.contains('delete')) {
                 const tr = e.target.closest('tr');
                 let id = e.target.dataset.id;
-                console.log(id)
+
                 apiRequest('/api/reagentcategories/delete/'+id, 'DELETE', null,
                     (response) => {
                         console.log('completed', response);
@@ -45,52 +39,76 @@ document.addEventListener("DOMContentLoaded", () => {
                     true)
             }
         });
-    //
-    //
+        
     }
 
     
+    const addReagentCategoryForm = document.querySelectorAll('.reagent-category-add');
+    if(addReagentCategoryForm) {
+        addReagentCategoryForm.forEach(f => {
+            f.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const requestData = {};
+                document.querySelectorAll('input').forEach(i => {
+                    console.log(i);    
+                    requestData[i.name] = i.value;
+                });
 
-    const updateCompanyForm = document.querySelector('form.company-edit');
-    if(updateCompanyForm) {
-        updateCompanyForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            console.log(updateCompanyForm.elements["id"].value);
-            const formData = new FormData();
-            formData.append("id", updateCompanyForm.elements["id"].value);
-            formData.append("name", updateCompanyForm.elements["name"].value);
-            formData.append("description", updateCompanyForm.elements["description"].value);
-            const logo = document.querySelector(".form-file").files[0];
-            formData.append("logo", logo);
 
-            fetch("/api/reagentcategories/update", {
-                method: "POST",
-                body: formData
-            }).then(data => {
-                console.log("Success:", data);
+                const successfully = document.querySelector('.successfully');
+                successfully.textContent = 'Категория реагентов успешно добавлена';
+                setTimeout(function() {
+                    successfully.textContent = '';
+                }, 4000);
+                
+                
+                apiRequest('/api/reagentcategories/add', 'POST', requestData,
+                    (response) => {
+                        document.querySelector('form').reset()
+                        console.log('completed', response);
+                    },
+                    (error, response) => {
+                        console.log('crashed', error, response);
+                    }, null,
+                    true)
             });
         });
     }
+    
+    
 
 
-    // document.querySelectorAll('.delete-company').forEach(del => {
-    //     del.addEventListener('click', (e) => {
-    //         e.preventDefault();
-    //         const tr = e.target.closest('tr');
-    //         const id = document.querySelector('tr[data-id]').dataset.id;
-    //
-    //         apiRequest('/api/companies/delete/'+id, 'DELETE', null,
-    //             (response) => {
-    //                 console.log('completed', response);
-    //                 tr.remove();
-    //             },
-    //             (error, response) => {
-    //                 console.log('crashed', error, response);
-    //             }, null,
-    //             true)
-    //
-    //     });
-    // })
 
+    const updateReagentCategoryForm = document.querySelector('form.reagentcategory-edit');
+    console.log(updateReagentCategoryForm);
+    if(updateReagentCategoryForm) {
+            updateReagentCategoryForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const requestData = {};
+                document.querySelectorAll('input').forEach(i => {
+                    console.log(i);
+                    requestData[i.name] = i.value;
+                });
+
+                const successfully = document.querySelector('.successfully');
+                successfully.textContent = 'Категория реагентов успешно отредактирована';
+                setTimeout(function() {
+                    successfully.textContent = '';
+                }, 4000);
+                
+                apiRequest('/api/reagentcategories/update', 'POST', requestData,
+                    (response) => {
+                        console.log('completed', response);
+                    },
+                    (error, response) => {
+                        console.log('crashed', error, response);
+                    }, null,
+                    true)
+            });
+    }
+    
+    
+
+    
 });
 

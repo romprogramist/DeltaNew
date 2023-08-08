@@ -1,5 +1,9 @@
 ﻿@model ReagentcategoryModel
 
+@{
+    ViewBag.Title = "Reagentcategory edit";
+}
+
 @section Scripts {    
     <environment include="Development">
         <script src="~/js/admin/reagent-category.js" asp-append-version="true"></script>
@@ -9,7 +13,10 @@
     </environment>
 }
 
-<form class="company-edit">
+<form class="reagentcategory-edit">
+    <h2 style="font-size: 22px; line-height: 28px; font-weight: 600;">Здесь вы можете отредактировать <br> категорию компании</h2>
+    
+    <p class="successfully"></p>
     <input type="hidden" name="id" value="@Model.Id"/>
     <label>
         Name

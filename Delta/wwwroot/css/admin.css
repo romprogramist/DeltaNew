@@ -424,7 +424,7 @@ header:before {
   margin-top: 20px;
 }
 
-.delete-company {
+.delete {
   cursor: pointer;
   width: 45px;
 }
@@ -455,7 +455,7 @@ table tbody td {
   vertical-align: middle;
 }
 table tbody td img {
-  width: 55px;
+  width: 45px;
 }
 table tbody td a {
   font-size: 19px;
