@@ -8,6 +8,7 @@ public partial class Reagent
     public int Id { get; set; }
 
     public string Name { get; set; } = null!;
+    public string InstructionPdf { get; set; } = null!;
 
     public int CompanyId { get; set; }
 

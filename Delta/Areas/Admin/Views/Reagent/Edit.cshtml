@@ -1,1 +1,38 @@
-﻿
+﻿@model ReagentModel
+
+
+@{
+    ViewBag.Title = "Company edit";
+}
+
+@section Scripts {    
+    <environment include="Development">
+        <script src="~/js/admin/reagent.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/admin/reagent-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+<form class="reagent-edit">
+    <h2 style="font-size: 22px; line-height: 28px; font-weight: 600;">Здесь вы можете отредактировать <br> реагент</h2>
+    
+    <p class="successfully"></p>
+    <input type="hidden" name="id" value="@Model.Id"/>
+    <label>
+        Name
+        <input value="@Model.Name" type="text" name="name"/>
+    </label>
+    <label for="">
+        <input list="fruitsList" name="companyId" value="@Model.CompanyName">
+        <datalist id="fruitsList">
+        </datalist>
+    </label>
+    <div class="lower-input">
+        <label>
+            <input class="form-file" type="file" name="instructionPdf"/>
+        </label>
+    </div>
+    <a style="margin: 20px 0; font-weight: 600;" href="/images/reagents/@Model.InstructionPdf">PDF</a>
+    <button class="add-btn" type="submit">Edit product</button>
+</form>

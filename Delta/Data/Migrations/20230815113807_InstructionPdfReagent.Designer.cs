@@ -3,17 +3,20 @@ using System;
 using Delta.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace Delta.Migrations
+namespace Delta.Data.Migrations
 {
     [DbContext(typeof(DeltaDbContext))]
-    partial class DeltaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230815113807_InstructionPdfReagent")]
+    partial class InstructionPdfReagent
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

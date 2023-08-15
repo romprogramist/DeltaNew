@@ -1,4 +1,5 @@
 ﻿using Delta.Models;
+using Delta.Models.Dtos;
 using Delta.Services.ReagentService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -27,10 +28,29 @@ public class ReagentController : ControllerBase
     
     [HttpPost]
     [Route("add")]
-    [Authorize(Roles = "Admin")]
-    public async Task<IActionResult> AddReagent(ReagentModel reagent)
+    // [Authorize(Roles = "Admin")]  
+    public async Task<IActionResult> AddReagent([FromForm] ReagentModel reagent)
     {
-        var saved = await _reagentService.AddReagentAsync(reagent);
+        var requestFiles = Request.Form.Files;
+        if (requestFiles.Count > 0)
+        {
+            if (requestFiles[0].Length > 1024 * 1024)
+            {
+                return BadRequest("File size is too large.");
+            }
+            reagent.InstructionPdf = await _reagentService.SaveReagentImageAsync(requestFiles[0]);
+        }
+        
+        var reagentDto = new ReagentDto
+        {
+            Name = reagent.Name,
+            InstructionPdf = reagent.InstructionPdf,
+            CompanyId = reagent.CompanyId
+        };
+        
+        
+        
+        var saved = await _reagentService.AddReagentAsync(reagentDto);
         if(!saved)
             return BadRequest();
         return Ok();

@@ -21,43 +21,41 @@ document.addEventListener("DOMContentLoaded", () => {
             false);
     }
     
-    const addReagentForm = document.querySelectorAll('.reagent-add');
+    const addReagentForm = document.querySelector('.reagent-add');
     if(addReagentForm) {
-        addReagentForm.forEach(f => {
-            f.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const requestData = {};
-                document.querySelectorAll('input').forEach(i => {
-                    requestData[i.name] = i.value;
-                    if(i.name === 'CompanyId') {
-                        const selectedOption = document.querySelector(`#fruitsList option[value="${i.value}"]`);
-                        requestData[i.name] = selectedOption.dataset.id
-                    }
-                });
-                console.log(requestData);
-                
-                const successfully = document.querySelector('.successfully');
-                successfully.textContent = 'Реагент успешно добавлена';
-                setTimeout(function() {
-                    successfully.textContent = '';
-                }, 4000);
+        addReagentForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData();
+            formData.append("name", addReagentForm.elements["name"].value);
+            if(addReagentForm.elements["companyId"].value) {
+                const selectedOption = document.querySelector(`#fruitsList option[value="${addReagentForm.elements["companyId"].value}"]`);
+                console.log(selectedOption.dataset.id);
+                formData.append("companyId", selectedOption.dataset.id);
+            }
+            
+            const instructionPdf = document.querySelector(".form-file").files[0];
+            formData.append("instructionPdf", instructionPdf);
+
+            const successfully = document.querySelector('.successfully');
+            console.log(successfully);
+            successfully.textContent = 'Компания успешно добавлена';
+            setTimeout(function() {
+                successfully.textContent = '';
+            }, 4000);
 
 
-                apiRequest('/api/reagents/add', 'POST', requestData,
-                    (response) => {
-                        document.querySelector('form').reset()
-                        console.log('completed', response);
-                    },
-                    (error, response) => {
-                        console.log('crashed', error, response);
-                    }, null,
-                    true)
+            fetch("/api/reagents/add", {
+                method: "POST",
+                body: formData
+            }).then(data => {
+                console.log("Success:", data);
+                addReagentForm.reset()
             });
         });
+        
     }
-
-
-
+    
     const reagentTable = document.querySelector("div.reagent");
     if(reagentTable) {
         apiRequest("/api/reagents/get", "GET", null,
@@ -67,8 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 response.forEach((product) => {
                     const rowHtml = `
                         <tr>
-                            <td><a href="/admin/reagents/edit/${product.id}">${product.name}</a></td>
-                            <td>${product.companyName}</td>
+                            <td><a href="/admin/reagent/edit/${product.id}">${product.name}</a></td>
+                            <td style="font-weight: 700; font-size: 20px">${product.companyName}</td>
+                            <td><a href="/images/reagents/${product.instructionPdf}">PDF</a></td>
                             <td><img data-id="${product.id}" class="delete" src="/images/icon/garbage.svg" alt=""></td>
                         </tr>
                     `;
@@ -99,7 +98,48 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+
+
+
+
+
+    const updateReagentForm = document.querySelector('form.reagent-edit');
+
     
+    if(updateReagentForm) {
+        
+        updateReagentForm.addEventListener("submit", (e) => {
+            e.preventDefault();
 
+            const formData = new FormData();
+            formData.append("name", updateReagentForm.elements["name"].value);
+            if(updateReagentForm.elements["companyId"].value) {
+                const selectedOption = document.querySelector(`#fruitsList option[value="${updateReagentForm.elements["companyId"].value}"]`);
+                formData.append("companyId", selectedOption.dataset.id);
+            }
+
+            const instructionPdf = document.querySelector(".form-file").files[0];
+            console.log(instructionPdf);
+            formData.append("instructionPdf", instructionPdf);
+
+            const successfully = document.querySelector('.successfully');
+            console.log(successfully);
+            successfully.textContent = 'Компания успешно добавлена';
+            setTimeout(function() {
+                successfully.textContent = '';
+            }, 4000);
+
+
+            fetch("/api/reagents/update", {
+                method: "POST",
+                body: formData
+            }).then(data => {
+                console.log("Success:", data);
+            });
+        });
+    }
+    
+    
+    
 });
-
