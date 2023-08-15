@@ -12,7 +12,7 @@
 }
 
 
-<form>
+<form class="reagent-add">
     <div class="button-and-header">
         <h2>
             Добавить реаген
@@ -26,8 +26,9 @@
         <input id="name" type="text" name="name" placeholder="Название"/>
     </label>
     <label for="">
-        <input id="CompanyId" type="text" name="CompanyId" placeholder="Компания">
+        <input list="fruitsList" name="CompanyId">
         <datalist id="fruitsList">
+            
         </datalist>
     </label>
     <div class="validation"></div>

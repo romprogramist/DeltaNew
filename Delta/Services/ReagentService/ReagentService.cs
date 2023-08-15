@@ -1,5 +1,6 @@
 ﻿using Delta.Data;
 using Delta.Models;
+using Delta.Models.Dtos;
 using Microsoft.EntityFrameworkCore;
 
 namespace Delta.Services.ReagentService;
@@ -26,14 +27,15 @@ public class ReagentService : IReagentService
         return saveCount > 0;
     }
 
-    public async Task<IEnumerable<ReagentModel>> GetReagentsAsync()
+    public async Task<List<ReagentDto>> GetReagentsAsync()
     {
         return await _context.Reagents
-            .Select(r => new ReagentModel
+            .Select(r => new ReagentDto
             {
                 Id = r.Id,
                 Name = r.Name,
-                CompanyId = r.CompanyId
+                CompanyId = r.CompanyId,
+                CompanyName = r.Company.Name
             }).ToListAsync();
     }
     
