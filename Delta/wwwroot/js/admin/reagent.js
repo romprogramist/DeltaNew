@@ -82,10 +82,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const formData = new FormData();
             const selectedOptions = Array.from(optionsContainer.querySelectorAll("input[type='checkbox']:checked"))
                 .map(checkbox => parseInt(checkbox.value));
-
+            
+            
             optionsContainer.style.display = "none";
             console.log("Выбранные реагенты:", selectedOptions);
-            formData.append("reagentCategoryReagents", selectedOptions);
+            formData.append("ReagentCategoryIds", selectedOptions);
 
             fetch("/api/reagents/add", {
                 method: "POST",
