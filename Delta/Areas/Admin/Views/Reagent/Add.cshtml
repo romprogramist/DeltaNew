@@ -25,6 +25,17 @@
     <label>
         <input id="name" type="text" name="name" placeholder="Название"/>
     </label>
+    <label>
+        <input id="kitComposition" type="text" name="kitComposition" placeholder="Состав набора"/>
+    </label>
+    
+    <label for="selectedReagents">Выберите реагенты:</label>
+    <div style="margin-top: 15px" class="custom-select">
+        <div class="select-header" id="selectHeader">Выберите реагенты</div>
+        <div class="options-container" id="optionsContainer">
+        </div>
+    </div>
+    
     <label for="">
         <input list="fruitsList" name="companyId">
         <datalist id="fruitsList">

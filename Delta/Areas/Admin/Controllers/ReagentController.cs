@@ -35,6 +35,7 @@ public class ReagentController : BaseAdminController
         {
             Id = reagent.Id,
             Name = reagent.Name,
+            KitComposition = reagent.KitComposition,
             InstructionPdf = reagent.InstructionPdf,
             CompanyId = reagent.CompanyId,
             CompanyName = reagent.CompanyName

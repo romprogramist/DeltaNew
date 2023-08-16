@@ -263,6 +263,9 @@ namespace Delta.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("KitComposition")
+                        .HasColumnType("text");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)

@@ -44,6 +44,8 @@ public class ReagentController : ControllerBase
         var reagentDto = new ReagentDto
         {
             Name = reagent.Name,
+            KitComposition = reagent.KitComposition,
+            ReagentCategoryIds = reagent.ReagentCategoryIds,
             InstructionPdf = reagent.InstructionPdf,
             CompanyId = reagent.CompanyId
         };
@@ -59,7 +61,7 @@ public class ReagentController : ControllerBase
     
     [HttpDelete]
     [Route("delete/{id:int}")]
-    [Authorize(Roles = "Admin")]
+    // [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteReagent(int id)
     {
         var deleted = await _reagentService.DeleteReagentAsync(id);

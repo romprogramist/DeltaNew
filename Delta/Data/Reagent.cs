@@ -8,6 +8,7 @@ public partial class Reagent
     public int Id { get; set; }
 
     public string Name { get; set; } = null!;
+    public string? KitComposition { get; set; } = null;
     public string InstructionPdf { get; set; } = null!;
 
     public int CompanyId { get; set; }
@@ -16,5 +17,5 @@ public partial class Reagent
 
     public virtual ICollection<Product> Products { get; } = new List<Product>();
 
-    public virtual ICollection<ReagentCategory> ReagentCategories { get; } = new List<ReagentCategory>();
+    public virtual ICollection<ReagentCategory> ReagentCategories { get; set; } = new List<ReagentCategory>();
 }

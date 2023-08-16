@@ -470,4 +470,34 @@ table tbody th:first-child, table tbody td:first-child {
   text-align: left;
 }
 
+.custom-select {
+  position: relative;
+  display: inline-block;
+}
+
+.select-header {
+  padding: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.options-container {
+  display: none;
+  position: absolute;
+  border: 1px solid #ccc;
+  background-color: white;
+  width: 200px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.option {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #f0f0f0;
+}
+
 /*# sourceMappingURL=admin.css.map */

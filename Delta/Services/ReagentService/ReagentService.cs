@@ -29,11 +29,16 @@ public class ReagentService : IReagentService
     
     public async Task<bool> AddReagentAsync(ReagentDto reagent)
     {
+        var reagentCategories = await _context.ReagentCategories
+            .Where(rc => reagent.ReagentCategoryIds.Contains(rc.Id)).ToListAsync();
+        
         _context.Reagents.Add(new Reagent
         {
             Name = reagent.Name,
+            KitComposition = reagent.KitComposition,
             InstructionPdf = reagent.InstructionPdf,
-            CompanyId = reagent.CompanyId
+            CompanyId = reagent.CompanyId,
+            ReagentCategories = reagentCategories
         });
     
         var saveCount = await _context.SaveChangesAsync();
@@ -48,6 +53,7 @@ public class ReagentService : IReagentService
             {
                 Id = r.Id,
                 Name = r.Name,
+                KitComposition = r.KitComposition,
                 InstructionPdf = r.InstructionPdf,
                 CompanyId = r.CompanyId,
                 CompanyName = r.Company.Name
@@ -76,6 +82,7 @@ public class ReagentService : IReagentService
             {
                 Id = p.Id,
                 Name = p.Name,
+                KitComposition = p.KitComposition,
                 InstructionPdf = p.InstructionPdf,
                 CompanyId = p.CompanyId,
                 CompanyName = p.Company.Name

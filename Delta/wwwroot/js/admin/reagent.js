@@ -19,15 +19,103 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             null,
             false);
+
+
+
+
+
+
+
+
+        
+        const containerForOption = document.querySelector(".options-container");
+        apiRequest("/api/reagentcategories/get", "GET", null,
+            (response) => {
+                let tbodyInnerHtml = '';
+                response.forEach((product) => {
+                    const reagentCattegory = `
+                        <div class="option"><input type="checkbox" value="${product.id}">${product.name}</div>
+                    `;
+                    tbodyInnerHtml += reagentCattegory;
+                });
+                containerForOption.innerHTML = tbodyInnerHtml;
+            },
+            (error, response) => {
+                console.log("error", error);
+            },
+            null,
+            false);
+        
+        
+        
+        
     }
     
     const addReagentForm = document.querySelector('.reagent-add');
     if(addReagentForm) {
+
+
+        const selectHeader = document.getElementById("selectHeader");
+        const optionsContainer = document.getElementById("optionsContainer");
+
+        selectHeader.addEventListener("click", function() {
+            optionsContainer.style.display = optionsContainer.style.display === "block" ? "none" : "block";
+        });
+
+        optionsContainer.addEventListener("click", function(event) {
+            if (event.target.classList.contains("option")) {
+                const checkbox = event.target.querySelector("input[type='checkbox']");
+                checkbox.checked = !checkbox.checked;
+            }
+        });
+
+
+        
+
+
+        // Выбор категории реагентов 
+        
+        
+        addReagentForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const formData = new FormData();
+            const selectedOptions = Array.from(optionsContainer.querySelectorAll("input[type='checkbox']:checked"))
+                .map(checkbox => parseInt(checkbox.value));
+
+            optionsContainer.style.display = "none";
+            console.log("Выбранные реагенты:", selectedOptions);
+            formData.append("reagentCategoryReagents", selectedOptions);
+
+            fetch("/api/reagents/add", {
+                method: "POST",
+                body: formData
+            }).then(data => {
+                const successfully = document.querySelector('.successfully');
+                successfully.textContent = 'Реагент успешно добавлен';
+
+                setTimeout(function() {
+                    successfully.textContent = '';
+                }, 4000);
+
+                console.log("Success:", data);
+                addReagentForm.reset()
+            });
+        });
+        
+        
+        
+        
+        
+        
+        
+        
         addReagentForm.addEventListener("submit", (e) => {
             e.preventDefault();
             
             const formData = new FormData();
             formData.append("name", addReagentForm.elements["name"].value);
+            formData.append("kitComposition", addReagentForm.elements["kitComposition"].value);
             if(addReagentForm.elements["companyId"].value) {
                 const selectedOption = document.querySelector(`#fruitsList option[value="${addReagentForm.elements["companyId"].value}"]`);
                 console.log(selectedOption.dataset.id);
@@ -36,19 +124,21 @@ document.addEventListener("DOMContentLoaded", () => {
             
             const instructionPdf = document.querySelector(".form-file").files[0];
             formData.append("instructionPdf", instructionPdf);
-
-            const successfully = document.querySelector('.successfully');
-            console.log(successfully);
-            successfully.textContent = 'Компания успешно добавлена';
-            setTimeout(function() {
-                successfully.textContent = '';
-            }, 4000);
+            
+            
 
 
             fetch("/api/reagents/add", {
                 method: "POST",
                 body: formData
             }).then(data => {
+                const successfully = document.querySelector('.successfully');
+                successfully.textContent = 'Реагент успешно добавлен';
+
+                setTimeout(function() {
+                    successfully.textContent = '';
+                }, 4000);
+                
                 console.log("Success:", data);
                 addReagentForm.reset()
             });
@@ -66,7 +156,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     const rowHtml = `
                         <tr>
                             <td><a href="/admin/reagent/edit/${product.id}">${product.name}</a></td>
-                            <td style="font-weight: 700; font-size: 20px">${product.companyName}</td>
+                            <td>${product.kitComposition}</td>
+                            <td style="font-weight: 700; font-size: 20px">${product.companyName}</td>                            
                             <td><a href="/images/reagents/${product.instructionPdf}">PDF</a></td>
                             <td><img data-id="${product.id}" class="delete" src="/images/icon/garbage.svg" alt=""></td>
                         </tr>
@@ -111,9 +202,10 @@ document.addEventListener("DOMContentLoaded", () => {
         
         updateReagentForm.addEventListener("submit", (e) => {
             e.preventDefault();
-
+            
             const formData = new FormData();
             formData.append("name", updateReagentForm.elements["name"].value);
+            formData.append("kitComposition", addReagentForm.elements["kitComposition"].value);
             if(updateReagentForm.elements["companyId"].value) {
                 const selectedOption = document.querySelector(`#fruitsList option[value="${updateReagentForm.elements["companyId"].value}"]`);
                 formData.append("companyId", selectedOption.dataset.id);
@@ -139,7 +231,5 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
-    
-    
     
 });
