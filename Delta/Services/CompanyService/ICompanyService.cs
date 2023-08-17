@@ -12,5 +12,6 @@ public interface ICompanyService
     Task<string> SaveCompanyImageAsync(IFormFile file);
     Task<bool> DeleteCompanyAsync(int id);
     Task<CompanyDto?> GetCompanyAsync(int id);
+    Task<List<CompanyModel>> GetAllCompaniesAsync();
     Task<CompanyDto?> UpdateCompanyAsync(CompanyDto company);
 }

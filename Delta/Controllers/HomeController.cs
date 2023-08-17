@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 using Delta.Models;
+using Delta.Models.Dtos;
+using Delta.Services.CompanyService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Delta.Controllers;
@@ -7,10 +9,12 @@ namespace Delta.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly ICompanyService _companyService;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, ICompanyService companyService)
     {
         _logger = logger;
+        _companyService = companyService;
     }
 
     public IActionResult Index()
@@ -23,10 +27,20 @@ public class HomeController : Controller
         return View();
     }
     
-    public IActionResult Partners()
+    public async Task<IActionResult> Partners()
     {
-        return View();
+        var companies = await _companyService.GetAllCompaniesAsync();
+    
+        if (companies == null || companies.Count == 0)
+            return NotFound("No companies found.");
+    
+        return View("Partners", companies);
     }
+    
+    
+    
+    
+    
     
     public IActionResult AboutUs()
     {

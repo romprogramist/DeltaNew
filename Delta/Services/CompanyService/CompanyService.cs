@@ -48,7 +48,12 @@ public class CompanyService : ICompanyService
                 Logo = p.Logo
             }).FirstOrDefaultAsync();
     }
-    
+
+    // public Task<List<CompanyModel>> GetAllCompaniesAsync()
+    // {
+    //     throw new NotImplementedException();
+    // }
+
 
     public async Task<bool> AddCompanyAsync(CompanyDto company)
     {
@@ -123,6 +128,27 @@ public class CompanyService : ICompanyService
         };
 
         return companyDto;
+    }
+    
+    
+    
+    
+    
+    public async Task<List<CompanyModel>> GetAllCompaniesAsync()
+    {
+        var companies = await _context.Companies.ToListAsync();
+    
+        // Здесь необходимо преобразовать сущности компаний в модели CompanyModel
+        var companyModels = companies.Select(company => new CompanyModel
+        {
+            Id = company.Id,
+            Name = company.Name,
+            Description = company.Description,
+            Logo = company.Logo
+            // Другие поля компании, если есть
+        }).ToList();
+    
+        return companyModels;
     }
 }
 

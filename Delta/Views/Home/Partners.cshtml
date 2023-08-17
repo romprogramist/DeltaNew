@@ -1,5 +1,7 @@
 @using Delta.Models.PartialModels
 @using Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<CompanyModel>
+
 
 @{
 	ViewData["Title"] = "Home Page";
@@ -35,30 +37,15 @@
 
 <section class="at-the-right-edge">
 	<div id="partners" class="items">
-		<div class="item">
-			<a href="">
-				<img src="/images/img/partner1.png" alt="" title="">
-			</a>
-			<div>
-				<p>Доступно множество вариаций отрывков из Lorem Ipsum, но большинство из них претерпели изменения в той или иной форме путем введения юмора.</p>
-			</div>
-		</div>
-		<div class="item">
-			<a href="">
-				<img src="/images/img/partner2.png" alt="" title="">
-			</a>
-			<div>
-				<p>Доступно множество вариаций отрывков из Lorem Ipsum, но большинство из них претерпели изменения в той или иной форме путем введения юмора.</p>
-			</div>
-		</div>
-		<div class="item">
-			<a href="">
-				<img src="/images/img/partner3.png" alt="" title="">
-			</a>
-			<div>
-				<p>Доступно множество вариаций отрывков из Lorem Ipsum, но большинство из них претерпели изменения в той или иной форме путем введения юмора.</p>
-			</div>
-		</div>
+		@foreach (var company in Model)
+	     {
+	         <div class="item">
+		         <img src="/images/companies/@company.Logo" alt="" title="">
+		         <div>
+			         <p>@company.Description</p>
+		         </div>
+	         </div>
+	     }
 	</div>
 	<div class="bg"></div>
 </section>

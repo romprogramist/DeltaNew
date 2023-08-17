@@ -11,28 +11,34 @@
   
 .at-the-right-edge
   .items
+    display: flex
+    flex-wrap: wrap
     .item
-      max-width: 1290px
-      margin: 0 auto
-      a        
-        img
-          max-width: 404px
-          display: flex
-          margin: 0 auto
-          width: 100%
+      max-width: 239px
+      width: 100%
+      min-height: 100%
+      background: #FFF
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15)
+      padding: 15px
+      margin: 15px 15px 0 15px
+      position: relative      
+      img
+        width: 185.294px
+        display: flex
+        margin: 0 auto
       & > div
+        &:before
+          content: ''
+          position: absolute
+          width: 100%
+          height: 4px
+          background: #C72930
+          right: 0
+          top: 224px
+          
         p
-          text-align: center
           font-weight: 500
-          font-size: 18px
-          line-height: 28px
+          font-size: 13px
+          line-height: 15px
           color: $darkGrey-color
-    
-@media screen and ( min-width: 800px )
-  .at-the-right-edge
-    .items
-      .item
-        & > div
-          p
-            font-size: 32px
-            line-height: 48px
+          margin-top: 35px

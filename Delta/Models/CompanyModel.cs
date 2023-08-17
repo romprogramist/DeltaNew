@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Delta.Models;
+﻿namespace Delta.Models;
 
 public class CompanyModel
 {
@@ -13,6 +11,8 @@ public class CompanyModel
     
     // [Display(Name = "Описание")]
     // [Required(ErrorMessage = "Заполните поле {0}.")]
+    
+    public List<CompanyModel> Companies { get; set; }
     
     public string Description { get; set; } = string.Empty;
     

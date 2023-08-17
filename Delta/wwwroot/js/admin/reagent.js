@@ -76,33 +76,33 @@ document.addEventListener("DOMContentLoaded", () => {
         // Выбор категории реагентов 
         
         
-        addReagentForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            const formData = new FormData();
-            const selectedOptions = Array.from(optionsContainer.querySelectorAll("input[type='checkbox']:checked"))
-                .map(checkbox => parseInt(checkbox.value));
-            
-            
-            optionsContainer.style.display = "none";
-            console.log("Выбранные реагенты:", selectedOptions);
-            formData.append("ReagentCategoryIds", selectedOptions);
-
-            fetch("/api/reagents/add", {
-                method: "POST",
-                body: formData
-            }).then(data => {
-                const successfully = document.querySelector('.successfully');
-                successfully.textContent = 'Реагент успешно добавлен';
-
-                setTimeout(function() {
-                    successfully.textContent = '';
-                }, 4000);
-
-                console.log("Success:", data);
-                addReagentForm.reset()
-            });
-        });
+        // addReagentForm.addEventListener("submit", (e) => {
+        //     e.preventDefault();
+        //
+        //     const formData = new FormData();
+        //     const selectedOptions = Array.from(optionsContainer.querySelectorAll("input[type='checkbox']:checked"))
+        //         .map(checkbox => parseInt(checkbox.value));
+        //    
+        //    
+        //     optionsContainer.style.display = "none";
+        //     console.log("Выбранные реагенты:", selectedOptions);
+        //     formData.append("ReagentCategoryIds", selectedOptions);
+        //
+        //     fetch("/api/reagents/add", {
+        //         method: "POST",
+        //         body: formData
+        //     }).then(data => {
+        //         const successfully = document.querySelector('.successfully');
+        //         successfully.textContent = 'Реагент успешно добавлен';
+        //
+        //         setTimeout(function() {
+        //             successfully.textContent = '';
+        //         }, 4000);
+        //
+        //         console.log("Success:", data);
+        //         addReagentForm.reset()
+        //     });
+        // });
         
         
         
@@ -121,6 +121,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 const selectedOption = document.querySelector(`#fruitsList option[value="${addReagentForm.elements["companyId"].value}"]`);
                 console.log(selectedOption.dataset.id);
                 formData.append("companyId", selectedOption.dataset.id);
+            }
+
+            const selectedOptions = Array.from(optionsContainer.querySelectorAll("input[type='checkbox']:checked"))
+                    .map(checkbox => parseInt(checkbox.value));
+
+            for (const option of selectedOptions) {
+                console.log(option);
+                formData.append('ReagentCategoryIds', option);
             }
             
             const instructionPdf = document.querySelector(".form-file").files[0];
