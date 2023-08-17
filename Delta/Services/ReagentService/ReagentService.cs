@@ -1,6 +1,5 @@
 ﻿using Delta.Data;
 using Delta.Helpers;
-using Delta.Models;
 using Delta.Models.Dtos;
 using Microsoft.EntityFrameworkCore;
 
@@ -62,10 +61,20 @@ public class ReagentService : IReagentService
     
     public async Task<bool> DeleteReagentAsync(int id)
     {
-        var reagent = await _context.Reagents.FindAsync(id);
+        var reagent = await _context.Reagents
+            .Include(r => r.ReagentCategories)
+            .FirstOrDefaultAsync(r => r.Id == id);
         if (reagent is null)
             return false;
-    
+
+        var reagentCategories = await _context.ReagentCategories
+            .Where(rc => reagent.ReagentCategories.Contains(rc)).ToListAsync();
+        
+        foreach (var reagentCategory in reagentCategories)
+        {
+            reagent.ReagentCategories.Remove(reagentCategory);
+        }
+
         _context.Reagents.Remove(reagent);
         var saveCount = await _context.SaveChangesAsync();
     

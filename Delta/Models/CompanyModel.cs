@@ -12,7 +12,7 @@ public class CompanyModel
     // [Display(Name = "Описание")]
     // [Required(ErrorMessage = "Заполните поле {0}.")]
     
-    public List<CompanyModel> Companies { get; set; }
+    // public List<CompanyModel> Companies { get; set; }
     
     public string Description { get; set; } = string.Empty;
     
