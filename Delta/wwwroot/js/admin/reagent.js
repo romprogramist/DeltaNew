@@ -38,7 +38,55 @@ document.addEventListener("DOMContentLoaded", () => {
                     `;
                     tbodyInnerHtml += reagentCattegory;
                 });
-                containerForOption.innerHTML = tbodyInnerHtml;
+                containerForOption.insertAdjacentHTML("beforeend", tbodyInnerHtml);
+
+
+
+
+                //Функция, обеспечивающая возможность фильтрации избыточных элементов.
+                const optionsContainer = document.getElementById("optionsContainer");
+                const categorySearchInput = optionsContainer.querySelector("#categorySearchInput");
+                const selectedReagentsInput = document.getElementById("selectedReagents");
+                const optionItems = optionsContainer.querySelectorAll(".option");
+
+                const selectedOptions = new Set();
+
+                document.getElementById("selectHeader").addEventListener("click", function() {
+                    optionsContainer.style.display = optionsContainer.style.display === "block" ? "none" : "block";
+                });
+
+                categorySearchInput.addEventListener("input", function() {
+                    const searchTerm = categorySearchInput.value.toLowerCase();
+
+                    optionItems.forEach(optionItem => {
+                        const optionText = optionItem.textContent.toLowerCase();
+                        const checkbox = optionItem.querySelector("input[type='checkbox']");
+                        optionItem.style.display = optionText.includes(searchTerm) ? "block" : "none";
+                        checkbox.style.display = optionText.includes(searchTerm) ? "inline-block" : "none";
+                    });
+                });
+
+                optionsContainer.addEventListener("change", function(event) {
+                    if (event.target.type === "checkbox") {
+                        const checkbox = event.target;
+                        const optionText = checkbox.parentNode.textContent.trim();
+                        checkbox.checked ? selectedOptions.add(optionText) : selectedOptions.delete(optionText);
+                        updateSelectedReagentsInput();
+                    }
+                });
+
+                function updateSelectedReagentsInput() {
+                    selectedReagentsInput.value = [...selectedOptions].join(", ");
+                }
+
+                updateSelectedReagentsInput();
+                //Функция, обеспечивающая возможность фильтрации избыточных элементов.
+
+
+
+
+
+
             },
             (error, response) => {
                 console.log("error", error);
@@ -54,23 +102,34 @@ document.addEventListener("DOMContentLoaded", () => {
     const addReagentForm = document.querySelector('.reagent-add');
     if(addReagentForm) {
 
-
-        const selectHeader = document.getElementById("selectHeader");
-        const optionsContainer = document.getElementById("optionsContainer");
-
-        selectHeader.addEventListener("click", function() {
-            optionsContainer.style.display = optionsContainer.style.display === "block" ? "none" : "block";
-        });
-
-        optionsContainer.addEventListener("click", function(event) {
-            if (event.target.classList.contains("option")) {
-                const checkbox = event.target.querySelector("input[type='checkbox']");
-                checkbox.checked = !checkbox.checked;
-            }
-        });
-
-
+        //11    
         
+        
+        // const selectHeader = document.getElementById("selectHeader");
+        // const optionsContainer = document.getElementById("optionsContainer");
+        //
+        // selectHeader.addEventListener("click", function() {
+        //     optionsContainer.style.display = optionsContainer.style.display === "block" ? "none" : "block";
+        // });
+        //
+        // optionsContainer.addEventListener("click", function(event) {
+        //     if (event.target.classList.contains("option")) {
+        //         const checkbox = event.target.querySelector("input[type='checkbox']");
+        //         checkbox.checked = !checkbox.checked;
+        //     }
+        // });
+
+        //11
+
+
+
+
+
+
+
+
+
+
 
 
         // Выбор категории реагентов 
