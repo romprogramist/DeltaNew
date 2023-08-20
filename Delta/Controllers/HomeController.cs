@@ -17,6 +17,18 @@ public class HomeController : Controller
         _companyService = companyService;
     }
 
+    // [Route("product/{productUrl}")]
+    // public async Task<IActionResult> Product()
+    // {
+    //     var productDto = await _productService.GetProductByAsync(productUrl);
+    //     if (product == null)
+    //         return NotFound("Product not found.");
+    //     // productModel = 
+    //     
+    //     
+    //     return View(productModel);
+    // }
+
     public IActionResult Index()
     {
         return View();

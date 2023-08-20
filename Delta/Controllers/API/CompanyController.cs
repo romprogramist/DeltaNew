@@ -50,7 +50,7 @@ public class CompanyController : ControllerBase
             Name = сompany.Name,
             Description = сompany.Description,
             Logo = сompany.Logo
-        };
+        };  
         
         var saved = await _companyService.AddCompanyAsync(сompanyDto);
         if(!saved)
