@@ -28,13 +28,46 @@
     <label>
         <input id="kitComposition" type="text" name="kitComposition" placeholder="Состав набора"/>
     </label>
+    @* //11 *@
     
-    <label for="selectedReagents">Выберите категорию:</label>
+    
+    @* <label for="selectedReagents">Выберите категории:</label> *@
+    @* <div style="margin-top: 15px" class="custom-select"> *@
+    @*     <div class="select-header" id="selectHeader">Выберите категории</div> *@
+    @*     <div class="options-container" id="optionsContainer"> *@
+    @*     </div> *@
+    @* </div> *@
+    
+    
+    @* //11 *@
+    
+    
+    
+    
+    
+    
+    
+    
+    <label for="selectedReagents">Выберите категории:</label>
     <div style="margin-top: 15px" class="custom-select">
-        <div class="select-header" id="selectHeader">Выберите реагенты</div>
+        <div class="select-header" id="selectHeader">Выберите категории</div>
         <div class="options-container" id="optionsContainer">
+            <input type="text" id="categorySearchInput" placeholder="Поиск категории...">
+            <!-- ... more options ... -->
         </div>
     </div>
+    <input type="text" id="selectedReagents" readonly>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     <label for="">
         <input list="fruitsList" name="companyId">
