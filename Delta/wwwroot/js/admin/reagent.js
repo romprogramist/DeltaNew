@@ -51,9 +51,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const selectedOptions = new Set();
 
-                document.getElementById("selectHeader").addEventListener("click", function() {
+
+
+
+                document.getElementById("selectHeader").addEventListener("click", function(event) {
                     optionsContainer.style.display = optionsContainer.style.display === "block" ? "none" : "block";
+                    event.stopPropagation();
                 });
+
+                optionsContainer.addEventListener("click", function(event) {
+                    event.stopPropagation(); // Предотвратить всплытие события, чтобы клик на optionsContainer не приводил к закрытию
+                });
+
+                document.addEventListener("click", function() {
+                    optionsContainer.style.display = "none";
+                });
+                
+                
+                
 
                 categorySearchInput.addEventListener("input", function() {
                     const searchTerm = categorySearchInput.value.toLowerCase();
@@ -221,12 +236,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 const tbody = reagentTable.querySelector("tbody");
                 let tbodyInnerHtml = '';
                 response.forEach((product) => {
+                    console.log(product);
                     const rowHtml = `
                         <tr>
                             <td><a href="/admin/reagent/edit/${product.id}">${product.name}</a></td>
-                            <td>${product.kitComposition}</td>
+                            <td>${product.kitComposition}</td>                            
                             <td style="font-weight: 700; font-size: 20px">${product.companyName}</td>                            
-                            <td><a href="/images/reagents/${product.instructionPdf}">PDF</a></td>
+                            <td><a href="/images/reagents/${product.instructionPdf}" target="_blank">PDF</a></td>
                             <td><img data-id="${product.id}" class="delete" src="/images/icon/garbage.svg" alt=""></td>
                         </tr>
                     `;
@@ -239,6 +255,8 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             null,
             false);
+        
+        
 
         reagentTable.addEventListener('click', (e) => {
             if(e.target.classList.contains('delete')) {
