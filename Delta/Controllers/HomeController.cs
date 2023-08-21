@@ -18,7 +18,7 @@ public class HomeController : Controller
     }
 
     // [Route("product/{productUrl}")]
-    // public async Task<IActionResult> Product()
+    // public async Task<IActionResult> Product(string productUrl)
     // {
     //     var productDto = await _productService.GetProductByAsync(productUrl);
     //     if (product == null)
