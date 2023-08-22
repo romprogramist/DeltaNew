@@ -58,6 +58,54 @@ public class ReagentController : ControllerBase
         return Ok();
     }
     
+    [HttpPost]
+    [Route("update")]
+    // [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> UpdateReagent([FromForm] ReagentModel reagent)
+    {
+        var requestFiles = Request.Form.Files;
+        if (requestFiles.Count > 0)
+        {
+            if (requestFiles[0].Length > 1024 * 1024)
+            {
+                return BadRequest("File size is too large.");
+            }
+            reagent.InstructionPdf = await _reagentService.SaveReagentImageAsync(requestFiles[0]);
+        }
+        
+        var reagentDto = new ReagentDto
+        {
+            Id = reagent.Id,
+            Name = reagent.Name,
+            KitComposition = reagent.KitComposition,
+            // ReagentCategoryNames = reagent.ReagentCategoryNames,
+            CompanyId = reagent.CompanyId,
+            ReagentCategoryIds = reagent.ReagentCategoryIds,
+            InstructionPdf = reagent.InstructionPdf
+        };
+        
+        var savedReagent = await _reagentService.UpdateReagentAsync(reagentDto);
+        if(savedReagent == null)
+            return BadRequest("Failed to save the object");
+        
+        var reagentModel = new ReagentModel
+        {
+            Id = reagent.Id,
+            Name = savedReagent.Name,
+            KitComposition = savedReagent.KitComposition,
+            // ReagentCategoryNames = reagent.ReagentCategoryNames,
+            CompanyId = savedReagent.CompanyId,
+            ReagentCategoryIds = savedReagent.ReagentCategoryIds,
+            InstructionPdf = savedReagent.InstructionPdf
+        };
+        
+        return Ok(reagentModel);
+    }
+    
+    
+    
+    
+    
     
     [HttpDelete]
     [Route("delete/{id:int}")]

@@ -13,7 +13,8 @@ public class ReagentModel
     
     [Display(Name = "Id Компании")]
     public int CompanyId { get; set; }
-
+    
     public string? CompanyName { get; set; } = null;
+    public string[] ReagentCategoryNames { get; set; } = Array.Empty<string>();
     public int[] ReagentCategoryIds { get; set; } = null!;
 }

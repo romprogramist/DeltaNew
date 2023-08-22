@@ -11,5 +11,6 @@ public interface IReagentService
     Task<bool> DeleteReagentAsync(int id);
     Task<string> SaveReagentImageAsync(IFormFile requestFile);
     Task<ReagentDto?> GetReagentAsync(int id);
+    Task<ReagentDto?> UpdateReagentAsync(ReagentDto reagentDto);
 }
 

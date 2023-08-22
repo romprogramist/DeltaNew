@@ -16,14 +16,37 @@
 
 <form class="reagent-edit">
     <h2 style="font-size: 22px; line-height: 28px; font-weight: 600;">Здесь вы можете отредактировать <br> реагент</h2>
-    
     <p class="successfully"></p>
     <input type="hidden" name="id" value="@Model.Id"/>
+    
     <label>
         Name
-        
         <input value="@Model.Name" type="text" name="name"/>
     </label>
+    
+    <label>
+        <input value="@Model.KitComposition" id="kitComposition" type="text" name="kitComposition" placeholder="Состав набора"/>
+    </label>
+    
+    
+    
+    
+    
+    <label for="selectedReagents">Выберите категории:</label>
+    <div style="margin-top: 15px" class="custom-select">
+        <div class="select-header" id="selectHeader">Изменить категории</div>
+        <div class="options-container" id="optionsContainer">
+            <input type="text" id="categorySearchInput" placeholder="Поиск категории...">
+        </div>
+    </div>
+    <div style="display: flex; padding: 10px 0" class="categoryReag">
+        <span>Действующие категории реагентов</span>: 
+        @foreach (var category in Model.ReagentCategoryNames)
+        {
+            <span style="color: #7EC119; margin-left: 5px; font-weight: 600" class="category-spacer"> @category / </span>
+        }
+    </div>
+    <input type="text" id="selectedReagents" readonly>
     <label for="">
         <input list="fruitsList" name="companyId" value="@Model.CompanyName">
         <datalist id="fruitsList">

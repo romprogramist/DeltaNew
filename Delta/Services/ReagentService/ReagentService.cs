@@ -84,8 +84,9 @@ public class ReagentService : IReagentService
     
     public async Task<ReagentDto?> GetReagentAsync(int id)
     {
-        return await _context.Reagents
+        var reagentDto = await _context.Reagents
             .Include(p => p.Company)
+            .Include(p => p.ReagentCategories)
             .Where(p => p.Id == id)
             .Select(p => new ReagentDto
             {
@@ -94,8 +95,44 @@ public class ReagentService : IReagentService
                 KitComposition = p.KitComposition,
                 InstructionPdf = p.InstructionPdf,
                 CompanyId = p.CompanyId,
-                CompanyName = p.Company.Name
+                CompanyName = p.Company.Name,
+                ReagentCategoryIds = p.ReagentCategories.Select(rc => rc.Id).ToArray(), // Список Id категорий
+                ReagentCategories = p.ReagentCategories // Включение связанных категорий
             }).FirstOrDefaultAsync();
+
+        if (reagentDto != null)
+        {
+            reagentDto.ReagentCategoryNames = reagentDto.ReagentCategories.Select(rc => rc.Name).ToArray();
+        }
+
+        return reagentDto;
     }
+
+   
     
+    public async Task<ReagentDto?> UpdateReagentAsync(ReagentDto reagent)
+    {
+        var reagentToUpdate = await _context.Reagents.FindAsync(reagent.Id);
+        if (reagentToUpdate is null)
+            return null;
+        
+        reagentToUpdate.Name = reagent.Name;
+        reagentToUpdate.KitComposition = reagent.KitComposition;
+        reagentToUpdate.InstructionPdf = reagent.InstructionPdf;
+        _context.Reagents.Update(reagentToUpdate);
+        
+        var savedCount = await _context.SaveChangesAsync();
+        if (savedCount <= 0)
+            return null;
+
+        var reagentDto = new ReagentDto
+        {
+            Id = reagentToUpdate.Id,
+            Name = reagentToUpdate.Name,
+            KitComposition = reagentToUpdate.KitComposition,
+            InstructionPdf = reagentToUpdate.InstructionPdf
+        };
+
+        return reagentDto;
+    }
 }

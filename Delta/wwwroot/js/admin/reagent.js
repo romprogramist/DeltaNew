@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
             formData.append("kitComposition", addReagentForm.elements["kitComposition"].value);
             if(addReagentForm.elements["companyId"].value) {
                 const selectedOption = document.querySelector(`#fruitsList option[value="${addReagentForm.elements["companyId"].value}"]`);
-                console.log(selectedOption.dataset.id);
+                // console.log(selectedOption.dataset.id);
                 formData.append("companyId", selectedOption.dataset.id);
             }
 
@@ -207,8 +207,14 @@ document.addEventListener("DOMContentLoaded", () => {
             
             const instructionPdf = document.querySelector(".form-file").files[0];
             formData.append("instructionPdf", instructionPdf);
-            
-            
+
+            var fieldData = [];
+            formData.forEach(function(value, key) {
+                fieldData.push({ key: key, value: value });
+            });
+
+            console.log(fieldData);
+
 
 
             fetch("/api/reagents/add", {
@@ -236,7 +242,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 const tbody = reagentTable.querySelector("tbody");
                 let tbodyInnerHtml = '';
                 response.forEach((product) => {
-                    console.log(product);
                     const rowHtml = `
                         <tr>
                             <td><a href="/admin/reagent/edit/${product.id}">${product.name}</a></td>
@@ -290,24 +295,41 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             
             const formData = new FormData();
+            formData.append("id", updateReagentForm.elements["id"].value);
             formData.append("name", updateReagentForm.elements["name"].value);
-            formData.append("kitComposition", addReagentForm.elements["kitComposition"].value);
+            formData.append("kitComposition", updateReagentForm.elements["kitComposition"].value);
             if(updateReagentForm.elements["companyId"].value) {
                 const selectedOption = document.querySelector(`#fruitsList option[value="${updateReagentForm.elements["companyId"].value}"]`);
                 formData.append("companyId", selectedOption.dataset.id);
             }
 
+            const selectedOptions = Array.from(optionsContainer.querySelectorAll("input[type='checkbox']:checked"))
+                .map(checkbox => parseInt(checkbox.value));
+
+            for (const option of selectedOptions) {
+                formData.append('reagentCategoryIds', option);
+            }
+            
+
             const instructionPdf = document.querySelector(".form-file").files[0];
-            console.log(instructionPdf);
             formData.append("instructionPdf", instructionPdf);
 
-            const successfully = document.querySelector('.successfully');
-            console.log(successfully);
-            successfully.textContent = 'Компания успешно добавлена';
-            setTimeout(function() {
-                successfully.textContent = '';
-            }, 4000);
+            // const successfully = document.querySelector('.successfully');
+            // successfully.textContent = 'Компания успешно добавлена';
+            // setTimeout(function() {
+            //     successfully.textContent = '';
+            // }, 4000);
 
+            //
+            //
+            // var fieldData = [];
+            // formData.forEach(function(value, key) {
+            //     fieldData.push({ key: key, value: value });
+            // });
+
+            console.log(formData);
+            
+            
 
             fetch("/api/reagents/update", {
                 method: "POST",
