@@ -20,19 +20,15 @@
     <input type="hidden" name="id" value="@Model.Id"/>
     
     <label>
-        Name
+        Наименование реагента
         <input value="@Model.Name" type="text" name="name"/>
     </label>
     
     <label>
+        Состав комплекта
         <input value="@Model.KitComposition" id="kitComposition" type="text" name="kitComposition" placeholder="Состав набора"/>
     </label>
-    
-    
-    
-    
-    
-    <label for="selectedReagents">Выберите категории:</label>
+    <label for="selectedReagents">Выбор категории:</label>
     <div style="margin-top: 15px" class="custom-select">
         <div class="select-header" id="selectHeader">Изменить категории</div>
         <div class="options-container" id="optionsContainer">
@@ -40,23 +36,28 @@
         </div>
     </div>
     <div style="display: flex; padding: 10px 0" class="categoryReag">
-        <span>Действующие категории реагентов</span>: 
-        @foreach (var category in Model.ReagentCategoryNames)
+        <span>Действующие категории реагентов</span>:
+        @foreach (var index in Enumerable.Range(0, Model.ReagentCategoryIds.Length))
         {
-            <span style="color: #7EC119; margin-left: 5px; font-weight: 600" class="category-spacer"> @category / </span>
+            var categoryId = Model.ReagentCategoryIds[index];
+            var categoryName = Model.ReagentCategoryNames[index];
+    
+            <span style="color: #7EC119; margin-left: 5px; font-weight: 600" class="category-spacer" id="@categoryId" data-category="@categoryName"> @categoryName / </span>
         }
     </div>
     <input type="text" id="selectedReagents" readonly>
     <label for="">
+        Компания реагента
         <input list="fruitsList" name="companyId" value="@Model.CompanyName">
         <datalist id="fruitsList">
         </datalist>
     </label>
     <div class="lower-input">
         <label>
+            Прекрепить файл инструкции
             <input class="form-file" type="file" name="instructionPdf"/>
         </label>
     </div>
-    <a style="margin: 20px 0; font-weight: 600;" href="/images/reagents/@Model.InstructionPdf">PDF</a>
-    <button class="add-btn" type="submit">Edit product</button>
+    <a style="margin: 20px 0; font-weight: 600;" href="/images/reagents/@Model.InstructionPdf" target="_blank">PDF</a>
+    <button class="add-btn" type="submit">Сохранить изменения</button>
 </form>

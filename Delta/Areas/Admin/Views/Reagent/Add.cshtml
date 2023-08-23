@@ -23,32 +23,14 @@
     </div>
     <p class="successfully"></p>
     <label>
+        Наименование реагента
         <input id="name" type="text" name="name" placeholder="Название"/>
     </label>
     <label>
+        Состав комплекта
         <input id="kitComposition" type="text" name="kitComposition" placeholder="Состав набора"/>
     </label>
-    @* //11 *@
-    
-    
-    @* <label for="selectedReagents">Выберите категории:</label> *@
-    @* <div style="margin-top: 15px" class="custom-select"> *@
-    @*     <div class="select-header" id="selectHeader">Выберите категории</div> *@
-    @*     <div class="options-container" id="optionsContainer"> *@
-    @*     </div> *@
-    @* </div> *@
-    
-    
-    @* //11 *@
-    
-    
-    
-    
-    
-    
-    
-    
-    <label for="selectedReagents">Выберите категории:</label>
+    <label for="selectedReagents">Выбор категории:</label>
     <div style="margin-top: 15px" class="custom-select">
         <div class="select-header" id="selectHeader">Выберите категории</div>
         <div class="options-container" id="optionsContainer">
@@ -57,12 +39,11 @@
         </div>
     </div>
     <input type="text" id="selectedReagents" readonly>
-
-    
     <label for="">
+        Компания реагента
         <input list="fruitsList" name="companyId">
         <datalist id="fruitsList">
-            
+
         </datalist>
     </label>
     <div class="lower-input">

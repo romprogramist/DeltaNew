@@ -54,6 +54,7 @@ public class ReagentService : IReagentService
                 Name = r.Name,
                 KitComposition = r.KitComposition,
                 InstructionPdf = r.InstructionPdf,
+                ReagentCategories = r.ReagentCategories,
                 CompanyId = r.CompanyId,
                 CompanyName = r.Company.Name
             }).ToListAsync();
@@ -112,15 +113,34 @@ public class ReagentService : IReagentService
     
     public async Task<ReagentDto?> UpdateReagentAsync(ReagentDto reagent)
     {
-        var reagentToUpdate = await _context.Reagents.FindAsync(reagent.Id);
-        if (reagentToUpdate is null)
+        var reagentToUpdate = await _context.Reagents
+            .Include(r => r.ReagentCategories)
+            .FirstOrDefaultAsync(r => r.Id == reagent.Id);
+
+        if (reagentToUpdate == null)
             return null;
-        
+
         reagentToUpdate.Name = reagent.Name;
-        reagentToUpdate.KitComposition = reagent.KitComposition;
+        reagentToUpdate.CompanyId = reagent.CompanyId;
         reagentToUpdate.InstructionPdf = reagent.InstructionPdf;
-        _context.Reagents.Update(reagentToUpdate);
-        
+        reagentToUpdate.KitComposition = reagent.KitComposition;
+
+        // Удаление старых категорий
+        foreach (var oldCategory in reagentToUpdate.ReagentCategories.ToList())
+        {
+            reagentToUpdate.ReagentCategories.Remove(oldCategory);
+        }
+
+        // Добавление новых категорий
+        var newCategories = await _context.ReagentCategories
+            .Where(rc => reagent.ReagentCategoryIds.Contains(rc.Id))
+            .ToListAsync();
+
+        foreach (var newCategory in newCategories)
+        {
+            reagentToUpdate.ReagentCategories.Add(newCategory);
+        }
+
         var savedCount = await _context.SaveChangesAsync();
         if (savedCount <= 0)
             return null;

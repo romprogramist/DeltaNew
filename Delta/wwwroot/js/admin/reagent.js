@@ -19,14 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             null,
             false);
-
-
-
-
-
-
-
-
         
         const containerForOption = document.querySelector(".options-container");
         apiRequest("/api/reagentcategories/get", "GET", null,
@@ -40,22 +32,46 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
                 containerForOption.insertAdjacentHTML("beforeend", tbodyInnerHtml);
 
-
-
-
                 //Функция, обеспечивающая возможность фильтрации избыточных элементов.
                 const optionsContainer = document.getElementById("optionsContainer");
                 const categorySearchInput = optionsContainer.querySelector("#categorySearchInput");
                 const selectedReagentsInput = document.getElementById("selectedReagents");
+                
                 const optionItems = optionsContainer.querySelectorAll(".option");
 
                 const selectedOptions = new Set();
-
-
-
+                
 
                 document.getElementById("selectHeader").addEventListener("click", function(event) {
                     optionsContainer.style.display = optionsContainer.style.display === "block" ? "none" : "block";
+
+                    document.querySelectorAll('.category-spacer').forEach(el => {
+                        const categoryValue = el.id;
+
+                        optionItems.forEach(o => {
+                            const optionValue = o.firstElementChild.value;
+
+                            if (categoryValue === optionValue) {
+                                o.firstElementChild.checked = true;
+                                o.firstElementChild.addEventListener('click', () => {
+                                    if(!o.firstElementChild.checked) {
+                                        o.firstElementChild.value = "";
+                                        el.textContent = '';
+                                    } else {
+                                        console.log(o.textContent);
+                                        o.firstElementChild.value = o.textContent;
+                                    }
+                                })
+                            }
+                        });
+                    });
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     event.stopPropagation();
                 });
 
@@ -67,9 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     optionsContainer.style.display = "none";
                 });
                 
-                
-                
-
                 categorySearchInput.addEventListener("input", function() {
                     const searchTerm = categorySearchInput.value.toLowerCase();
 
@@ -93,14 +106,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 function updateSelectedReagentsInput() {
                     selectedReagentsInput.value = [...selectedOptions].join(", ");
                 }
+                
 
                 updateSelectedReagentsInput();
-                //Функция, обеспечивающая возможность фильтрации избыточных элементов.
-
-
-
-
-
+               
 
             },
             (error, response) => {
@@ -116,74 +125,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const addReagentForm = document.querySelector('.reagent-add');
     if(addReagentForm) {
-
-        //11    
-        
-        
-        // const selectHeader = document.getElementById("selectHeader");
-        // const optionsContainer = document.getElementById("optionsContainer");
-        //
-        // selectHeader.addEventListener("click", function() {
-        //     optionsContainer.style.display = optionsContainer.style.display === "block" ? "none" : "block";
-        // });
-        //
-        // optionsContainer.addEventListener("click", function(event) {
-        //     if (event.target.classList.contains("option")) {
-        //         const checkbox = event.target.querySelector("input[type='checkbox']");
-        //         checkbox.checked = !checkbox.checked;
-        //     }
-        // });
-
-        //11
-
-
-
-
-
-
-
-
-
-
-
-
-        // Выбор категории реагентов 
-        
-        
-        // addReagentForm.addEventListener("submit", (e) => {
-        //     e.preventDefault();
-        //
-        //     const formData = new FormData();
-        //     const selectedOptions = Array.from(optionsContainer.querySelectorAll("input[type='checkbox']:checked"))
-        //         .map(checkbox => parseInt(checkbox.value));
-        //    
-        //    
-        //     optionsContainer.style.display = "none";
-        //     console.log("Выбранные реагенты:", selectedOptions);
-        //     formData.append("ReagentCategoryIds", selectedOptions);
-        //
-        //     fetch("/api/reagents/add", {
-        //         method: "POST",
-        //         body: formData
-        //     }).then(data => {
-        //         const successfully = document.querySelector('.successfully');
-        //         successfully.textContent = 'Реагент успешно добавлен';
-        //
-        //         setTimeout(function() {
-        //             successfully.textContent = '';
-        //         }, 4000);
-        //
-        //         console.log("Success:", data);
-        //         addReagentForm.reset()
-        //     });
-        // });
-        
-        
-        
-        
-        
-        
-        
         
         addReagentForm.addEventListener("submit", (e) => {
             e.preventDefault();
@@ -213,10 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 fieldData.push({ key: key, value: value });
             });
 
-            console.log(fieldData);
-
-
-
             fetch("/api/reagents/add", {
                 method: "POST",
                 body: formData
@@ -241,13 +178,21 @@ document.addEventListener("DOMContentLoaded", () => {
             (response) => {
                 const tbody = reagentTable.querySelector("tbody");
                 let tbodyInnerHtml = '';
+                
                 response.forEach((product) => {
+                    console.log(product.reagentCategories);
+
+                    const categories = product.reagentCategories.map(category => category.name).join(", ");
+
+
+
                     const rowHtml = `
                         <tr>
                             <td><a href="/admin/reagent/edit/${product.id}">${product.name}</a></td>
                             <td>${product.kitComposition}</td>                            
                             <td style="font-weight: 700; font-size: 20px">${product.companyName}</td>                            
                             <td><a href="/images/reagents/${product.instructionPdf}" target="_blank">PDF</a></td>
+                            <td>${categories}</td>
                             <td><img data-id="${product.id}" class="delete" src="/images/icon/garbage.svg" alt=""></td>
                         </tr>
                     `;
@@ -287,10 +232,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     const updateReagentForm = document.querySelector('form.reagent-edit');
-
+    
     
     if(updateReagentForm) {
-        
         updateReagentForm.addEventListener("submit", (e) => {
             e.preventDefault();
             
@@ -313,24 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const instructionPdf = document.querySelector(".form-file").files[0];
             formData.append("instructionPdf", instructionPdf);
-
-            // const successfully = document.querySelector('.successfully');
-            // successfully.textContent = 'Компания успешно добавлена';
-            // setTimeout(function() {
-            //     successfully.textContent = '';
-            // }, 4000);
-
-            //
-            //
-            // var fieldData = [];
-            // formData.forEach(function(value, key) {
-            //     fieldData.push({ key: key, value: value });
-            // });
-
-            console.log(formData);
-            
-            
-
+        
             fetch("/api/reagents/update", {
                 method: "POST",
                 body: formData
@@ -338,6 +265,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log("Success:", data);
             });
         });
+
+        
+
+
+        
     }
     
 });

@@ -39,7 +39,7 @@ public class ReagentController : BaseAdminController
             CompanyId = reagent.CompanyId,
             ReagentCategoryIds = reagent.ReagentCategoryIds,
             InstructionPdf = reagent.InstructionPdf,
-            // CompanyName = reagent.CompanyName,
+            CompanyName = reagent.CompanyName,
             ReagentCategoryNames = reagent.ReagentCategoryNames
         };
         
