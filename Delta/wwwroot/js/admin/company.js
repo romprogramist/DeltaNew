@@ -1,4 +1,5 @@
 ﻿
+
 document.addEventListener("DOMContentLoaded", () => {
     const productTable = document.querySelector("div.companies");
     if(productTable) {
@@ -113,5 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
   
+    
+    
 });
 

@@ -500,4 +500,8 @@ table tbody th:first-child, table tbody td:first-child {
   background-color: #f0f0f0;
 }
 
+.ql-editor p {
+  font-size: 18px;
+}
+
 /*# sourceMappingURL=admin.css.map */

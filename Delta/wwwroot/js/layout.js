@@ -1,4 +1,5 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+﻿
+document.addEventListener('DOMContentLoaded', () => {
     const telInputs = document.querySelectorAll('input[type=tel]');
     const body = document.querySelector('body');
     phoneMask(telInputs);
@@ -87,31 +88,6 @@
             }
         }
     });
-
-    // function calculatesTheRoute(item) {
-    //     let urlParts = item.split('/');
-    //     let currentPage = urlParts[urlParts.length - 1];
-    //     currentPage = currentPage.split('?')[0];
-    //     return currentPage;
-    // }
-    // function addClassActiveHeader(href) {
-    //     lis.forEach(li => {
-    //         if(calculatesTheRoute(li.lastElementChild.href) === href) {
-    //             li.classList.add('active-btn-h');
-    //         }
-    //         if(href === 'home' && calculatesTheRoute(li.lastElementChild.href) === href) {
-    //             li.classList.add('active-btn-h');
-    //         }
-    //     })
-    // }
-    // let currentUrl = window.location.href;
-    // function getCurrentPage(url) {
-    //     addClassActiveHeader(calculatesTheRoute(url))
-    // }
-    // getCurrentPage(currentUrl);
-  
-    
-    
     
     const plusMinus = document.querySelector('.submenu .arrow');
     plusMinus.addEventListener('click', () => {
@@ -131,9 +107,5 @@
     btn.addEventListener('click', (e) => {
         scrollTo(0, 0)
     })
-
-
     
-
-
 });

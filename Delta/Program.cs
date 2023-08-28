@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Delta.Data;
 using Delta.Middleware;
+using Delta.Services.Aboutus;
 using Delta.Services.ApplicationService;
 using Delta.Services.CertificatesService;
 using Delta.Services.CompanyService;
@@ -47,6 +48,7 @@ builder.Services.AddScoped<IReviewService, ReviewService>();
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<IReagentcategoryService, ReagentcategoryService>();
 builder.Services.AddScoped<IReagentService, ReagentService>();
+builder.Services.AddScoped<IAboutusService, AboutusService>();
 
 builder.Services.AddScoped<ICertificateService, CertificateService>();
 
@@ -133,6 +135,8 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/js/api-request.js");
     pipeline.AddJavaScriptBundle("/js/admin/company-bundle.js",
         "/js/admin/company.js");
+    pipeline.AddJavaScriptBundle("/js/admin/about-us-bundle.js",
+        "/js/admin/about-us.js");
     pipeline.AddJavaScriptBundle("/js/admin/reagent-bundle.js",
         "/js/admin/reagent.js");
     pipeline.AddJavaScriptBundle("/js/admin/reagent-category-bundle.js",

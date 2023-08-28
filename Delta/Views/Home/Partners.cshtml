@@ -37,15 +37,19 @@
 
 <section class="at-the-right-edge">
 	<div id="partners" class="items">
-		@foreach (var company in Model)
-	     {
-	         <div class="item">
-		         <img src="/images/companies/@company.Logo" alt="" title="">
-		         <div>
-			         <p>@company.Description</p>
-		         </div>
-	         </div>
-	     }
+		@{
+            var sortedCompanies = Model.OrderBy(company => company.Id);
+        }
+        
+        @foreach (var company in sortedCompanies)
+        {
+            <div class="item">
+                <img src="/images/companies/@company.Logo" alt="" title="">
+                <div>
+                    <p>@company.Description</p>
+                </div>
+            </div>
+        }
 	</div>
 	<div class="bg"></div>
 </section>

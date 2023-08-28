@@ -22,5 +22,9 @@ public class HomeController : BaseAdminController
     {
         return RedirectToAction("Index", "Reagentcategories");
     }
+    public IActionResult Aboutus()
+    {
+        return RedirectToAction("Index", "Aboutus");
+    }
 }
 

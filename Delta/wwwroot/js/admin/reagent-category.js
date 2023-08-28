@@ -49,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 e.preventDefault();
                 const requestData = {};
                 document.querySelectorAll('input').forEach(i => {
-                    console.log(i);    
                     requestData[i.name] = i.value;
                 });
 
@@ -85,9 +84,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 e.preventDefault();
                 const requestData = {};
                 document.querySelectorAll('input').forEach(i => {
-                    console.log(i);
                     requestData[i.name] = i.value;
                 });
+                console.log(requestData);
 
                 const successfully = document.querySelector('.successfully');
                 successfully.textContent = 'Категория реагентов успешно отредактирована';

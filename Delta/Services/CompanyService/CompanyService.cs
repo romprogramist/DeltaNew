@@ -138,14 +138,12 @@ public class CompanyService : ICompanyService
     {
         var companies = await _context.Companies.ToListAsync();
     
-        // Здесь необходимо преобразовать сущности компаний в модели CompanyModel
         var companyModels = companies.Select(company => new CompanyModel
         {
             Id = company.Id,
             Name = company.Name,
             Description = company.Description,
             Logo = company.Logo
-            // Другие поля компании, если есть
         }).ToList();
     
         return companyModels;

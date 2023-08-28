@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Delta.Models;
 using Delta.Models.Dtos;
+using Delta.Services.Aboutus;
 using Delta.Services.CompanyService;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,11 +11,13 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
     private readonly ICompanyService _companyService;
+    private readonly IAboutusService _aboutusService;
 
-    public HomeController(ILogger<HomeController> logger, ICompanyService companyService)
+    public HomeController(ILogger<HomeController> logger, ICompanyService companyService, IAboutusService aboutusService)
     {
         _logger = logger;
         _companyService = companyService;
+        _aboutusService = aboutusService;
     }
 
     // [Route("product/{productUrl}")]
@@ -54,9 +57,16 @@ public class HomeController : Controller
     
     
     
-    public IActionResult AboutUs()
+    public async Task<IActionResult> AboutUs()
     {
-        return View();
+        
+        var aboutus = await _aboutusService.GetAllAboutusAsync();
+    
+        if (aboutus == null || aboutus.Count == 0)
+            return NotFound("No companies found.");
+    
+        return View("AboutUs", aboutus);
+        
     }
     
     public IActionResult ContactUs()

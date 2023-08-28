@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     
     if(!document.getElementById('development-mode')){
@@ -48,6 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
     //     openSearchBtn.parentElement.classList.add('desktop-form-active');
     // })
 
+    
+    
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: 1.2,
         spaceBetween: 30,
@@ -76,4 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
+
+
+   
+    
+    
 });
