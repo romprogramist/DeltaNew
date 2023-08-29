@@ -42,4 +42,59 @@
       <Folder Include="wwwroot\pdf" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Remove="wwwroot\images\reagents\638283318732700590.pdf" />
+      <Content Remove="wwwroot\images\reagents\638283312913962988.pdf" />
+      <Content Remove="wwwroot\images\reagents\638283247164087513.pdf" />
+      <Content Remove="wwwroot\images\reagents\638283205674616164.pdf" />
+      <Content Remove="wwwroot\images\reagents\638283203119897376.pdf" />
+      <Content Remove="wwwroot\images\reagents\638283202787739811.pdf" />
+      <Content Remove="wwwroot\images\reagents\638283201334080644.pdf" />
+      <Content Remove="wwwroot\images\reagents\638282629864597386.jpeg" />
+      <Content Remove="wwwroot\images\reagents\638282628575162700.pdf" />
+      <Content Remove="wwwroot\images\reagents\638282626954422053.pdf" />
+      <Content Remove="wwwroot\images\reagents\638282625581695764.pdf" />
+      <Content Remove="wwwroot\images\reagents\638282619414907689.pdf" />
+      <Content Remove="wwwroot\images\reagents\638282619223431943.pdf" />
+      <Content Remove="wwwroot\images\reagents\638282619029354941.pdf" />
+      <Content Remove="wwwroot\images\reagents\638282617639829217.pdf" />
+      <Content Remove="wwwroot\images\reagents\638282616172141708.pdf" />
+      <Content Remove="wwwroot\images\reagents\638282612573815614.pdf" />
+      <Content Remove="wwwroot\images\reagents\638282607385706656.pdf" />
+      <Content Remove="wwwroot\images\reagents\638282272179925888.jpeg" />
+      <Content Remove="wwwroot\images\reagents\638281840916061412.pdf" />
+      <Content Remove="wwwroot\images\reagents\638281816963609159.pdf" />
+      <Content Remove="wwwroot\images\reagents\638281795596331623.pdf" />
+      <Content Remove="wwwroot\images\reagents\638281778269938616.pdf" />
+      <Content Remove="wwwroot\images\reagents\638278671736500211.pdf" />
+      <Content Remove="wwwroot\images\reagents\638278671614278264.pdf" />
+      <Content Remove="wwwroot\images\reagents\638278671504953312.pdf" />
+      <Content Remove="wwwroot\images\reagents\638278669864615748.pdf" />
+      <Content Remove="wwwroot\images\reagents\638278669464587337.pdf" />
+      <Content Remove="wwwroot\images\reagents\638277940779701887.pdf" />
+      <Content Remove="wwwroot\images\reagents\638277937291600526.pdf" />
+      <Content Remove="wwwroot\images\reagents\638277933305024584.pdf" />
+      <Content Remove="wwwroot\images\reagents\638277933075808388.pdf" />
+      <Content Remove="wwwroot\images\reagents\638277305563983300.pdf" />
+      <Content Remove="wwwroot\images\reagents\638277305427631656.pdf" />
+      <Content Remove="wwwroot\images\reagents\638277304895451257.pdf" />
+      <Content Remove="wwwroot\images\reagents\638277280162648959.pdf" />
+      <Content Remove="wwwroot\images\reagents\638277261923100838.pdf" />
+      <Content Remove="wwwroot\images\reagents\638277211042150264.pdf" />
+      <Content Remove="wwwroot\images\reagents\638277196880006493.pdf" />
+      <Content Remove="wwwroot\images\companies\638284920163206582.svg" />
+      <Content Remove="wwwroot\images\companies\638284920043971524.svg" />
+      <Content Remove="wwwroot\images\companies\638284919927681924.svg" />
+      <Content Remove="wwwroot\images\companies\638284919229056733.svg" />
+      <Content Remove="wwwroot\images\companies\638284919107939779.svg" />
+      <Content Remove="wwwroot\images\companies\638284919035716020.svg" />
+      <Content Remove="wwwroot\images\companies\638284918729349465.svg" />
+      <Content Remove="wwwroot\images\companies\638283188494485319.pdf" />
+      <Content Remove="wwwroot\images\companies\638283176785254350.svg" />
+      <Content Remove="wwwroot\images\companies\638279010002091806.svg" />
+      <Content Remove="wwwroot\images\companies\638279009957054321.svg" />
+      <Content Remove="wwwroot\images\companies\638279009514407482.svg" />
+      <Content Remove="wwwroot\images\companies\638276892879303113.svg" />
+    </ItemGroup>
+
 </Project>

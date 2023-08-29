@@ -3,6 +3,7 @@ using Delta.Models;
 using Delta.Models.Dtos;
 using Delta.Services.Aboutus;
 using Delta.Services.CompanyService;
+using Delta.Services.ContactService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Delta.Controllers;
@@ -12,12 +13,14 @@ public class HomeController : Controller
     private readonly ILogger<HomeController> _logger;
     private readonly ICompanyService _companyService;
     private readonly IAboutusService _aboutusService;
+    private readonly IContactService _contactService;
 
-    public HomeController(ILogger<HomeController> logger, ICompanyService companyService, IAboutusService aboutusService)
+    public HomeController(ILogger<HomeController> logger, ICompanyService companyService, IAboutusService aboutusService, IContactService contactService)
     {
         _logger = logger;
         _companyService = companyService;
         _aboutusService = aboutusService;
+        _contactService = contactService;
     }
 
     // [Route("product/{productUrl}")]
@@ -52,11 +55,6 @@ public class HomeController : Controller
         return View("Partners", companies);
     }
     
-    
-    
-    
-    
-    
     public async Task<IActionResult> AboutUs()
     {
         
@@ -68,10 +66,15 @@ public class HomeController : Controller
         return View("AboutUs", aboutus);
         
     }
-    
-    public IActionResult ContactUs()
+
+    public async Task<IActionResult> ContactUs()
     {
-        return View();
+        var contact = await _contactService.GetAllContactAsync();
+    
+        if (contact == null || contact.Count == 0)
+            return NotFound("No companies found.");
+    
+        return View("ContactUs", contact);
     }
     
     public IActionResult Hematology()

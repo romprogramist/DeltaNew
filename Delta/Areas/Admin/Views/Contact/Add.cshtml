@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Add contact";
+}
+
+@section Styles {    
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true">
+    </environment>
+}
+
+
+@section Scripts {    
+    <environment include="Development">
+        <script src="~/js/admin/contact.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/admin/contact-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+
+
+
+<form class="contact-add">
+    <div class="button-and-header">
+        <h2>
+            Добавить контакты
+        </h2>
+        <button type="submit">
+            Добавить
+        </button>
+    </div>
+    <p class="successfully"></p>
+    <label>
+        <input id="headerNumber" type="text" name="headerNumber" placeholder="Введите заголовок рядом с телефоном"/>
+    </label>
+    <label>
+        <input id="address" type="text" name="address" placeholder="Адрес"/>
+    </label>
+    <label>
+        <input id="numberOne" type="text" name="numberOne" placeholder="Номер телефона 1"/>
+    </label>
+    <label>
+        <input id="numberTwo" type="text" name="numberTwo" placeholder="Номер телефона 2"/>
+    </label>
+    <label>
+        <input id="headerTimetable" type="text" name="headerTimetable" placeholder="Заголовок рядом с расписанием рабочих дней"/>
+    </label>
+    <label>
+        <input id="monday" type="text" name="monday" placeholder="Понедельник часы работы"/>
+    </label>
+    <label>
+        <input id="friday" type="text" name="friday" placeholder="Пятница часы работы"/>
+    </label>
+    <label>
+        <input id="saturday" type="text" name="saturday" placeholder="Суббота часы работы"/>
+    </label>
+    
+    <div class="lower-input">
+        <label>
+            <input id="imgBg" class="form-file" type="file" name="imgBg"/>
+        </label>
+    </div>
+    <div class="validation"></div>
+    <a class="link-transition" href="/Admin/Contact/Index">Таблица со списком контактов</a>
+</form>

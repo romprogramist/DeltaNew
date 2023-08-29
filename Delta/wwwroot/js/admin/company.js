@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
             formData.append("name", addCompanyForm.elements["name"].value);
             formData.append("description", addCompanyForm.elements["description"].value);
             const logo = document.querySelector(".form-file").files[0];
+            console.log(logo)
             formData.append("logo", logo);
             
             const successfully = document.querySelector('.successfully');
@@ -90,7 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
             formData.append("id", updateCompanyForm.elements["id"].value);
             formData.append("name", updateCompanyForm.elements["name"].value);
             formData.append("description", updateCompanyForm.elements["description"].value);
-            console.log(updateCompanyForm.elements["description"].value);
             
             const logo = document.querySelector(".form-file").files[0];
             console.log(logo);

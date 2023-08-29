@@ -26,5 +26,12 @@ public class HomeController : BaseAdminController
     {
         return RedirectToAction("Index", "Aboutus");
     }
+    
+    public IActionResult Contact()
+    {
+        return RedirectToAction("Index", "Contact");
+    }
+    
+    
 }
 

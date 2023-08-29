@@ -49,10 +49,6 @@ public class CompanyService : ICompanyService
             }).FirstOrDefaultAsync();
     }
 
-    // public Task<List<CompanyModel>> GetAllCompaniesAsync()
-    // {
-    //     throw new NotImplementedException();
-    // }
 
 
     public async Task<bool> AddCompanyAsync(CompanyDto company)

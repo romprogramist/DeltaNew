@@ -8,6 +8,7 @@ using Delta.Services.Aboutus;
 using Delta.Services.ApplicationService;
 using Delta.Services.CertificatesService;
 using Delta.Services.CompanyService;
+using Delta.Services.ContactService;
 using Delta.Services.EmailService;
 using Delta.Services.PhotoAddition;
 using Delta.Services.ReagentcategoryService;
@@ -49,9 +50,8 @@ builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<IReagentcategoryService, ReagentcategoryService>();
 builder.Services.AddScoped<IReagentService, ReagentService>();
 builder.Services.AddScoped<IAboutusService, AboutusService>();
-
 builder.Services.AddScoped<ICertificateService, CertificateService>();
-
+builder.Services.AddScoped<IContactService, ContactService>();
 builder.Services.AddTransient<IPhotoAddition, PhotoAddition>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -135,6 +135,10 @@ builder.Services.AddWebOptimizer(pipeline =>
         "/js/api-request.js");
     pipeline.AddJavaScriptBundle("/js/admin/company-bundle.js",
         "/js/admin/company.js");
+    
+    pipeline.AddJavaScriptBundle("/js/admin/contact-bundle.js",
+        "/js/admin/contact.js");
+    
     pipeline.AddJavaScriptBundle("/js/admin/about-us-bundle.js",
         "/js/admin/about-us.js");
     pipeline.AddJavaScriptBundle("/js/admin/reagent-bundle.js",

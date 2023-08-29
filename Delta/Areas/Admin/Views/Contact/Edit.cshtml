@@ -1,0 +1,57 @@
+﻿@model ContactModel
+
+@{
+    ViewBag.Title = "Contact edit";
+}
+
+@section Styles {    
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true">
+    </environment>
+}
+
+
+@section Scripts {    
+    <environment include="Development">
+        <script src="~/js/admin/contact.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/admin/contact-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+
+
+<form class="contact-edit">
+    <h2 style="font-size: 22px; line-height: 28px; font-weight: 600;">Здесь вы можете отредактировать <br> контакты</h2>
+    
+    <p class="successfully"></p>
+    <input type="hidden" name="id" value="@Model.Id"/>
+    <label>
+        <input value="@Model.HeaderNumber" id="headerNumber" type="text" name="headerNumber" placeholder="Заголовок"/>
+    </label>
+    <label>
+        <input value="@Model.Address" id="address" type="text" name="address" placeholder="Адрес"/>
+    </label>
+    <label>
+        <input value="@Model.NumberOne" id="numberOne" type="text" name="numberOne" placeholder="Номер телефона"/>
+    </label>
+    <label>
+        <input value="@Model.NumberTwo" id="numberTwo" type="text" name="numberTwo" placeholder="Номер телефона"/>
+    </label>
+    <label>
+        <input value="@Model.HeaderTimetable" id="headerTimetable" type="text" name="headerTimetable" placeholder="Заголовок"/>
+    </label>
+    <label>
+        <input value="@Model.Monday" id="monday" type="text" name="monday" placeholder="День"/>
+    </label>
+    <label>
+        <input value="@Model.Friday" id="friday" type="text" name="friday" placeholder="День"/>
+    </label>
+    <label>
+        <input value="@Model.Saturday" id="saturday" type="text" name="saturday" placeholder="День"/>
+    </label>
+    <img src="/images/companies/@Model.ImgBg"/>
+    <input class="form-file" type="file" name="logo" accept="image/*"/>
+    <button type="submit">Edit product</button>
+</form>

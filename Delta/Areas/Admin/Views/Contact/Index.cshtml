@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+@section Styles {    
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true">
+    </environment>
+}
+
+
+@section Scripts {    
+    <environment include="Development">
+        <script src="~/js/admin/contact.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/admin/contact-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+
+<div class="contact">
+    <a href="/Admin/Contact/Add">
+        Добавить контакты
+    </a>
+    <table>
+        @* <thead> *@
+        @*     <tr> *@
+        @*         <th>Заголовок 1</th> *@
+        @*         <th>Заголовок 2</th> *@
+        @*     </tr> *@
+        @* </thead> *@
+        <tbody>
+            
+        </tbody>
+    </table>
+</div>
