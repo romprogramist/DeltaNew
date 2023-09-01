@@ -73,6 +73,11 @@ public class ReagentController : ControllerBase
             reagent.InstructionPdf = await _reagentService.SaveReagentImageAsync(requestFiles[0]);
         }
         
+        else
+        {
+            reagent.InstructionPdf = string.Empty;
+        }
+        
         var reagentDto = new ReagentDto
         {
             Id = reagent.Id,

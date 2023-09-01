@@ -53,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const addCompanyForm = document.querySelector('form.company-add');
-    // console.log(addCompanyForm);
     if(addCompanyForm) {
         addCompanyForm.addEventListener("submit", (e) => {
             e.preventDefault();

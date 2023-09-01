@@ -73,6 +73,12 @@ public class CompanyController : ControllerBase
             сompany.ImageUrl = await _companyService.SaveCompanyImageAsync(requestFiles[0]);
         }
         
+        else
+        {
+            сompany.ImageUrl = string.Empty;
+        }
+        
+        
         var companyDto = new CompanyDto
         {
             Id = сompany.Id,

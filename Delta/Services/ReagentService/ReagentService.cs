@@ -125,6 +125,12 @@ public class ReagentService : IReagentService
         reagentToUpdate.InstructionPdf = reagent.InstructionPdf;
         reagentToUpdate.KitComposition = reagent.KitComposition;
 
+        if (!string.IsNullOrEmpty(reagent.InstructionPdf))
+        {
+            reagentToUpdate.InstructionPdf = reagent.InstructionPdf;
+        }
+        
+        
         // Удаление старых категорий
         foreach (var oldCategory in reagentToUpdate.ReagentCategories.ToList())
         {

@@ -10,4 +10,5 @@ public interface IContactService
     Task<string> SaveContactImageAsync(IFormFile requestFile);
     Task<List<ContactModel>> GetAllContactAsync();
     Task<ContactDto?> UpdateContactAsync(ContactDto contactDto);
+    Task<bool> DeleteContactAsync(int id);
 }

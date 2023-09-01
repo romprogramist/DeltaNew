@@ -427,6 +427,10 @@ header:before {
 .delete {
   cursor: pointer;
   width: 45px;
+  font-weight: 600;
+  font-size: 18px;
+  color: -webkit-link;
+  text-decoration: underline;
 }
 
 table {
@@ -441,7 +445,6 @@ table tbody {
 }
 table tbody th, table tbody td:first-child {
   background: #AFCDE7;
-  color: white;
   padding: 10px 20px;
 }
 table tbody th, table tbody td {
@@ -458,7 +461,7 @@ table tbody td img {
   width: 45px;
 }
 table tbody td a {
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 600;
   text-decoration: underline;
 }
@@ -468,6 +471,40 @@ table tbody td form button {
 }
 table tbody th:first-child, table tbody td:first-child {
   text-align: left;
+}
+
+.reagent-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.reagent-table td {
+  border: 1px solid black;
+  padding: 10px 20px;
+}
+
+.reagent-table tbody {
+  min-width: 100%;
+}
+.reagent-table tbody > tr {
+  display: flex;
+}
+.reagent-table tbody > tr td {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #D1D1D1;
+  background: #fff;
+}
+.reagent-table tbody > tr .delete {
+  justify-content: center;
+}
+.reagent-table tbody .tr-top {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  width: 100%;
+  background: #bb3459;
 }
 
 .custom-select {
@@ -502,6 +539,10 @@ table tbody th:first-child, table tbody td:first-child {
 
 .ql-editor p {
   font-size: 18px;
+}
+
+h1 {
+  text-align: left;
 }
 
 /*# sourceMappingURL=admin.css.map */

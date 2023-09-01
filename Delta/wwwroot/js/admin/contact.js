@@ -35,6 +35,29 @@ document.addEventListener("DOMContentLoaded", () => {
             null,
             false);
 
+
+
+
+        productTable.addEventListener('click', (e) => {
+
+            if(e.target.classList.contains('delete')) {
+
+                const tr = e.target.closest('tr');
+                let id = e.target.dataset.id;
+                console.log(id)
+                apiRequest('/api/contact/delete/'+id, 'DELETE', null,
+                    (response) => {
+                        console.log('completed', response);
+                        tr.remove();
+                    },
+                    (error, response) => {
+                        console.log('crashed', error, response);
+                    }, null,
+                    true)
+            }
+        });
+        
+
     }
     
     

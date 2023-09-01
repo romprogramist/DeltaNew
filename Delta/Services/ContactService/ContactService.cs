@@ -52,8 +52,16 @@ public class ContactService : IContactService
         contactToUpdate.Monday = contactDto.Monday;
         contactToUpdate.Friday = contactDto.Friday;
         contactToUpdate.Saturday = contactDto.Saturday;
-        contactToUpdate.ImgBg = contactDto.ImgBg;
+        // contactToUpdate.ImgBg = contactDto.ImgBg;
         contactToUpdate.Address = contactDto.Address;
+        
+        
+        if (!string.IsNullOrEmpty(contactDto.ImgBg))
+        {
+            contactToUpdate.ImgBg = contactDto.ImgBg;
+        }
+        
+        
         _context.Contacts.Update(contactToUpdate);
         var savedCount = await _context.SaveChangesAsync();
         if (savedCount <= 0)
@@ -65,6 +73,18 @@ public class ContactService : IContactService
         };
         
         return contactDto;
+    }
+
+    public async Task<bool> DeleteContactAsync(int id)
+    {
+        var contact = await _context.Contacts.FindAsync(id);
+        if (contact is null)
+            return false;
+    
+        _context.Contacts.Remove(contact);
+        var saveCount = await _context.SaveChangesAsync();
+    
+        return saveCount > 0;
     }
 
 

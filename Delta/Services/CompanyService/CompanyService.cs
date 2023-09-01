@@ -108,7 +108,16 @@ public class CompanyService : ICompanyService
         
         companyToUpdate.Name = company.Name;
         companyToUpdate.Description = company.Description;
-        companyToUpdate.Logo = company.Logo;
+        // companyToUpdate.Logo = company.Logo;
+        
+        
+        
+        if (!string.IsNullOrEmpty(company.Logo))
+        {
+            companyToUpdate.Logo = company.Logo;
+        }
+        
+        
         _context.Companies.Update(companyToUpdate);
         
         var savedCount = await _context.SaveChangesAsync();

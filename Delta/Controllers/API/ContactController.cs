@@ -45,12 +45,17 @@ public class ContactController : ControllerBase
         var requestFiles = Request.Form.Files;
         if (requestFiles.Count > 0)
         {
-            if (requestFiles[0].Length > 1024 * 1024)
-            {
-                return BadRequest("File size is too large.");
-            }
+            // if (requestFiles[0].Length > 1024 * 1024)
+            // {
+            //     return BadRequest("File size is too large.");
+            // }
             contact.ImgBg = await _contactService.SaveContactImageAsync(requestFiles[0]);
         }
+        
+        // else
+        // {
+        //     contact.ImgBg = string.Empty;
+        // }
         
         var contactDto = new ContactDto
         {
@@ -82,11 +87,16 @@ public class ContactController : ControllerBase
         var requestFiles = Request.Form.Files;
         if (requestFiles.Count > 0)
         {
-            if (requestFiles[0].Length > 1024 * 1024)
-            {
-                return BadRequest("File size is too large.");
-            }
+            // if (requestFiles[0].Length > 1024 * 1024)
+            // {
+            //     return BadRequest("File size is too large.");
+            // }
             contact.ImgBg = await _contactService.SaveContactImageAsync(requestFiles[0]);
+        }
+        
+        else
+        {
+            contact.ImgBg = string.Empty;
         }
         
         var contactDto = new ContactDto
@@ -124,6 +134,17 @@ public class ContactController : ControllerBase
         return Ok(contactModel);
     }
     
+    
+    [HttpDelete]
+    [Route("delete/{id:int}")]
+    // [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> DeleteContact(int id)
+    {
+        var deleted = await _contactService.DeleteContactAsync(id);
+        if(!deleted)
+            return BadRequest();
+        return Ok();
+    }
     
     
 }

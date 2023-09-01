@@ -181,19 +181,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 response.forEach((product) => {
                     console.log(product.reagentCategories);
-
                     const categories = product.reagentCategories.map(category => category.name).join(", ");
-
-
-
                     const rowHtml = `
+                        <tr style="margin-top: 25px" class="tr-top">                        
+                            <td style="background: #D1D1D1">БРЕНД:</span>&nbsp; ( ${ product.companyName} ) </td>                                                        
+                            <td>${categories}</td>                            
+                        </tr>
                         <tr>
-                            <td><a href="/admin/reagent/edit/${product.id}">${product.name}</a></td>
-                            <td>${product.kitComposition}</td>                            
-                            <td style="font-weight: 700; font-size: 20px">${product.companyName}</td>                            
+                            <td>${product.name}</td>
+                            <td>${product.kitComposition}</td>
                             <td><a href="/images/reagents/${product.instructionPdf}" target="_blank">PDF</a></td>
-                            <td>${categories}</td>
-                            <td><img data-id="${product.id}" class="delete" src="/images/icon/garbage.svg" alt=""></td>
+                            <td> <a href="/admin/reagent/edit/${product.id}">Редактировать</a></td>
+                            <td data-id="${product.id}" class="delete">Удалить</td>
                         </tr>
                     `;
                     tbodyInnerHtml += rowHtml;

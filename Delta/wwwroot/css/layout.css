@@ -684,6 +684,26 @@ footer .social-network {
   scroll-behavior: smooth;
 }
 
+h6 {
+  font-size: 0.7em;
+}
+
+h5 {
+  font-size: 0.9em;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
 section {
   opacity: 0;
   transition: opacity 1s ease-in-out;

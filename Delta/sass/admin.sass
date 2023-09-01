@@ -170,6 +170,10 @@ header
 .delete
   cursor: pointer
   width: 45px
+  font-weight: 600
+  font-size: 18px
+  color: -webkit-link
+  text-decoration: underline
 
 table
   font-size: 14px
@@ -181,7 +185,7 @@ table
     min-width: 100%
     th, td:first-child
       background: #AFCDE7
-      color: white
+      //color: white
       padding: 10px 20px
     th, td
       border-style: solid
@@ -194,7 +198,7 @@ table
       img
         width: 45px        
       a
-        font-size: 19px
+        font-size: 18px
         font-weight: 600
         text-decoration: underline
       form
@@ -203,7 +207,37 @@ table
           border: 0
     th:first-child, td:first-child
       text-align: left
+
+.reagent-table 
+  width: 100%
+  border-collapse: collapse
+
+
+.reagent-table td 
+  border: 1px solid black
+  padding: 10px 20px
+
+.reagent-table
+  tbody
+    min-width: 100%
+    & > tr
+      display: flex
       
+      td        
+        width: 100%
+        display: flex        
+        align-items: center
+        border: 1px solid #D1D1D1
+        background: #fff
+      .delete
+        justify-content: center
+  tbody .tr-top
+    display: flex
+    flex-direction: column
+    min-width: 100%
+    width: 100%
+    background: #bb3459
+
 
 .custom-select 
   position: relative
@@ -228,3 +262,6 @@ table
 .ql-editor
   p
     font-size: 18px
+    
+h1
+  text-align: left
