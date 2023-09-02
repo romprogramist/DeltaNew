@@ -145,6 +145,18 @@
     left: 13px;
   }
 }
+.line-height-small {
+  line-height: 1.2;
+}
+
+.line-height-medium {
+  line-height: 1.5;
+}
+
+.line-height-large {
+  line-height: 2;
+}
+
 .not-main {
   background: url(/images/img/main-partners.jpg) center center/cover no-repeat;
 }

@@ -63,10 +63,27 @@ document.addEventListener('DOMContentLoaded', () => {
         let quill = new Quill("#largeText", {
             modules:{
                 toolbar: toolbaroptions,
+
+                clipboard: {
+                    matchVisual: false
+                }
             },
             theme:"snow"
         })
 
+
+
+        quill.on('editor-change', function(eventName, ...args) {
+            if (eventName === 'text-change') {
+                // Получаем текущий стиль межстрочного интервала
+                let lineHeightStyle = quill.getFormat().lineHeight;
+
+                // Применяем стиль к выделенному тексту
+                if (lineHeightStyle) {
+                    quill.format('line-height', lineHeightStyle);
+                }
+            }
+        });
 
 
 

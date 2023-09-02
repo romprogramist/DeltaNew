@@ -109,6 +109,23 @@ public class ReagentService : IReagentService
         return reagentDto;
     }
 
+    
+    
+    public async Task<List<ReagentDto>> GetReagentsByCategoryAsync(int[] categoryIds)
+    {
+        return await _context.Reagents
+            .Where(r => r.ReagentCategories.Any(rc => categoryIds.Contains(rc.Id)))
+            .Select(r => new ReagentDto
+            {
+                Id = r.Id,
+                Name = r.Name,
+                KitComposition = r.KitComposition,
+                InstructionPdf = r.InstructionPdf,
+                ReagentCategories = r.ReagentCategories,
+                CompanyId = r.CompanyId,
+                CompanyName = r.Company.Name
+            }).ToListAsync();
+    }
    
     
     public async Task<ReagentDto?> UpdateReagentAsync(ReagentDto reagent)

@@ -179,13 +179,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 const tbody = reagentTable.querySelector("tbody");
                 let tbodyInnerHtml = '';
                 
-                response.forEach((product) => {
-                    console.log(product.reagentCategories);
+                response.forEach((product, i) => {
+                    
+
                     const categories = product.reagentCategories.map(category => category.name).join(", ");
+                    const categoriesId = product.reagentCategories.map(category => category.id).join(", ");
+                    
+                    
                     const rowHtml = `
                         <tr style="margin-top: 25px" class="tr-top">                        
-                            <td style="background: #D1D1D1">БРЕНД:</span>&nbsp; ( ${ product.companyName} ) </td>                                                        
-                            <td>${categories}</td>                            
+                            <td class="brand" style="background: #D1D1D1">БРЕНД:</span>&nbsp; ( ${ product.companyName} ) </td>                                                        
+                            <td class="categories" data-id="${categoriesId}">${categories}</td>
+                            <td class="reagents-list"></td>                    
                         </tr>
                         <tr>
                             <td>${product.name}</td>
@@ -198,15 +203,66 @@ document.addEventListener("DOMContentLoaded", () => {
                     tbodyInnerHtml += rowHtml;
                 });
                 tbody.innerHTML = tbodyInnerHtml;
+
+
+
+                
+                document.querySelectorAll('.brand').forEach(b => {
+                    b.addEventListener('click', () => {
+                        console.log(b.nextElementSibling);
+                        b.nextElementSibling.classList.toggle('show');
+                    })
+                })
+
+
+                let flag = true;
+                document.querySelectorAll(".categories").forEach(el => {
+                    el.addEventListener('click', () => {
+
+                        if(el.nextElementSibling.classList.contains('show')) {
+                            el.nextElementSibling.innerHTML = '';
+                            el.nextElementSibling.classList.remove("show");
+                            flag = false;
+                        } else {
+                            flag = true;
+                        }
+                        
+                        const dataIdValue = el.getAttribute('data-id');
+                        const idValues = dataIdValue.split(',');
+
+
+                        idValues.forEach(value => {
+                            const numericDataId = parseInt(value.trim(), 10);
+                            if (!isNaN(numericDataId)) {
+                                const apiUrl = `/api/reagents/getByCategory?categoryIds=${numericDataId}`;
+                                
+                                apiRequest(apiUrl, "GET", null,
+                                    (response) => {
+                                        response.forEach((item, index, array) => {
+                                            if(flag) {
+                                                el.nextElementSibling.innerHTML += item.name + "</br>" + item.kitComposition + "</br></br>";
+                                                el.nextElementSibling.classList.add("show");
+                                            }
+                                        })
+                                    },
+                                    
+                                    (error, response) => {
+                                        console.log("error", error);
+                                    },
+                                    null,
+                                    false
+                                );
+                            }
+                        });
+                    });
+                });
+                
             },
             (error, response) => {
                 console.log("error", error);
             },
             null,
             false);
-        
-        
-
         reagentTable.addEventListener('click', (e) => {
             if(e.target.classList.contains('delete')) {
                 const tr = e.target.closest('tr');
@@ -223,6 +279,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     true)
             }
         });
+        
     }
 
 

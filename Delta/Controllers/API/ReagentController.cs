@@ -107,11 +107,6 @@ public class ReagentController : ControllerBase
         return Ok(reagentModel);
     }
     
-    
-    
-    
-    
-    
     [HttpDelete]
     [Route("delete/{id:int}")]
     // [Authorize(Roles = "Admin")]
@@ -121,6 +116,14 @@ public class ReagentController : ControllerBase
         if(!deleted)
             return BadRequest();
         return Ok();
+    }
+    
+    [HttpGet]
+    [Route("getByCategory")]
+    public async Task<IActionResult> GetReagentsByCategory([FromQuery] int[] categoryIds)
+    {
+        var reagents = await _reagentService.GetReagentsByCategoryAsync(categoryIds);
+        return Ok(reagents);
     }
     
 }
