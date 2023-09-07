@@ -178,41 +178,106 @@ document.addEventListener("DOMContentLoaded", () => {
             (response) => {
                 const tbody = reagentTable.querySelector("tbody");
                 let tbodyInnerHtml = '';
-                
-                response.forEach((product, i) => {
-                    
 
-                    const categories = product.reagentCategories.map(category => category.name).join(", ");
-                    const categoriesId = product.reagentCategories.map(category => category.id).join(", ");
-                    
-                    
+                const hierarchicalData = {}
+                
+                console.log(response);
+
+                response.forEach((product) => {
+                    if (!hierarchicalData[product.companyName]) {
+                        hierarchicalData[product.companyName] = {
+                            companyName: product.companyName,
+                            companyId: product.companyId,
+                            categories: {},
+                        };
+                    }
+
+                    product.reagentCategories.forEach((category) => {
+                        if (!hierarchicalData[product.companyName].categories[category.name]) {
+                            hierarchicalData[product.companyName].categories[category.name] = {
+                                id: category.id,
+                                name: {},
+                                kitComposition: {},
+                            };
+                        }
+
+                        hierarchicalData[product.companyName].categories[category.name].name[product.id] = {
+                            id: product.id,
+                            value: product.name,
+                            kitComposition: product.kitComposition, // Добавляем kitComposition
+                        };
+                    });
+                });
+
+
+                Object.values(hierarchicalData).forEach((value) => {
                     const rowHtml = `
-                        <tr style="margin-top: 25px" class="tr-top">                        
-                            <td class="brand" style="background: #D1D1D1">БРЕНД:</span>&nbsp; ( ${ product.companyName} ) </td>                                                        
-                            <td class="categories" data-id="${categoriesId}">${categories}</td>
-                            <td class="reagents-list"></td>                    
-                        </tr>
-                        <tr>
-                            <td>${product.name}</td>
-                            <td>${product.kitComposition}</td>
-                            <td><a href="/images/reagents/${product.instructionPdf}" target="_blank">PDF</a></td>
-                            <td> <a href="/admin/reagent/edit/${product.id}">Редактировать</a></td>
-                            <td data-id="${product.id}" class="delete">Удалить</td>
-                        </tr>
-                    `;
+                    <tr style="margin-top: 25px" class="tr-top">
+                      <td data-id="${value.companyId}" class="brand" style="background: #D1D1D1">БРЕНД:&nbsp; ( ${value.companyName} ) </td>
+                      ${Object.keys(value.categories).map((categoryName) => {
+                                        const category = value.categories[categoryName];
+                                        return `
+                          <td style="color: #007aff" class="category">${categoryName}</td>
+                          ${Object.values(category.name).map((reagent) => `
+                            <td class="reagent-item">
+                              <span>${reagent.value}</span>
+                              <p>${reagent.kitComposition}</p> <!-- Выводим kitComposition -->
+                              <a href="/admin/reagent/edit/${reagent.id}">Редактировать</a>
+                              <p style="width: 80px;" data-id="${reagent.id}" class="delete">Удалить</p>
+                            </td>
+                          `).join('')}
+                        `;
+                      }).join('')}
+                    </tr>
+                  `;
                     tbodyInnerHtml += rowHtml;
                 });
+                
+                console.log(hierarchicalData);
+
+                // <a href="/admin/reagent/edit/${category.id}">Редактировать</a>
+                // <p style="width: 80px;" data-id="${category.id}" className="delete">Удалить</p>
+                
+                
+                
+
+                // <td>${product.name}</td>
+                // <td>${product.kitComposition}</td>
+                // <td><a href="/images/reagents/${product.instructionPdf}" target="_blank">PDF</a></td>
+                // <td><a href="/admin/reagent/edit/${product.id}">Редактировать</a></td>
+                // <td data-id="${product.id}" className="delete">Удалить</td>
+
+                
+                
                 tbody.innerHTML = tbodyInnerHtml;
-
-
 
                 
                 document.querySelectorAll('.brand').forEach(b => {
+                    
                     b.addEventListener('click', () => {
-                        console.log(b.nextElementSibling);
-                        b.nextElementSibling.classList.toggle('show');
-                    })
-                })
+
+                        const nextElements = b.parentElement.querySelectorAll('.category');
+                        nextElements.forEach(element => {
+                            element.classList.toggle('show');
+                        });
+                        
+                        nextElements.forEach(r => {
+                            console.log(r);
+                            r.addEventListener('click', () => {
+                                const elementsToSelect = [];
+                                let currentElement = r.nextElementSibling;
+
+                                while (currentElement && !currentElement.classList.contains('category')) {
+                                    elementsToSelect.push(currentElement);
+                                    currentElement = currentElement.nextElementSibling;
+                                }
+                                elementsToSelect.forEach(selectedElement => {
+                                    selectedElement.classList.toggle('show');
+                                });
+                            });
+                        });
+                    });
+                });
 
 
                 let flag = true;

@@ -554,17 +554,28 @@ h1 {
   display: none !important;
 }
 
-.reagents-list {
+.category {
   text-align: left;
   display: none !important;
+  cursor: pointer;
 }
 
-.reagents-list.show {
+.category.show {
   display: block !important;
 }
 
 .categories.show {
   display: flex !important;
+}
+
+.reagent-item {
+  display: none !important;
+  cursor: pointer;
+}
+
+.reagent-item.show {
+  display: flex !important;
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=admin.css.map */
