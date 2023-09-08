@@ -81,7 +81,7 @@ namespace Delta.Migrations
                     Name = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
                     Image = table.Column<string>(type: "character varying(32)", maxLength: 32, nullable: false),
                     Url = table.Column<string>(type: "character varying(64)", maxLength: 64, nullable: false),
-                    ParentCategoryId = table.Column<int>(type: "integer", nullable: false)
+                    ParentCategoryId = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
