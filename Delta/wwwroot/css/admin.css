@@ -578,4 +578,38 @@ h1 {
   justify-content: space-between;
 }
 
+.productcategory-add .hidden-input, .productcategory-edit .hidden-input {
+  display: none;
+}
+.productcategory-add .input-label, .productcategory-edit .input-label {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 14px;
+  vertical-align: middle;
+}
+.productcategory-add .styled-checkbox, .productcategory-edit .styled-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px !important;
+  height: 20px !important;
+  background-color: #ffffff;
+  border: 2px solid #333;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+  vertical-align: middle;
+  margin-top: 0 !important;
+}
+.productcategory-add .styled-checkbox:hover, .productcategory-edit .styled-checkbox:hover {
+  background-color: #f0f0f0;
+}
+.productcategory-add .styled-checkbox:checked, .productcategory-edit .styled-checkbox:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.productcategory-add .checkbox-label-text, .productcategory-edit .checkbox-label-text {
+  vertical-align: middle;
+}
+
 /*# sourceMappingURL=admin.css.map */

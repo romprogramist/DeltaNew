@@ -2,6 +2,12 @@
     ViewBag.Title = "Products";
 }
 
+@section Styles {    
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true">
+    </environment>
+}
+
 @section Scripts {    
     <environment include="Development">
         <script src="~/js/admin/product-category.js" asp-append-version="true"></script>
@@ -11,9 +17,9 @@
     </environment>
 }
 
-<div>
-    <a href="/Admin/Product/Add">
-        Добавить прибор
+<div class="product-category">
+    <a href="/Admin/Productcategory/Add">
+        Добавить категорию прибора
     </a>
     <table>
         <tr>

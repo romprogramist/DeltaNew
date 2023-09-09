@@ -17,7 +17,6 @@ public class HomeController : BaseAdminController
     {
         return RedirectToAction("Index", "Reagent");
     }
-    
     public IActionResult Reagentcategories()
     {
         return RedirectToAction("Index", "Reagentcategories");
@@ -26,12 +25,14 @@ public class HomeController : BaseAdminController
     {
         return RedirectToAction("Index", "Aboutus");
     }
-    
     public IActionResult Contact()
     {
         return RedirectToAction("Index", "Contact");
     }
-    
+    public IActionResult Productcategory()
+    {
+        return RedirectToAction("Index", "Productcategory");
+    }
     
 }
 

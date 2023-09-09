@@ -13,7 +13,7 @@ public partial class ProductCategory
 
     public string Url { get; set; } = null!;
 
-    public int ParentCategoryId { get; set; }
+    public int? ParentCategoryId { get; set; }
 
     public virtual ICollection<ProductCategory> InverseParentCategory { get; } = new List<ProductCategory>();
 

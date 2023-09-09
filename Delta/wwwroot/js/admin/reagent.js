@@ -67,11 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     });
                     
                     
-                    
-                    
-                    
-                    
-                    
                     event.stopPropagation();
                 });
 
@@ -386,10 +381,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.log("Success:", data);
             });
         });
-
-        
-
-
         
     }
     

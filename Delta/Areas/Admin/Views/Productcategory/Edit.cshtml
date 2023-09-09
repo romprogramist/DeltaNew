@@ -1,0 +1,59 @@
+﻿@model ProductcategoryModel
+
+
+@{
+    ViewBag.Title = "Edit product category";
+}
+
+@section Styles {    
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true">
+    </environment>
+}
+
+@section Scripts {    
+    <environment include="Development">
+        <script src="~/js/admin/product-category.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/admin/product-category-bundle.js" asp-append-version="true"></script>
+    </environment>
+}
+
+<form class="productcategory-edit">
+    <div class="button-and-header">
+        <h2>
+            Добавить категорию продукта
+        </h2>
+        <button class="add-btn">
+            Добавить
+        </button>
+    </div>
+    <p class="successfully"></p>
+    
+    <label for="">
+        Раздел продукта
+        <input id="name" name="name" type="text" placeholder="Добавить раздел продукта" value="@Model.Name">
+    </label>
+    <label for="">
+        Ссылка данной категории
+        <input id="url" name="url" type="text" placeholder="добавить ссылка данной категории" value="@Model.Url">
+    </label>
+    
+    <label for="showInput" class="input-label">
+        <input type="checkbox" id="showInput" class="styled-checkbox">
+        <span class="checkbox-label-text">Есть категория</span>
+        <input list="fruitsList" id="parentCategoryId" name="parentCategoryId" type="text" class="hidden-input" placeholder="Выбирается подраздел продукта" value="@Model.ParentCategoryName" data-id=""@Model.ParentCategoryId>
+        <datalist id="fruitsList">
+        </datalist>
+    </label>
+    <img src="/images/reagents/@Model.Image" alt="@Model.Name"/>
+    <div class="lower-input">
+        <label>
+            <input class="form-file" type="file" name="image"/>
+        </label>
+    </div>
+
+    <div class="validation"></div>
+    <a class="link-transition" href="/Admin/Productcategory/Index">Таблица со списком категориев продукта</a>
+</form>

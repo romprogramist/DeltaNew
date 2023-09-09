@@ -1,17 +1,25 @@
 ﻿@{
-	ViewBag.Title = "title";
-	Layout = "_Layout";
+	ViewBag.Title = "Add product";
 }
-
 
 @section Styles {    
-    <environment include="Development">
-        <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true">
-    </environment>
+	<environment include="Development">
+		<link rel="stylesheet" href="~/css/admin.css" asp-append-version="true">
+	</environment>
 }
 
 
-<form>
+@section Scripts {    
+	<environment include="Development">
+		<script src="~/js/admin/product.js" asp-append-version="true"></script>
+	</environment>
+	<environment exclude="Development">
+		<script src="~/js/admin/product-bundle.js" asp-append-version="true"></script>
+	</environment>
+}
+
+
+<form class="product-add">
 	<div class="button-and-header">
 		<h2>
 			Добавить прибор
@@ -21,61 +29,50 @@
 		</button>
 	</div>
 	<label>
-		Раздел
-		<input type="text" placeholder="- Раздел -">
+		Раздел продукта
+		<input id="productCategoriesId" name="productCategoriesId" type="text" placeholder="Выбирается раздел продукта">
 	</label>
 	<label>
-		Модель
-		<input type="text" placeholder="- Модель -">
+		Бренд
+		<input list="fruitsList" name="companyId">
+		<datalist id="fruitsList">
+        
+		</datalist>
 	</label>
 	<label>
-		Заголовок
-		<input type="text" placeholder="- Заголовок -">
+		Префикс длинного заголовок
+		<input id="longNamePrefix" name="longNamePrefix" type="text" placeholder="Префикс длинного заголовок">
 	</label>
 	<label>
 		Описание
-		<input type="text" placeholder="- Описание -">
+		<input id="description" name="description" type="text" placeholder="Текст описание продукта">
 	</label>
 	<label>
-		Технческие характеристики
-		<input type="text" placeholder="- Технческие характеристики -">
+		Url
+		<input id="url" name="url" type="text" placeholder="Url">
 	</label>
 	<label> 
-		Тип
-		<input type="text" placeholder="- Тип прибора -">
+		Техническая характеристика
+		<input id="techInfo" name="techInfo" type="text" placeholder="Техническая характеристика">
 	</label>
 	<label> 
-        Мини описание
-        <input type="text" placeholder="- Мини описание -">
-    </label>
-	<label>
-		Реагенты
-		<input type="text" placeholder="- Реагенты -">
+		Тип модели
+		<input id="type" name="type" type="text" placeholder="Текст в черной строке">
 	</label>
 	<label>
-		Расходные материалы
-		<input type="text" placeholder="- Расходные материалы -">
+		Описание в карточке
+		<input id="cardTitle" name="cardTitle" type="text" placeholder="Описание в карточке">
 	</label>
 	<label>
-		Сертификаты
-		<input type="file" name="iFormFile">
+		DIFF
+		<input id="modelSeries" name="modelSeries" type="text" placeholder="DIFF">
 	</label>
-	<div class="lower-input">
-		<label> 
-			Большое фото
-			<input type="file" name="iFormFile">
-		</label>
-		<label>
-			1
-			<input type="file" name="iFormFile">
-		</label>
-		<label>
-			2
-			<input type="file" name="iFormFile">
-		</label>
-		<label>
-			3
-			<input type="file" name="iFormFile">
-		</label>
-	</div>
+	<label>
+		Модел
+		<input id="model" name="model" type="text" placeholder="Название модели">
+	</label>
+	
+	
+	<div class="validation"></div>
+	<a class="link-transition" href="/Admin/Product/Index">Таблица со списком продуктов</a>
 </form>

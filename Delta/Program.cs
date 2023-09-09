@@ -11,6 +11,8 @@ using Delta.Services.CompanyService;
 using Delta.Services.ContactService;
 using Delta.Services.EmailService;
 using Delta.Services.PhotoAddition;
+using Delta.Services.ProductcategoryService;
+using Delta.Services.ProductService;
 using Delta.Services.ReagentcategoryService;
 using Delta.Services.ReagentService;
 using Delta.Services.ReviewService;
@@ -52,7 +54,9 @@ builder.Services.AddScoped<IReagentService, ReagentService>();
 builder.Services.AddScoped<IAboutusService, AboutusService>();
 builder.Services.AddScoped<ICertificateService, CertificateService>();
 builder.Services.AddScoped<IContactService, ContactService>();
+builder.Services.AddScoped<IProductcategoryService, ProductcategoryService>();
 builder.Services.AddTransient<IPhotoAddition, PhotoAddition>();
+builder.Services.AddTransient<IProductService, ProductService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -138,7 +142,10 @@ builder.Services.AddWebOptimizer(pipeline =>
     
     pipeline.AddJavaScriptBundle("/js/admin/contact-bundle.js",
         "/js/admin/contact.js");
-    
+    pipeline.AddJavaScriptBundle("/js/admin/product-bundle.js",
+        "/js/admin/product.js");
+    pipeline.AddJavaScriptBundle("/js/admin/product-category-bundle.js",
+        "/js/admin/product-category.js");
     pipeline.AddJavaScriptBundle("/js/admin/about-us-bundle.js",
         "/js/admin/about-us.js");
     pipeline.AddJavaScriptBundle("/js/admin/reagent-bundle.js",
@@ -146,6 +153,7 @@ builder.Services.AddWebOptimizer(pipeline =>
     pipeline.AddJavaScriptBundle("/js/admin/reagent-category-bundle.js",
         "/js/admin/reagent-category.js");
 });
+
 
 var app = builder.Build();
 
