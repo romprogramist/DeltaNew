@@ -27,6 +27,7 @@
     <ItemGroup>
       <Folder Include="Areas\Admin\Models\" />
       <Folder Include="Areas\Admin\Pages\Reagentcategories\" />
+      <Folder Include="Data\Migrations\" />
       <Folder Include="wwwroot\fonts" />
       <Folder Include="wwwroot\images\admin\" />
       <Folder Include="wwwroot\images\companies\" />
