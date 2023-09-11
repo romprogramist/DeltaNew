@@ -20,12 +20,19 @@
             // Получаем выбранный элемент <option> из <datalist>
             const selectedOption = document.querySelector('#fruitsList option[value="' + addProductcategoryForm.elements["parentCategoryId"].value + '"]');
             // Получаем значение атрибута data-id выбранного элемента
-            const dataIdValue = selectedOption.getAttribute('data-id');
+            // const dataIdValue = selectedOption.getAttribute('data-id');
+            
+            
+            
 
             const formData = new FormData();
             formData.append("name", addProductcategoryForm.elements["name"].value);
             formData.append("url", addProductcategoryForm.elements["url"].value);
-            formData.append("parentCategoryId", dataIdValue); // Передаем значение data-id
+
+            if (selectedOption) {
+                const dataIdValue = parseInt(selectedOption.getAttribute('data-id'), 10);
+                formData.append("parentCategoryId", dataIdValue); // Передаем значение data-id
+            }
             
             
             const image = document.querySelector(".form-file").files[0];
@@ -92,6 +99,28 @@
             },
             null,
             false);
+
+
+
+
+        productCategoryTable.addEventListener('click', (e) => {
+            if(e.target.classList.contains('delete')) {
+                const tr = e.target.closest('tr');
+                let id = e.target.dataset.id;
+                console.log(id);
+
+                apiRequest('/api/productcategory/delete/'+id, 'DELETE', null,
+                    (response) => {
+                        console.log('completed', response);
+                        tr.remove();
+                    },
+                    (error, response) => {
+                        console.log('crashed', error, response);
+                    }, null,
+                    true)
+            }
+        });
+        
     }
 
 
@@ -120,24 +149,32 @@
         updateProductCategoryForm.addEventListener("submit", (e) => {
             e.preventDefault();
             const selectedOption = document.querySelector('#fruitsList option[value="' + updateProductCategoryForm.elements["parentCategoryId"].value + '"]');
-
-            const dataIdValue = selectedOption.getAttribute('data-id');
+            
+            // Получаем значение атрибута data-id выбранного элемента
+            
 
             const formData = new FormData();
+            formData.append("id", updateProductCategoryForm.elements["id"].value);
             formData.append("name", updateProductCategoryForm.elements["name"].value);
             formData.append("url", updateProductCategoryForm.elements["url"].value);
-            formData.append("parentCategoryId", dataIdValue); // Передаем значение data-id
 
-            const url = document.querySelector(".form-file").files[0];
-            formData.append("url", url);
-
-
-            const formDataEntries = formData.entries();
-
-            // Пройдитесь по итератору и выведите поля
-            for (const pair of formDataEntries) {
-                console.log(`Key: ${pair[0]}, Value: ${pair[1]}`);
+            if (selectedOption) {
+                const dataIdValue = parseInt(selectedOption.getAttribute('data-id'), 10);
+                formData.append("parentCategoryId", dataIdValue); // Передаем значение data-id
             }
+            
+            
+
+            const image = document.querySelector(".form-file").files[0];
+            formData.append("image", image);
+
+
+            // const formDataEntries = formData.entries();
+            //
+            // // Пройдитесь по итератору и выведите поля
+            // for (const pair of formDataEntries) {
+            //     console.log(`Key: ${pair[0]}, Value: ${pair[1]}`);
+            // }
             
 
             fetch("/api/productcategory/update", {

@@ -1,7 +1,5 @@
 ﻿document.addEventListener("DOMContentLoaded", () => {
-
     
-    console.log(1);
     const addProductForm = document.querySelector('.product-add');
     if(addProductForm) {
         const shippingContainer = document.querySelector("div datalist");
@@ -41,16 +39,15 @@
             formData.append("modelSeries", addProductForm.elements["modelSeries"].value);
             formData.append("model", addProductForm.elements["model"].value);
             
-            
             if(addProductForm.elements["companyId"].value) {
                 const selectedOption = document.querySelector(`#fruitsList option[value="${addProductForm.elements["companyId"].value}"]`);
                 formData.append("companyId", selectedOption.dataset.id);
             }
 
 
-            // for (const [key, value] of formData.entries()) {
-            //     console.log(`Поле: ${key}, Значение: ${value}`);
-            // }
+            for (const [key, value] of formData.entries()) {
+                console.log(`Поле: ${key}, Значение: ${value}`);
+            }
             
 
             fetch("/api/products/add", {

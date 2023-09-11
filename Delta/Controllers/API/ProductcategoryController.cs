@@ -67,13 +67,8 @@ public class ProductcategoryController : ControllerBase
         var requestFiles = Request.Form.Files;
         if (requestFiles.Count > 0)
         {
-            // if (requestFiles[0].Length > 1024 * 1024)
-            // {
-            //     return BadRequest("File size is too large.");
-            // }
             productcategory.Image = await _productcategoryService.SaveProductcategoryImageAsync(requestFiles[0]);
         }
-        
         else
         {
             productcategory.Image = string.Empty;
@@ -87,23 +82,19 @@ public class ProductcategoryController : ControllerBase
             Url = productcategory.Url,
             ParentCategoryId = productcategory.ParentCategoryId
         };
+        var savedProductcategory = await _productcategoryService.UpdateProductcategoryAsync(productcategoryDto);
+        if(savedProductcategory == null)
+            return BadRequest();
         
-        var savedReagent = await _productcategoryService.UpdateProductcategoryAsync(productcategoryDto);
-        if(savedReagent == null)
-            return BadRequest("Failed to save the object");
-        
-        // var reagentModel = new ReagentModel
-        // {
-        //     Id = reagent.Id,
-        //     Name = savedReagent.Name,
-        //     KitComposition = savedReagent.KitComposition,
-        //     // ReagentCategoryNames = reagent.ReagentCategoryNames,
-        //     CompanyId = savedReagent.CompanyId,
-        //     ReagentCategoryIds = savedReagent.ReagentCategoryIds,
-        //     InstructionPdf = savedReagent.InstructionPdf
-        // };
-        //
-        // return Ok(reagentModel);
+        var productcategoryModel = new ProductcategoryModel
+        {
+            Id = savedProductcategory.Id,
+            Name = savedProductcategory.Name,
+            Image = savedProductcategory.Image,
+            Url = savedProductcategory.Url,
+            ParentCategoryId = savedProductcategory.ParentCategoryId
+        };
+        return Ok(productcategoryModel);
     }
     
     

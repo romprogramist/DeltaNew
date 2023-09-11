@@ -15,8 +15,7 @@ public class ProductcategoryService : IProductcategoryService
         _context = context;
         _environment = environment;
     }
-
-
+    
     public async Task<string> SaveProductcategoryImageAsync(IFormFile file)
     {
         var uniqueFileName = FileHelper.GetUniqueFileName(file.FileName);
@@ -87,8 +86,50 @@ public class ProductcategoryService : IProductcategoryService
         return productCategory;
     }
 
-    public Task<ProductcategoryDto?> UpdateProductcategoryAsync(ProductcategoryDto productcategoryDto)
+    public async Task<ProductcategoryDto?> UpdateProductcategoryAsync(ProductcategoryDto productcategory)
     {
-        throw new NotImplementedException();
+        var productcategoryToUpdate = await _context.ProductCategories.Where(pc  => productcategory.Id == pc.Id).FirstOrDefaultAsync();
+        
+        if (productcategoryToUpdate is null)
+            return null;
+        //     
+        //     productcategoryToUpdate.Name = productcategory.Name;
+        //     
+        //     if (!string.IsNullOrEmpty(productcategory.Image))
+        //     {
+        //         productcategoryToUpdate.Image = productcategory.Image;
+        //     }
+        //     
+        //     
+        //     productcategoryToUpdate.Url = productcategory.Url;
+        //     productcategoryToUpdate.ParentCategoryId = productcategory.ParentCategoryId;
+        //     _context.ProductCategories.Update(productcategoryToUpdate);
+        //     
+        //     var savedCount = await _context.SaveChangesAsync();
+        //     if (savedCount <= 0)
+        //         return null;
+        //
+        var productcategoryDto = new ProductcategoryDto
+        {
+            Id = productcategoryToUpdate.Id,
+            Name = productcategoryToUpdate.Name,
+            Image = productcategoryToUpdate.Image,
+            Url = productcategoryToUpdate.Url,
+            ParentCategoryId = productcategoryToUpdate.ParentCategoryId
+        };
+        
+        return productcategoryDto;
+    }
+
+    public async Task<bool> DeleteReagentcategoryAsync(int id)
+    {
+        var productcategory = await _context.ProductCategories.FindAsync(id);
+        if (productcategory is null)
+            return false;
+    
+        _context.ProductCategories.Remove(productcategory);
+        var saveCount = await _context.SaveChangesAsync();
+    
+        return saveCount > 0;
     }
 }

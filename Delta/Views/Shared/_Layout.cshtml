@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using Delta.Models.Dtos
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    var productCategories = ViewData["ProductCategories"] as List<ProductcategoryDto>;
+}
+
+
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 	<meta charset="utf-8"/>
@@ -69,6 +76,10 @@
 			<div></div>
 		</div>
 	</div>
+	
+	
+	
+	
 	
 	<form class="mobail-form">
 		<input type="search" id="query" name="q" placeholder="Search...">
@@ -210,13 +221,13 @@
 </footer>
 <div class="overlay" id="loader">
 	<div class="modal" id="company-success">
-    		<div>
-    			Спасибо за оставленный отзыв !
-    		</div>
-    		<div>
-    			Благодаря Вашего отзыва мы становимся лучше !
-    		</div>
-    	</div>
+		<div>
+			Спасибо за оставленный отзыв !
+		</div>
+		<div>
+			Благодаря Вашего отзыва мы становимся лучше !
+		</div>
+	</div>
 	<div class="modal" id="company-error">
 		<div>
 			Что-то пошло не так
@@ -226,8 +237,22 @@
 		</div>
 	</div>
 </div>
+
+
+
 <div class="submenu" id="products">
 	<div class="items-s">
+		@* @foreach (var productCategory in Model) *@
+  @*       { *@
+	 @*        <div></div> *@
+  @*       } *@
+		
+		@* <li>@productCategory.Name</li> *@
+  @*       <li>@productCategory.ParentCategoryId</li> *@
+  @*       <li>@productCategory.Url</li> *@
+  @*       <li>@productCategory.Id</li> *@
+		
+		
 		<div class="item">
 			<a href="/home/Hematology" class="item-hr">
 				Гематология
@@ -240,7 +265,7 @@
 			</a>
 			<a href="/home/Biochemistry" class="item-hr">
 				Биохимия
-			</a> 
+			</a>
 			<div class="item-hr arrow">
 				<a href="#">
 					Иммунология

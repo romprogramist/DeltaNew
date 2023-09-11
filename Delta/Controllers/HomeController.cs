@@ -4,6 +4,7 @@ using Delta.Models.Dtos;
 using Delta.Services.Aboutus;
 using Delta.Services.CompanyService;
 using Delta.Services.ContactService;
+using Delta.Services.ProductcategoryService;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Delta.Controllers;
@@ -14,30 +15,25 @@ public class HomeController : Controller
     private readonly ICompanyService _companyService;
     private readonly IAboutusService _aboutusService;
     private readonly IContactService _contactService;
+    private readonly IProductcategoryService _productcategoryService;
 
-    public HomeController(ILogger<HomeController> logger, ICompanyService companyService, IAboutusService aboutusService, IContactService contactService)
+    public HomeController(ILogger<HomeController> logger, ICompanyService companyService, IAboutusService aboutusService, IContactService contactService, IProductcategoryService productcategoryService)
     {
         _logger = logger;
         _companyService = companyService;
         _aboutusService = aboutusService;
         _contactService = contactService;
+        _productcategoryService = productcategoryService;
     }
-
-    // [Route("product/{productUrl}")]
-    // public async Task<IActionResult> Product(string productUrl)
-    // {
-    //     var productDto = await _productService.GetProductByAsync(productUrl);
-    //     if (product == null)
-    //         return NotFound("Product not found.");
-    //     // productModel = 
-    //     
-    //     
-    //     return View(productModel);
-    // }
-
-    public IActionResult Index()
+    
+    
+    
+    public async Task<IActionResult> Index()
     {
-        return View();
+        var productCategorys = await _productcategoryService.GetProductcategorysAsync();
+        if (productCategorys == null || productCategorys.Count == 0)
+            return NotFound("No productCategorys found.");
+        return View("Index", productCategorys);
     }
     
     public IActionResult OurProduction()
@@ -64,7 +60,6 @@ public class HomeController : Controller
             return NotFound("No companies found.");
     
         return View("AboutUs", aboutus);
-        
     }
 
     public async Task<IActionResult> ContactUs()

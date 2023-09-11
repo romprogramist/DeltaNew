@@ -23,14 +23,14 @@
 <form class="productcategory-edit">
     <div class="button-and-header">
         <h2>
-            Добавить категорию продукта
+            Редактирование категории продукта
         </h2>
         <button class="add-btn">
-            Добавить
+            Сохранить
         </button>
     </div>
     <p class="successfully"></p>
-    
+    <input type="hidden" name="id" value="@Model.Id"/>
     <label for="">
         Раздел продукта
         <input id="name" name="name" type="text" placeholder="Добавить раздел продукта" value="@Model.Name">
@@ -55,5 +55,5 @@
     </div>
 
     <div class="validation"></div>
-    <a class="link-transition" href="/Admin/Productcategory/Index">Таблица со списком категориев продукта</a>
+    <a class="link-transition" href="/Admin/Productcategory/Index">Таблица со списком категорий продукта</a>
 </form>

@@ -578,6 +578,10 @@ h1 {
   justify-content: space-between;
 }
 
+.images-add {
+  display: flex;
+}
+
 .productcategory-add .hidden-input, .productcategory-edit .hidden-input {
   display: none;
 }
