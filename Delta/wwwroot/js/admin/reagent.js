@@ -135,6 +135,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const selectedOptions = Array.from(optionsContainer.querySelectorAll("input[type='checkbox']:checked"))
                     .map(checkbox => parseInt(checkbox.value));
+            
+            console.log(selectedOptions);
 
             for (const option of selectedOptions) {
                 console.log(option);

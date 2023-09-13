@@ -1,5 +1,7 @@
 ﻿
 document.addEventListener('DOMContentLoaded', () => {
+
+    
     const telInputs = document.querySelectorAll('input[type=tel]');
     const body = document.querySelector('body');
     phoneMask(telInputs);
@@ -50,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, )
         }
     })
-
+    
 
 
 
@@ -89,12 +91,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
+    
     const plusMinus = document.querySelector('.submenu .arrow');
-    plusMinus.addEventListener('click', () => {
-        plusMinus.parentElement.parentElement.classList.toggle('subsection-static');
-        
-    })
+    if(plusMinus) {
+        plusMinus.addEventListener('click', () => {
+            plusMinus.parentElement.parentElement.classList.toggle('subsection-static');
+        })
+    }
+    
 
+    
     let btn = document.querySelector('.top');
     window.addEventListener('scroll', function() {
         let res = self.pageYOffset || (document.documentElement && document.documentElement.scrollTop) || (document.body && document.body.scrollTop);
@@ -107,5 +113,75 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', (e) => {
         scrollTo(0, 0)
     })
+
+    
+    
+    const subHeaderNavContainer = document.querySelector('.submenu .items-s');
+    if(subHeaderNavContainer) {
+        
+        apiRequest("/api/productcategory/get", "GET", null,
+            (response) => {
+
+                const uniqueNames = new Set();
+                const fragment = document.createDocumentFragment();
+                response.forEach((product) => {
+                    if(product.parentCategoryId) {
+                        
+                        response.forEach((otherProduct) => {
+                            if(otherProduct.id === product.parentCategoryId) {
+                                uniqueNames.add(product);
+                            }
+                        });
+                    } else {
+                        const a = document.createElement("a");
+                        
+                        a.textContent = product.name;
+                        a.href = `/home/${product.url}`
+                        fragment.appendChild(a);
+                    }
+                    
+                });
+                const div = document.createElement("div");
+                uniqueNames.forEach(p => {
+                    console.log(p.name);
+                });
+
+                
+                
+                subHeaderNavContainer.appendChild(fragment);
+                subHeaderNavContainer.appendChild(div);
+
+                
+                
+                
+                const links = subHeaderNavContainer.querySelectorAll("a");
+                let columns = 3;
+                let columnContainers = [];
+                for (let i = 0; i < columns; i++) {
+                    let column = document.createElement("div");
+                    column.classList.add("column");
+                    columnContainers.push(column);
+                }
+                let columnIndex = 0;
+                links.forEach(function (link) {
+                    columnContainers[columnIndex].appendChild(link);
+                    columnIndex = (columnIndex + 1) % columns;
+                });
+                subHeaderNavContainer.innerHTML = "";
+                columnContainers.forEach(function (column) {
+                    subHeaderNavContainer.appendChild(column);
+                });
+                
+                
+                
+            },
+            (error, response) => {
+                console.log("error", error);
+            },
+            null,
+            false);
+
+        
+    }
     
 });

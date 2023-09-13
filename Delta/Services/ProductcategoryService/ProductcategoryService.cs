@@ -92,23 +92,23 @@ public class ProductcategoryService : IProductcategoryService
         
         if (productcategoryToUpdate is null)
             return null;
-        //     
-        //     productcategoryToUpdate.Name = productcategory.Name;
-        //     
-        //     if (!string.IsNullOrEmpty(productcategory.Image))
-        //     {
-        //         productcategoryToUpdate.Image = productcategory.Image;
-        //     }
-        //     
-        //     
-        //     productcategoryToUpdate.Url = productcategory.Url;
-        //     productcategoryToUpdate.ParentCategoryId = productcategory.ParentCategoryId;
-        //     _context.ProductCategories.Update(productcategoryToUpdate);
-        //     
-        //     var savedCount = await _context.SaveChangesAsync();
-        //     if (savedCount <= 0)
-        //         return null;
-        //
+        
+        productcategoryToUpdate.Name = productcategory.Name;
+        
+        if (!string.IsNullOrEmpty(productcategory.Image))
+        {
+            productcategoryToUpdate.Image = productcategory.Image;
+        }
+        
+        
+        productcategoryToUpdate.Url = productcategory.Url;
+        productcategoryToUpdate.ParentCategoryId = productcategory.ParentCategoryId;
+        _context.ProductCategories.Update(productcategoryToUpdate);
+        
+        var savedCount = await _context.SaveChangesAsync();
+        if (savedCount <= 0)
+            return null;
+        
         var productcategoryDto = new ProductcategoryDto
         {
             Id = productcategoryToUpdate.Id,
@@ -121,7 +121,7 @@ public class ProductcategoryService : IProductcategoryService
         return productcategoryDto;
     }
 
-    public async Task<bool> DeleteReagentcategoryAsync(int id)
+    public async Task<bool> DeleteProductCategoryAsync(int id)
     {
         var productcategory = await _context.ProductCategories.FindAsync(id);
         if (productcategory is null)

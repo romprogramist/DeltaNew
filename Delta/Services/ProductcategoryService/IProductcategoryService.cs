@@ -9,5 +9,5 @@ public interface IProductcategoryService
     Task<List<ProductcategoryDto>> GetProductcategorysAsync();
     Task<ProductcategoryDto?> GetProductcategoryAsync(int id);
     Task<ProductcategoryDto?> UpdateProductcategoryAsync(ProductcategoryDto productcategory);
-    Task<bool> DeleteReagentcategoryAsync(int id);
+    Task<bool> DeleteProductCategoryAsync(int id);
 }

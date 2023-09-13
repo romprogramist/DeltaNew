@@ -18,7 +18,7 @@ public class AboutusService : IAboutusService
     
     public async Task<bool> AddAboutusAsync(AboutusDto aboutus)
     {
-        _context.AboutUs.Add(new AboutUs
+        _context.AboutUs.Add(new AboutU
         {
             Title = aboutus.Title
         });

@@ -19,5 +19,5 @@ public partial class Reagent
 
     public virtual ICollection<Product> Products { get; } = new List<Product>();
 
-    public virtual ICollection<ReagentCategory> ReagentCategories { get; } = new List<ReagentCategory>();
+    public virtual ICollection<ReagentCategory> ReagentCategories { get; set; } = new List<ReagentCategory>();
 }

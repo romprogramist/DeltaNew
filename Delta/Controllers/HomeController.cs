@@ -28,14 +28,19 @@ public class HomeController : Controller
     
     
     
-    public async Task<IActionResult> Index()
-    {
-        var productCategorys = await _productcategoryService.GetProductcategorysAsync();
-        if (productCategorys == null || productCategorys.Count == 0)
-            return NotFound("No productCategorys found.");
-        return View("Index", productCategorys);
-    }
+    // public async Task<IActionResult> Index()
+    // {
+    //     var productCategorys = await _productcategoryService.GetProductcategorysAsync();
+    //     if (productCategorys == null || productCategorys.Count == 0)
+    //         return NotFound("No productCategorys found.");
+    //     return View("Index", productCategorys);
+    // }
     
+    
+    public IActionResult Index()
+    {
+        return View();
+    }
     public IActionResult OurProduction()
     {
         return View();

@@ -15,11 +15,11 @@ public class ReagentcategoryService : IReagentcategoryService
     }
 
 
-    public async Task<bool> AddReagentcategory(ReagentcategoryDto reagentcategory)
+    public async Task<bool> AddReagentcategory(ReagentCategoryDto reagentCategory)
     {
         _context.ReagentCategories.Add(new ReagentCategory
         {
-            Name = reagentcategory.Name
+            Name = reagentCategory.Name
         });
     
         var savedCount = await _context.SaveChangesAsync();
@@ -27,11 +27,11 @@ public class ReagentcategoryService : IReagentcategoryService
         return savedCount > 0;
     }
 
-    public async Task<bool> AddReagentcategoryAsync(ReagentcategoryDto reagentcategory)
+    public async Task<bool> AddReagentcategoryAsync(ReagentCategoryDto reagentCategory)
     {
         _context.ReagentCategories.Add(new ReagentCategory
         {
-            Name = reagentcategory.Name
+            Name = reagentCategory.Name
         });
     
         var saveCount = await _context.SaveChangesAsync();
@@ -39,12 +39,12 @@ public class ReagentcategoryService : IReagentcategoryService
         return saveCount > 0;
     }
     
-    public async Task<IEnumerable<ReagentcategoryDto>> GetReagentcategoriesAsync(int? categoryId = null)
+    public async Task<IEnumerable<ReagentCategoryDto>> GetReagentcategoriesAsync(int? categoryId = null)
     {
         return await _context.ReagentCategories
             .Where(p => categoryId == null || p.Id == categoryId)
             // .Include(p => p.Category)
-            .Select(p => new ReagentcategoryDto
+            .Select(p => new ReagentCategoryDto
             {
                 Id = p.Id,
                 Name = p.Name
@@ -65,32 +65,32 @@ public class ReagentcategoryService : IReagentcategoryService
         return saveCount > 0;
     }
 
-    public async Task<ReagentcategoryDto?> GetReagentcategoryAsync(int id)
+    public async Task<ReagentCategoryDto?> GetReagentcategoryAsync(int id)
     {
         return await _context.ReagentCategories
             .Where(p => p.Id == id)
             // .Include(p => p.Category)
-            .Select(p => new ReagentcategoryDto
+            .Select(p => new ReagentCategoryDto
             {
                 Id = p.Id,
                 Name = p.Name
             }).FirstOrDefaultAsync();
     }
 
-    public async Task<ReagentcategoryDto?> UpdateReagentcategoryAsync(ReagentcategoryDto reagentcategory)
+    public async Task<ReagentCategoryDto?> UpdateReagentcategoryAsync(ReagentCategoryDto reagentCategory)
     {
-        var reagentcategoryToUpdate = await _context.ReagentCategories.FindAsync(reagentcategory.Id);
+        var reagentcategoryToUpdate = await _context.ReagentCategories.FindAsync(reagentCategory.Id);
         if (reagentcategoryToUpdate is null)
             return null;
         
-        reagentcategoryToUpdate.Name = reagentcategory.Name;
+        reagentcategoryToUpdate.Name = reagentCategory.Name;
         _context.ReagentCategories.Update(reagentcategoryToUpdate);
         
         var savedCount = await _context.SaveChangesAsync();
         if (savedCount <= 0)
             return null;
 
-        var reagentcategoryDto = new ReagentcategoryDto
+        var reagentcategoryDto = new ReagentCategoryDto
         {
             Id = reagentcategoryToUpdate.Id,
             Name = reagentcategoryToUpdate.Name

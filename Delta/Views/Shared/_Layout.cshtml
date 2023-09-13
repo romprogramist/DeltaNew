@@ -1,8 +1,20 @@
 ﻿@using Delta.Models.Dtos
 @using Microsoft.AspNetCore.Mvc.TagHelpers
-@{
-    var productCategories = ViewData["ProductCategories"] as List<ProductcategoryDto>;
-}
+@* @{ *@
+@*     var productCategories = ViewData["ProductCategories"] as List<ProductcategoryDto>; *@
+@* } *@
+@* *@
+@* *@
+@* @foreach (var productCategory in Model) *@
+@* { *@
+@* 	<div> *@
+@* 		@productCategory.Name *@
+@* 	</div> *@
+@* 	<li>@productCategory.Name</li> *@
+@* 	<li>@productCategory.ParentCategoryId</li> *@
+@* 	<li>@productCategory.Url</li> *@
+@* 	<li>@productCategory.Id</li> *@
+@* } *@
 
 
 <!DOCTYPE html>
@@ -237,81 +249,67 @@
 		</div>
 	</div>
 </div>
-
-
-
 <div class="submenu" id="products">
 	<div class="items-s">
-		@* @foreach (var productCategory in Model) *@
-  @*       { *@
-	 @*        <div></div> *@
-  @*       } *@
-		
-		@* <li>@productCategory.Name</li> *@
-  @*       <li>@productCategory.ParentCategoryId</li> *@
-  @*       <li>@productCategory.Url</li> *@
-  @*       <li>@productCategory.Id</li> *@
-		
-		
-		<div class="item">
-			<a href="/home/Hematology" class="item-hr">
-				Гематология
-			</a>
-			<a href="/home/MocciStudy" class="item-hr">
-				Исследование мочи
-			</a>
-			<a href="/home/EjaculateStudy" class="item-hr">
-				Исследование эякулята
-			</a>
-			<a href="/home/Biochemistry" class="item-hr">
-				Биохимия
-			</a>
-			<div class="item-hr arrow">
-				<a href="#">
-					Иммунология
-				</a>
-			</div>
-			<div class="subsection">
-				<a href="/home/IfaPage">ИФА</a>
-				<a href="/home/Immunochemistry">Иммунохимия</a>
-			</div>
-		</div>
-		<div class="line"></div>
-		<div class="item">
-			<a href="/home/Electrolytes" class="item-hr">
-				Электролиты
-			</a>
-			<a href="/home/Hemostasis" class="item-hr">
-				Гемостаз (коагуляция)
-			</a>
-			<a href="#" class="item-hr">
-				Экспресс диагностика
-			</a>
-			<a href="#" class="item-hr">
-				Иммунофлуоресценция
-			</a>
-			<a href="#" class="item-hr">
-				Изосерология
-			</a>
-		</div>
-		<div class="line"></div>
-		<div class="item item-a">
-			<a href="#" class="item-hr">
-				Оптические инструменты
-			</a>
-			<a href="#" class="item-hr">
-				Центрифуги
-			</a>
-			<a href="#" class="item-hr">
-				Общелабораторное оборудование
-			</a>
-			<a href="/home/GeneralLaboratoryConsumable" class="item-hr">
-				Общелабораторные расходные материалы
-			</a>
-			<a href="/home/LaboratoryChemistry" class="item-hr">
-				Лабораторная химия
-			</a>
-		</div>
+	@* 	<div class="item"> *@
+	@* 		<a href="/home/Hematology" class="item-hr"> *@
+	@* 			Гематология *@
+	@* 		</a> *@
+	@* 		<a href="/home/MocciStudy" class="item-hr"> *@
+	@* 			Исследование мочи *@
+	@* 		</a> *@
+	@* 		<a href="/home/EjaculateStudy" class="item-hr"> *@
+	@* 			Исследование эякулята *@
+	@* 		</a> *@
+	@* 		<a href="/home/Biochemistry" class="item-hr"> *@
+	@* 			Биохимия *@
+	@* 		</a> *@
+	@* 		<div class="item-hr arrow"> *@
+	@* 			<a href="#"> *@
+	@* 				Иммунология *@
+	@* 			</a> *@
+	@* 		</div> *@
+	@* 		<div class="subsection"> *@
+	@* 			<a href="/home/IfaPage">ИФА</a> *@
+	@* 			<a href="/home/Immunochemistry">Иммунохимия</a> *@
+	@* 		</div> *@
+	@* 	</div> *@
+	@* 	<div class="line"></div> *@
+	@* 	<div class="item"> *@
+	@* 		<a href="/home/Electrolytes" class="item-hr"> *@
+	@* 			Электролиты *@
+	@* 		</a> *@
+	@* 		<a href="/home/Hemostasis" class="item-hr"> *@
+	@* 			Гемостаз (коагуляция) *@
+	@* 		</a> *@
+	@* 		<a href="#" class="item-hr"> *@
+	@* 			Экспресс диагностика *@
+	@* 		</a> *@
+	@* 		<a href="#" class="item-hr"> *@
+	@* 			Иммунофлуоресценция *@
+	@* 		</a> *@
+	@* 		<a href="#" class="item-hr"> *@
+	@* 			Изосерология *@
+	@* 		</a> *@
+	@* 	</div> *@
+	@* 	<div class="line"></div> *@
+	@* 	<div class="item item-a"> *@
+	@* 		<a href="#" class="item-hr"> *@
+	@* 			Оптические инструменты *@
+	@* 		</a> *@
+	@* 		<a href="#" class="item-hr"> *@
+	@* 			Центрифуги *@
+	@* 		</a> *@
+	@* 		<a href="#" class="item-hr"> *@
+	@* 			Общелабораторное оборудование *@
+	@* 		</a> *@
+	@* 		<a href="/home/GeneralLaboratoryConsumable" class="item-hr"> *@
+	@* 			Общелабораторные расходные материалы *@
+	@* 		</a> *@
+	@* 		<a href="/home/LaboratoryChemistry" class="item-hr"> *@
+	@* 			Лабораторная химия *@
+	@* 		</a> *@
+	@* 	</div> *@
 	</div>
 </div>
 <img class="top" src="/images/icon/top.svg" alt="">

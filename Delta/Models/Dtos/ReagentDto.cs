@@ -12,6 +12,5 @@ public class ReagentDto
     public string CompanyName { get; set; } = null!;
     public int[] ReagentCategoryIds { get; set; } = null!;
     public string[] ReagentCategoryNames { get; set; } = null!;
-    public virtual ICollection<ReagentCategory> ReagentCategories { get; set; } = null!;
-    
+    public IEnumerable<ReagentCategoryDto> ReagentCategories { get; set; } = null!;
 }

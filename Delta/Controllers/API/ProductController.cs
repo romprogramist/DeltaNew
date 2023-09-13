@@ -1,4 +1,5 @@
-﻿using Delta.Models;
+﻿using Delta.Data;
+using Delta.Models;
 using Delta.Models.Dtos;
 using Delta.Services.ProductService;
 using Microsoft.AspNetCore.Mvc;
@@ -25,15 +26,26 @@ public class ProductController : ControllerBase
     // [Authorize(Roles = "Admin")]  
     public async Task<IActionResult> AddProduct([FromForm] ProductModel product)
     {
-        // var requestFiles = Request.Form.Files;
-        // if (requestFiles.Count > 0)
+        var requestFiles = Request.Form.Files;
+        if (requestFiles.Count > 0)
+        {
+            // if (requestFiles[0].Length > 1024 * 1024)
+            // {
+            //     return BadRequest("File size is too large.");
+            // }
+            // product.InstructionPdf = await _productService.SaveReagentImageAsync(requestFiles[0]);
+        }
+        
+        // var productImage = new ProductImage
         // {
-        //     if (requestFiles[0].Length > 1024 * 1024)
-        //     {
-        //         return BadRequest("File size is too large.");
-        //     }
-        //     reagent.InstructionPdf = await _reagentService.SaveReagentImageAsync(requestFiles[0]);
-        // }
+        //     ProductId = product.Id,
+        //     Url = product.Url
+        // };
+
+        // _context.ProductImages.Add(productImage);
+        // var saveCount = await _context.SaveChangesAsync();
+        // return saveCount > 0;
+        
         
         var productDto = new ProductDto
         {
@@ -46,7 +58,7 @@ public class ProductController : ControllerBase
             CardTitle = product.CardTitle,
             LongNamePrefix = product.LongNamePrefix,
             CompanyId = product.CompanyId,
-            // ProductCategoriesId = product.ProductCategoriesId
+            ProductCategoriesId = product.ProductCategoriesId
         };
         
         

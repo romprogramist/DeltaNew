@@ -56,9 +56,6 @@ public class ProductcategoryController : ControllerBase
         return Ok();
     }
     
-    
-    
-    
     [HttpPost]
     [Route("update")]
     // [Authorize(Roles = "Admin")]
@@ -82,6 +79,7 @@ public class ProductcategoryController : ControllerBase
             Url = productcategory.Url,
             ParentCategoryId = productcategory.ParentCategoryId
         };
+        
         var savedProductcategory = await _productcategoryService.UpdateProductcategoryAsync(productcategoryDto);
         if(savedProductcategory == null)
             return BadRequest();
@@ -94,10 +92,21 @@ public class ProductcategoryController : ControllerBase
             Url = savedProductcategory.Url,
             ParentCategoryId = savedProductcategory.ParentCategoryId
         };
+        
         return Ok(productcategoryModel);
     }
     
     
+    [HttpDelete]
+    [Route("delete/{id:int}")]
+    // [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> DeleteProductCategory(int id)
+    {
+        var deleted = await _productcategoryService.DeleteProductCategoryAsync(id);
+        if(!deleted)
+            return BadRequest();
+        return Ok();
+    }
     
     
 }

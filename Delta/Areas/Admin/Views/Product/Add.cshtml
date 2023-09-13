@@ -28,14 +28,18 @@
 			Добавить
 		</button>
 	</div>
+	
 	<label>
 		Раздел продукта
-		<input id="productCategoriesId" name="productCategoriesId" type="text" placeholder="Выбирается раздел продукта">
+		<input list="fruitsList1" id="productCategoriesId" name="productCategoriesId">
+		<datalist class="datalist-product-category" id="fruitsList1">
+            
+		</datalist>
 	</label>
 	<label>
 		Бренд
 		<input list="fruitsList" name="companyId">
-		<datalist id="fruitsList">
+		<datalist class="datalist-company" id="fruitsList">
         
 		</datalist>
 	</label>
@@ -76,25 +80,25 @@
 		<div class="lower-input">
 			<label>
 				Главная картинка
-				<input class="form-file" type="file" name="url"/>
+				<input class="form-file" type="file" name="url0"/>
 			</label>
 		</div>
 		<div class="lower-input">
 			<label>
 				Картинка 1
-				<input class="form-file" type="file" name="url"/>
+				<input class="form-file" type="file" name="url1"/>
 			</label>
 		</div>
 		<div class="lower-input">
 			<label>
 				Картинка 2
-				<input class="form-file" type="file" name="url"/>
+				<input class="form-file" type="file" name="url2"/>
 			</label>
 		</div>
 		<div class="lower-input">
 			<label>
 				Картинка 3
-				<input class="form-file" type="file" name="url"/>
+				<input class="form-file" type="file" name="url3"/>
 			</label>
 		</div>
 	</div>

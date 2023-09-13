@@ -54,7 +54,11 @@ public class ReagentService : IReagentService
                 Name = r.Name,
                 KitComposition = r.KitComposition,
                 InstructionPdf = r.InstructionPdf,
-                ReagentCategories = r.ReagentCategories,
+                ReagentCategories = r.ReagentCategories.Select(rc => new ReagentCategoryDto
+                {
+                    Id = rc.Id,
+                    Name = rc.Name
+                }),
                 CompanyId = r.CompanyId,
                 CompanyName = r.Company.Name
             }).ToListAsync();
@@ -98,7 +102,11 @@ public class ReagentService : IReagentService
                 CompanyId = p.CompanyId,
                 CompanyName = p.Company.Name,
                 ReagentCategoryIds = p.ReagentCategories.Select(rc => rc.Id).ToArray(), // Список Id категорий
-                ReagentCategories = p.ReagentCategories // Включение связанных категорий
+                ReagentCategories = p.ReagentCategories.Select(rc => new ReagentCategoryDto
+                {
+                    Id = rc.Id,
+                    Name = rc.Name
+                }), // Включение связанных категорий
             }).FirstOrDefaultAsync();
 
         if (reagentDto != null)
@@ -114,6 +122,7 @@ public class ReagentService : IReagentService
     public async Task<List<ReagentDto>> GetReagentsByCategoryAsync(int[] categoryIds)
     {
         return await _context.Reagents
+            .Include(r => r.ReagentCategories)
             .Where(r => r.ReagentCategories.Any(rc => categoryIds.Contains(rc.Id)))
             .Select(r => new ReagentDto
             {
@@ -121,7 +130,11 @@ public class ReagentService : IReagentService
                 Name = r.Name,
                 KitComposition = r.KitComposition,
                 InstructionPdf = r.InstructionPdf,
-                ReagentCategories = r.ReagentCategories,
+                ReagentCategories = r.ReagentCategories.Select(rc => new ReagentCategoryDto
+                {
+                    Id = rc.Id,
+                    Name = rc.Name
+                }),
                 CompanyId = r.CompanyId,
                 CompanyName = r.Company.Name
             }).ToListAsync();

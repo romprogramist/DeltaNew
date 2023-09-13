@@ -109,7 +109,7 @@ public class ContactService : IContactService
 
     public async Task<bool> AddContactAsync(ContactDto contact)
     {
-        _context.Contacts.Add(new Contacts
+        _context.Contacts.Add(new Contact
         {
             HeaderNumber = contact.HeaderNumber,
             NumberOne = contact.NumberOne,

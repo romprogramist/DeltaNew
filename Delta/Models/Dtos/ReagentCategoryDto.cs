@@ -1,6 +1,6 @@
 ﻿namespace Delta.Models.Dtos;
 
-public class ReagentcategoryDto
+public class ReagentCategoryDto
 {
     public int Id { get; set; }
     public string Name { get; set; } = string.Empty;
